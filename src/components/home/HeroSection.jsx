@@ -35,7 +35,7 @@ export default function HeroSection() {
             {/* I'm Looking for */}
             <div className="md:col-span-4">
               <div className="flex items-center space-x-3 p-4 bg-gray-50 rounded-lg">
-                <Grid3X3 className="h-5 w-5 text-orange-500" />
+                <Grid3X3 className="h-5 w-5 text-primary" />
                 <div className="flex-1">
                   <label className="block text-sm font-medium text-gray-600 mb-1">I'm Looking for</label>
                   <input
@@ -50,7 +50,7 @@ export default function HeroSection() {
             {/* Category Dropdown */}
             <div className="md:col-span-3">
               <div className="flex items-center space-x-3 p-4 bg-gray-50 rounded-lg">
-                <Grid3X3 className="h-5 w-5 text-orange-500" />
+                <Grid3X3 className="h-5 w-5 text-primary" />
                 <div className="flex-1">
                   <label className="block text-sm font-medium text-gray-600 mb-1">Category</label>
                   <select className="w-full bg-transparent border-none outline-none text-gray-800">
@@ -67,7 +67,7 @@ export default function HeroSection() {
             {/* Location */}
             <div className="md:col-span-3">
               <div className="flex items-center space-x-3 p-4 bg-gray-50 rounded-lg">
-                <MapPin className="h-5 w-5 text-orange-500" />
+                <MapPin className="h-5 w-5 text-primary" />
                 <div className="flex-1">
                   <label className="block text-sm font-medium text-gray-600 mb-1">Location</label>
                   <input
@@ -81,7 +81,7 @@ export default function HeroSection() {
 
             {/* Search Button */}
             <div className="md:col-span-2">
-              <button className="w-full bg-orange-500 hover:bg-orange-600 text-white p-4 rounded-lg flex items-center justify-center transition-colors">
+              <button className="w-full bg-primary hover:bg-orange-600 text-white p-4 rounded-lg flex items-center justify-center transition-colors">
                 <Search className="h-5 w-5" />
               </button>
             </div>

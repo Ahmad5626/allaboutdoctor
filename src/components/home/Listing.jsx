@@ -1,77 +1,78 @@
-"use client";
+"use client"
 
-import { useEffect, useRef, useState } from "react";
-import { motion } from "framer-motion";
-import { Heart, MapPin, Star } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { useEffect, useRef, useState } from "react"
+import { motion } from "framer-motion"
+import { Heart, MapPin, Star } from "lucide-react"
+import { Button } from "@/components/ui/button"
 
 const listings = [
   {
     id: 1,
     title: "Saddle & Sip Saloon",
     category: "salon1",
-    categoryColor: "bg-orange-500",
+    categoryColor: "bg-primary",
     owner: {
       name: "superbusiness47",
-      avatar: "https://php82.kreativdev.com/bulistio/demo/assets/admin/img/vendor-photo/6631db1720b0b.png",
+      avatar: "https://i.pravatar.cc/300",
     },
-    image: "https://image.wedmegood.com/resized/450X/uploads/images/93d9aa860dcf4d0dacfeda4b17f64b1frealwedding/PTN_RUHI+KARTIK_DAY02-5452-3.jpg?crop=224,349,1626,914",
+    image:
+      "https://image.wedmegood.com/resized/450X/uploads/images/93d9aa860dcf4d0dacfeda4b17f64b1frealwedding/PTN_RUHI+KARTIK_DAY02-5452-3.jpg?crop=224,349,1626,914",
     rating: 4.5,
     reviewCount: 2,
     location: "Melbourne, Victoria, Australia",
     priceRange: "$40 - $999",
     isFavorited: false,
   },
-  
+
   {
-    id: 1,
-    title: "Saddle & Sip Saloon",
-    category: "salon1",
-    categoryColor: "bg-orange-500",
+    id: 2,
+    title: "Another Saloon",
+    category: "salon2",
+    categoryColor: "bg-blue-500",
     owner: {
-      name: "superbusiness47",
-      avatar: "https://php82.kreativdev.com/bulistio/demo/assets/admin/img/vendor-photo/6631db1720b0b.png",
-    },
-    image: "https://image.wedmegood.com/resized/450X/uploads/images/46f88aa94224455fbc3940697615a453realwedding/NT6_5075-EditLarge.jpeg?crop=145,253,1013,569",
-    rating: 4.5,
-    reviewCount: 2,
-    location: "Melbourne, Victoria, Australia",
-    priceRange: "$40 - $999",
-    isFavorited: false,
-  },
-  {
-    id: 1,
-    title: "Saddle & Sip Saloon",
-    category: "salon1",
-    categoryColor: "bg-orange-500",
-    owner: {
-      name: "superbusiness47",
-      avatar: "https://php82.kreativdev.com/bulistio/demo/assets/admin/img/vendor-photo/6631db1720b0b.png",
+      name: "anotherbusiness",
+      avatar: "https://i.pravatar.cc/300",
     },
     image: "https://image.wedmegood.com/resized/450X/uploads/images/76286e68431a4c929007f48f19e380bbrealwedding/SRI01051.jpg?crop=285,1154,1630,917",
-    rating: 4.5,
-    reviewCount: 2,
-    location: "Melbourne, Victoria, Australia",
-    priceRange: "$40 - $999",
+    rating: 4.0,
+    reviewCount: 5,
+    location: "Sydney, New South Wales, Australia",
+    priceRange: "$50 - $1500",
     isFavorited: false,
   },
   {
-    id: 1,
-    title: "Saddle & Sip Saloon",
-    category: "salon1",
-    categoryColor: "bg-orange-500",
+    id: 3,
+    title: "Third Saloon",
+    category: "salon3",
+    categoryColor: "bg-green-500",
     owner: {
-      name: "superbusiness47",
-      avatar: "https://php82.kreativdev.com/bulistio/demo/assets/admin/img/vendor-photo/6631db1720b0b.png",
+      name: "thirdbusiness",
+      avatar: "https://i.pravatar.cc/300",
     },
-    image: "https://image.wedmegood.com/resized/450X/uploads/images/4bfb1109e25948b89a7c0fb3fd93adfdrealwedding/ABHI5060Large.jpeg?crop=140,218,1013,569",
-    rating: 4.5,
-    reviewCount: 2,
-    location: "Melbourne, Victoria, Australia",
-    priceRange: "$40 - $999",
+    image: "https://image.wedmegood.com/resized/450X/uploads/images/46f88aa94224455fbc3940697615a453realwedding/NT6_5075-EditLarge.jpeg?crop=145,253,1013,569",
+    rating: 3.8,
+    reviewCount: 8,
+    location: "Brisbane, Queensland, Australia",
+    priceRange: "$60 - $1200",
     isFavorited: false,
   },
-];
+  {
+    id: 4,
+    title: "Fourth Saloon",
+    category: "salon4",
+    categoryColor: "bg-purple-500",
+    owner: {
+      name: "fourthbusiness",
+      avatar: "https://i.pravatar.cc/300",
+    },
+    image: "https://image.wedmegood.com/resized/450X/uploads/images/4bfb1109e25948b89a7c0fb3fd93adfdrealwedding/ABHI5060Large.jpeg?crop=140,218,1013,569",
+    rating: 4.2,
+    reviewCount: 10,
+    location: "Adelaide, South Australia, Australia",
+    priceRange: "$70 - $1300",
+    isFavorited: false,
+  },
+]
 
 const StarRating = ({ rating, reviewCount }) => {
   return (
@@ -80,9 +81,7 @@ const StarRating = ({ rating, reviewCount }) => {
         {[1, 2, 3, 4, 5].map((star) => (
           <Star
             key={star}
-            className={`w-4 h-4 ${
-              star <= rating ? "fill-yellow-400 text-yellow-400" : "fill-gray-200 text-gray-200"
-            }`}
+            className={`w-4 h-4 ${star <= rating ? "fill-yellow-400 text-yellow-400" : "fill-gray-200 text-gray-200"}`}
           />
         ))}
       </div>
@@ -90,11 +89,11 @@ const StarRating = ({ rating, reviewCount }) => {
         ({rating > 0 ? rating.toFixed(1) : "0"}) {reviewCount} Reviews
       </span>
     </div>
-  );
-};
+  )
+}
 
 const ListingCard = ({ listing, index }) => {
-  const [isFavorited, setIsFavorited] = useState(listing.isFavorited);
+  const [isFavorited, setIsFavorited] = useState(listing.isFavorited)
 
   return (
     <motion.div
@@ -162,7 +161,7 @@ const ListingCard = ({ listing, index }) => {
 
         {/* Location */}
         <div className="flex items-center gap-2 mb-4 text-gray-600">
-          <MapPin className="w-4 h-4 text-orange-500" />
+          <MapPin className="w-4 h-4 text-primary" />
           <span className="text-sm">{listing.location}</span>
         </div>
 
@@ -173,46 +172,40 @@ const ListingCard = ({ listing, index }) => {
         </div>
       </div>
     </motion.div>
-  );
-};
+  )
+}
 
 export default function Listing() {
-    const splideRef = useRef(null)
-    useEffect(() => {
-        const loadSplide = async () => {
-          const { Splide } = await import("@splidejs/splide")
-          await import("@splidejs/splide/css")
-    
-          if (splideRef.current) {
-            new Splide(splideRef.current, {
-              type: "loop",
-              perPage: 6,
-              perMove: 1,
-              gap: "0rem",
-              pagination: true,
-              arrows: true,
-              autoplay: false,
-              pauseOnHover: true,
-              breakpoints: {
-                1280: {
-                  perPage: 4,
-                },
-                1024: {
-                  perPage: 3,
-                },
-                768: {
-                  perPage: 2,
-                },
-                640: {
-                  perPage: 1,
-                },
+  const splideRef = useRef(null)
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      import("@splidejs/splide").then(({ Splide }) => {
+        if (splideRef.current) {
+          new Splide(splideRef.current, {
+            type: "loop",
+            perPage: 4,
+            perMove: 1,
+            gap: "1.5rem",
+            pagination: true,
+            arrows: true,
+            breakpoints: {
+              1024: {
+                perPage: 3,
               },
-            }).mount()
-          }
+              768: {
+                perPage: 2,
+              },
+              640: {
+                perPage: 1,
+              },
+            },
+          }).mount()
         }
-    
-        loadSplide()
-      }, [])
+      })
+    }
+  }, [])
+
   return (
     <section className="py-16 bg-gray-50 md:px-20 px-10">
       <div className="container mx-auto px-4">
@@ -231,24 +224,23 @@ export default function Listing() {
               whileInView={{ width: "100%" }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.3 }}
-              className="absolute bottom-0 left-0 h-1 bg-orange-500 rounded-full"
+              className="absolute bottom-0 left-0 h-1 bg-primary rounded-full"
             />
           </h2>
         </motion.div>
 
-        {/* Listings Grid */}
-
-          <div className="splide" ref={splideRef}>
-        <div className="splide__track">
-          <div className="splide__list">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {listings.map((listing, index) => (
-            <ListingCard key={listing.id} listing={listing} index={index} />
-          ))}
+        {/* Listings Slider */}
+        <div ref={splideRef} className="splide">
+          <div className="splide__track">
+            <ul className="splide__list">
+              {listings.map((listing, index) => (
+                <li key={listing.id} className="splide__slide">
+                  <ListingCard listing={listing} index={index} />
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
-        </div>
-        </div></div>
-       
 
         {/* View All Button */}
         <motion.div
@@ -260,12 +252,33 @@ export default function Listing() {
         >
           <Button
             size="lg"
-            className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded-full font-semibold transition-all duration-300 hover:scale-105"
+            className="bg-primary hover:bg-orange-600 text-white px-8 py-3 rounded-full font-semibold transition-all duration-300 hover:scale-105"
           >
             View All Listings
           </Button>
         </motion.div>
       </div>
+
+      {/* Splide CSS */}
+      <style jsx>{`
+        .splide__arrow {
+          background: rgba(255, 255, 255, 0.9);
+          border: 1px solid #e5e7eb;
+          box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        .splide__arrow:hover {
+          background: white;
+        }
+        .splide__arrow svg {
+          fill: #374151;
+        }
+        .splide__pagination__page {
+          background: #d1d5db;
+        }
+        .splide__pagination__page.is-active {
+          background: #f97316;
+        }
+      `}</style>
     </section>
-  );
+  )
 }
