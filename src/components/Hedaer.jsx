@@ -255,7 +255,7 @@ export default function Navbar() {
                   <ChevronDown className="ml-1 h-4 w-4" />
                 </button>
                 {isVendorsOpen && (
-                  <div className="absolute top-full left-0 mt-1 w-screen max-w-6xl bg-white rounded-md shadow-xl py-6 z-50 -ml-96">
+                  <div className="absolute top-full left-0 mt-1 w-screen max-w-6xl bg-white rounded-md shadow-xl py-6 z-50 -ml-96 h-screen overflow-auto">
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-6">
                       {vendorCategories.map((category, index) => {
                         const IconComponent = category.icon
