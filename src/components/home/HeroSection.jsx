@@ -10,7 +10,7 @@ export default function HeroSection() {
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: `url('https://weddingplanet.in.net/assets/img/hero-section/664af3245b2b4.png')`,
+          backgroundImage: `url('./assets/img/banner-2.jpg')`,
         }}
       >
         <div className="absolute inset-0 bg-black/50"></div>
@@ -37,11 +37,11 @@ export default function HeroSection() {
               <div className="flex items-center space-x-3 p-4 bg-gray-50 rounded-lg">
                 <Grid3X3 className="h-5 w-5 text-primary" />
                 <div className="flex-1">
-                  <label className="block text-sm font-medium text-gray-600 mb-1">I'm Looking for</label>
+                  {/* <label className="block text-sm font-medium text-gray-600 mb-1">I'm Looking for</label> */}
                   <input
                     type="text"
                     placeholder="Choose a Service"
-                    className="w-full bg-transparent border-none  outline-none text-gray-800 placeholder-gray-400 "
+                    className="w-full bg-transparent   outline-none text-gray-800 placeholder-gray-400 "
                   />
                 </div>
               </div>
@@ -52,7 +52,7 @@ export default function HeroSection() {
               <div className="flex items-center space-x-3 p-4 bg-gray-50 rounded-lg">
                 <Grid3X3 className="h-5 w-5 text-primary" />
                 <div className="flex-1">
-                  <label className="block text-sm font-medium text-gray-600 mb-1">Category</label>
+                  {/* <label className="block text-sm font-medium text-gray-600 mb-1">Category</label> */}
                   <select className="w-full bg-transparent border-none outline-none text-gray-800">
                     <option>All</option>
                     <option>Photography</option>
@@ -69,7 +69,7 @@ export default function HeroSection() {
               <div className="flex items-center space-x-3 p-4 bg-gray-50 rounded-lg">
                 <MapPin className="h-5 w-5 text-primary" />
                 <div className="flex-1">
-                  <label className="block text-sm font-medium text-gray-600 mb-1">Location</label>
+                  {/* <label className="block text-sm font-medium text-gray-600 mb-1">Location</label> */}
                   <input
                     type="text"
                     placeholder="Enter your city"

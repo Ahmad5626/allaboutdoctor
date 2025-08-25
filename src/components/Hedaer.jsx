@@ -256,21 +256,21 @@ export default function Navbar() {
                 </button>
                 {isVendorsOpen && (
                   <div className="absolute top-full left-0 mt-1 w-screen max-w-6xl bg-white rounded-md shadow-xl py-6 z-50 -ml-96 h-screen overflow-auto">
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-6">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 px-6">
                       {vendorCategories.map((category, index) => {
                         const IconComponent = category.icon
                         return (
                           <div key={index} className="space-y-3">
-                            <div className="flex items-center space-x-2 text-coral-500 font-semibold">
+                            <div className="flex items-center space-x-2 text-coral-500 font-semibold ">
                               <IconComponent className="h-5 w-5 text-primary" />
-                              <span className="text-sm text-primary">{category.title}</span>
+                              <span className="text-[10px] text-primary">{category.title}</span>
                             </div>
                             <div className="space-y-1">
                               {category.items.map((item, itemIndex) => (
                                 <a
                                   key={itemIndex}
                                   href="#"
-                                  className="block px-2 py-1 text-sm text-gray-700 hover:bg-coral-50 hover:text-coral-600 rounded transition-colors"
+                                  className="block px-2 py-1 text-[10px] text-gray-700 hover:bg-coral-50 hover:text-coral-600 rounded transition-colors"
                                 >
                                   {item}
                                 </a>

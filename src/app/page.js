@@ -14,7 +14,7 @@ const page = () => {
       <HeroSection/>
       <CategoriesSlider/>
       <Listing/>
-      <Pricing/>
+     
       <TestimonialsSection/>
       <Footer/>
       
