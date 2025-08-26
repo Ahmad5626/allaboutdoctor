@@ -22,6 +22,7 @@ import { Input } from "@/components/ui/input"
 import { Badge } from "@/components/ui/badge"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import Link from "next/link"
+import Navbar from "@/components/Hedaer"
 
 const recentBookings = [
   {
@@ -73,42 +74,7 @@ export default function VendorDashboard() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
-      <header className="bg-white shadow-sm border-b">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
-            <div className="flex items-center gap-4">
-              <Building2 className="w-8 h-8 text-blue-600" />
-              <h1 className="text-xl font-bold text-gray-900">Vendor Dashboard</h1>
-            </div>
-
-            <div className="flex items-center gap-4">
-              <div className="relative">
-                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
-                <Input
-                  type="text"
-                  placeholder="Search bookings..."
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  className="pl-10 w-64"
-                />
-              </div>
-
-              <Button variant="ghost" size="sm">
-                <Bell className="w-5 h-5" />
-              </Button>
-
-              <Button variant="ghost" size="sm">
-                <Settings className="w-5 h-5" />
-              </Button>
-
-              <Avatar>
-                <AvatarImage src="/placeholder.svg" />
-                <AvatarFallback>VS</AvatarFallback>
-              </Avatar>
-            </div>
-          </div>
-        </div>
-      </header>
+      <Navbar fixed={true}/>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Welcome Section */}
@@ -171,101 +137,12 @@ export default function VendorDashboard() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {/* Recent Bookings */}
-          <Card>
-            <CardHeader className="flex flex-row items-center justify-between">
-              <CardTitle>Recent Bookings</CardTitle>
-              <Button variant="outline" size="sm">
-                <Plus className="w-4 h-4 mr-2" />
-                Add Booking
-              </Button>
-            </CardHeader>
-            <CardContent>
-              <div className="space-y-4">
-                {recentBookings.map((booking) => (
-                  <div key={booking.id} className="flex items-center justify-between p-4 border rounded-lg">
-                    <div className="flex-1">
-                      <h4 className="font-medium text-gray-900">{booking.clientName}</h4>
-                      <p className="text-sm text-gray-600">{booking.service}</p>
-                      <p className="text-sm text-gray-500">{booking.date}</p>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <div className="text-right">
-                        <p className="font-medium text-gray-900">{booking.amount}</p>
-                        <Badge
-                          variant={booking.status === "confirmed" ? "default" : "secondary"}
-                          className={booking.status === "confirmed" ? "bg-green-100 text-green-800" : ""}
-                        >
-                          {booking.status}
-                        </Badge>
-                      </div>
-                      <div className="flex gap-1">
-                        <Button variant="ghost" size="sm">
-                          <Eye className="w-4 h-4" />
-                        </Button>
-                        <Button variant="ghost" size="sm">
-                          <Edit className="w-4 h-4" />
-                        </Button>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </CardContent>
-          </Card>
+        
 
           {/* Recent Reviews */}
-          <Card>
-            <CardHeader className="flex flex-row items-center justify-between">
-              <CardTitle>Recent Reviews</CardTitle>
-              <Button variant="outline" size="sm">
-                <MessageSquare className="w-4 h-4 mr-2" />
-                View All
-              </Button>
-            </CardHeader>
-            <CardContent>
-              <div className="space-y-4">
-                {recentReviews.map((review) => (
-                  <div key={review.id} className="p-4 border rounded-lg">
-                    <div className="flex items-center justify-between mb-2">
-                      <h4 className="font-medium text-gray-900">{review.clientName}</h4>
-                      <div className="flex items-center gap-1">
-                        {Array.from({ length: review.rating }, (_, i) => (
-                          <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
-                        ))}
-                      </div>
-                    </div>
-                    <p className="text-sm text-gray-600 mb-2">{review.comment}</p>
-                    <p className="text-xs text-gray-500">{review.date}</p>
-                  </div>
-                ))}
-              </div>
-            </CardContent>
-          </Card>
+          
         </div>
 
-        {/* Quick Actions */}
-        <Card className="mt-8">
-          <CardHeader>
-            <CardTitle>Quick Actions</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              <Button className="h-20 flex flex-col items-center justify-center gap-2">
-                <Plus className="w-6 h-6" />
-                Add New Service
-              </Button>
-              <Button variant="outline" className="h-20 flex flex-col items-center justify-center gap-2 bg-transparent">
-                <Calendar className="w-6 h-6" />
-                Manage Calendar
-              </Button>
-              <Button variant="outline" className="h-20 flex flex-col items-center justify-center gap-2 bg-transparent">
-                <Users className="w-6 h-6" />
-                View Clients
-              </Button>
-            </div>
-          </CardContent>
-        </Card>
 
         {/* Navigation Links */}
         <div className="mt-8 text-center">
