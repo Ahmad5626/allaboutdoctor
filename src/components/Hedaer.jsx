@@ -23,11 +23,12 @@ import {
   Building,
 } from "lucide-react"
 
-export default function Navbar() {
+export default function Navbar({fixed}) {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isVendorsOpen, setIsVendorsOpen] = useState(false)
   const [isCustomerOpen, setIsCustomerOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
+
 
   useEffect(() => {
     const handleScroll = () => {
@@ -207,10 +208,10 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`w-full z-50 fixed top-0 transition-all duration-300 ${isScrolled ? "bg-white shadow-lg text-gray-900" : "bg-transparent text-white"
+      className={`w-full z-50 ${!fixed ? "fixed  text-white" : "bg-white shadow-lg text-gray-900"} top-0 transition-all duration-300 ${isScrolled ? "bg-white shadow-lg text-gray-900" : "bg-transparent"
         }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 md:px-0">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
@@ -224,21 +225,21 @@ export default function Navbar() {
             <div className="ml-10 flex items-baseline space-x-8">
               <a
                 href="#"
-                className={`hover:text-coral-500 px-3 py-2 text-sm font-medium transition-colors ${isScrolled ? "text-gray-900" : "text-white"
+                className={`hover:text-coral-500 px-3 py-2 text-sm font-medium transition-colors ${isScrolled ? "text-gray-900" : ""
                   }`}
               >
                 Home
               </a>
               <a
                 href="#"
-                className={`hover:text-coral-500 px-3 py-2 text-sm font-medium transition-colors ${isScrolled ? "text-gray-900" : "text-white"
+                className={`hover:text-coral-500 px-3 py-2 text-sm font-medium transition-colors ${isScrolled ? "text-gray-900" : ""
                   }`}
               >
                 Listings
               </a>
               <a
                 href="#"
-                className={`hover:text-coral-500 px-3 py-2 text-sm font-medium transition-colors ${isScrolled ? "text-gray-900" : "text-white"
+                className={`hover:text-coral-500 px-3 py-2 text-sm font-medium transition-colors ${isScrolled ? "text-gray-900" : ""
                   }`}
               >
                 Pricing
@@ -248,7 +249,7 @@ export default function Navbar() {
               <div className="relative">
                 <button
                   onClick={() => setIsVendorsOpen(!isVendorsOpen)}
-                  className={`hover:text-coral-500 px-3 py-2 text-sm font-medium flex items-center transition-colors ${isScrolled ? "text-gray-900" : "text-white"
+                  className={`hover:text-coral-500 px-3 py-2 text-sm font-medium flex items-center transition-colors ${isScrolled ? "text-gray-900" : ""
                     }`}
                 >
                   Vendors
@@ -286,7 +287,7 @@ export default function Navbar() {
 
               <a
                 href="#"
-                className={`hover:text-coral-500 px-3 py-2 text-sm font-medium flex items-center transition-colors ${isScrolled ? "text-gray-900" : "text-white"
+                className={`hover:text-coral-500 px-3 py-2 text-sm font-medium flex items-center transition-colors ${isScrolled ? "text-gray-900" : ""
                   }`}
               >
                 Shop
@@ -294,7 +295,7 @@ export default function Navbar() {
               </a>
               <a
                 href="#"
-                className={`hover:text-coral-500 px-3 py-2 text-sm font-medium flex items-center transition-colors ${isScrolled ? "text-gray-900" : "text-white"
+                className={`hover:text-coral-500 px-3 py-2 text-sm font-medium flex items-center transition-colors ${isScrolled ? "text-gray-900" : ""
                   }`}
               >
                 Pages
@@ -302,7 +303,7 @@ export default function Navbar() {
               </a>
               <a
                 href="#"
-                className={`hover:text-coral-500 px-3 py-2 text-sm font-medium transition-colors ${isScrolled ? "text-gray-900" : "text-white"
+                className={`hover:text-coral-500 px-3 py-2 text-sm font-medium transition-colors ${isScrolled ? "text-gray-900" : ""
                   }`}
               >
                 Contact
@@ -356,7 +357,7 @@ export default function Navbar() {
           <div className="lg:hidden">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className={`hover:text-coral-500 transition-colors ${isScrolled ? "text-gray-900" : "text-white"}`}
+              className={`hover:text-coral-500 transition-colors ${isScrolled ? "text-gray-900" : ""}`}
             >
               {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
