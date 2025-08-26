@@ -73,7 +73,7 @@ export function AdminSidebar({ className }) {
   return (
     <div
       className={cn(
-        "flex flex-col bg-sidebar border-r border-sidebar-border transition-all duration-300 bg-gray-500 ",
+        "flex flex-col bg-sidebar border-r border-sidebar-border transition-all duration-300 bg-gray-100 ",
         isCollapsed ? "w-20" : "w-64",
         className,
       )}
@@ -110,7 +110,7 @@ export function AdminSidebar({ className }) {
                   "flex items-center gap-3 px-3 py-2 rounded-lg transition-colors text-white",
                   isActive
                     ? "bg-primary  text-white"
-                    : " hover:bg-sidebar-primary/10 hover:text-sidebar-accent text-white",
+                    : " hover:bg-sidebar-primary/10 hover:text-sidebar-accent text-black",
                 )}
               >
                 <Icon className="h-5 w-5 flex-shrink-0" />
