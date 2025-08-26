@@ -102,7 +102,7 @@ export default function TestimonialsSection() {
                   {testimonials.map((testimonial) => (
                     <li key={testimonial.id} className="splide__slide">
                       <div className="bg-white p-6 rounded-lg">
-                        <div className="text-coral-500 text-6xl mb-4 font-serif">"</div>
+                        <div className="text-coral-500 text-6xl mb-4 ">"</div>
                         <p className="text-gray-600 text-lg mb-6 leading-relaxed">{testimonial.text}</p>
                         <div className="flex items-center gap-4">
                           <img

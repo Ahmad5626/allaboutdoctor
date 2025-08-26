@@ -21,7 +21,7 @@ export default function Footer() {
           <div className="lg:col-span-1">
             <div className="flex items-center gap-2 mb-4">
               <Heart className="h-8 w-8 text-primary fill-current" />
-              <h3 className="text-2xl font-serif font-bold text-foreground">EventBliss</h3>
+              <h3 className="text-2xl  font-bold text-foreground">EventBliss</h3>
             </div>
             <p className="text-muted-foreground mb-6 leading-relaxed">
               Creating magical moments and unforgettable celebrations. Your dream wedding and event planning partner.
@@ -44,7 +44,7 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-lg font-serif font-semibold text-foreground mb-6">Quick Links</h4>
+            <h4 className="text-lg  font-semibold text-foreground mb-6">Quick Links</h4>
             <ul className="space-y-3">
               <li>
                 <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
@@ -76,7 +76,7 @@ export default function Footer() {
 
           {/* Services */}
           <div>
-            <h4 className="text-lg font-serif font-semibold text-foreground mb-6">Services</h4>
+            <h4 className="text-lg  font-semibold text-foreground mb-6">Services</h4>
             <ul className="space-y-3">
               <li>
                 <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
@@ -108,7 +108,7 @@ export default function Footer() {
 
           {/* Contact & Newsletter */}
           <div>
-            <h4 className="text-lg font-serif font-semibold text-foreground mb-6">Get In Touch</h4>
+            <h4 className="text-lg  font-semibold text-foreground mb-6">Get In Touch</h4>
             <div className="space-y-4 mb-6">
               <div className="flex items-center gap-3">
                 <Phone className="h-4 w-4 text-primary" />
