@@ -73,7 +73,7 @@ export function AdminSidebar({ className }) {
   return (
     <div
       className={cn(
-        "flex flex-col bg-sidebar border-r border-sidebar-border transition-all duration-300 bg-gray-100 ",
+        "flex flex-col border-r border-sidebar-border transition-all duration-300 bg-gray-100 ",
         isCollapsed ? "w-20" : "w-64",
         className,
       )}
