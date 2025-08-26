@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { useSearchParams, useRouter } from "next/navigation"
+// import { useSearchParams, useRouter } from "next/navigation"
 import { User, Building2, Phone, Mail, Lock, UserCheck } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
@@ -24,8 +24,8 @@ const vendorTypes = [
 ]
 
 export default function SignupPage() {
-  const searchParams = useSearchParams()
-  const router = useRouter()
+  // const searchParams = useSearchParams()
+  // const router = useRouter()
   const [userType, setUserType] = useState("user")
   const [formData, setFormData] = useState({
     name: "",
@@ -36,12 +36,12 @@ export default function SignupPage() {
     vendorType: "",
   })
 
-  useEffect(() => {
-    const type = searchParams.get("type")
-    if (type === "vendor" || type === "user") {
-      setUserType(type)
-    }
-  }, [searchParams])
+  // useEffect(() => {
+  //   const type = searchParams.get("type")
+  //   if (type === "vendor" || type === "user") {
+  //     setUserType(type)
+  //   }
+  // }, [searchParams])
 
   const handleInputChange = (e) => {
     setFormData({
@@ -256,14 +256,15 @@ export default function SignupPage() {
               <div className="text-center mt-4">
                 <p className="text-sm text-gray-600">
                   Want to sign up as {userType === "vendor" ? "user" : "vendor"}?{" "}
-                  <Link
-                    href={`/signup?type=${userType === "vendor" ? "user" : "vendor"}`}
+                  <button
+                  onClick={() => setUserType(userType === "vendor" ? "user" : "vendor")}
+                    
                     className={`font-medium ${
                       userType === "vendor" ? "text-pink-600 hover:text-pink-700" : "text-blue-600 hover:text-blue-700"
                     }`}
                   >
                     Click here
-                  </Link>
+                  </button>
                 </p>
               </div>
             </CardContent>
