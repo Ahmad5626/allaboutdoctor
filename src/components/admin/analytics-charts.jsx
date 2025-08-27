@@ -57,7 +57,7 @@ export function AnalyticsCharts() {
           <p className="text-muted-foreground">Detailed insights into your platform performance</p>
         </div>
         <div className="flex items-center gap-2">
-          <Select defaultValue="30days">
+          {/* <Select defaultValue="30days">
             <SelectTrigger className="w-40">
               <Calendar className="h-4 w-4 mr-2" />
               <SelectValue />
@@ -68,7 +68,7 @@ export function AnalyticsCharts() {
               <SelectItem value="90days">Last 90 days</SelectItem>
               <SelectItem value="1year">Last year</SelectItem>
             </SelectContent>
-          </Select>
+          </Select> */}
           <Button variant="outline" size="sm">
             <Download className="h-4 w-4 mr-2" />
             Export
@@ -92,7 +92,7 @@ export function AnalyticsCharts() {
           </Select>
         </div>
         <div className="h-80">
-          {/* <ResponsiveContainer width="100%" height="100%">
+          <ResponsiveContainer width="100%" height="100%">
             <AreaChart data={monthlyRevenue}>
               <CartesianGrid strokeDasharray="3 3" className="stroke-border" />
               <XAxis dataKey="month" className="text-muted-foreground" />
@@ -113,7 +113,7 @@ export function AnalyticsCharts() {
                 strokeWidth={2}
               />
             </AreaChart>
-          </ResponsiveContainer> */}
+          </ResponsiveContainer>
         </div>
       </Card>
 
