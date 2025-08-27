@@ -92,7 +92,7 @@ export function AnalyticsCharts() {
           </Select>
         </div>
         <div className="h-80">
-          <ResponsiveContainer width="100%" height="100%">
+          {/* <ResponsiveContainer width="100%" height="100%">
             <AreaChart data={monthlyRevenue}>
               <CartesianGrid strokeDasharray="3 3" className="stroke-border" />
               <XAxis dataKey="month" className="text-muted-foreground" />
@@ -113,7 +113,7 @@ export function AnalyticsCharts() {
                 strokeWidth={2}
               />
             </AreaChart>
-          </ResponsiveContainer>
+          </ResponsiveContainer> */}
         </div>
       </Card>
 
