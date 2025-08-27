@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
-// import { useSearchParams, useRouter } from "next/navigation"
+
 import { User, Building2, Phone, Mail, Lock, UserCheck } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
@@ -24,8 +24,7 @@ const vendorTypes = [
 ]
 
 export default function SignupPage() {
-  // const searchParams = useSearchParams()
-  // const router = useRouter()
+  
   const [userType, setUserType] = useState("user")
   const [formData, setFormData] = useState({
     name: "",
@@ -36,12 +35,7 @@ export default function SignupPage() {
     vendorType: "",
   })
 
-  // useEffect(() => {
-  //   const type = searchParams.get("type")
-  //   if (type === "vendor" || type === "user") {
-  //     setUserType(type)
-  //   }
-  // }, [searchParams])
+
 
   const handleInputChange = (e) => {
     setFormData({
@@ -65,8 +59,8 @@ export default function SignupPage() {
       return
     }
 
-    // Navigate to OTP verification
-    router.push(`/verify-otp?type=${userType}&email=${formData.email}`)
+    // // Navigate to OTP verification
+    // router.push(`/verify-otp?type=${userType}&email=${formData.email}`)
   }
 
   return (
