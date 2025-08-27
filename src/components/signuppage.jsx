@@ -60,7 +60,7 @@ export default function SignupPage() {
     }
 
     // // Navigate to OTP verification
-    // router.push(`/verify-otp?type=${userType}&email=${formData.email}`)
+    
   }
 
   return (

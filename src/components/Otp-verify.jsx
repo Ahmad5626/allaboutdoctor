@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect, useRef } from "react"
-import { useSearchParams, useRouter } from "next/navigation"
+
 import { User, Building2, Shield, ArrowLeft } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
@@ -9,8 +9,7 @@ import { Input } from "@/components/ui/input"
 import Link from "next/link"
 
 export default function VerifyOTPPage() {
-  const searchParams = useSearchParams()
-  const router = useRouter()
+ 
   const [userType, setUserType] = useState("user")
   const [email, setEmail] = useState("")
   const [otp, setOtp] = useState(["", "", "", "", "", ""])
@@ -19,8 +18,8 @@ export default function VerifyOTPPage() {
   const inputRefs = useRef([])
 
   useEffect(() => {
-    const type = searchParams.get("type")
-    const emailParam = searchParams.get("email")
+   
+    
 
     if (type === "vendor" || type === "user") {
       setUserType(type)
@@ -28,7 +27,7 @@ export default function VerifyOTPPage() {
     if (emailParam) {
       setEmail(emailParam)
     }
-  }, [searchParams])
+  }, [])
 
   useEffect(() => {
     const timer = setInterval(() => {
