@@ -13,13 +13,13 @@ const categories = [
   {
     id: 2,
     name: "Decorators",
-    count: 3,
+   
     icon: Building2,
   },
   {
     id: 3,
     name: "Bridal Makeup",
-    count: 1,
+    
     icon: Plane,
   },
   {
@@ -97,13 +97,13 @@ export default function CategoriesSlider() {
                   <div className="text-center py-8 px-4 bg-white shadow-sm border border-gray-200 rounded-lg mx-2">
                     <div className="mb-6">
                       <div className="w-16 h-16 mx-auto bg-white rounded-lg flex items-center justify-center shadow-sm">
-                        <IconComponent className="h-8 w-8 text-red-500" />
+                        <IconComponent className="h-10 w-10 text-red-500" />
                       </div>
                     </div>
 
                     <h3 className="text-lg font-bold text-gray-900 mb-2">{category.name}</h3>
 
-                    <div className="text-sm text-gray-500">{category.count}</div>
+                 
                   </div>
                 </li>
               )

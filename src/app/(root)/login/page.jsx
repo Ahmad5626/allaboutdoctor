@@ -1,35 +1,36 @@
 "use client"
 
-import { useState } from "react"
+import { useContext, useState } from "react"
 import { User, Building2, Facebook, Mail } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import Link from "next/link"
+import { AuthContext } from "@/app/context/page"
 
 export default function LoginPage() {
+  const {loginFormData,setLoginFormData,loginHandleSubmit,Toaster} = useContext(AuthContext)
   const [activeTab, setActiveTab] = useState("user")
-  const [formData, setFormData] = useState({
-    email: "",
-    password: "",
-  })
+ 
 
   const handleInputChange = (e) => {
-    setFormData({
-      ...formData,
+    setLoginFormData({
+      ...loginFormData,
       [e.target.name]: e.target.value,
     })
   }
 
-  const handleLogin = (e) => {
-    e.preventDefault()
-    // Handle login logic here
-    console.log("Login attempt:", { ...formData, userType: activeTab })
-  }
+  // const handleLogin = (e) => {
+  //   e.preventDefault()
+  //   // Handle login logic here
+  //   console.log("Login attempt:", { ...loginFormData, userType: activeTab })
+  // }
 
   return (
-    <div className="min-h-screen flex">
+  <>
+  <Toaster position="top-center"  />
+      <div className="min-h-screen flex">
       {/* Left Side - Wedding Image */}
       <div className="hidden lg:flex lg:w-1/2 relative">
         <div
@@ -72,14 +73,14 @@ export default function LoginPage() {
                 </TabsList>
 
                 <TabsContent value="user" className="space-y-4 mt-6">
-                  <form onSubmit={handleLogin} className="space-y-4">
+                  <form onSubmit={loginHandleSubmit} className="space-y-4">
                     <div className="relative">
                       <User className="absolute left-3 top-3 w-5 h-5 text-pink-500" />
                       <Input
                         type="email"
                         name="email"
                         placeholder="Enter email or mobile*"
-                        value={formData.email}
+                        value={loginFormData.email}
                         onChange={handleInputChange}
                         className="pl-12 h-12 border-gray-300"
                         required
@@ -90,7 +91,7 @@ export default function LoginPage() {
                       type="password"
                       name="password"
                       placeholder="Enter password*"
-                      value={formData.password}
+                      value={loginFormData.password}
                       onChange={handleInputChange}
                       className="h-12 border-gray-300"
                       required
@@ -103,14 +104,14 @@ export default function LoginPage() {
                 </TabsContent>
 
                 <TabsContent value="vendor" className="space-y-4 mt-6">
-                  <form onSubmit={handleLogin} className="space-y-4">
+                  <form onSubmit={loginHandleSubmit} className="space-y-4">
                     <div className="relative">
                       <Building2 className="absolute left-3 top-3 w-5 h-5 text-blue-500" />
                       <Input
                         type="email"
                         name="email"
                         placeholder="Enter business email or mobile*"
-                        value={formData.email}
+                        value={loginFormData.email}
                         onChange={handleInputChange}
                         className="pl-12 h-12 border-gray-300"
                         required
@@ -121,7 +122,7 @@ export default function LoginPage() {
                       type="password"
                       name="password"
                       placeholder="Enter password*"
-                      value={formData.password}
+                      value={loginFormData.password}
                       onChange={handleInputChange}
                       className="h-12 border-gray-300"
                       required
@@ -181,5 +182,6 @@ export default function LoginPage() {
         </div>
       </div>
     </div>
+  </>
   )
 }

@@ -125,7 +125,7 @@ export default function TestimonialsSection() {
 
           {/* Right side - Hero Image */}
           <div className="relative">
-            <div className="bg-gradient-to-br from-primary to-coral-500 rounded-2xl p-8 lg:p-12">
+            <div className="bg-gradient-to-br from-primary to-coral-500 rounded-2xl p-8 lg:p-12 w-[300] md:w-auto">
               <img
                 src="https://i.pravatar.cc/300"
                 alt="Happy client making OK gesture"
