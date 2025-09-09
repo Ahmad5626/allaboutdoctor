@@ -21,12 +21,12 @@ export default function HomeBlogSection() {
       <div className="mx-auto w-full max-w-7xl px-4 md:px-6">
         <div className="mb-6 flex items-center justify-between gap-4">
           <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">Read our latest blogs</h2>
-          <Link
+          {/* <Link
             href="/blog"
             className="inline-flex rounded-xl bg-rose-600 px-4 py-2 text-sm font-medium text-white shadow-sm transition hover:bg-rose-700"
           >
             More
-          </Link>
+          </Link> */}
         </div>
 
         <Splide

@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react"
 import { motion } from "framer-motion"
 import { Heart, MapPin, Star } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import Link from "next/link"
 
 const listings = [
   {
@@ -109,7 +110,7 @@ const ListingCard = ({ listing, index }) => {
       className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group"
     >
       {/* Image Container */}
-      <div className="relative overflow-hidden">
+      <Link href={`/product-details`} className="relative overflow-hidden">
         <motion.img
           src={listing.image}
           alt={listing.title}
@@ -130,7 +131,7 @@ const ListingCard = ({ listing, index }) => {
             }`}
           />
         </Button>
-      </div>
+      </Link>
 
       {/* Content */}
       <div className="p-6">
@@ -207,8 +208,8 @@ export default function Listing() {
   }, [])
 
   return (
-    <section className="py-16 bg-gray-50 md:px-20 px-10">
-      <div className="container mx-auto px-4">
+    <section className="py-16 bg-gray-50  max-w-7xl mx-auto">
+      <div className="container  px-4">
         {/* Section Title */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}

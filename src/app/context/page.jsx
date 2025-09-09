@@ -2,10 +2,11 @@
 
 
 import { loginUser, registerService } from "@/app/services/authApi";
-import { createContext, useEffect, useState } from "react";
+import { createContext, use, useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { toast, Toaster } from "sonner";
-import { getBlog } from "../services/blog";
+import { createBlog, deleteBlog, getBlog } from "../services/blog";
+import { uploadFile } from "../services/uploadImg";
 
 export const AuthContext = createContext(null);
 
@@ -13,6 +14,18 @@ export default function AuthProvider({ children }) {
   const router = useRouter();
   const [userType, setUserType] = useState("user")
     const [blogData, setBlogData] = useState([])
+     const [uploadingHero, setUploadingHero] = useState(false)
+     const [createBlogFormData, setCreateBlogFormData]=useState({
+       title: "",
+    slug: "",
+    shotDescription: "",
+    description: "",
+    image: "",
+    date:"",
+    metaTittle: "",
+    metaKeyword: "",
+    metaDescription: "",
+     })
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
@@ -85,13 +98,86 @@ export default function AuthProvider({ children }) {
 
     }
   }
-  useEffect(() => {
-    getBlogData()
-  }, [])
 
+
+
+ 
+
+const handleChangeCreateBlog=async(e)=>{
+  const {name, value,files} = e.target;
+  setCreateBlogFormData((prevData) => ({
+    ...prevData,
+    [name]: value,
+  }))
+ try {
+  setUploadingHero(true)
+   if (files && files[0]) {
+    const file = files[0];
+    const uploadedUrl = await uploadFile(file);
+    setCreateBlogFormData((prevData) => ({
+      ...prevData,
+      [name]: uploadedUrl,
+    }));
+  }
+ } catch (error) {
+  return error
+ }finally{
+  setUploadingHero(false)
+ }
+}
+   
+
+const handleSubmitCreateBlog=async(e)=>{
+  e.preventDefault();
+  const data =await createBlog(createBlogFormData)
+try {
+    if(data.success){
+    toast.success("Blog Created successfully");
+    getBlogData()
+  }
+  else{
+    toast.error("Blog update failed");
+    console.log(data);
+    
+  }
+} catch (error) {
+  
+}finally{
+  getBlogData()
+}
+}
+
+
+   
+const handleDeleteBlog=async(id)=>{
+  const isConfirmed = window.confirm("Are you sure you want to delete this destinations? This action cannot be undone.")
+  if(isConfirmed){
+    
+    const data=await deleteBlog(id)
+  }
+ try {
+   if(data.success){
+    toast.success("Blog deleted successfully");
+    getBlogData()
+  }
+  else{
+    toast.error("Blog deletion failed");
+    console.log(data);
+    
+  }
+ } catch (error) {
+  
+ }finally{
+  getBlogData()
+ }
 
   
 
+
+}
+useEffect(() => {
+  getBlogData()
+}, [])
   return (
     <AuthContext.Provider
       value={{
@@ -105,7 +191,13 @@ export default function AuthProvider({ children }) {
         loginFormData,
         setLoginFormData,
         Toaster,
-        blogData
+        toast,
+        blogData,
+        handleDeleteBlog,
+        handleSubmitCreateBlog,
+        handleChangeCreateBlog,
+        createBlogFormData,
+        uploadingHero
       }}
     >
       {children}

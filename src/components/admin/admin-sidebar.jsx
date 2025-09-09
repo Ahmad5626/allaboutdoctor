@@ -43,11 +43,11 @@ const sidebarItems = [
     href: "/admin/messages",
     icon: MessageSquare,
   },
-  // {
-  //   title: "Analytics",
-  //   href: "/admin/analytics",
-  //   icon: BarChart3,
-  // },
+  {
+    title: "Blogs",
+    href: "/admin/blogs",
+    icon: BarChart3,
+  },
   // {
   //   title: "Reports",
   //   href: "/admin/reports",
@@ -91,7 +91,7 @@ export function AdminSidebar({ className }) {
           variant="ghost"
           size="sm"
           onClick={() => setIsCollapsed(!isCollapsed)}
-          className="text-white hover:bg-sidebar-accent/10"
+          className=" hover:bg-sidebar-accent/10"
         >
           {isCollapsed ? <Menu className="h-4 w-4" /> : <X className="h-4 w-4" />}
         </Button>
@@ -110,7 +110,7 @@ export function AdminSidebar({ className }) {
                   "flex items-center gap-3 px-3 py-2 rounded-lg transition-colors text-white",
                   isActive
                     ? "bg-primary  text-white"
-                    : " hover:bg-sidebar-primary/10 hover:text-sidebar-accent text-black",
+                    : " hover:bg-sidebar-primary/10 hover:text-primary text-black",
                 )}
               >
                 <Icon className="h-5 w-5 flex-shrink-0" />

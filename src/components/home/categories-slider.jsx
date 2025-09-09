@@ -97,7 +97,9 @@ export default function CategoriesSlider() {
                   <div className="text-center py-8 px-4 bg-white shadow-sm border border-gray-200 rounded-lg mx-2">
                     <div className="mb-6">
                       <div className="w-16 h-16 mx-auto bg-white rounded-lg flex items-center justify-center shadow-sm">
+                      <a href={`/product-listing`}>
                         <IconComponent className="h-10 w-10 text-red-500" />
+                      </a>
                       </div>
                     </div>
 

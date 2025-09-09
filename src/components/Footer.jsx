@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { Heart, Phone, Mail, MapPin, Facebook, Instagram, Twitter, Linkedin } from "lucide-react"
+import { Heart, Phone, Mail, MapPin, Facebook, Instagram, Twitter, Linkedin, Link } from "lucide-react"
 
 export default function Footer() {
   const [email, setEmail] = useState("")
@@ -47,30 +47,30 @@ export default function Footer() {
             <h4 className="text-lg  font-semibold text-foreground mb-6">Quick Links</h4>
             <ul className="space-y-3">
               <li>
-                <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+                <a href="/about" className="text-muted-foreground hover:text-primary transition-colors">
                   About Us
                 </a>
               </li>
               <li>
-                <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-                  Our Services
+                <a href="/contact" className="text-muted-foreground hover:text-primary transition-colors">
+                  Contact Us
                 </a>
               </li>
               <li>
-                <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-                  Portfolio
+                <a href="/product-listing" className="text-muted-foreground hover:text-primary transition-colors">
+                  Listing
                 </a>
               </li>
               <li>
-                <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-                  Testimonials
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+                <a href="/blog" className="text-muted-foreground hover:text-primary transition-colors">
                   Blog
                 </a>
               </li>
+              {/* <li>
+                <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+                  Blog
+                </a>
+              </li> */}
             </ul>
           </div>
 
@@ -79,7 +79,7 @@ export default function Footer() {
             <h4 className="text-lg  font-semibold text-foreground mb-6">Services</h4>
             <ul className="space-y-3">
               <li>
-                <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+                <a href="/" className="text-muted-foreground hover:text-primary transition-colors">
                   Wedding Planning
                 </a>
               </li>
@@ -158,13 +158,13 @@ export default function Footer() {
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-sm text-muted-foreground">© 2024 EventBliss. All rights reserved.</p>
             <div className="flex gap-6">
-              <a href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+              <a href="/terms-&-condition" className="text-sm text-muted-foreground hover:text-primary transition-colors">
                 Privacy Policy
               </a>
-              <a href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+              <a href="/terms-&-condition" className="text-sm text-muted-foreground hover:text-primary transition-colors">
                 Terms of Service
               </a>
-              <a href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+              <a href="/terms-&-condition" className="text-sm text-muted-foreground hover:text-primary transition-colors">
                 Cookie Policy
               </a>
             </div>
