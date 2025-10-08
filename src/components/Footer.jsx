@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import { Heart, Phone, Mail, MapPin, Facebook, Instagram, Twitter, Linkedin, Link } from "lucide-react"
+import Image from "next/image"
 
 export default function Footer() {
   const [email, setEmail] = useState("")
@@ -20,11 +21,21 @@ export default function Footer() {
           {/* Branding Section */}
           <div className="lg:col-span-1">
             <div className="flex items-center gap-2 mb-4">
-              <Heart className="h-8 w-8 text-primary fill-current" />
-              <h3 className="text-2xl  font-bold text-foreground">EventBliss</h3>
+            <div className="flex items-center gap-3">
+          <a href="/" className="flex items-center gap-3">
+            <Image
+              src="/assets/img/logo.png"
+              alt="All About Doctor logo"
+              width={200}
+              height={200}
+              className="rounded-md"
+            />
+          
+          </a>
+        </div>
             </div>
             <p className="text-muted-foreground mb-6 leading-relaxed">
-              Creating magical moments and unforgettable celebrations. Your dream wedding and event planning partner.
+              We transform complex study abroad journeys into a smooth, personalised path — from shortlisting to scholarships — powered by experienced counsellors and modern tools.
             </p>
             <div className="flex gap-4">
               <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
@@ -47,18 +58,19 @@ export default function Footer() {
             <h4 className="text-lg  font-semibold text-foreground mb-6">Quick Links</h4>
             <ul className="space-y-3">
               <li>
-                <a href="/about" className="text-muted-foreground hover:text-primary transition-colors">
+                <a href="/" className="text-muted-foreground hover:text-primary transition-colors">
                   About Us
                 </a>
               </li>
               <li>
-                <a href="/contact" className="text-muted-foreground hover:text-primary transition-colors">
+                <a href="/" className="text-muted-foreground hover:text-primary transition-colors">
                   Contact Us
                 </a>
               </li>
               <li>
-                <a href="/product-listing" className="text-muted-foreground hover:text-primary transition-colors">
-                  Listing
+                <a href="/" className="text-muted-foreground hover:text-primary transition-colors">
+                 Partnership & Franchise
+
                 </a>
               </li>
               <li>
@@ -80,27 +92,27 @@ export default function Footer() {
             <ul className="space-y-3">
               <li>
                 <a href="/" className="text-muted-foreground hover:text-primary transition-colors">
-                  Wedding Planning
+                  MBBS
                 </a>
               </li>
               <li>
                 <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-                  Event Coordination
+                  MD
                 </a>
               </li>
               <li>
                 <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-                  Venue Selection
+                  BAMS
                 </a>
               </li>
               <li>
                 <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-                  Catering Services
+                  BVSc
                 </a>
               </li>
               <li>
                 <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-                  Photography
+                  GNM
                 </a>
               </li>
             </ul>
@@ -112,11 +124,11 @@ export default function Footer() {
             <div className="space-y-4 mb-6">
               <div className="flex items-center gap-3">
                 <Phone className="h-4 w-4 text-primary" />
-                <span className="text-muted-foreground">+1 (555) 123-4567</span>
+                <span className="text-muted-foreground">+91 93510 18577</span>
               </div>
               <div className="flex items-center gap-3">
                 <Mail className="h-4 w-4 text-primary" />
-                <span className="text-muted-foreground">hello@eventbliss.com</span>
+                <span className="text-muted-foreground">info@allaboutdoctor.in</span>
               </div>
               <div className="flex items-start gap-3">
                 <MapPin className="h-4 w-4 text-primary mt-1" />

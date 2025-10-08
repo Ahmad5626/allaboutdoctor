@@ -121,5 +121,6 @@
   }
 }
 @theme{
-  --color-primary: #f9725f !important;
+  --color-primary: #01349e !important;
+  --color-secondary:   #ee8019 !important;
 }

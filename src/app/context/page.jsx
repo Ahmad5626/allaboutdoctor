@@ -1,7 +1,7 @@
 "use client";
 
 
-import { loginUser, registerService } from "@/app/services/authApi";
+import { getAuthenticatedAdmin, getAuthenticatedUser, getData, loginUser, registerService } from "@/app/services/authApi";
 import { createContext, use, useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { toast, Toaster } from "sonner";
@@ -13,6 +13,9 @@ export const AuthContext = createContext(null);
 export default function AuthProvider({ children }) {
   const router = useRouter();
   const [userType, setUserType] = useState("user")
+  const [authenticatedUser, setAuthenticatedUser] = useState({});
+  const [authenticatedAdmin, setAuthenticatedAdmin] = useState({});
+  const [allUsers, setAllUsers] = useState([]); 
     const [blogData, setBlogData] = useState([])
      const [uploadingHero, setUploadingHero] = useState(false)
      const [createBlogFormData, setCreateBlogFormData]=useState({
@@ -40,8 +43,15 @@ export default function AuthProvider({ children }) {
     email: "",
     password: "",
   })
+console.log("loginFormData",authenticatedAdmin );
 
-
+//  login form data
+ const handleInputChange = (e) => {
+    setLoginFormData({
+      ...loginFormData,
+      [e.target.name]: e.target.value,
+    })
+  }
 
   //   sumbit register form
   const registerHandleSubmit = async (e) => {
@@ -55,7 +65,7 @@ export default function AuthProvider({ children }) {
         toast.success("Registered successfully!");
         console.log("Registered successfully!");
 
-
+ router.push("/login");
         setFormData({});
       } else {
         toast.error(result.message || "Registration failed");
@@ -76,8 +86,29 @@ export default function AuthProvider({ children }) {
       if (result?.success) {
         toast.success("Login successful!");
         console.log("Login successful!");
+        const token=localStorage.getItem("token")
 
-        router.push("/");
+        const decoded = JSON.parse(atob(token.split(".")[1]));
+       
+        
+        if ( decoded.role == "admin") {
+          router.push("/admin"); // not authorized
+          console.log("admin");
+          
+        }
+        else if ( decoded.role == "user") {
+          router.push("/"); // not authorized
+          console.log("user");
+          
+        }
+
+    // if(authenticatedUser.role === "admin"){
+    //   router.push("/admin");
+      
+    // }
+          // router.push("/");
+        // getLoginUserData()
+        getLoginAdminData()
       } else {
         toast.error(result.message || "Login failed");
       }
@@ -86,6 +117,29 @@ export default function AuthProvider({ children }) {
       const message = error?.response?.data?.message || error.message || "Something went wrong";
       toast.error(message);
     }
+  };
+
+
+
+   async function getLoginUserData() {
+    const user = await getAuthenticatedUser();
+    if (user) setAuthenticatedUser(user);
+  }
+
+  const getLoginAdminData = async () => {
+    const user = await getAuthenticatedAdmin();
+    if (user) setAuthenticatedAdmin(user);
+  }
+const getUserData = async () => {
+  const user = await getData();
+  if (user) {
+   setAllUsers(user)
+  }
+}
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    setAuthenticatedUser(null);
+    router.push("/login");
   };
 
   // blog 
@@ -177,6 +231,10 @@ const handleDeleteBlog=async(id)=>{
 }
 useEffect(() => {
   getBlogData()
+  getLoginUserData()
+  getUserData()
+  // getLoginAdminData()
+  
 }, [])
   return (
     <AuthContext.Provider
@@ -190,6 +248,7 @@ useEffect(() => {
         loginHandleSubmit,
         loginFormData,
         setLoginFormData,
+        handleInputChange,
         Toaster,
         toast,
         blogData,

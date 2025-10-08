@@ -33,28 +33,28 @@ export default function TestimonialsSection() {
   const testimonials = [
     {
       id: 1,
-      text: "User-friendly interface makes finding local businesses a breeze. Highly recommend for services or products nearby.",
+      text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown",
       name: "Jennifer Lee",
       role: "Freelance Photographer",
       avatar: "https://i.pravatar.cc/300",
     },
     {
       id: 2,
-      text: "Comprehensive listings with detailed information and reviews help in making informed decisions. A must-use for discovering trusted local businesses.",
+      text: "CLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown",
       name: "Michael Collins",
       role: "Marketing Manager",
       avatar: "https://i.pravatar.cc/300",
     },
     {
       id: 3,
-      text: "Amazing platform that connects you with quality service providers. The review system is incredibly helpful for making the right choice.",
+      text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown",
       name: "Sarah Johnson",
       role: "Small Business Owner",
       avatar: "https://i.pravatar.cc/300",
     },
     {
       id: 4,
-      text: "Outstanding service and easy navigation. Found exactly what I was looking for within minutes. Definitely my go-to platform now.",
+      text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown",
       name: "David Wilson",
       role: "Event Coordinator",
       avatar: "https://i.pravatar.cc/300",
@@ -89,7 +89,7 @@ export default function TestimonialsSection() {
               <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
                 What Clients Say About
                 <br />
-                Bulistio Packages
+                 All About Doctor
               </h2>
 
              
