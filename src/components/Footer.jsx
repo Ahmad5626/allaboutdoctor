@@ -170,13 +170,13 @@ export default function Footer() {
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-sm text-muted-foreground">© 2024 EventBliss. All rights reserved.</p>
             <div className="flex gap-6">
-              <a href="/terms-&-condition" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+              <a href="/" className="text-sm text-muted-foreground hover:text-primary transition-colors">
                 Privacy Policy
               </a>
-              <a href="/terms-&-condition" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+              <a href="/" className="text-sm text-muted-foreground hover:text-primary transition-colors">
                 Terms of Service
               </a>
-              <a href="/terms-&-condition" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+              <a href="/" className="text-sm text-muted-foreground hover:text-primary transition-colors">
                 Cookie Policy
               </a>
             </div>
