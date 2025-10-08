@@ -311,7 +311,7 @@ export default function Header() {
             {CORE_MENU.map((item) => (
               <Link
                 key={item.href}
-                href={item.href}
+                href=""
                 className="block rounded px-3 py-2 hover:bg-accent"
                 onClick={() => setMobileOpen(false)}
               >
@@ -331,7 +331,7 @@ export default function Header() {
                   {INDIA_STATES.map((s) => (
                     <Link
                       key={s.href}
-                      href={s.href}
+                      href=""
                       className="px-3 py-2 rounded-full text-sm bg-accent/50 hover:bg-accent hover:text-accent-foreground whitespace-nowrap"
                       onClick={() => setMobileOpen(false)}
                     >
@@ -345,7 +345,7 @@ export default function Header() {
                   {ABROAD_COUNTRIES.map((c) => (
                     <Link
                       key={c.href}
-                      href={c.href}
+                      href=""
                       className="px-3 py-2 rounded-full text-sm bg-accent/50 hover:bg-accent hover:text-accent-foreground whitespace-nowrap"
                       onClick={() => setMobileOpen(false)}
                     >
@@ -365,7 +365,7 @@ export default function Header() {
                 {COURSES.map((c) => (
                   <Link
                     key={c.href}
-                    href={c.href}
+                    href=""
                     className="rounded px-2 py-1.5 text-sm text-muted-foreground hover:text-foreground hover:bg-accent"
                     onClick={() => setMobileOpen(false)}
                   >
@@ -378,7 +378,7 @@ export default function Header() {
             {TAIL_MENU.map((item) => (
               <Link
                 key={item.href}
-                href={item.href}
+                href=""
                 className="block rounded px-3 py-2 hover:bg-accent"
                 onClick={() => setMobileOpen(false)}
               >
