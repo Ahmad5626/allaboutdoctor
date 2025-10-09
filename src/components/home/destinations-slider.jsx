@@ -26,7 +26,7 @@ export default function DestinationsSlider() {
       {/* subtle radial background */}
       <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(1200px_400px_at_50%_-150px,theme(colors.muted/0.25),transparent_60%)]" />
 
-      <div className="mx-auto w-full max-w-6xl px-4 md:px-6 py-12 md:py-16">
+      <div className="mx-auto w-full max-w-7xl px-4 md:px-6 py-12 md:py-16">
         <header className="mx-auto max-w-3xl text-center">
           <h2
             id="destinations-heading"
