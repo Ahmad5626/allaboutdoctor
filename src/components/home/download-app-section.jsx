@@ -9,10 +9,9 @@ export default function DownloadAppSection() {
           {/* Left Content */}
           <div className="space-y-6">
             <div>
-              <h2 className="text-3xl font-bold text-slate-900 mb-4">Download Our Wedding Planning App</h2>
+              <h2 className="text-3xl font-bold text-slate-900 mb-4">Download Our All About Doctor App</h2>
               <p className="text-lg text-slate-600 mb-6">
-                Plan your dream wedding on the go with our mobile app. Access thousands of vendors, get instant quotes,
-                and manage your wedding timeline from anywhere.
+              Lorem Ipsum is simply dummy text of the printing and typesetting industry.
               </p>
             </div>
 
@@ -27,7 +26,7 @@ export default function DownloadAppSection() {
                 <div className="bg-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-2 shadow-md">
                   <Star className="w-8 h-8 text-rose-600" />
                 </div>
-                <p className="text-sm font-medium text-slate-700">Top Vendors</p>
+                <p className="text-sm font-medium text-slate-700">Top Ratings</p>
               </div>
               <div className="text-center">
                 <div className="bg-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-2 shadow-md">
@@ -52,7 +51,7 @@ export default function DownloadAppSection() {
             <div className="relative">
               <div className=" p-2 shadow-2xl">
                 <div className="rounded-2xl overflow-hidden">
-                  <img src="https://image.wedmegood.com/resized/500X/images/banner/download_app.jpg" alt="Wedding Planning App" className="w-44 h-auto" />
+                  <img src="https://media.edvoy.com/home-app-image-d11b21d83d.png?w=384&q=80" alt="Wedding Planning App" className="w-100 h-auto" />
                 </div>
               </div>
             </div>

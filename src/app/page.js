@@ -16,6 +16,11 @@ import GallerySection from '@/components/home/gallery-section'
 import SuccessStories from '@/components/home/SuccessStories'
 import MbbsCta from '@/components/home/MbbsCta'
 import VideoSection from '@/components/home/Video'
+import FeaturedSlider from '@/components/home/featured-slider'
+import Destination from '@/components/home/destination'
+
+import AppSectionSlider from '@/components/home/app-section-slider'
+import DestinationsSlider from '@/components/home/destinations-slider'
 
 const page = () => {
   return (
@@ -24,17 +29,21 @@ const page = () => {
       <HeroSection/>
       <MbbsCta/>
       <SuccessStories />
-      <VideoSection/>
-        
+      <FeaturedSlider/>
+      <Destination/>
 
-        
+      <VideoSection/>
+      
+        <DestinationsSlider/>
+
+         <DownloadAppSection/>
           
            {/* <PopularSearches />
          
       <ServicesSection/>
       <CategoriesSlider/>
       <Listing/>
-      <DownloadAppSection/>
+     
       <WeddingStoriesSection/>
       <GallerySection/>  */}
       <TestimonialsSection/>
