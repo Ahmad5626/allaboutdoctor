@@ -37,7 +37,7 @@ export default function AdminDashboard() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           <DashboardStatsCard title="Total Users" value="1,234" change="12%" changeType="positive" icon={Users} />
-          <DashboardStatsCard title="Active Venues" value="567" change="8%" changeType="positive" icon={Building2} />
+          <DashboardStatsCard title="Total Admin" value="567" change="8%" changeType="positive" icon={Building2} />
           <DashboardStatsCard
             title="This Month Bookings"
             value="89"

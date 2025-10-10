@@ -34,17 +34,17 @@ const sidebarItems = [
   },
  
   {
-    title: "Compaign",
-    href: "/admin/compaign",
+    title: "Admin List",
+    href: "/admin/adminList",
     icon: BarChart3,
   },
   {
-    title: "Messages",
-    href: "/admin/messages",
+    title: "Notifications",
+    href: "/admin/Notifications",
     icon: MessageSquare,
   },
   {
-    title: "Blogs",
+    title: "New pagss",
     href: "/admin/blogs",
     icon: BarChart3,
   },
@@ -53,11 +53,11 @@ const sidebarItems = [
   //   href: "/admin/reports",
   //   icon: FileText,
   // },
-  {
-    title: "Payments",
-    href: "/admin/payments",
-    icon: CreditCard,
-  },
+  // {
+  //   title: "Payments",
+  //   href: "/admin/payments",
+  //   icon: CreditCard,
+  // },
 
   // {
   //   title: "Settings",
@@ -83,7 +83,7 @@ export function AdminSidebar({ className }) {
         {!isCollapsed && (
             <div className="flex-shrink-0">
             <div className="bg-white px-4 py-2 rounded">
-              <span className="text-pink-500 text-xl font-bold italic">wedding planet</span>
+              <img src="/assets/img/logo.png" alt="Logo" className="w-36 h-12" />
             </div>
           </div>
         )}
@@ -114,7 +114,7 @@ export function AdminSidebar({ className }) {
                 )}
               >
                 <Icon className="h-5 w-5 flex-shrink-0" />
-                {!isCollapsed && <span className="font-medium">{item.title}</span>}
+                {!isCollapsed && <span classNme="font-medium">{item.title}</span>}
               </div>
             </Link>
           )

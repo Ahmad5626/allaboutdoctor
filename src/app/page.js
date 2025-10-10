@@ -18,6 +18,8 @@ import Destination from '@/components/home/destination'
 
 
 import DestinationsSlider from '@/components/home/destinations-slider'
+import DoctorServicesSlider from '@/components/home/doctor-services-slider'
+import HowWeWork from '@/components/home/how-we-work'
 
 const page = () => {
   return (
@@ -31,8 +33,8 @@ const page = () => {
 
       <VideoSection/>
       
-        <DestinationsSlider/>
-
+       <DoctorServicesSlider/>
+<HowWeWork/>
          <DownloadAppSection/>
           
            {/* <PopularSearches />

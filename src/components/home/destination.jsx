@@ -103,7 +103,7 @@ export default function FeaturedSlider() {
     <section className="w-full py-12 md:py-16">
       <div className="mx-auto w-full max-w-7xl px-4 md:px-6">
         <header className="mb-8 text-center md:mb-10">
-          <h2 className="text-balance text-3xl font-extrabold tracking-tight md:text-5xl">
+          <h2 className="text-pretty text-3xl font-semibold leading-tight sm:text-4xl md:text-5xl">
             Where Will You Study <span className="text-primary">MBBS?</span>
           </h2>
           <p className="mt-3 text-lg font-semibold text-muted-foreground md:text-xl">Explore Your Ideal Destination!</p>

@@ -135,9 +135,9 @@ export default function VideoSection() {
             <span className="h-1 w-1 rounded-full bg-foreground/60" />
             Instagram Reels
           </div>
-          <h2 className="text-pretty text-2xl font-semibold tracking-tight text-foreground md:text-4xl">
+          <h2 className="text-pretty text-3xl font-semibold leading-tight sm:text-4xl md:text-5xl">
             Stories that inspire. Moments that matter.
-            <span className="block bg-gradient-to-r from-sky-500 via-cyan-400 to-emerald-400 bg-clip-text text-transparent">
+            <span className="block text-primary ">
               Tap to watch on Instagram
             </span>
           </h2>

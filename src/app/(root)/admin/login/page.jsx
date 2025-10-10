@@ -16,7 +16,9 @@ const page = () => {
                             <div className="mb-2 flex justify-center">
                                 <div className="flex-shrink-0">
                                     <div className="bg-white px-4 py-2 rounded">
-                                        <span className="text-pink-500 text-xl font-bold italic">wedding planet</span>
+                                        
+
+                                        <img src="/assets/img/logo.png" alt="Logo" className="w-36 h-12" />
                                     </div>
                                 </div>
                             </div>
