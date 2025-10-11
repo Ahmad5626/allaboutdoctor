@@ -24,7 +24,7 @@ export default function MbbsCta() {
 
           <div className="px-6 py-10 sm:px-10 sm:py-12 md:p-14">
             <p className="text-center text-sm font-medium text-muted-foreground tracking-wide uppercase">
-              Dreaming of Studying MBBS ?
+              About All About Doctor Education Pvt. Ltd
             </p>
 
             <h2
@@ -49,10 +49,36 @@ export default function MbbsCta() {
               className="mx-auto mt-6 max-w-3xl text-center text-pretty leading-relaxed text-muted-foreground"
               aria-describedby="mbbs-cta-desc"
             >
-              Looking to pursue MBBS abroad ? All About Doctor MBBS abroad consultants makes your journey smooth and
-              hassle-free ! From university selection to visa processing, test preparation, and travel assistance, we
-              provide complete support to help you achieve your medical dreams. Start your journey with expert guidance
-              today !
+              Founded in <b>2015</b>, All About Doctor Education Pvt. Ltd. is India’s most trusted overseas medical education consultancy.
+            </p>
+            <p
+              className="mx-auto mt-6 max-w-3xl text-center text-pretty leading-relaxed text-muted-foreground"
+              aria-describedby="mbbs-cta-desc"
+            >
+             We specialize in helping students <b>pursue MBBS, MD, MS</b>, and <b>Doctoral degrees (EdD, PhD)</b> from reputed international universities across <b>Russia, Kazakhstan, Georgia, Uzbekistan, Armenia, Nepal</b>,Europe and more.
+
+            </p>
+             <p
+              className="mx-auto mt-6 max-w-3xl text-center text-pretty leading-relaxed text-muted-foreground"
+              aria-describedby="mbbs-cta-desc"
+            >
+            ✅ Transparency ✅ Integrity ✅ Excellence ✅ Personalized Support
+
+            </p>
+             <p
+              className="mx-auto mt-6 max-w-3xl text-center text-pretty leading-relaxed text-muted-foreground"
+              aria-describedby="mbbs-cta-desc"
+            >
+           <h2
+              id="mbbs-cta-title"
+              className="mt-3 text-center text-balance text-3xl sm:text-2xl md:text-3xl font-semibold text-primary"
+            > Leadership</h2> 
+           <br/>
+Dr. Anand Sharma — Managing Director & Founder
+<br/>
+
+Ms. Deeksha Bhargava — Co-Founder & CEO
+
             </p>
 
             <div className="mt-10 flex justify-center">

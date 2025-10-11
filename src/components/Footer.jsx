@@ -35,7 +35,8 @@ export default function Footer() {
         </div>
             </div>
             <p className="text-muted-foreground mb-6 leading-relaxed">
-              We transform complex study abroad journeys into a smooth, personalised path — from shortlisting to scholarships — powered by experienced counsellors and modern tools.
+              As featured in leading publications and education portals for ethical consultancy and verified student success stories.
+ (Insert media logos once finalized — e.g., India Today, Hindustan Times, The Hindu Education Plus)
             </p>
             <div className="flex gap-4">
               <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
@@ -168,16 +169,16 @@ export default function Footer() {
       <div className="border-t border-border bg-muted/30">
         <div className="max-w-7xl mx-auto px-4 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-sm text-muted-foreground">© 2024 EventBliss. All rights reserved.</p>
+            <p className="text-sm text-muted-foreground">© 2025 All About Doctor Education Pvt. Ltd. | Empowering Future Doctors Since 2015</p>
             <div className="flex gap-6">
               <a href="/" className="text-sm text-muted-foreground hover:text-primary transition-colors">
                 Privacy Policy
               </a>
               <a href="/" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-                Terms of Service
+                 Terms of Service 
               </a>
               <a href="/" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-                Cookie Policy
+                Career Opportunities
               </a>
             </div>
           </div>

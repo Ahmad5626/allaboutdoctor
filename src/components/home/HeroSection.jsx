@@ -26,22 +26,22 @@ export default function HeroSection() {
               className="inline-flex items-center rounded-full border border-border/60 bg-card px-3 py-1 text-xs font-medium text-muted-foreground animate-fade-up"
               style={{ animationDelay: "40ms" }}
             >
-              Your Future, Our Best Creation
+            All About Doctor Education Pvt Ltd
             </span>
 
             <h1
               className="text-pretty text-4xl font-semibold leading-tight sm:text-5xl animate-fade-up"
               style={{ animationDelay: "100ms" }}
             >
-              Unlock Your <span className="text-primary">Global Dream</span> with Expert Guidance
+            From NEET to NExT <span className="text-primary">Your Global Medical</span> Future Begins Here
+
             </h1>
 
             <p
               className="max-w-xl text-muted-foreground leading-relaxed animate-fade-up"
               style={{ animationDelay: "180ms" }}
             >
-              We transform complex study abroad journeys into a smooth, personalised path — from shortlisting to
-              scholarships — powered by experienced counsellors and modern tools.
+              At <b>All About Doctor</b> , we redefine the medical education journey. With Doctor-Led Mentorship and <b>Smart Education Technology</b>, we empower aspiring medical professionals to navigate every milestone with confidence — from NEET to NExT, in India or abroad.
             </p>
 
             <div className="flex flex-col gap-3 sm:flex-row animate-fade-up" style={{ animationDelay: "260ms" }}>
@@ -61,12 +61,12 @@ export default function HeroSection() {
 
             {/* Trust copy */}
             <div className="space-y-3 animate-fade-up" style={{ animationDelay: "320ms" }}>
-              <p className="text-sm text-muted-foreground">95% of our students receive admits in less than 4 weeks</p>
+              <p className="text-sm text-muted-foreground">95% Admission Success Rate</p>
               <div className="flex flex-wrap items-center gap-3">
                 {/* Compact trust pills instead of only logos */}
-                <MetricPill label="850+ universities" />
-                <MetricPill label="150k+ courses" />
-                <MetricPill label="$40M+ scholarships" />
+                <MetricPill label="850+ Partner Universities" />
+                <MetricPill label="12+ Countries" />
+                <MetricPill label="10000+ Students Guided" />
               </div>
             </div>
 

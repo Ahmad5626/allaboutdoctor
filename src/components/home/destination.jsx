@@ -27,45 +27,42 @@ function ArrowIcon({ dir = "left", className = "" }) {
 
 const destinations = [
   {
-    name: "Egypt",
+    name: "Russia",
     image: "https://debright.org/wp-content/uploads/2025/02/University-of-Traditional-Medicine.jpg",
     flag: "/flag-of-egypt.jpg",
+    title:"Globally recognized, affordable programs"
   },
   {
-    name: "Georgia",
+    name: "Kazakhstan ",
     image: "https://debright.org/wp-content/uploads/2025/02/Yerevan-Haybusak-University.jpg",
     flag: "/flag-of-georgia.jpg",
+    title:" Modern infrastructure & clinical exposure"
   },
   {
-    name: "Kazakhstan",
+    name: "Georgia ",
     image: "https://debright.org/wp-content/uploads/2025/03/vitebsk-state-medical-university.jpeg",
     flag: "/flag-of-kazakhstan.jpg",
+    title:" European standards & safe student life"
   },
   {
-    name: "Kyrgyzstan",
+    name: "Uzbekistan ",
     image: "https://debright.org/wp-content/uploads/2025/02/The-University-of-East-Sarajevo.jpg",
     flag: "/flag-of-kyrgyzstan.jpg",
+    title:" English-medium teaching & lower fees "
   },
   {
-    name: "Latvia",
+    name: "Armenia ",
     image: "https://debright.org/wp-content/uploads/2025/02/University-of-Traditional-Medicine.jpg",
     flag: "/flag-of-latvia.jpg",
+    title:" Historic universities with advanced labs "
   },
   {
-    name: "Lithuania",
+    name: "Nepal ",
     image: "https://debright.org/wp-content/uploads/2025/02/Yerevan-Haybusak-University.jpg",
     flag: "/flag-of-lithuania.jpg",
-  },
-  {
-    name: "Uzbekistan",
-    image: "https://debright.org/wp-content/uploads/2025/03/vitebsk-state-medical-university.jpeg",
-    flag: "/flag-of-uzbekistan.jpg",
-  },
-  {
-    name: "Poland",
-    image: "https://debright.org/wp-content/uploads/2025/03/vitebsk-state-medical-university.jpeg",
-    flag: "/flag-of-poland.png",
-  },
+    title:" Cultural proximity & NMC-approved colleges "
+  }
+  
 ]
 
 export default function FeaturedSlider() {
@@ -104,9 +101,9 @@ export default function FeaturedSlider() {
       <div className="mx-auto w-full max-w-7xl px-4 md:px-6">
         <header className="mb-8 text-center md:mb-10">
           <h2 className="text-pretty text-3xl font-semibold leading-tight sm:text-4xl md:text-5xl">
-            Where Will You Study <span className="text-primary">MBBS?</span>
+            Popular Study <span className="text-primary">Destinations?</span>
           </h2>
-          <p className="mt-3 text-lg font-semibold text-muted-foreground md:text-xl">Explore Your Ideal Destination!</p>
+          <p className="mt-3 text-lg font-semibold text-muted-foreground md:text-xl">Explore your medical career across the globe</p>
         </header>
 
         <div className="relative">
@@ -158,7 +155,7 @@ export default function FeaturedSlider() {
                     </div>
 
                     <h3 className="text-lg font-semibold">{d.name}</h3>
-                    <p className="mt-1 text-xs text-muted-foreground">Top medical programs · Safe campuses</p>
+                    <p className="mt-1 text-xs text-muted-foreground">{d.title}</p>
 
                     <a
                       href="#"

@@ -9,9 +9,9 @@ export default function DownloadAppSection() {
           {/* Left Content */}
           <div className="space-y-6">
             <div>
-              <h2 className="text-3xl font-bold text-slate-900 mb-4">Download Our All About Doctor App</h2>
+              <h2 className="text-3xl font-bold text-slate-900 mb-4"> Plan Your Medical Future, Anytime!</h2>
               <p className="text-lg text-slate-600 mb-6">
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+              Download All About Doctor App — End-to-end medical education support , study material, NEET coaching, and expert doctors to guide your journey.
               </p>
             </div>
 
@@ -20,13 +20,13 @@ export default function DownloadAppSection() {
                 <div className="bg-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-2 shadow-md">
                   <Smartphone className="w-8 h-8 text-rose-600" />
                 </div>
-                <p className="text-sm font-medium text-slate-700">Easy Planning</p>
+                <p className="text-sm font-medium text-slate-700">Download on Google Play</p>
               </div>
               <div className="text-center">
                 <div className="bg-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-2 shadow-md">
                   <Star className="w-8 h-8 text-rose-600" />
                 </div>
-                <p className="text-sm font-medium text-slate-700">Top Ratings</p>
+                <p className="text-sm font-medium text-slate-700">Download on App Store</p>
               </div>
               <div className="text-center">
                 <div className="bg-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-2 shadow-md">
