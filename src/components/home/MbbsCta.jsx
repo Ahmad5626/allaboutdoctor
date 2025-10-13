@@ -69,10 +69,10 @@ export default function MbbsCta() {
               className="mx-auto mt-6 max-w-3xl text-center text-pretty leading-relaxed text-muted-foreground"
               aria-describedby="mbbs-cta-desc"
             >
-           <h2
+           <span
               id="mbbs-cta-title"
               className="mt-3 text-center text-balance text-3xl sm:text-2xl md:text-3xl font-semibold text-primary"
-            > Leadership</h2> 
+            > Leadership</span> 
            <br/>
 Dr. Anand Sharma — Managing Director & Founder
 <br/>

@@ -24,20 +24,20 @@ import HowWeWork from '@/components/home/how-we-work'
 const page = () => {
   return (
     <div>
-      <Hedaer/>
-      <HeroSection/>
-      <MbbsCta/>
+      <Hedaer />
+      <HeroSection />
+      <MbbsCta />
       <SuccessStories />
-      <FeaturedSlider/>
-      <Destination/>
+      <FeaturedSlider />
+      <Destination />
 
-      <VideoSection/>
-      
-       <DoctorServicesSlider/>
-<HowWeWork/>
-         <DownloadAppSection/>
-          
-           {/* <PopularSearches />
+      <VideoSection />
+
+      <DoctorServicesSlider />
+      <HowWeWork />
+      <DownloadAppSection />
+
+      {/* <PopularSearches />
          
       <ServicesSection/>
       <CategoriesSlider/>
@@ -45,11 +45,11 @@ const page = () => {
      
       <WeddingStoriesSection/>
       <GallerySection/>  */}
-      <TestimonialsSection/>
+      <TestimonialsSection />
       {/* <HomeBlogSection/> */}
 
-      <Footer/>
-      
+      <Footer />
+
     </div>
   )
 }

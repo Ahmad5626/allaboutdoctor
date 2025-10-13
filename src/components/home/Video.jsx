@@ -1,59 +1,64 @@
 "use client"
 
+import { useEffect } from "react"
+
 const videos = [
   {
     id: "v1",
     title: "From Dreamer to Doctor",
     instaUrl: "https://www.instagram.com/",
-    thumb: "https://publicassets.leverageedu.com/homepage/homepageV2/media13.png",
+    thumb: "https://www.instagram.com/p/DPbSrpZD3E4/",
     featured: true,
   },
   {
     id: "v2",
     title: "Visa Approved in 10 Days",
     instaUrl: "https://www.instagram.com/",
-    thumb: "https://publicassets.leverageedu.com/homepage/homepageV2/media2.png",
-   
+    thumb: "https://www.instagram.com/p/DPbXzSFj00b/",
+
   },
   {
     id: "v3",
     title: "Campus Life Abroad",
     instaUrl: "https://www.instagram.com/",
-    thumb: "https://publicassets.leverageedu.com/homepage/homepageV2/media3.png",
+    thumb: "https://www.instagram.com/reel/DK107FMqNkS/",
   },
   {
     id: "v4",
     title: "Scholarship Journey",
     instaUrl: "https://www.instagram.com/",
-    thumb: "https://publicassets.leverageedu.com/homepage/homepageV2/media8.png",
+    thumb: "https://www.instagram.com/reel/DPK_F6jgaIH/",
   },
   {
     id: "v5",
     title: "Parents Speak",
     instaUrl: "https://www.instagram.com/",
-    thumb: "https://publicassets.leverageedu.com/homepage/homepageV2/media9.png",
+    thumb: "https://www.instagram.com/reel/DOp6MMAj1Xv/",
   },
   {
     id: "v6",
     title: "Day in Med School",
     instaUrl: "https://www.instagram.com/",
-    thumb: "https://publicassets.leverageedu.com/homepage/homepageV2/media4.png",
+    thumb: "https://www.instagram.com/reel/DOpo126D8wA/",
   },
   {
     id: "v7",
     title: "How I Chose My University",
     instaUrl: "https://www.instagram.com/",
-    thumb: "https://publicassets.leverageedu.com/homepage/homepageV2/media5.png",
+    thumb: "https://www.instagram.com/reel/DOnIYNUjwy-/",
   },
   {
     id: "v8",
     title: "Hostel Tour",
     instaUrl: "https://www.instagram.com/",
-    thumb: "https://publicassets.leverageedu.com/homepage/homepageV2/media6.png",
+    thumb: "https://www.instagram.com/reel/DNfsoBQPPri/",
   },
 ]
 
+
+
 function PlayBadge() {
+
   return (
     <span className="pointer-events-none inline-flex items-center gap-2 rounded-full bg-foreground/90 px-3 py-1 text-xs font-medium text-background shadow-sm ring-1 ring-foreground/10 backdrop-blur-md">
       <svg width="14" height="14" viewBox="0 0 24 24" className="fill-current">
@@ -70,9 +75,8 @@ function Card({ item, variant = "default" }) {
       href={item.instaUrl}
       target="_blank"
       rel="noopener noreferrer"
-      className={`group relative block overflow-hidden rounded-2xl ring-1 ring-border transition-shadow hover:shadow-lg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary ${
-        variant === "feature" ? "aspect-[16/10]" : "aspect-[4/5]"
-      }`}
+      className={`group relative block overflow-hidden rounded-2xl ring-1 ring-border transition-shadow hover:shadow-lg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary ${variant === "feature" ? "aspect-[16/10]" : "aspect-[4/5]"
+        }`}
       style={{
         backgroundImage: `url(${item.thumb})`,
         backgroundSize: "cover",
@@ -81,28 +85,16 @@ function Card({ item, variant = "default" }) {
       aria-label={`${item.title} — opens on Instagram`}
     >
       {/* gradient veil for readability */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-black/10 transition-opacity group-hover:from-black/80" />
 
-      {/* bottom content and play */}
-      <div className="absolute inset-x-0 bottom-4 flex items-end justify-between px-4">
-        <div className="flex flex-col gap-2">
-          <PlayBadge />
-          <h3 className="max-w-[26ch] text-balance text-white/95 drop-shadow-sm">
-            <span className="text-sm/5 font-medium tracking-wide text-white/80">Student Story</span>
-            <br />
-            <span className="text-lg font-semibold md:text-xl">{item.title}</span>
-          </h3>
-        </div>
+       <div className="flex justify-center">
+      <blockquote
+        className="instagram-media"
+        data-instgrm-permalink={item.thumb}
+        data-instgrm-version="14"
+        style={{ width: "100%", maxWidth: "400px" }}
+      ></blockquote>
+    </div>
 
-        <div className="relative">
-          <div className="absolute inset-0 -m-1 rounded-full bg-white/30 blur-md opacity-60 group-hover:opacity-80 transition-opacity" />
-          <div className="relative grid h-12 w-12 place-items-center rounded-full bg-foreground text-background shadow-md ring-1 ring-foreground/10 group-hover:scale-105 transition-transform">
-            <svg width="20" height="20" viewBox="0 0 24 24" className="fill-current">
-              <path d="M8 5v14l11-7z" />
-            </svg>
-          </div>
-        </div>
-      </div>
 
       {/* animated conic sweep border */}
       <span className="pointer-events-none absolute inset-0 rounded-2xl ring-1 ring-white/10">
@@ -113,6 +105,12 @@ function Card({ item, variant = "default" }) {
 }
 
 export default function VideoSection() {
+    useEffect(() => {
+    const script = document.createElement("script");
+    script.src = "https://www.instagram.com/embed.js";
+    script.async = true;
+    document.body.appendChild(script);
+  })
   const featured = videos.find((v) => v.featured) || videos[0]
   const others = videos.filter((v) => v.id !== featured.id)
 
@@ -145,23 +143,31 @@ export default function VideoSection() {
 
         {/* Mosaic grid */}
         <div className="grid grid-cols-12 gap-4 md:gap-6">
-          <div className="col-span-12 md:col-span-7 lg:col-span-8">
-            <Card item={featured} variant="feature" />
-          </div>
+         
 
-          <div className="col-span-12 grid grid-cols-2 gap-4 md:col-span-5 md:grid-cols-2 md:gap-4 lg:col-span-4">
+          {/* <div className="col-span-12 grid grid-cols-2 gap-4 md:col-span-5 md:grid-cols-2 md:gap-4 lg:col-span-4">
             {others.slice(0, 4).map((v) => (
               <Card key={v.id} item={v} />
             ))}
-          </div>
+          </div> */}
 
           {/* More rows */}
           <div className="col-span-12 grid grid-cols-2 gap-4 md:grid-cols-3 md:gap-6">
-            {others.slice(4).map((v) => (
-              <Card key={v.id} item={v} />
-            ))}
+            {videos?.map((v)=>{
+              return(
+                      
+      <blockquote
+        className="instagram-media"
+        data-instgrm-permalink={v.thumb}
+        data-instgrm-version="14"
+        style={{ width: "100%", maxWidth: "400px" }}
+      ></blockquote>
+   
+              )
+            })}
           </div>
         </div>
+
       </div>
 
       <style jsx>{`
