@@ -9,7 +9,8 @@ export default function DownloadAppSection() {
           {/* Left Content */}
           <div className="space-y-6">
             <div>
-              <h2 className="text-3xl font-bold text-slate-900 mb-4"> Plan Your Medical Future, Anytime!</h2>
+            <h1 className="text-4xl font-bold text-slate-900 mb-4"> Our Mobile App</h1>
+              <h2 className="text-2xl font-bold text-slate-900 mb-4"> Plan Your Medical Future, Anytime!</h2>
               <p className="text-lg text-slate-600 mb-6">
               Download All About Doctor App — End-to-end medical education support , study material, NEET coaching, and expert doctors to guide your journey.
               </p>
