@@ -3,7 +3,7 @@ import { Smartphone, Download, Star } from "lucide-react"
 
 export default function DownloadAppSection() {
   return (
-    <section className="py-12 bg-gradient-to-r from-rose-50 to-pink-50 max-w-7xl mx-auto my-10">
+    <section className="py-12  max-w-7xl mx-auto my-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
           {/* Left Content */}

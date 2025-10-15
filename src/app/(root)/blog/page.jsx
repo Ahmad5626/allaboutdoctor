@@ -10,7 +10,7 @@ export default function BlogPage() {
   return (
    <>
      <Navbar fixed={true} />
-     <main className="mx-auto min-h-screen max-w-6xl px-4 py-8 md:py-12">
+     <main className="mx-auto min-h-screen max-w-7xl px-4 py-8 md:py-12">
       <HomeBlogSection /> 
      </main>
     

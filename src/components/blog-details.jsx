@@ -5,7 +5,7 @@ import React from 'react'
 const BlogDetails = ({post}) => {
   return (
     <div>
-      <main className="mx-auto min-h-screen max-w-6xl px-4 py-8 md:py-12">
+      <main className="mx-auto min-h-screen max-w-7xl px-4 py-8 md:py-12">
       <nav className="mb-6 text-sm text-slate-600">
         <Link href="/blog" className="text-rose-600 hover:underline">
           Blog

@@ -156,12 +156,20 @@ export default function VideoSection() {
             {videos?.map((v)=>{
               return(
                       
-      <blockquote
-        className="instagram-media"
-        data-instgrm-permalink={v.thumb}
-        data-instgrm-version="14"
-        style={{ width: "100%", maxWidth: "400px" }}
-      ></blockquote>
+    <div className="insta-wrapper">
+  <blockquote
+    className="instagram-media"
+    data-instgrm-permalink={v.thumb}
+    data-instgrm-version="14"
+    style={{
+      width: "100%",
+      maxWidth: "400px",
+      borderRadius: "12px",
+      overflow: "hidden",
+      boxShadow: "0 4px 12px rgba(0,0,0,0.2)"
+    }}
+  ></blockquote>
+</div>
    
               )
             })}

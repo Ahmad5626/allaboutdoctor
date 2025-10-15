@@ -79,7 +79,7 @@ function StepCard({ step }) {
 
 export default function HowWeWork() {
   return (
-    <section className="relative mx-auto max-w-6xl px-4 py-16">
+    <section className="relative mx-auto max-w-7xl px-4 py-16">
       {/* Soft radial backdrop */}
       <div
         aria-hidden="true"

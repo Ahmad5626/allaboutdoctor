@@ -1,43 +1,55 @@
 export default function Hero() {
   return (
-    <section className="relative isolate">
-      <div className="mx-auto max-w-7xl px-4 py-12 md:py-20">
-        <div className="grid items-center gap-8 md:grid-cols-2">
-          <div>`  `
-            <p className="text-teal-600 font-medium">Our Purpose</p>
-            <h1 className="mt-2 text-balance text-3xl font-semibold text-slate-900 md:text-4xl">
-              Crafting joyful wedding journeys with trusted vendors
-            </h1>
-            <p className="mt-4 text-slate-600 leading-relaxed">
-              We bring couples and verified vendors together on one simple, transparent platform. From discovery to
-              booking, we make every step effortless so you can focus on celebrating love.
-            </p>
-            <div className="mt-6 flex flex-wrap items-center gap-3">
-              <a
-                href="/vendor-dashboard"
-                className="inline-flex items-center rounded-md bg-rose-600 px-4 py-2 text-white transition hover:bg-rose-700"
-              >
-                Become a Vendor
-              </a>
-              <a
-                href="/"
-                className="inline-flex items-center rounded-md border border-slate-200 px-4 py-2 text-slate-700 transition hover:bg-slate-50"
-              >
-                Explore Listings
-              </a>
-            </div>
-          </div>
+    <header className="relative overflow-hidden border-b border-border">
+      <div className="relative mx-auto max-w-7xl px-6 py-10 md:py-10">
+         <span
+              className="inline-flex items-center rounded-full border border-border/60 bg-card px-3 py-1 text-xs font-medium text-muted-foreground animate-fade-up"
+              style={{ animationDelay: "40ms" }}
+            >
+            All About Doctor Education Pvt Ltd
+            </span>
+        <h1
+              className="text-pretty text-4xl font-semibold leading-tight sm:text-5xl animate-fade-up my-4"
+              style={{ animationDelay: "100ms" }}
+            >
+           The  <span className="text-primary">About All About Doctor Education Pvt Ltd</span> 
 
-          <div className="relative overflow-hidden rounded-xl border border-slate-200 w-full h-100">
-            <img
-              src="https://i.pravatar.cc/300"
-              alt="Happy couple celebrating at their wedding"
-              className="h-full w-full object-cover"
-            />
-            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/30 to-black/0" />
-          </div>
+            </h1>
+        <p className="mt-4 max-w-2xl text-sm/6 md:text-base/7 text-muted-foreground">
+          page provides a complete overview of the organization’s background, leadership, services, and global university partnerships.
+        </p>
+
+        <div className="mt-8 flex flex-col sm:flex-row gap-3">
+          <a
+            href="#overview"
+            className="inline-flex items-center justify-center rounded-lg border bg-secondary px-5 py-3 text-sm font-medium text-white hover:opacity-85 transition"
+          >
+            View Overview
+          </a>
+          <a
+            href="#partners"
+            className="inline-flex items-center justify-center rounded-lg border bg-primary px-5 py-3 text-sm font-medium text-white hover:opacity-85 transition"
+          >
+            Our University Partners
+          </a>
+        </div>
+
+        <div className="mt-10 grid grid-cols-2 md:grid-cols-4 gap-4">
+          <Stat label="Founded" value="2015" />
+          <Stat label="Countries" value="9+ Regions" />
+          <Stat label="Experts" value="20+ Doctors" />
+          <Stat label="USP" value="Transparent & Verified" />
         </div>
       </div>
-    </section>
+    </header>
+  )
+}
+
+function Stat({ label, value }) {
+  return (
+    <div className="rounded-lg p-4 ring-1 ring-border">
+      <div className="text-xs uppercase tracking-wide text-muted-foreground">{label}</div>
+      <div className="mt-1 text-lg md:text-xl font-semibold">{value}</div>
+    </div>
   )
 }

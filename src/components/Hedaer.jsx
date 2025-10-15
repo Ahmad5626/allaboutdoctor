@@ -6,7 +6,7 @@ import Link from "next/link"
 
 const CORE_MENU = [
   { label: "HOME", href: "/" },
-  { label: "ABOUT US", href: "/about" },
+  { label: "ABOUT US", href: "/about-allaboutdoctor" },
   { label: "OUR BRANCHES", href: "/branches" },
 ]
 
@@ -171,9 +171,9 @@ export default function Header() {
         <div className="mx-auto max-w-7xl px-4">
           <ul className="flex items-center gap-2 text-[16px]">
             {/* CORE MENU - separate map */}
-            {CORE_MENU.map((item) => (
-              <li key={item.href} className="relative">
-                <Link href="" className="nav-link inline-flex items-center px-4 py-3">
+            {CORE_MENU.map((item, index) => (
+              <li key={index} className="relative">
+                <Link href={item.href} className="nav-link inline-flex items-center px-4 py-3">
                   <span>{item.label}</span>
                   <span className="underline-anim" />
                 </Link>
