@@ -272,7 +272,7 @@ export default function Header() {
             {/* TAIL MENU - separate map */}
             {TAIL_MENU.map((item) => (
               <li key={item.href} className="relative">
-                <Link href="" className="nav-link inline-flex items-center px-4 py-3">
+                <Link href={item.href} className="nav-link inline-flex items-center px-4 py-3">
                   <span>{item.label}</span>
                   <span className="underline-anim" />
                 </Link>
