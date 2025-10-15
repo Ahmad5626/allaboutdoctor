@@ -67,7 +67,7 @@ export default function ContactSection() {
       <input
         type="text"
         placeholder="Enter your name"
-        className="form-input"
+        className="form-input rounded-md p-1 px-1"
       />
       <span className="absolute right-3 top-9 text-muted-foreground/50">👤</span>
     </div>
@@ -77,9 +77,9 @@ export default function ContactSection() {
       <input
         type="email"
         placeholder="name@email.com"
-        className="form-input"
+        className="form-input rounded-md p-1 px-1"
       />
-      <span className="absolute right-3 top-9 text-muted-foreground/50">📧</span>
+      <span className="absolute right-3 top-9 text-muted-foreground/50 ">📧</span>
     </div>
   </div>
 
@@ -90,7 +90,7 @@ export default function ContactSection() {
       <input
         type="tel"
         placeholder="+91 9XXXXXXXXX"
-        className="form-input"
+        className="form-input rounded-md p-1 px-1"
       />
       <span className="absolute right-3 top-9 text-muted-foreground/50">📞</span>
     </div>
@@ -113,7 +113,7 @@ export default function ContactSection() {
     <textarea
       rows="4"
       placeholder="How can we help?"
-      className="form-input resize-none"
+      className="form-input resize-none w-full px-2"
     ></textarea>
   </div>
 
