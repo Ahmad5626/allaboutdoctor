@@ -1,12 +1,10 @@
 import Hero from "@/components/contact/hero"
-import Stats from "@/components/contact/stats"
-import GetInTouch from "@/components/contact/get-in-touch"
-import Offices from "@/components/contact/offices"
-import ContactForm from "@/components/contact/form"
+
 import Header from "@/components/Hedaer"
 import Footer from "@/components/Footer"
 import ContactSection from "@/components/contact/get-in-touch"
 import Branches from "@/components/contact/branch"
+import UpcomingBranches from "@/components/contact/upcomingBranches"
 
 export default function Page() {
   return (
@@ -16,7 +14,8 @@ export default function Page() {
  
       <Hero />
       <ContactSection />
-      <Branches />  
+      <Branches /> 
+      <UpcomingBranches />  
     </main>
     <Footer/>
     </>
