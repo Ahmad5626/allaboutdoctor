@@ -7,16 +7,16 @@ import Link from "next/link"
 const CORE_MENU = [
   { label: "HOME", href: "/" },
   { label: "ABOUT US", href: "/about-allaboutdoctor" },
-  { label: "OUR BRANCHES", href: "/branches" },
+  { label: "Neet ug", href: "/branches" },
+  { label: "Neet pg", href: "/branches" }
 ]
 
 const TAIL_MENU = [
-  // { label: "PARTNERSHIP & FRANCHISE", href: "/partnership" },
-  { label: "BLOG", href: "/blog" },
+  { label: "NMC Updates", href: "/nmc-updates" },
+  { label: "Gallery ", href: "/gallery" },
   { label: "CONTACT US", href: "/contact" },
 ]
 
-// Horizontal chips for MBBS > India
 const INDIA_STATES = [
   { label: "Maharashtra", href: "/mbbs-in-india/maharashtra" },
   { label: "Karnataka", href: "/mbbs-in-india/karnataka" },
@@ -30,7 +30,6 @@ const INDIA_STATES = [
   { label: "Telangana", href: "/mbbs-in-india/telangana" },
 ]
 
-// Horizontal chips for MBBS > Abroad
 const ABROAD_COUNTRIES = [
   { label: "Russia", href: "/mbbs-abroad/russia" },
   { label: "Uzbekistan", href: "/mbbs-abroad/uzbekistan" },
@@ -44,14 +43,13 @@ const ABROAD_COUNTRIES = [
   { label: "Armenia", href: "/mbbs-abroad/armenia" },
 ]
 
-// Courses list from your screenshot
 const COURSES = [
   { label: "MBBS", href: "/courses/mbbs" },
   { label: "MD", href: "/courses/md" },
   { label: "MS", href: "/courses/ms" },
   { label: "BAMS", href: "/courses/bams" },
   { label: "BDS", href: "/courses/bds" },
-  { label: "BVSc (Bachelor of Veterinary Science)", href: "/courses/bvsc" },
+  { label: "BVSc", href: "/courses/bvsc" },
   { label: "B.Sc. Nursing", href: "/courses/bsc-nursing" },
   { label: "GNM", href: "/courses/gnm" },
   { label: "ANM", href: "/courses/anm" },
@@ -62,467 +60,377 @@ const COURSES = [
   { label: "BHMS", href: "/courses/bhms" },
 ]
 
-export default function Header() {
+export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false)
-  const [openKey, setOpenKey] = useState(null)
-  const closeOnEsc = (e) => e.key === "Escape" && (setMobileOpen(false), setOpenKey(null))
+  const [activeDropdown, setActiveDropdown] = useState(null)
+  const [activeMobileSubmenu, setActiveMobileSubmenu] = useState(null)
 
   useEffect(() => {
-    if (mobileOpen) document.addEventListener("keydown", closeOnEsc)
-    return () => document.removeEventListener("keydown", closeOnEsc)
+    const handleEsc = (e) => {
+      if (e.key === "Escape") {
+        setMobileOpen(false)
+        setActiveDropdown(null)
+      }
+    }
+    if (mobileOpen) document.addEventListener("keydown", handleEsc)
+    return () => document.removeEventListener("keydown", handleEsc)
   }, [mobileOpen])
 
   return (
-    <header className="sticky top-0 z-50 bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/70 border-b ">
-      {/* Topbar */}
-      <div className="hidden sm:block bg-accent text-accent-foreground text-xs">
-        <div className="mx-auto max-w-7xl px-4 py-2 flex items-center justify-end gap-4">
-          <span className="inline-flex items-center gap-2">
-            <MailIcon className="h-4 w-4 opacity-80" />
-            <a href="mailto:info@allaboutdoctor.in" className="hover:underline">
-              info@allaboutdoctor.in
+    <header className="sticky top-0 z-50 bg-white shadow-md">
+      {/* Top Contact Bar */}
+      <div className="hidden sm:block bg-gradient-to-r from-blue-600 to-blue-700 text-white text-xs">
+        <div className="max-w-7xl mx-auto px-4 py-2.5 flex items-center justify-between gap-4">
+          <div className="flex items-center gap-6">
+            <a href="mailto:info@allaboutdoctor.in" className="flex items-center gap-2 hover:opacity-80 transition">
+              <MailIcon className="h-4 w-4" />
+              <span>info@allaboutdoctor.in</span>
             </a>
-          </span>
+          </div>
+          <div className="flex items-center gap-4">
+            <a href="tel:+919351018577" className="flex items-center gap-1.5 hover:opacity-80 transition">
+              <PhoneIcon className="h-4 w-4" />
+              <span>+91 93510 18577</span>
+            </a>
+            <span className="text-blue-200">|</span>
+            <a href="https://wa.me/917737367793" className="flex items-center gap-1.5 hover:opacity-80 transition">
+              <WhatsAppIcon className="h-4 w-4" />
+              <span>WhatsApp: 77373 67793</span>
+            </a>
+          </div>
         </div>
       </div>
 
-      {/* Brand + quick actions */}
-      <div className="mx-auto max-w-7xl px-4 py-3 flex items-center justify-between gap-4">
-        <div className="flex items-center gap-3">
-          <Link href="/" className="flex items-center gap-3">
-            <Image
-              src="/assets/img/logo.png"
-              alt="All About Doctor logo"
-              width={200}
-              height={200}
-              className="rounded-md"
-            />
-          
-          </Link>
-        </div>
+      {/* Main Navbar */}
+      <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between gap-4">
+        {/* Logo */}
+        <Link href="/" className="flex-shrink-0">
+          <Image src="/assets/img/logo.png" alt="All About Doctor" width={180} height={50} className="h-12 w-auto" />
+        </Link>
 
-        {/* Desktop quick actions */}
-        <div className="hidden lg:flex items-center gap-5">
-          <a
-            href="/counselling"
-            className="inline-flex items-center gap-2 rounded-xl border border-secondary/30 bg-background px-4 py-2 text-sm font-medium text-secondary hover:bg-secondary/10 transition"
-          >
-            <HeadsetIcon className="h-5 w-5" />
-            <span>Live Meeting </span>
-          </a>
-
-          <div className="hidden md:flex items-center gap-2 pl-5 border-l">
-            <PhoneIcon className="h-5 w-5 text-secondary" />
-            <div className="leading-tight">
-              <span className="text-xs text-muted-foreground">Call us Now</span>
-              <a href="tel:+919351018577" className="block text-sm font-semibold text-secondary">
-                +91 93510 18577
-              </a>
-            </div>
-          </div>
-
-          <div className="hidden md:flex items-center gap-2 pl-5 border-l">
-            <WhatsAppIcon className="h-5 w-5 text-green-600" />
-            <div className="leading-tight">
-              <span className="text-xs text-muted-foreground">Whatsapp Us</span>
-              <a href="https://wa.me/917737367793" className="block text-sm font-semibold text-foreground">
-                77373 67793
-              </a>
-            </div>
-          </div>
-
-          <div className="hidden sm:flex items-center gap-3 pl-5 border-l">
-            <a aria-label="YouTube" href="#" className="group">
-              <YouTubeIcon className="h-5 w-5 group-hover:scale-110 transition" />
-            </a>
-            <a aria-label="Facebook" href="#" className="group">
-              <FacebookIcon className="h-5 w-5 group-hover:scale-110 transition" />
-            </a>
-            <a aria-label="Instagram" href="#" className="group">
-              <InstagramIcon className="h-5 w-5 group-hover:scale-110 transition" />
-            </a>
-          </div>
-        </div>
-
-        {/* Mobile actions */}
-        <div className="flex lg:hidden items-center gap-3">
-          <a href="tel:+919351018577" aria-label="Call" className="rounded-full p-2 border hover:bg-accent">
-            <PhoneIcon className="h-5 w-5" />
-          </a>
-          <a
-            href="https://wa.me/917737367793"
-            aria-label="WhatsApp"
-            className="rounded-full p-2 border hover:bg-accent"
-          >
-            <WhatsAppIcon className="h-5 w-5 text-green-600" />
-          </a>
-          <button
-            aria-label="Open menu"
-            className="rounded-md border px-3 py-2 hover:bg-accent"
-            onClick={() => setMobileOpen(true)}
-          >
-            <BurgerIcon className="h-5 w-5" />
-          </button>
-        </div>
-      </div>
-
-      {/* Navbar */}
-      <nav className="hidden lg:block bg-primary text-primary-foreground">
-        <div className="mx-auto max-w-7xl px-4">
-          <ul className="flex items-center gap-2 text-[16px]">
-            {/* CORE MENU - separate map */}
-            {CORE_MENU.map((item, index) => (
-              <li key={index} className="relative">
-                <Link href={item.href} className="nav-link inline-flex items-center px-4 py-3">
-                  <span>{item.label}</span>
-                  <span className="underline-anim" />
-                </Link>
-              </li>
-            ))}
-
-            {/* MBBS (mega dropdown with two horizontal submenus) */}
-            <li className="relative" onMouseEnter={() => setOpenKey("mbbs")} onMouseLeave={() => setOpenKey(null)}>
-              <button
-                className="nav-link group inline-flex items-center gap-2 px-4 py-3"
-                aria-expanded={openKey === "mbbs"}
-                onClick={() => setOpenKey(openKey === "mbbs" ? null : "mbbs")}
-              >
-                <span>MBBS</span>
-                <ChevronDown className={`h-4 w-4 transition ${openKey === "mbbs" ? "rotate-180" : ""}`} />
-                <span className="underline-anim" />
-              </button>
-
-              <div className={`dropdown ${openKey === "mbbs" ? "open" : ""}`}>
-                <div className="min-w-[720px] rounded-md border bg-popover p-4 shadow ">
-                  <div className="grid grid-cols-1 gap-4">
-                    {/* India row - mapped chips */}
-                    <div>
-                      <div className="text-[12px] font-semibold mb-2 text-muted-foreground">1. MBBS IN INDIA</div>
-                        <div className="flex flex-wrap items-stretch gap-2  pb-1 ">
-                      {/* <div className="flex flex-nowrap items-stretch gap-2 overflow-x-auto pb-1 [-ms-overflow-style:none] [scrollbar-width:none]"> */}
-                        {INDIA_STATES.map((s) => (
-                          <Link
-                            key={s.href}
-                            href={s.href}
-                            className="px-3 py-2 text-black rounded-full text-sm bg-accent/50 hover:bg-accent hover:text-accent-foreground whitespace-nowrap"
-                          >
-                            {s.label}
-                          </Link>
-                        ))}
-                      </div>
-                    </div>
-
-                    {/* Abroad row - mapped chips */}
-                    <div>
-                      <div className="text-[12px] font-semibold mb-2 text-muted-foreground">2. MBBS IN ABROAD</div>
-                      <div className="flex flex-wrap items-stretch gap-2  pb-1">
-                        {ABROAD_COUNTRIES.map((c) => (
-                          <Link
-                            key={c.href}
-                            href={c.href}
-                            className="px-3 py-2 text-black rounded-full text-sm bg-accent/50 hover:bg-accent hover:text-accent-foreground whitespace-nowrap"
-                          >
-                            {c.label}
-                          </Link>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </li>
-
-            {/* COURSES (dropdown: list + screenshot/content) */}
-            <li className="relative" onMouseEnter={() => setOpenKey("courses")} onMouseLeave={() => setOpenKey(null)}>
-              <button
-                className="nav-link group inline-flex items-center gap-2 px-4 py-3"
-                aria-expanded={openKey === "courses"}
-                onClick={() => setOpenKey(openKey === "courses" ? null : "courses")}
-              >
-                <span>COURSE</span>
-                <ChevronDown className={`h-4 w-4 transition ${openKey === "courses" ? "rotate-180" : ""}`} />
-                <span className="underline-anim" />
-              </button>
-
-              <div className={`dropdown ${openKey === "courses" ? "open" : ""}`}>
-                <div className="min-w-[400px] rounded-md border bg-popover p-4 shadow">
-                  <div className="grid grid-cols-4 gap-4">
-                    {/* Left: mapped course list */}
-                    <div className="col-span-7">
-                      <ul className="grid grid-cols-2 gap-1">
-                        {COURSES.map((c) => (
-                          <li key={c.href}>
-                            <Link
-                              href={c.href}
-                              className="block text-black px-2 py-1.5 rounded text-sm hover:bg-accent hover:text-accent-foreground"
-                            >
-                              {c.label}
-                            </Link>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-
-                   
-                  </div>
-                </div>
-              </div>
-            </li>
-
-            {/* TAIL MENU - separate map */}
-            {TAIL_MENU.map((item) => (
-              <li key={item.href} className="relative">
-                <Link href={item.href} className="nav-link inline-flex items-center px-4 py-3">
-                  <span>{item.label}</span>
-                  <span className="underline-anim" />
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </nav>
-
-      {/* Mobile drawer */}
-      <div
-        className={`fixed inset-0 z-50 transition ${mobileOpen ? "pointer-events-auto" : "pointer-events-none" }  `}
-        aria-hidden={!mobileOpen}
-      >
-        <div
-          className={`absolute inset-0 bg-black/50 transition-opacity ${mobileOpen ? "opacity-100" : "opacity-0"}`}
-          onClick={() => setMobileOpen(false)}
-        />
-        <aside
-          className={`absolute right-0 top-0 h-full w-80 max-w-[90%] md:hidden bg-background border-l shadow-xl transition-transform ${
-            mobileOpen ? "translate-x-0 " : "translate-x-full hidden"
-          }`}
-        >
-          <div className="px-4 py-3 border-b flex items-center justify-between">
-            <span className="font-semibold">Menu</span>
-            <button
-              aria-label="Close menu"
-              className="rounded-md border px-3 py-2"
-              onClick={() => setMobileOpen(false)}
+        {/* Desktop Navigation */}
+        <nav className="hidden lg:flex items-center gap-1">
+          {CORE_MENU.map((item,i) => (
+            <Link
+              key={i}
+              href={item.href}
+              className="px-4 py-2 text-sm font-semibold text-gray-700 hover:text-blue-600 transition relative group"
             >
-              <CloseIcon className="h-4 w-4" />
+              {item.label}
+              <span className="absolute bottom-0 left-4 right-4 h-0.5 bg-blue-600 scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
+            </Link>
+          ))}
+
+          {/* MBBS Dropdown */}
+          <div
+            className="relative group"
+            onMouseEnter={() => setActiveDropdown("mbbs")}
+            onMouseLeave={() => setActiveDropdown(null)}
+          >
+            <button className="px-4 py-2 text-sm font-semibold text-gray-700 hover:text-blue-600 transition flex items-center gap-1.5 group">
+              Study
+              <ChevronDown className="h-4 w-4 group-hover:rotate-180 transition-transform" />
+              <span className="absolute bottom-0 left-4 right-4 h-0.5 bg-blue-600 scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
             </button>
+
+            {/* Mega Dropdown */}
+            <div className="absolute left-0 top-full pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+              <div className="bg-white rounded-lg shadow-xl border border-gray-100 p-6 min-w-max">
+                <div className="grid grid-cols-2 gap-8">
+                  {/* India Section */}
+                  <div>
+                    <h3 className="text-xs font-bold text-blue-600 uppercase tracking-wider mb-3">Study in India</h3>
+                    <div className="grid grid-cols-2 gap-2">
+                      {INDIA_STATES.map((state) => (
+                        <Link
+                          key={state.href}
+                          href={state.href}
+                          className="px-3 py-1.5 text-xs bg-blue-50 text-blue-700 rounded-full hover:bg-blue-600 hover:text-white transition whitespace-nowrap"
+                        >
+                          {state.label}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Abroad Section */}
+                  <div>
+                    <h3 className="text-xs font-bold text-blue-600 uppercase tracking-wider mb-3">Study Abroad</h3>
+                    <div className="grid grid-cols-2 gap-2">
+                      {ABROAD_COUNTRIES.map((country) => (
+                        <Link
+                          key={country.href}
+                          href={country.href}
+                          className="px-3 py-1.5 text-xs bg-blue-50 text-blue-700 rounded-full hover:bg-blue-600 hover:text-white transition whitespace-nowrap"
+                        >
+                          {country.label}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
 
-          <div className="px-2 py-3 bg-white z-10" >
+          {/* Courses Dropdown */}
+          <div
+            className="relative group"
+            onMouseEnter={() => setActiveDropdown("courses")}
+            onMouseLeave={() => setActiveDropdown(null)}
+          >
+            <button className="px-4 py-2 text-sm font-semibold text-gray-700 hover:text-blue-600 transition flex items-center gap-1.5 group">
+              COURSES
+              <ChevronDown className="h-4 w-4 group-hover:rotate-180 transition-transform" />
+              <span className="absolute bottom-0 left-4 right-4 h-0.5 bg-blue-600 scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
+            </button>
+
+            {/* Courses Dropdown */}
+            <div className="absolute left-0 top-full pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+              <div className="bg-white rounded-lg shadow-xl border border-gray-100 p-4 min-w-max">
+                <div className="grid grid-cols-2 gap-2">
+                  {COURSES.map((course) => (
+                    <Link
+                      key={course.href}
+                      href={course.href}
+                      className="px-3 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded transition whitespace-nowrap"
+                    >
+                      {course.label}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Tail Menu */}
+          {TAIL_MENU.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              className="px-4 py-2 text-sm font-semibold text-gray-700 hover:text-blue-600 transition relative group"
+            >
+              {item.label}
+              <span className="absolute bottom-0 left-4 right-4 h-0.5 bg-blue-600 scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
+            </Link>
+          ))}
+        </nav>
+
+        {/* Desktop CTA Buttons */}
+        <div className="hidden lg:flex items-center gap-3">
+          {/* <a
+            href="/counselling"
+            className="px-4 py-2 text-sm font-semibold text-blue-600 border-2 border-blue-600 rounded-lg hover:bg-blue-50 transition"
+          >
+            Free Counselling
+          </a> */}
+          <a
+            href="tel:+919351018577"
+            className="px-4 py-2 text-sm font-semibold text-white bg-blue-600 rounded-lg hover:bg-blue-700 transition"
+          >
+            Call Now
+          </a>
+        </div>
+
+        {/* Mobile Menu Button */}
+        <button
+          onClick={() => setMobileOpen(!mobileOpen)}
+          className="lg:hidden p-2 hover:bg-gray-100 rounded-lg transition"
+          aria-label="Toggle menu"
+        >
+          {mobileOpen ? <CloseIcon className="h-6 w-6" /> : <BurgerIcon className="h-6 w-6" />}
+        </button>
+      </div>
+
+      {/* Mobile Menu */}
+      {mobileOpen && (
+        <div className="lg:hidden border-t bg-white">
+          <div className="max-w-7xl mx-auto px-4 py-4 space-y-2">
+            {/* Core Menu */}
             {CORE_MENU.map((item) => (
               <Link
                 key={item.href}
-                href=""
-                className="block rounded px-3 py-2 hover:bg-accent"
+                href={item.href}
+                className="block px-4 py-2 text-sm font-semibold text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded transition"
                 onClick={() => setMobileOpen(false)}
               >
                 {item.label}
               </Link>
             ))}
 
-            <details className="group rounded-md">
-              <summary className="flex cursor-pointer list-none items-center justify-between rounded px-3 py-2 hover:bg-accent">
-                <span>MBBS</span>
-                <ChevronDown className="h-4 w-4 transition group-open:rotate-180" />
-              </summary>
+            {/* MBBS Mobile Submenu */}
+            <div className="border-t pt-2 mt-2">
+              <button
+                onClick={() => setActiveMobileSubmenu(activeMobileSubmenu === "mbbs" ? null : "mbbs")}
+                className="w-full text-left px-4 py-2 text-sm font-semibold text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded transition flex items-center justify-between"
+              >
+                MBBS
+                <ChevronDown
+                  className={`h-4 w-4 transition-transform ${activeMobileSubmenu === "mbbs" ? "rotate-180" : ""}`}
+                />
+              </button>
 
-              <div className="px-3 pb-2">
-                <div className="text-[12px] font-semibold mb-1 text-muted-foreground">1. MBBS IN INDIA</div>
-                <div className="flex flex-nowrap gap-2 overflow-x-auto pb-2">
-                  {INDIA_STATES.map((s) => (
+              {activeMobileSubmenu === "mbbs" && (
+                <div className="pl-4 py-2 space-y-3">
+                  <div>
+                    <p className="text-xs font-bold text-blue-600 uppercase mb-2">India</p>
+                    <div className="flex flex-wrap gap-2">
+                      {INDIA_STATES.map((state) => (
+                        <Link
+                          key={state.href}
+                          href={state.href}
+                          className="px-2.5 py-1 text-xs bg-blue-50 text-blue-700 rounded-full hover:bg-blue-600 hover:text-white transition"
+                          onClick={() => setMobileOpen(false)}
+                        >
+                          {state.label}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                  <div>
+                    <p className="text-xs font-bold text-blue-600 uppercase mb-2">Abroad</p>
+                    <div className="flex flex-wrap gap-2">
+                      {ABROAD_COUNTRIES.map((country) => (
+                        <Link
+                          key={country.href}
+                          href={country.href}
+                          className="px-2.5 py-1 text-xs bg-blue-50 text-blue-700 rounded-full hover:bg-blue-600 hover:text-white transition"
+                          onClick={() => setMobileOpen(false)}
+                        >
+                          {country.label}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
+
+            {/* Courses Mobile Submenu */}
+            <div>
+              <button
+                onClick={() => setActiveMobileSubmenu(activeMobileSubmenu === "courses" ? null : "courses")}
+                className="w-full text-left px-4 py-2 text-sm font-semibold text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded transition flex items-center justify-between"
+              >
+                COURSES
+                <ChevronDown
+                  className={`h-4 w-4 transition-transform ${activeMobileSubmenu === "courses" ? "rotate-180" : ""}`}
+                />
+              </button>
+
+              {activeMobileSubmenu === "courses" && (
+                <div className="pl-4 py-2 grid grid-cols-2 gap-2">
+                  {COURSES.map((course) => (
                     <Link
-                      key={s.href}
-                      href=""
-                      className="px-3 py-2 rounded-full text-sm bg-accent/50 hover:bg-accent hover:text-accent-foreground whitespace-nowrap"
+                      key={course.href}
+                      href={course.href}
+                      className="px-3 py-1.5 text-xs text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded transition"
                       onClick={() => setMobileOpen(false)}
                     >
-                      {s.label}
+                      {course.label}
                     </Link>
                   ))}
                 </div>
+              )}
+            </div>
 
-                <div className="text-[12px] font-semibold mb-1 text-muted-foreground mt-2">2. MBBS IN ABROAD</div>
-                <div className="flex flex-nowrap gap-2 overflow-x-auto pb-2">
-                  {ABROAD_COUNTRIES.map((c) => (
-                    <Link
-                      key={c.href}
-                      href=""
-                      className="px-3 py-2 rounded-full text-sm bg-accent/50 hover:bg-accent hover:text-accent-foreground whitespace-nowrap"
-                      onClick={() => setMobileOpen(false)}
-                    >
-                      {c.label}
-                    </Link>
-                  ))}
-                </div>
-              </div>
-            </details>
-
-            <details className="group rounded-md">
-              <summary className="flex cursor-pointer list-none items-center justify-between rounded px-3 py-2 hover:bg-accent">
-                <span>COURSE</span>
-                <ChevronDown className="h-4 w-4 transition group-open:rotate-180" />
-              </summary>
-              <div className="pl-3 grid grid-cols-2 gap-1 pb-2">
-                {COURSES.map((c) => (
-                  <Link
-                    key={c.href}
-                    href=""
-                    className="rounded px-2 py-1.5 text-sm text-muted-foreground hover:text-foreground hover:bg-accent"
-                    onClick={() => setMobileOpen(false)}
-                  >
-                    {c.label}
-                  </Link>
-                ))}
-              </div>
-            </details>
-
+            {/* Tail Menu */}
             {TAIL_MENU.map((item) => (
               <Link
                 key={item.href}
-                href=""
-                className="block rounded px-3 py-2 hover:bg-accent"
+                href={item.href}
+                className="block px-4 py-2 text-sm font-semibold text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded transition"
                 onClick={() => setMobileOpen(false)}
               >
                 {item.label}
               </Link>
             ))}
 
-            <div className="mt-4 border-t pt-4 grid grid-cols-2 gap-3">
-              <a href="/counselling" className="rounded-md border px-3 py-2 text-center text-sm">
-                Live Meeting 
+            {/* Mobile CTA Buttons */}
+            <div className="border-t pt-4 mt-4 space-y-2">
+              <a
+                href="/counselling"
+                className="block px-4 py-2 text-sm font-semibold text-center text-blue-600 border-2 border-blue-600 rounded-lg hover:bg-blue-50 transition"
+              >
+                Free Counselling
               </a>
               <a
                 href="tel:+919351018577"
-                className="rounded-md bg-primary text-primary-foreground px-3 py-2 text-center text-sm"
+                className="block px-4 py-2 text-sm font-semibold text-center text-white bg-blue-600 rounded-lg hover:bg-blue-700 transition"
               >
-                Call now
+                Call Now
               </a>
               <a
                 href="https://wa.me/917737367793"
-                className="rounded-md border px-3 py-2 text-center text-sm col-span-2"
+                className="block px-4 py-2 text-sm font-semibold text-center text-white bg-green-600 rounded-lg hover:bg-green-700 transition"
               >
-                WhatsApp 77373 67793
+                WhatsApp Us
               </a>
             </div>
           </div>
-        </aside>
-      </div>
+        </div>
+      )}
 
-      {/* Animations */}
       <style jsx>{`
-        .nav-link {
-          position: relative;
-          font-weight: 600;
-          letter-spacing: 0.2px;
-        }
-        .underline-anim {
-          position: absolute;
-          left: 1rem;
-          right: 1rem;
-          bottom: 0.5rem;
-          height: 2px;
-          transform-origin: left;
-          transform: scaleX(0);
-          background: currentColor;
-          opacity: 0.7;
-          transition: transform 200ms ease;
-        }
-        .nav-link:hover .underline-anim,
-        .nav-link:focus-visible .underline-anim {
-          transform: scaleX(1);
-        }
-        .dropdown {
-          position: absolute;
-          left: 0;
-          top: calc(100% + 4px);
-          opacity: 0;
-          transform: translateY(-6px);
-          pointer-events: none;
-          transition: all 200ms ease;
-        }
-        .dropdown.open {
-          opacity: 1;
-          transform: translateY(0);
-          pointer-events: auto;
+        @media (max-width: 1024px) {
+          nav {
+            display: none;
+          }
         }
       `}</style>
     </header>
   )
 }
 
-/* --------- Icons (inline SVG for zero deps) --------- */
+/* Icons */
 function MailIcon(props) {
   return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" {...props}>
-      <path strokeWidth="1.5" d="M3 7.5c0-1.105.895-2 2-2h14a2 2 0 0 1 2 2V17a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7.5Z" />
-      <path strokeWidth="1.5" d="m3.5 7 8.2 6a1.5 1.5 0 0 0 1.8 0l8.2-6" />
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" {...props}>
+      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+      <polyline points="22,6 12,13 2,6" />
     </svg>
   )
 }
+
 function PhoneIcon(props) {
   return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" {...props}>
-      <path
-        strokeWidth="1.5"
-        d="M2.5 5.5 7 4l3 4-2 2a16 16 0 0 0 6 6l2-2 4 3-1.5 4.5c-.3.9-1.2 1.5-2.1 1.3C6.9 20.3 3.7 12.9 2.2 7.6c-.2-.9.4-1.8 1.3-2.1Z"
-      />
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" {...props}>
+      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
     </svg>
   )
 }
+
 function WhatsAppIcon(props) {
   return (
-    <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor" {...props}>
-      <path d="M12 2a9.9 9.9 0 0 0-8.5 15.1L2 22l5-1.4A9.9 9.9 0 1 0 12 2Zm0 1.8a8.1 8.1 0 0 1 6.8 12.6c-.3.4-.7.8-1.1 1.1A8.1 8.1 0 0 1 6 18.3l-.7-.4-.9.3.3-.9-.4-.7a8.1 8.1 0 0 1 7.7-12.7Zm-4 4.9c.2-.5.5-.5.8-.5h.7c.2 0 .5 0 .7.6.2.6.8 1.9.9 2-.1.2-.2.4-.4.6l-.3.4c-.1.1-.3.3-.1.6.2.3.9 1.5 2.1 2.4 1.4 1 1.7.8 2 .7l.7-.3c.2-.1.4 0 .5.2l1 1.6c.1.2.1.4 0 .5-.2.2-.9.7-1.8.7-1 .1-2.4-.2-4.1-1.3-2.2-1.4-3.6-3.8-3.9-4.2-.3-.4-.9-1.4-.9-2.5 0-.9.5-1.4.8-1.6Z" />
+    <svg viewBox="0 0 24 24" fill="currentColor" {...props}>
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421-7.403h-.004a9.87 9.87 0 00-4.782 1.14l-.46.264-4.779-.791 1.25 4.405.334.532a9.302 9.302 0 001.946 3.835 9.864 9.864 0 003.034 2.541 10.042 10.042 0 001.799.379c.584.061 1.189.027 1.775-.109 4.245-.959 7.494-4.817 7.932-9.321.02-.203.031-.406.031-.61 0-5.338-4.239-9.678-9.456-9.678" />
     </svg>
   )
 }
+
 function BurgerIcon(props) {
   return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" {...props}>
-      <path strokeWidth="1.5" d="M4 6h16M4 12h16M4 18h16" />
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" {...props}>
+      <line x1="3" y1="6" x2="21" y2="6" />
+      <line x1="3" y1="12" x2="21" y2="12" />
+      <line x1="3" y1="18" x2="21" y2="18" />
     </svg>
   )
 }
+
 function CloseIcon(props) {
   return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" {...props}>
-      <path strokeWidth="1.5" d="m6 6 12 12M18 6 6 18" />
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" {...props}>
+      <line x1="18" y1="6" x2="6" y2="18" />
+      <line x1="6" y1="6" x2="18" y2="18" />
     </svg>
   )
 }
+
 function ChevronDown(props) {
   return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" {...props}>
-      <path strokeWidth="1.5" d="m6 9 6 6 6-6" />
-    </svg>
-  )
-}
-function HeadsetIcon(props) {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" {...props}>
-      <path strokeWidth="1.5" d="M4 12a8 8 0 0 1 16 0v5a3 3 0 0 1-3 3h-2v-8h5" />
-      <rect x="3" y="11" width="4" height="7" rx="2" />
-      <rect x="17" y="11" width="4" height="7" rx="2" />
-    </svg>
-  )
-}
-function YouTubeIcon(props) {
-  return (
-    <svg viewBox="0 0 24 24" fill="currentColor" {...props}>
-      <path d="M23 7.5a4 4 0 0 0-2.8-2.8C18.4 4.3 12 4.3 12 4.3s-6.4 0-8.2.4A4 4 0 0 0 1 7.5a41 41 0 0 0 0 9c.2 1.3 1.3 2.4 2.8 2.8 1.8.4 8.2.4 8.2.4s6.4 0 8.2-.4A4 4 0 0 0 23 16.5a41 41 0 0 0 0-9ZM10 15.2V8.8l6 3.2-6 3.2Z" />
-    </svg>
-  )
-}
-function FacebookIcon(props) {
-  return (
-    <svg viewBox="0 0 24 24" fill="currentColor" {...props}>
-      <path d="M13.2 21.7V12h3l.4-3.4h-3.4V6.4c0-1 .3-1.7 1.7-1.7h1.8V1.5c-.4-.1-1.5-.1-2.7-.1-2.7 0-4.6 1.7-4.6 4.8v2.4H7v3.4h3.4v9.7h2.8Z" />
-    </svg>
-  )
-}
-function InstagramIcon(props) {
-  return (
-    <svg viewBox="0 0 24 24" fill="currentColor" {...props}>
-      <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm10 2H7a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3Zm-5 4.3A5.7 5.7 0 1 1 6.3 14 5.7 5.7 0 0 1 12 8.3Zm0 2a3.7 3.7 0 1 0 0 7.4 3.7 3.7 0 0 0 0-7.4ZM18 6.8a1.2 1.2 0 1 0 0 2.4 1.2 1.2 0 0 0 0-2.4Z" />
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" {...props}>
+      <polyline points="6 9 12 15 18 9" />
     </svg>
   )
 }
