@@ -19,20 +19,21 @@ export default function WhyChooseUs() {
   ]
 
   return (
-    <section className="w-full py-16 md:py-24 px-4 md:px-8">
+    <section className="w-full ">
       <div className="relative mx-auto max-w-7xl px-6 py-10 md:py-10">
         <div>
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-2">
-            Why Choose All About Doctor Education Pvt. Ltd.?
-          </h2>
-          <div className="h-1 w-16 bg-secondary rounded-full mb-6"></div>
+          <h1 className="text-pretty text-4xl font-semibold leading-tight sm:text-5xl animate-fade-up my-4"
+              style={{ animationDelay: "100ms" }}>
+            Why Choose <span className="text-primary">All About Doctor Education Pvt. Ltd.?</span> 
+          </h1>
+          
           <p className="text-foreground leading-relaxed">
             Founded in 2015, All About Doctor Education Pvt. Ltd. is India's most trusted medical education consultancy,
             guiding over 10,000+ students toward successful MBBS admissions across the country.
           </p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 py-6">
           {strengths.map((item, idx) => (
             <div key={idx} className="border border-border rounded-lg p-4 text-center space-y-2">
               <p className="text-2xl md:text-3xl font-bold text-primary">{item.value}</p>

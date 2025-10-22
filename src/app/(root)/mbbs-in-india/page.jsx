@@ -26,13 +26,13 @@ export default function MBBSInIndiaPage() {
       <AdmissionProcess />
       <Costs />
       <Accreditation />
-      {/* <Syllabus />
+      <Syllabus />
       <Universities />
       <Advantages />
       <Career />
       <Documents />
       <FAQs />
-      <WhyChooseUs /> */}
+      <WhyChooseUs />
       <Footer/>
     </main>
   )

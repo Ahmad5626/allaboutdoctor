@@ -7,14 +7,15 @@ export default function Career() {
   ]
 
   return (
-    <section className="w-full py-16 md:py-24 px-4 md:px-8 border-b border-border">
+    <section className="w-full ">
       <div className="relative mx-auto max-w-7xl px-6 py-10 md:py-10">
         <div>
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-2">Career Opportunities After MBBS</h2>
-          <div className="h-1 w-16 bg-secondary rounded-full mb-6"></div>
+          <h1 className="text-pretty text-4xl font-semibold leading-tight sm:text-5xl animate-fade-up my-4"
+              style={{ animationDelay: "100ms" }}>Career Opportunities <span className="text-primary">After MBBS</span> </h1>
+          
         </div>
 
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid md:grid-cols-2 gap-6 py-6">
           {opportunities.map((opp, idx) => (
             <div key={idx} className="border border-border rounded-lg p-6 space-y-3">
               <div className="w-10 h-10 rounded-full border-2 border-primary flex items-center justify-center">

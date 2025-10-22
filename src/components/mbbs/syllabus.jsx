@@ -6,18 +6,19 @@ export default function Syllabus() {
   ]
 
   return (
-    <section className="w-full py-16 md:py-24 px-4 md:px-8 border-b border-border">
+    <section className="w-full ">
       <div className="relative mx-auto max-w-7xl px-6 py-10 md:py-10">
         <div>
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-2">MBBS Syllabus and Clinical Training</h2>
-          <div className="h-1 w-16 bg-secondary rounded-full mb-6"></div>
-          <p className="text-foreground leading-relaxed">
+          <h1 className="text-pretty text-4xl font-semibold leading-tight sm:text-5xl animate-fade-up my-4"
+              style={{ animationDelay: "100ms" }}>MBBS Syllabus and <span className="text-primary">Clinical Training</span></h1>
+          
+          <p className="text-foreground leading-relaxed ">
             The MBBS syllabus is designed to build a strong foundation in medical science along with hands-on clinical
             exposure.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-3 gap-6 py-6">
           {subjects.map((subject, idx) => (
             <div key={idx} className="border border-border rounded-lg p-6 space-y-4">
               <h3 className="text-lg font-bold text-primary">{subject.phase}</h3>
