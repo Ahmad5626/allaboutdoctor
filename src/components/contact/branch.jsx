@@ -55,7 +55,7 @@ export default function Branches() {
     <section id="branches" className="bg-gradient-to-b from-white to-gray-50 py-12 md:py-16 border-t border-border">
       <div className="mx-auto max-w-7xl px-6">
         <header className="text-center mb-10">
-          <h2 className="text-4xl font-semibold leading-tight sm:text-5xl">
+          <h2 className="text-4xl font-semibold leading-tight sm:text-4xl">
             Our Branches Across <span className="text-primary">India</span>
           </h2>
           <p className="mt-2 text-sm/6 md:text-base/6 text-muted-foreground">

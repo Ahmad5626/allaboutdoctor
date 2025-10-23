@@ -18,7 +18,7 @@ export default function UpcomingBranches() {
       <div className="mx-auto max-w-7xl px-6 text-center">
         {/* Header */}
         <header className="mb-8">
-          <h2 className="text-4xl font-semibold leading-tight sm:text-5xl">
+          <h2 className="text-4xl font-semibold leading-tight sm:text-4xl">
             Upcoming <span className="text-primary">Branches</span>
           </h2>
           <p className="mt-3 text-muted-foreground text-sm md:text-base">

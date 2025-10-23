@@ -22,7 +22,7 @@ export default function WhyChooseUs() {
     <section className="w-full ">
       <div className="relative mx-auto max-w-7xl px-6 py-10 md:py-10">
         <div>
-          <h1 className="text-pretty text-4xl font-semibold leading-tight sm:text-5xl animate-fade-up my-4"
+          <h1 className="text-pretty text-4xl font-semibold leading-tight sm:text-4xl animate-fade-up my-4"
               style={{ animationDelay: "100ms" }}>
             Why Choose <span className="text-primary">All About Doctor Education Pvt. Ltd.?</span> 
           </h1>
