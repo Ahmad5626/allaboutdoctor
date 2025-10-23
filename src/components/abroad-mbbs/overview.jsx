@@ -41,7 +41,7 @@ export default function Overview() {
           >
             Why Pursue <span className="text-primary">MBBS Abroad?</span>
           </h1>
-          <div className="h-1 w-20 bg-primary rounded-full"></div>
+          {/* <div className="h-1 w-20 bg-primary rounded-full"></div> */}
 
           <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
             Every year, thousands of Indian students choose to study medicine overseas because of the benefits it offers:

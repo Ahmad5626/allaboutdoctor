@@ -19,7 +19,7 @@ export default function Eligibility() {
           >
             Key Highlights of <span className="text-primary">MBBS Abroad</span>
           </h1>
-          <div className="h-1 w-24 bg-primary rounded-full"></div>
+        
         </div>
 
         {/* Highlights Table */}
