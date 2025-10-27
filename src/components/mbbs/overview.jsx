@@ -47,7 +47,7 @@
                 style={{ animationDelay: "100ms" }}>
               MBBS in India:  <span className="text-primary">Your First Step Toward a Medical Career</span>
             </h1>
-            <div className="h-1 w-20 bg-primary rounded-full"></div>
+            {/* <div className="h-1 w-20 bg-primary rounded-full"></div> */}
 
             <div className="space-y-4 text-foreground leading-relaxed">
               <p>
@@ -80,7 +80,7 @@
           </div>
 
           <div className="space-y-8">
-            <h3 className="text-3xl font-bold text-foreground">Course Structure</h3>
+            <h3 className="text-3xl font-semibold text-foreground">Course Structure</h3>
 
             <div className="relative">
               {/* Slider Container */}
