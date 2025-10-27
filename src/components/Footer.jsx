@@ -36,7 +36,7 @@ export default function Footer() {
               {/* Logo & Main Address */}
               <div className="space-y-4 mb-8">
                 <div className="flex items-center gap-2">
-                  <img src="./assets/img/logo.png" className="w-[150]"></img>
+                  <img src="/assets/img/logo.png" className="w-[150]"></img>
                 </div>
 
                 <div className="space-y-2 text-sm text-muted-foreground">
