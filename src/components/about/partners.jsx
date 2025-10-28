@@ -14,12 +14,14 @@ export default function Partners() {
   return (
     <section id="partners">
       <div className="mx-auto max-w-7xl px-6 py-12 md:py-16">
-        <header className="max-w-2xl">
-          <h2 className="text-pretty text-2xl md:text-3xl font-semibold">Official University Partners</h2>
-          <p className="mt-2 text-sm/6 md:text-base/6 text-muted-foreground">
-            Partnered with reputable institutions recognized by NMC and WHO.
+         <div className="max-w-7xl mx-auto px-6 text-center">
+         <h2 className="text-4xl md:text-5xl font-bold tracking-tight">
+            Official  <span className="text-primary">University Partners</span>
+          </h2>
+          <p className="mt-4 text-muted-foreground max-w-2xl mx-auto text-lg">
+            Partnered with reputable institutions recognized by NMC and WHO, All about doctor  maintains direct collaborations with top global universities to ensure authenticity and transparency in every admission
           </p>
-        </header>
+    </div>
 
         <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {universities.map((u) => (
@@ -29,6 +31,9 @@ export default function Partners() {
             </article>
           ))}
         </div>
+         <p className="mt-2 text-sm/6 md:text-base/6 text-muted-foreground py-10">
+           Our official partnerships help students receive accurate information, direct university admissions, and complete assurance of quality education abroad.
+          </p>
       </div>
     </section>
   )
