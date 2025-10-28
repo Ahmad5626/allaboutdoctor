@@ -7,18 +7,18 @@ const Faq = () => {
     const [openIdx, setOpenIdx] = useState(null)
       const faqs = [
     {
-      question: "Which courses do you provide admission support for?",
-      answer: "MBBS, BDS, BAMS, BVSc, and other medical programs in NMC-approved universities abroad.",
+      question: "Who can participate in clinical training programs?",
+      answer: "Students enrolled in MBBS, BDS, or other medical courses, seeking practical exposure, can join our programs.",
     },
     {
-      question: " Do you assist with visa processes as well?",
+      question: " Are the training programs supervised?",
       answer:
-        "Yes, our services include pre-departure guidance, including visa documentation and travel arrangements.",
+        "Yes, all sessions are conducted under the supervision of experienced doctors and hospital staff.",
     },
     {
-      question: " How long does the admission process take?",
+      question: " Does the training count towards academic credits?",
       answer:
-        "he timeline depends on the university and program, but we provide a clear roadmap and regular updates.",
+        "While primarily for practical exposure, training can enhance your CV and professional experience.",
     },
   ]
   return (
@@ -28,9 +28,9 @@ const Faq = () => {
         <div className="max-w-7xl mx-auto px-6">
           <h1 className="text-pretty text-4xl font-semibold leading-tight sm:text-4xl animate-fade-up my-4"
             style={{ animationDelay: "100ms" }}>
-            FAQs – <span className="text-primary">Admission Assistance</span> 
+            FAQs – <span className="text-primary">Clinical Trainings</span> 
           </h1>
-          
+       
 
           <div className="space-y-4">
             {faqs.map((faq, idx) => (

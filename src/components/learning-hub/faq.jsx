@@ -5,22 +5,21 @@ import { useState } from "react"
 const Faq = () => {
     const [expandedFaq, setExpandedFaq] = useState(0)
     const [openIdx, setOpenIdx] = useState(null)
-      const faqs = [
-    {
-      question: "Which courses do you provide admission support for?",
-      answer: "MBBS, BDS, BAMS, BVSc, and other medical programs in NMC-approved universities abroad.",
-    },
-    {
-      question: " Do you assist with visa processes as well?",
-      answer:
-        "Yes, our services include pre-departure guidance, including visa documentation and travel arrangements.",
-    },
-    {
-      question: " How long does the admission process take?",
-      answer:
-        "he timeline depends on the university and program, but we provide a clear roadmap and regular updates.",
-    },
-  ]
+   const faqs = [
+  {
+    question: "Who can access the Learning Hub?",
+    answer: "All students enrolled in medical programs seeking additional digital resources and guidance.",
+  },
+  {
+    question: "Are the webinars live or recorded?",
+    answer: "Both — live sessions allow interaction, and recordings are available for later reference.",
+  },
+  {
+    question: "Can workshops help with exam preparation?",
+    answer: "Yes, workshops enhance practical skills, clinical understanding, and readiness for FMGE/NExT and other licensing exams.",
+  },
+];
+
   return (
     <div>
        {/* FAQs Section */}
@@ -28,9 +27,9 @@ const Faq = () => {
         <div className="max-w-7xl mx-auto px-6">
           <h1 className="text-pretty text-4xl font-semibold leading-tight sm:text-4xl animate-fade-up my-4"
             style={{ animationDelay: "100ms" }}>
-            FAQs – <span className="text-primary">Admission Assistance</span> 
+            FAQs – <span className="text-primary">Learning Hub</span> 
           </h1>
-          
+         
 
           <div className="space-y-4">
             {faqs.map((faq, idx) => (

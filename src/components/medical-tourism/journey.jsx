@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import React from 'react'
 
 const Journey = () => {
@@ -7,12 +8,12 @@ const Journey = () => {
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6 text-balance">Start Your Admission Journey Today</h2>
           <p className="text-lg mb-8 opacity-90 max-w-2xl mx-auto">
-            Take the first step toward securing admission in a top medical university abroad. Schedule your free consultation with All About Doctor Education Pvt Ltd and let our experts guide you through a smooth and successful admission process.
+       Ensure a safe, organized, and successful travel experience for treatment or medical studies with All About Doctor Education Pvt Ltd.
           </p>
-           <button className="px-8 py-4 bg-white text-primary rounded-lg font-bold hover:scale-105 transition text-lg">
+          <button className="px-8 py-4 bg-white text-primary rounded-lg font-bold hover:scale-105 transition text-lg">
           <Link href="/services">
 
-             Book Now  
+            Get Assistance Now
           </Link>
           </button>
         </div>
