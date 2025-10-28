@@ -2,8 +2,15 @@ import { MapPin, Phone } from "lucide-react"
 
 const branches = [
   {
+    city: "Jaipur – Head Office",
+    address:
+      "Ramnagri More, Ashiyana-Digha Road, opposite 9to9 Super Market, 4th Floor, Jaipur, Rajasthan – 800025",
+    phone: "+91 93510 18577",
+  },
+  {
     city: "Lucknow",
-    address: "Second Floor, Heera Plaza, near Power House Chauraha, Sector 8, Vikas Nagar, Lucknow, Uttar Pradesh – 226022",
+    address:
+      "Second Floor, Heera Plaza, near Power House Chauraha, Sector 8, Vikas Nagar, Lucknow, Uttar Pradesh – 226022",
     phone: "+91 95699 36836",
   },
   {
@@ -25,12 +32,6 @@ const branches = [
     phone: "+91 77373 67793",
   },
   {
-    city: "Patna",
-    address:
-      "Ramnagri More, Ashiyana-Digha Road, opposite 9to9 Super Market, 4th Floor, Patna – 800025",
-    phone: "+91 93510 18577",
-  },
-  {
     city: "Thane",
     address:
       "Blue Pearl, 4th Floor, Office 401, Santhoshi Mata Road, Rambaug Lane No. 2, Kalyan West, Thane, Maharashtra – 421301",
@@ -48,7 +49,8 @@ const branches = [
       "212, DLF Galleria Road, Galleria Market Towers, DLF Phase IV, Gurugram, Haryana – 122009",
     phone: "+91 98997 89635",
   },
-]
+];
+
 
 export default function Branches() {
   return (
@@ -56,7 +58,7 @@ export default function Branches() {
       <div className="mx-auto max-w-7xl px-6">
         <header className="text-center mb-10">
           <h2 className="text-4xl font-semibold leading-tight sm:text-4xl">
-            Our Branches Across <span className="text-primary">India</span>
+            Our Key <span className="text-primary">Branches</span>
           </h2>
           <p className="mt-2 text-sm/6 md:text-base/6 text-muted-foreground">
             Visit our offices across major cities for in-person guidance and student support.

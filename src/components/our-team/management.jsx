@@ -1,15 +1,15 @@
 const members = [
-  { name: "Ms. Deeksha Bhargava", role: "Director & CEO", img: "assets/img/doctor/doctor-5.jpg" },
-  { name: "Mrs. Neha Jain", role: "Institutional Collaborations Head", img: "assets/img/doctor/doctor-6.jpg" },
-  { name: "Mr. Rahul Bhatia", role: "Training, Development & Quality Assurance Head; Strategic Advisor", img: "assets/img/doctor/doctor-7.jpg" },
-  { name: "Mr. Satyajeet Kumar", role: "Co-Director & Counselling & Lead Management Head", img: "assets/img/doctor/doctor-8.jpg" },
-  { name: "Mr. Prem Charles", role: "Regional Relations & Multilingual Counseling Head", img: "assets/img/doctor/doctor-9.jpg" },
-  { name: "Mr. Anand Shekar", role: "Awareness Programs & Seminar Operations Head", img: "assets/img/doctor/doctor-10.jpg" },
-  { name: "Mr. Sarthak Shandilya", role: "Student Relation Manager", img: "assets/img/doctor/doctor-11.jpg" },
-  { name: "Mr. Avinash", role: "Operations Support Team", img: "assets/img/doctor/doctor-12.jpg" },
-  { name: "Mr. Naimish kr Mishra", role: "Marketing Head", img: "assets/img/doctor/doctor-13.jpg" },
-  { name: "Mr. Anubhav", role: "Marketing & Outreach Support", img: "assets/img/doctor/doctor-14.jpg" },
-  { name: "Entire Team", role: "Dedicated All About Doctor Education Pvt Ltd Team", img: "assets/img/doctor/doctor-15.jpg" },
+  { name: "Ms. Deeksha Bhargava", role: "Director & CEO", img: "/assets/img/doctor/doctor-5.jpg" },
+  { name: "Mrs. Neha Jain", role: "Institutional Collaborations Head", img: "/assets/img/doctor/doctor-6.jpg" },
+  { name: "Mr. Rahul Bhatia", role: "Training, Development & Quality Assurance Head; Strategic Advisor", img: "/assets/img/doctor/doctor-7.jpg" },
+  { name: "Mr. Satyajeet Kumar", role: "Co-Director & Counselling & Lead Management Head", img: "/assets/img/doctor/doctor-8.jpg" },
+  { name: "Mr. Prem Charles", role: "Regional Relations & Multilingual Counseling Head", img: "/assets/img/doctor/doctor-9.jpg" },
+  { name: "Mr. Anand Shekar", role: "Awareness Programs & Seminar Operations Head", img: "/assets/img/doctor/doctor-10.jpg" },
+  { name: "Mr. Sarthak Shandilya", role: "Student Relation Manager", img: "/assets/img/doctor/doctor-11.jpg" },
+  { name: "Mr. Avinash", role: "Operations Support Team", img: "/assets/img/doctor/doctor-12.jpg" },
+  { name: "Mr. Naimish kr Mishra", role: "Marketing Head", img: "/assets/img/doctor/doctor-13.jpg" },
+  { name: "Mr. Anubhav", role: "Marketing & Outreach Support", img: "/assets/img/doctor/doctor-14.jpg" },
+  { name: "Entire Team", role: "Dedicated All About Doctor Education Pvt Ltd Team", img: "/assets/img/doctor/doctor-15.jpg" },
 ];
 
 export default function Management() {
@@ -22,8 +22,8 @@ export default function Management() {
             Core Management <span className="text-primary">Team</span>
           </h2>
           <p className="mt-4 text-muted-foreground max-w-2xl mx-auto text-lg">
-            Led by <strong>Ms. Deeksha Bhargava (CEO)</strong> with expert leadership across collaborations,
-            training, relations, and marketing — ensuring organizational excellence.
+           Leads organizational <strong>strategy, growth, and partnerships,</strong>  ensuring All About Doctor maintains its excellence in medical education and global collaborations.
+           
           </p>
         </header>
 

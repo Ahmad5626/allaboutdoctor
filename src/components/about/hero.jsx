@@ -32,13 +32,13 @@ export default function Hero() {
    
         <div className="mt-8 flex flex-col sm:flex-row gap-3">
           <a
-            href="/our-team"
+            href="/about-us/our-team"
             className="inline-flex items-center justify-center rounded-lg border bg-secondary px-5 py-3 text-sm font-medium text-white hover:opacity-85 transition"
           >
             Our Team
           </a>
           <a
-            href="/our-branches"
+            href="about-us/our-branches"
             className="inline-flex items-center justify-center rounded-lg border bg-primary px-5 py-3 text-sm font-medium text-white hover:opacity-85 transition"
           >
             Our Branches

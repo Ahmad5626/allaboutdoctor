@@ -1,14 +1,15 @@
 export default function UpcomingBranches() {
-  const cities = [
-    "Indore",
-    "Coimbatore",
-    "Sikar",
-    "Hyderabad",
-    "Srinagar",
-    "Kolkata",
-    "Ahmedabad",
-    "Chennai",
-  ];
+const cities = [
+  "Indore",
+  "Coimbatore",
+  "Sikar",
+  "Hyderabad",
+  "Srinagar",
+  "Kolkata",
+  "Ahmedabad",
+  "Chennai",
+];
+
 
   return (
     <section
@@ -22,7 +23,7 @@ export default function UpcomingBranches() {
             Upcoming <span className="text-primary">Branches</span>
           </h2>
           <p className="mt-3 text-muted-foreground text-sm md:text-base">
-            Expanding to new cities soon to serve you better.
+           We are expanding to more cities soon to serve students better:
           </p>
         </header>
 
