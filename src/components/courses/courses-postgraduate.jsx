@@ -21,7 +21,7 @@ export default function CoursesPostgraduate() {
     "Anesthesiology",
     "Pathology",
     "General Surgery",
-    "ENT – Otorhinolaryngology",
+    
   ]
 
   return (
