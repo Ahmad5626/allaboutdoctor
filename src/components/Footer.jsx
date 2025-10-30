@@ -135,7 +135,7 @@ export default function Footer() {
             </div>
 
             {/* Sister Company */}
-            <div className="pt-6 border-t border-border space-y-3">
+            {/* <div className="pt-6 border-t border-border space-y-3">
               <div className="flex items-center gap-2">
                 <span className="text-2xl">🇩🇪</span>
                 <h4 className="font-semibold text-foreground text-sm">Our German sister company</h4>
@@ -149,7 +149,7 @@ export default function Footer() {
                 <ArrowRight size={14} />
                 <span>www.future-doctor.de</span>
               </a>
-            </div>
+            </div> */}
           </div>
         </div>
 
