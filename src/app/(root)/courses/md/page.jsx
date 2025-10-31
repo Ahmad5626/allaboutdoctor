@@ -11,7 +11,7 @@ import Footer from '@/components/Footer'
 import Navbar from '@/components/Hedaer'
 import React from 'react'
 import PopularMdSpecializations from '@/components/md/popularMdSpecializations'
-
+import WhyChooseUs from '@/components/mbbs/why-choose-us'
 const page = () => {
   return (
     <div>
@@ -23,6 +23,7 @@ const page = () => {
       <Career/>
       <Support/>
       <RightChoice/>
+      <WhyChooseUs/>
       <Faq/>
       <Journey/>
       <Footer/>

@@ -1,7 +1,9 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 
 const FAQ = () => {
+  const [expandedFAQ, setExpandedFAQ] = useState(null)
+        const [openIdx, setOpenIdx] = useState(null)
   const faqs = [
     {
       question: "Doctor degree name list",
@@ -54,19 +56,29 @@ const FAQ = () => {
           FAQs About <span className="text-primary">MS (Master of Surgery)</span>
         </h1>
 
-        <div className="space-y-6 mt-8">
-          {faqs.map((faq, idx) => (
-            <div
-              key={idx}
-              className="p-6 bg-white rounded-lg border border-primary/20 shadow-sm hover:shadow-md transition"
-            >
-              <h3 className="text-lg font-semibold text-foreground mb-2">
-                {idx + 1}. {faq.question}
-              </h3>
-              <p className="text-foreground/80">{faq.answer}</p>
-            </div>
-          ))}
-        </div>
+          <div className="space-y-4">
+            {faqs.map((faq, idx) => (
+              <div key={idx} className="border border-primary/20 rounded-lg overflow-hidden">
+                <button
+                  onClick={() => setExpandedFAQ(expandedFAQ === idx ? null : idx)}
+                  className="w-full p-6 flex items-center justify-between bg-white hover:bg-primary/5 transition text-left"
+                >
+                  <p className="font-semibold text-foreground">{faq.question}</p>
+                    <span
+                  className={`text-primary text-xl flex-shrink-0 transition-transform ${openIdx === idx ? "rotate-180" : ""}`}
+                >
+                  ▼
+                </span>
+                  
+                </button>
+                {expandedFAQ === idx && (
+                  <div className="px-6 py-4 bg-primary/5 border-t border-primary/20">
+                    <p className="text-foreground/80">{faq.answer}</p>
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
       </div>
     </section>
   );
