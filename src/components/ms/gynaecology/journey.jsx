@@ -8,18 +8,18 @@ const Journey = () => {
       <section className="py-16 md:py-24 px-4 md:px-8 bg-primary text-white">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6 text-balance">
-            Start Your <span className="text-secondary"> Journey</span> Today
+            Start Your  <span className="text-secondary"> Journey</span> Today
           </h2>
 
           <p className="text-lg mb-8 opacity-90 max-w-2xl mx-auto">
-     Master the art and science of surgery with an MD in General Surgery and shape a career that saves lives every day.
-    Let All About Doctor Education Pvt. Ltd. guide you with trusted counseling, expert mentorship, and complete admission support.
+        Ready to specialize in women’s healthcare with an MS in Gynaecology?
+ Let All About Doctor Education Pvt. Ltd. guide you through every step — from application to successful admission — with expert-led, end-to-end support.
           </p>
 
          
 
           <button className="px-8 py-4 bg-white text-primary rounded-lg font-bold hover:scale-105 transition text-lg">
-            <Link href="/courses/md">Read More about MD Courses</Link>
+            <Link href="/courses/ms">Read More about MS Courses</Link>
           </button>
         </div>
       </section>
