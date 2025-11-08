@@ -74,7 +74,7 @@ export default function MbbsCta() {
               className="mt-3 text-center text-balance text-3xl sm:text-2xl md:text-3xl font-semibold text-primary"
             > Leadership</span> 
            <br/>
-Dr. Anand Sharma — Managing Director & Founder
+Dr. Anand Sharma — Founder & Managing Director
 <br/>
 
 Ms. Deeksha Bhargava — Co-Founder & CEO

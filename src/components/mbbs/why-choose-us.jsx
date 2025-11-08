@@ -14,7 +14,7 @@ export default function WhyChooseUs() {
   ]
 
   const leaders = [
-    { name: "Dr. Anand Sharma", title: "Managing Director & Founder" },
+    { name: "Dr. Anand Sharma", title: "Founder & Managing Director" },
     { name: "Ms. Deeksha Bhargava", title: "Co-Founder & CEO" },
   ]
 

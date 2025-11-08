@@ -52,7 +52,7 @@ export default function WhyChooseUs() {
             <div className="space-y-3">
               <div>
                 <p className="font-semibold text-foreground">Dr. Anand Sharma</p>
-                <p className="text-sm text-foreground/70">Managing Director & Founder</p>
+                <p className="text-sm text-foreground/70">Founder & Managing Director</p>
               </div>
               <div>
                 <p className="font-semibold text-foreground">Ms. Deeksha Bhargava</p>
