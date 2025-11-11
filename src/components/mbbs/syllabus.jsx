@@ -6,7 +6,7 @@ export default function Syllabus() {
   ]
 
   return (
-    <section className="w-full ">
+    <section className="w-full bg-primary/5 ">
       <div className="relative mx-auto max-w-7xl px-6 py-10 md:py-10">
         <div>
           <h1 className="text-pretty text-4xl font-semibold leading-tight sm:text-4xl animate-fade-up my-4"

@@ -14,6 +14,7 @@ import FAQs from "@/components/mbbs/faqs"
 import WhyChooseUs from "@/components/mbbs/why-choose-us"
 import Navbar from "@/components/Hedaer"
 import Footer from "@/components/Footer"
+import StateMedicalEducation from "@/components/mbbs/stateMedicalEducation"
 
 export default function MBBSInIndiaPage() {
   return (
@@ -32,6 +33,7 @@ export default function MBBSInIndiaPage() {
       <Career />
       <Documents />
       <FAQs />
+      <StateMedicalEducation/>
       <WhyChooseUs />
       <Footer/>
     </main>
