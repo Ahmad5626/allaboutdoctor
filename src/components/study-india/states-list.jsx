@@ -42,7 +42,7 @@ export default function StatesList() {
             filteredStates.map((state) => (
               <Link
                 key={state.slug}
-                href={`/study-in-india/${state.slug}`}
+                href={`/india/${state.slug}/mbbs`}
                 className="hover:underline hover:text-white transition-colors flex items-center gap-2"
               >
                 {state.name}

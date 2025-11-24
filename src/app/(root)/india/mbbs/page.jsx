@@ -14,12 +14,14 @@ import FAQs from "@/components/mbbs/faqs"
 import WhyChooseUs from "@/components/mbbs/why-choose-us"
 import Navbar from "@/components/Hedaer"
 import Footer from "@/components/Footer"
+import StatesList from "@/components/study-india/states-list"
 
 export default function MBBSInIndiaPage() {
   return (
     <main className="w-full">
     <Navbar/>
       <Hero />
+      <StatesList />
       <Overview />
       <Eligibility />
       <EntranceExam />
