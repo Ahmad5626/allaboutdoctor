@@ -1,6 +1,7 @@
 import AboradEligibility from '@/components/abroad-mbbs/abroad-eligility'
 import AdmissionProcess from '@/components/abroad-mbbs/admission-process'
 import CareerScope from '@/components/abroad-mbbs/careerScope'
+import CountryList from '@/components/abroad-mbbs/country-list'
 import CourseOverview from '@/components/abroad-mbbs/courseOverview'
 import Documents from '@/components/abroad-mbbs/documents'
 import EducationSystemAbroad from '@/components/abroad-mbbs/educationSystemAbroad'
@@ -27,6 +28,7 @@ const page = () => {
     <div>
       <Navbar/>
       <Hero/>
+      <CountryList/>
       <Overview/>
       <Eligibility/>
       <CourseOverview/>
