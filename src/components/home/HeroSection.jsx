@@ -171,13 +171,13 @@ export default function HeroSection() {
                   <p className="flex items-start gap-2">
                     <span className="text-[#0057ff] text-2xl">✔</span> Expert Guidance for MBBS Admissions
                   </p>
-                  <p className="flex items-start gap-2">
+                  <p className="flex items-start gap-2 ml-6">
                     <span className="text-[#0057ff] text-2xl">✔</span> University Selection Based on Budget & NEET Score
                   </p>
-                  <p className="flex items-start gap-2">
+                  <p className="flex items-start gap-2 ml-10">
                     <span className="text-[#0057ff] text-2xl">✔</span> Complete Support: Documentation, Visa & Hostel
                   </p>
-                  <p className="flex items-start gap-2">
+                  <p className="flex items-start gap-2 ml-16">
                     <span className="text-[#0057ff] text-2xl">✔</span> Personal Counselling & Student Assistance
                   </p>
                 </div>
