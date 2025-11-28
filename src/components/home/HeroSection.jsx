@@ -1,9 +1,28 @@
 "use client"
 
 import Image from "next/image"
+import { useEffect, useState } from "react";
 
 export default function HeroSection() {
+
+    const [open, setOpen] = useState(false);
+  const [name, setName] = useState("");
+  const [mobile, setMobile] = useState("");
+
+  
+useEffect(() => {
+    const timer = setTimeout(() => {
+      setOpen(true);
+    }, 3000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
+
+    <>
+
+   
     <main className="relative overflow-hidden">
       {/* Background accent (subtle, solid + light vignette) */}
       <div className="pointer-events-none absolute inset-0 -z-10" aria-hidden="true">
@@ -133,6 +152,113 @@ export default function HeroSection() {
         .animate-spin-slow { animation: spinSlow 24s linear infinite; }
       `}</style>
     </main>
+
+    {/* OPEN BUTTON */}
+     
+
+      {/* POPUP BACKDROP */}
+      {open && (
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
+          {/* POPUP BOX */}
+          <div className="bg-white rounded-xl max-w-4xl w-full mx-4 p-6 md:p-10 relative">
+            
+            {/* CLOSE BUTTON */}
+            <button
+              onClick={() => setOpen(false)}
+              className="absolute right-4 top-4 text-gray-600 text-xl font-bold"
+            >
+              ✕
+            </button>
+
+            <div className="grid md:grid-cols-2 gap-10">
+
+              {/* LEFT SIDE */}
+              <div>
+                <ul className="space-y-4 text-[17px] text-blue-900">
+                  <li>✔ Expert Guidance for MBBS Admissions</li>
+                  <li>✔ University Selection Based on Budget & NEET Score</li>
+                  <li>✔ Complete Support: Documentation, Visa & Hostel</li>
+                  <li>✔ Personal Counselling & Student Assistance</li>
+                </ul>
+
+                {/* Doctors Image */}
+                <div className="flex gap-4 mt-8">
+                  <img
+                    src="/assets/img/man-1.png"
+                    alt="doctor male"
+                    className="w-40 rounded-md"
+                  />
+                  <img
+                    src="/assets/img/girl-1.png"
+                    alt="doctor female"
+                    className=" rounded-md"
+                  />
+                </div>
+              </div>
+
+              {/* RIGHT SIDE FORM */}
+              <div>
+
+                <h2 className="text-3xl font-bold text-orange-600 leading-tight">
+                  START YOUR MBBS <br /> JOURNEY WITH CONFIDENCE
+                </h2>
+
+                <p className="mt-1 text-sm text-blue-800">
+                  SECURE ADMISSION IN TOP MEDICAL UNIVERSITIES IN INDIA & ABROAD
+                </p>
+
+                {/* Icons Row */}
+                <div className="grid grid-cols-2 gap-4 mt-4 text-center text-xs text-blue-800">
+                  <div>
+                    🎓 <br /> 15,000+ Students Guided
+                  </div>
+                  <div>
+                    🛡️ <br /> Trusted Since 2015
+                  </div>
+                  <div>
+                    🌍 <br /> Official Tie-Ups With Universities
+                  </div>
+                  <div>
+                    ☎️ <br /> Dedicated Counsellor Support
+                  </div>
+                </div>
+
+                {/* FORM */}
+                <div className="mt-6 space-y-4">
+                  <input
+                    type="text"
+                    placeholder="Name"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    className="w-full px-4 py-3 border border-orange-400 rounded-md outline-none"
+                  />
+                  <input
+                    type="tel"
+                    placeholder="Mobile"
+                    value={mobile}
+                    onChange={(e) => setMobile(e.target.value)}
+                    className="w-full px-4 py-3 border border-orange-400 rounded-md outline-none"
+                  />
+                </div>
+
+                {/* Checkbox */}
+                <label className="flex items-start gap-3 mt-5 text-sm text-blue-800">
+                  <input type="checkbox" className="mt-1 w-5 h-5 accent-orange-500" />
+                  <span>
+                    I agree to be contacted by All About Doctor Education through call, WhatsApp, and SMS for admission guidance.
+                  </span>
+                </label>
+
+                {/* Submit Button */}
+                <button className="w-full mt-6 bg-orange-500 text-white py-3 rounded-md font-semibold text-lg">
+                  GET FREE COUNSELLING →
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+     </>
   )
 }
 
