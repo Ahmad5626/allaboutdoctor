@@ -4,20 +4,13 @@ import Image from "next/image"
 import { useEffect, useState } from "react";
 
 export default function HeroSection() {
+ const [show, setShow] = useState(false);
 
-    const [open, setOpen] = useState(false);
-  const [name, setName] = useState("");
-  const [mobile, setMobile] = useState("");
-
-  
-useEffect(() => {
-    const timer = setTimeout(() => {
-      setOpen(true);
-    }, 3000);
-
-    return () => clearTimeout(timer);
+  // Auto open after 3 seconds
+  useEffect(() => {
+    const t = setTimeout(() => setShow(true), 3000);
+    return () => clearTimeout(t);
   }, []);
-
   return (
 
     <>
@@ -156,104 +149,114 @@ useEffect(() => {
     {/* OPEN BUTTON */}
      
 
-      {/* POPUP BACKDROP */}
-      {open && (
-        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
+       {show && (
+        <div className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-[9999] p-4">
+
           {/* POPUP BOX */}
-          <div className="bg-white rounded-xl max-w-4xl w-full mx-4 p-6 md:p-10 relative">
-            
-            {/* CLOSE BUTTON */}
+          <div className="bg-white rounded-2xl max-w-6xl w-full shadow-2xl overflow-hidden relative animate-fadeIn">
             <button
-              onClick={() => setOpen(false)}
-              className="absolute right-4 top-4 text-gray-600 text-xl font-bold"
+              onClick={() => setShow(false)}
+              className="absolute top-3 right-3 bg-black/70 text-white w-8 h-8 rounded-full flex items-center justify-center text-xl z-50"
             >
-              ✕
+              ×
             </button>
 
-            <div className="grid md:grid-cols-2 gap-10">
+            <div className="grid grid-cols-1 md:grid-cols-2">
+              
+              {/* LEFT SIDE EXACT AS YOUR DESIGN */}
+              <div className="p-8 flex flex-col justify-between">
+                
+                {/* Bullet Points */}
+                <div className="space-y-4 text-[#003b99] font-semibold text-lg">
+                  <p className="flex items-start gap-2">
+                    <span className="text-[#0057ff] text-2xl">✔</span> Expert Guidance for MBBS Admissions
+                  </p>
+                  <p className="flex items-start gap-2">
+                    <span className="text-[#0057ff] text-2xl">✔</span> University Selection Based on Budget & NEET Score
+                  </p>
+                  <p className="flex items-start gap-2">
+                    <span className="text-[#0057ff] text-2xl">✔</span> Complete Support: Documentation, Visa & Hostel
+                  </p>
+                  <p className="flex items-start gap-2">
+                    <span className="text-[#0057ff] text-2xl">✔</span> Personal Counselling & Student Assistance
+                  </p>
+                </div>
 
-              {/* LEFT SIDE */}
-              <div>
-                <ul className="space-y-4 text-[17px] text-blue-900">
-                  <li>✔ Expert Guidance for MBBS Admissions</li>
-                  <li>✔ University Selection Based on Budget & NEET Score</li>
-                  <li>✔ Complete Support: Documentation, Visa & Hostel</li>
-                  <li>✔ Personal Counselling & Student Assistance</li>
-                </ul>
-
-                {/* Doctors Image */}
-                <div className="flex gap-4 mt-8">
+                {/* Doctor Images */}
+                <div className=" mt-8 flex  justify-center">
                   <img
                     src="/assets/img/man-1.png"
-                    alt="doctor male"
-                    className="w-40 rounded-md"
+                    className="w-56 md:w-64  z-10"
                   />
                   <img
                     src="/assets/img/girl-1.png"
-                    alt="doctor female"
-                    className=" rounded-md"
+                    className="w-44 md:w-54 object-cover  bottom-0"
                   />
                 </div>
               </div>
 
-              {/* RIGHT SIDE FORM */}
-              <div>
-
-                <h2 className="text-3xl font-bold text-orange-600 leading-tight">
+              {/* RIGHT SIDE EXACT AS YOUR DESIGN */}
+              <div className="p-8">
+                <h2 className="text-[34px] md:text-[34px] font-bold text-[#f68b1e] leading-tight text-center">
                   START YOUR MBBS <br /> JOURNEY WITH CONFIDENCE
                 </h2>
 
-                <p className="mt-1 text-sm text-blue-800">
+                <p className="mt-3 text-[#003b99] font-semibold text-sm border-b pb-2">
                   SECURE ADMISSION IN TOP MEDICAL UNIVERSITIES IN INDIA & ABROAD
                 </p>
 
                 {/* Icons Row */}
-                <div className="grid grid-cols-2 gap-4 mt-4 text-center text-xs text-blue-800">
+                <p className="text-center mt-4 text-[14px] font-semibold text-[#003b99]">
+                  With All About Doctor Global Medical Admission Program
+                </p>
+
+                <div className="mt-3 grid grid-cols-4 gap-3 text-center text-[10px] font-semibold text-[#003b99]">
                   <div>
-                    🎓 <br /> 15,000+ Students Guided
+                    <img src="/assets/img/popup-icon-1.png" className="w-8 mx-auto" />
+                    15,000+ <br /> STUDENTS GUIDED
                   </div>
                   <div>
-                    🛡️ <br /> Trusted Since 2015
+                    <img src="/assets/img/popup-icon-2.png" className="w-8 mx-auto" />
+                    TRUSTED SINCE <br /> 2015
                   </div>
                   <div>
-                    🌍 <br /> Official Tie-Ups With Universities
+                    <img src="/assets/img/popup-icon-3.png" className="w-8 mx-auto" />
+                    OFFICIAL TIE-UPS <br /> TOP UNIVERSITIES
                   </div>
                   <div>
-                    ☎️ <br /> Dedicated Counsellor Support
+                    <img src="/assets/img/popup-icon-4.png" className="w-8 mx-auto" />
+                    DEDICATED <br /> COUNSELLOR SUPPORT
                   </div>
                 </div>
 
-                {/* FORM */}
+                {/* Form */}
                 <div className="mt-6 space-y-4">
                   <input
                     type="text"
                     placeholder="Name"
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                    className="w-full px-4 py-3 border border-orange-400 rounded-md outline-none"
+                    className="w-full border border-[#f68b1e] p-3 rounded-xl text-[#003b99] font-semibold"
                   />
                   <input
-                    type="tel"
+                    type="text"
                     placeholder="Mobile"
-                    value={mobile}
-                    onChange={(e) => setMobile(e.target.value)}
-                    className="w-full px-4 py-3 border border-orange-400 rounded-md outline-none"
+                    className="w-full border border-[#f68b1e] p-3 rounded-xl text-[#003b99] font-semibold"
                   />
                 </div>
 
                 {/* Checkbox */}
-                <label className="flex items-start gap-3 mt-5 text-sm text-blue-800">
-                  <input type="checkbox" className="mt-1 w-5 h-5 accent-orange-500" />
-                  <span>
+                <div className="mt-4 flex gap-3">
+                  <div className="bg-[#f68b1e] w-6 h-6 rounded flex items-center justify-center text-white font-bold">✔</div>
+                  <p className="text-[13px] text-[#003b99]">
                     I agree to be contacted by All About Doctor Education through call, WhatsApp, and SMS for admission guidance.
-                  </span>
-                </label>
+                  </p>
+                </div>
 
-                {/* Submit Button */}
-                <button className="w-full mt-6 bg-orange-500 text-white py-3 rounded-md font-semibold text-lg">
+                {/* Button */}
+                <button className="mt-6 w-full bg-[#f68b1e] hover:bg-[#e27a17] text-white font-bold py-3 rounded-xl text-lg">
                   GET FREE COUNSELLING →
                 </button>
               </div>
+
             </div>
           </div>
         </div>
