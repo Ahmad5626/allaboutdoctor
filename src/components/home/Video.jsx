@@ -153,10 +153,10 @@ export default function VideoSection() {
 
           {/* More rows */}
           <div className="col-span-12 grid grid-cols-2 gap-4 md:grid-cols-3 md:gap-6">
-            {videos?.map((v)=>{
+            {videos?.map((v,i)=>{
               return(
                       
-    <div className="insta-wrapper">
+    <div className="insta-wrapper" key={i}>
   <blockquote
     className="instagram-media"
     data-instgrm-permalink={v.thumb}

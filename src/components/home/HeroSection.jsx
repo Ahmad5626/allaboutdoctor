@@ -164,7 +164,7 @@ export default function HeroSection() {
             <div className="grid grid-cols-1 md:grid-cols-2">
               
               {/* LEFT SIDE EXACT AS YOUR DESIGN */}
-              <div className="p-8 flex flex-col justify-between">
+              <div className="p-8 flex flex-col justify-between bg-[#eaf6ff]">
                 
                 {/* Bullet Points */}
                 <div className="space-y-4 text-[#003b99] font-semibold text-sm">
@@ -234,7 +234,7 @@ export default function HeroSection() {
                   <input
                     type="text"
                     placeholder="Name"
-                    className="w-full border border-primary py-2 px-3 rounded-md text-[#003b99] "
+                    className="w-full border border-primary py-2 px-3 rounded-md text-[#003b99] font-semibold"
                   />
                   <input
                     type="text"

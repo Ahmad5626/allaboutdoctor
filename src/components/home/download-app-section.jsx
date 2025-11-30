@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button"
-import { Smartphone, Download, Star } from "lucide-react"
+import { Smartphone, Download, Star, ArrowUpRightFromSquare } from "lucide-react"
 
 export default function DownloadAppSection() {
   return (
@@ -51,8 +51,10 @@ export default function DownloadAppSection() {
           <div className="flex justify-center">
             <div className="relative">
               <div className=" p-2 shadow-2xl">
-                <div className="rounded-2xl overflow-hidden">
-                  <img src="https://media.edvoy.com/home-app-image-d11b21d83d.png?w=384&q=80" alt="Wedding Planning App" className="w-100 h-auto" />
+                <div className="rounded-2xl overflow-hidden ">
+                  <img src="/assets/img/4.png" alt="Wedding Planning App" className="w-100 h-auto " />
+
+
                 </div>
               </div>
             </div>

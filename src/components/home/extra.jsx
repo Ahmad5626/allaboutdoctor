@@ -1,31 +1,31 @@
-import { ArrowRight } from 'lucide-react'
-import Link from 'next/link'
 import React from 'react'
 
-const Trusted = () => {
+const extra = () => {
   return (
-    <main className="min-h-screen bg-gradient-to-b from-sky-100 to-white p-4 md:p-8">
+    <div>
+      
+      <main className="min-h-screen bg-gradient-to-b from-sky-100 to-white p-4 md:p-8">
       <div className="mx-auto max-w-7xl">
         <div className="relative bg-white rounded-3xl shadow-lg overflow-hidden px-10 pt-10 ">
           {/* Content Container */}
-          <div className="flex flex-col lg:flex-row pb-">
+          <div className="flex flex-col lg:flex-row items-stretch">
             {/* Left Content */}
-            <div className="flex-1 z-10   pb-10">
+            <div className="flex-1 z-10 ">
               <p className="text-primary italic text-lg mb-4">All About Doctor – Global Medical Admission Program</p>
 
-              <h1 className="text-3xl md:text-4xl lg:text-3xl font-bold text-secondary leading-tight ">
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-secondary leading-tight mb-6">
                 {"India's Trusted MBBS Admission Guidance Platform"}
               </h1>
 
               <p className="text-primary text-lg mb-1">Secure admission in top medical universities</p>
-              <p className="text-primary text-lg ">In India & Abroad with expert counselling and full support</p>
+              <p className="text-primary text-lg mb-4">In India & Abroad with expert counselling and full support</p>
 
-              <p className="text-primary text-sm mb-2">
+              <p className="text-primary text-sm mb-4">
                 Start your MBBS journey with confidence, guidance & transparency
               </p>
 
-              <p className="text-secondary font-semibold text-sm mb-2">Get Admission Support For</p>
-              <p className="text-secondary text-sm mb-2">
+              <p className="text-orange-500 font-semibold text-sm mb-2">Get Admission Support For</p>
+              <p className="text-orange-500 text-sm mb-8">
                 Russia • Uzbekistan • Kazakhstan • Georgia • Nepal • Bangladesh • India & more
               </p>
 
@@ -87,18 +87,18 @@ const Trusted = () => {
             </div>
 
             {/* Center Image */}
-            <div className="flex-1 flex items-end justify-center relative ">
+            <div className="flex-1 flex items-end justify-center relative">
               <img src="/assets/img/Gemini_Generated.png" alt="Medical students" className="w-full max-w-lg object-contain" />
             </div>
 
             {/* Right Content */}
-            <div className="lg:w-72 p-8 flex flex-col items-center justify-center gap-6 ">
+            <div className="lg:w-72 p-8 flex flex-col items-center justify-center gap-6">
               {/* Orange Starburst Badge */}
               <div className="relative">
                 <svg viewBox="0 0 200 200" className="w-44 h-44">
                   <path
                     d="M100 10 L115 40 L145 25 L140 58 L175 60 L155 85 L190 100 L155 115 L175 140 L140 142 L145 175 L115 160 L100 190 L85 160 L55 175 L60 142 L25 140 L45 115 L10 100 L45 85 L25 60 L60 58 L55 25 L85 40 Z"
-                    fill="#f68b1e"
+                    fill="#F97316"
                   />
                   <text x="100" y="75" textAnchor="middle" fill="white" fontSize="16" fontStyle="italic">
                     Starting From
@@ -113,23 +113,17 @@ const Trusted = () => {
               </div>
 
               <div className="text-center">
-                <h2 className="text-2xl md:text-3xl font-bold text-secondary mb-2">ENROLL NOW</h2>
+                <h2 className="text-2xl md:text-3xl font-bold text-orange-500 mb-2">ENROLL NOW</h2>
                 <p className="text-gray-600 text-sm">& take the first step towards your</p>
                 <p className="text-gray-600 text-sm">medical career</p>
               </div>
-
-               <Link href="/services/admissions" className="inline-flex items-center gap-2 bg-secondary hover:bg-orange-600 text-white  px-3 py-2 rounded-full transition-colors text-[12px] ">
-          {"Let's Begin Your Admission"}
-          <ArrowRight className="w-5 h-5" />
-        </Link>
             </div>
           </div>
         </div>
       </div>
     </main>
-
-
+    </div>
   )
 }
 
-export default Trusted
+export default extra
