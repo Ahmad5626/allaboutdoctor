@@ -150,7 +150,7 @@ export default function HeroSection() {
      
 
        {show && (
-        <div className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-[9999] p-4">
+        <div className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-[9999] p-6  lg:p-4  ">
 
           {/* POPUP BOX */}
           <div className="bg-white rounded-2xl max-w-4xl w-full shadow-2xl overflow-hidden relative animate-fadeIn">
@@ -161,13 +161,13 @@ export default function HeroSection() {
               ×
             </button>
 
-            <div className="grid grid-cols-1 md:grid-cols-2">
+            <div className="grid grid-cols-1 lg:grid-cols-2">
               
               {/* LEFT SIDE EXACT AS YOUR DESIGN */}
-              <div className="p-8 flex flex-col justify-between bg-[#eaf6ff]">
+              <div className="p-2 md:p-8 flex lg:flex-col justify-between bg-[#eaf6ff]">
                 
                 {/* Bullet Points */}
-                <div className="space-y-4 text-[#003b99] font-semibold text-sm">
+                <div className="space-y-4 text-[#003b99] font-semibold text-[8px] md:text-sm">
                   <p className="flex items-start gap-2">
                     <span className="text-[#0057ff] text-sm">✔</span> Expert Guidance for MBBS Admissions
                   </p>
@@ -186,11 +186,11 @@ export default function HeroSection() {
                 <div className=" mt-8 flex  justify-center">
                   <img
                     src="/assets/img/man-1.png"
-                    className="w-56 md:w-54  z-10"
+                    className="w-10 lg:w-54 object-cover z-10"
                   />
                   <img
                     src="/assets/img/girl-1.png"
-                    className="w-44 md:w-44 object-cover  bottom-0"
+                    className="w-10 lg:w-44 object-cover  bottom-0"
                   />
                 </div>
               </div>
