@@ -4,7 +4,7 @@ import React from 'react'
 
 const MedicalCareer = () => {
   return (
-  <main className="min-h-screen bg-gradient-to-b from-sky-100 to-white p-4 md:p-8">
+  <main className=" bg-gradient-to-b from-sky-100 to-white p-4 md:p-8">
       <div className="mx-auto max-w-7xl">
         <div className="relative flex flex-col lg:flex-row items-center justify-between bg-white rounded-3xl shadow-sm p-6 md:p-10 lg-px-10 lg:pb-0 lg-pt-10">
           {/* Left Content */}

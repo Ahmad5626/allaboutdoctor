@@ -4,7 +4,7 @@ import React from 'react'
 
 const Trusted = () => {
   return (
-    <main className="min-h-screen bg-gradient-to-b from-sky-100 to-white p-4 md:p-8">
+    <main className=" bg-gradient-to-b from-sky-100 to-white p-4 md:p-8">
       <div className="mx-auto max-w-7xl">
         <div className="relative bg-white rounded-3xl shadow-lg overflow-hidden px-10 pt-10 ">
           {/* Content Container */}
