@@ -7,41 +7,65 @@ import Link from "next/link"
 const CORE_MENU = [
   { label: "HOME", href: "/" },
   { label: "ABOUT US", href: "/about-allaboutdoctor" },
-  { label: "Neet ug", href: "/branches" },
-  { label: "Neet pg", href: "/branches" }
+  { label: "NEET UG", href: "/neet-ug-counselling" },
+  { label: "NEET PG", href: "/neet-pg-counselling" }
 ]
 
 const TAIL_MENU = [
-  { label: "NMC Updates", href: "/nmc-updates" },
-  { label: "Gallery ", href: "/gallery" },
+  { label: "NMC UPDATES", href: "/nmc-updates" },
+  { label: "GALLERY", href: "/gallery" },
   { label: "CONTACT US", href: "/contact" },
 ]
 
 const INDIA_STATES = [
-  { label: "Maharashtra", href: "/mbbs-in-india/maharashtra" },
-  { label: "Karnataka", href: "/mbbs-in-india/karnataka" },
-  { label: "Tamil Nadu", href: "/mbbs-in-india/tamil-nadu" },
-  { label: "Kerala", href: "/mbbs-in-india/kerala" },
-  { label: "Gujarat", href: "/mbbs-in-india/gujarat" },
-  { label: "Rajasthan", href: "/mbbs-in-india/rajasthan" },
-  { label: "Uttar Pradesh", href: "/mbbs-in-india/uttar-pradesh" },
-  { label: "Madhya Pradesh", href: "/mbbs-in-india/madhya-pradesh" },
-  { label: "West Bengal", href: "/mbbs-in-india/west-bengal" },
-  { label: "Telangana", href: "/mbbs-in-india/telangana" },
-]
+  { label: "Andhra Pradesh", href: "/india/andhra-pradesh/mbbs" },
+  { label: "Arunachal Pradesh", href: "/india/arunachal-pradesh/mbbs" },
+  { label: "Assam", href: "/india/assam/mbbs" },
+  { label: "Bihar", href: "/india/bihar/mbbs" },
+  { label: "Chhattisgarh", href: "/india/chhattisgarh/mbbs" },
+  { label: "Delhi", href: "/india/delhi/mbbs" },
+  { label: "Goa", href: "/india/goa/mbbs" },
+  { label: "Gujarat", href: "/india/gujarat/mbbs" },
+  { label: "Haryana", href: "/india/haryana/mbbs" },
+  { label: "Himachal Pradesh", href: "/india/himachal-pradesh/mbbs" },
+  { label: "Jharkhand", href: "/india/jharkhand/mbbs" },
+  { label: "Karnataka", href: "/india/karnataka/mbbs" },
+  { label: "Kashmir", href: "/india/kashmir/mbbs" },
+  { label: "Kerala", href: "/india/kerala/mbbs" },
+  { label: "Madhya Pradesh", href: "/india/madhya-pradesh/mbbs" },
+  { label: "Maharashtra", href: "/india/maharashtra/mbbs" },
+  { label: "Manipur", href: "/india/manipur/mbbs" },
+  { label: "Meghalaya", href: "/india/meghalaya/mbbs" },
+  { label: "Mizoram", href: "/india/mizoram/mbbs" },
+  { label: "Nagaland", href: "/india/nagaland/mbbs" },
+  { label: "Odisha", href: "/india/odisha/mbbs" },
+  { label: "Puducherry", href: "/india/puducherry/mbbs" },
+  { label: "Punjab", href: "/india/punjab/mbbs" },
+  { label: "Rajasthan", href: "/india/rajasthan/mbbs" },
+  { label: "Sikkim", href: "/india/sikkim/mbbs" },
+  { label: "Tamil Nadu", href: "/india/tamil-nadu/mbbs" },
+  { label: "Telangana", href: "/india/telangana/mbbs" },
+  { label: "Tripura", href: "/india/tripura/mbbs" },
+  { label: "Uttar Pradesh", href: "/india/uttar-pradesh/mbbs" },
+  { label: "Uttarakhand", href: "/india/uttarakhand/mbbs" },
+  { label: "West Bengal", href: "/india/west-bengal/mbbs" },
+];
+
 
 const ABROAD_COUNTRIES = [
-  { label: "Russia", href: "/mbbs-abroad/russia" },
-  { label: "Uzbekistan", href: "/mbbs-abroad/uzbekistan" },
-  { label: "Kazakhstan", href: "/mbbs-abroad/kazakhstan" },
-  { label: "Philippines", href: "/mbbs-abroad/philippines" },
-  { label: "Georgia", href: "/mbbs-abroad/georgia" },
-  { label: "Egypt", href: "/mbbs-abroad/egypt" },
-  { label: "Nepal", href: "/mbbs-abroad/nepal" },
-  { label: "Bangladesh", href: "/mbbs-abroad/bangladesh" },
-  { label: "Kyrgyzstan", href: "/mbbs-abroad/kyrgyzstan" },
-  { label: "Armenia", href: "/mbbs-abroad/armenia" },
-]
+  { label: "Armenia", href: "/abroad/armenia/mbbs" },
+  { label: "Bulgaria", href: "/abroad/bulgaria/mbbs" },
+  { label: "Georgia", href: "/abroad/georgia/mbbs" },
+  { label: "Kazakhstan", href: "/abroad/kazakhstan/mbbs" },
+  { label: "Kyrgyzstan", href: "/abroad/kyrgyzstan/mbbs" },
+  { label: "Nepal", href: "/abroad/nepal/mbbs" },
+  { label: "Romania", href: "/abroad/romania/mbbs" },
+  { label: "Russia", href: "/abroad/russia/mbbs" },
+  { label: "Serbia", href: "/abroad/serbia/mbbs" },
+  { label: "Tajikistan", href: "/abroad/tajikistan/mbbs" },
+  { label: "Uzbekistan", href: "/abroad/uzbekistan/mbbs" },
+  { label: "Vietnam", href: "/abroad/vietnam/mbbs" },
+];
 
 const COURSES = [
   { label: "MBBS", href: "/courses/mbbs" },
@@ -49,17 +73,11 @@ const COURSES = [
   { label: "MS", href: "/courses/ms" },
   { label: "BAMS", href: "/courses/bams" },
   { label: "BDS", href: "/courses/bds" },
-  { label: "BVSc", href: "/courses/bvsc" },
-  { label: "B.Sc. Nursing", href: "/courses/bsc-nursing" },
-  { label: "GNM", href: "/courses/gnm" },
-  { label: "ANM", href: "/courses/anm" },
-  { label: "D PHARMA", href: "/courses/d-pharma" },
-  { label: "B PHARMA", href: "/courses/b-pharma" },
-  { label: "M PHARMA", href: "/courses/m-pharma" },
-  { label: "BNYS", href: "/courses/bnys" },
   { label: "BHMS", href: "/courses/bhms" },
-]
-
+  { label: "BNYS", href: "/courses/bnys" },
+  { label: "BUMS", href: "/courses/bums" },
+  { label: "BVSc", href: "/courses/bvsc" },
+];
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false)
   const [activeDropdown, setActiveDropdown] = useState(null)
@@ -128,19 +146,19 @@ export default function Navbar() {
             onMouseLeave={() => setActiveDropdown(null)}
           >
             <button className="px-4 py-2 text-sm font-semibold text-gray-700 hover:text-blue-600 transition flex items-center gap-1.5 group">
-              Study
+              STUDY
               <ChevronDown className="h-4 w-4 group-hover:rotate-180 transition-transform" />
               <span className="absolute bottom-0 left-4 right-4 h-0.5 bg-blue-600 scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
             </button>
 
             {/* Mega Dropdown */}
-            <div className="absolute left-0 top-full pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-              <div className="bg-white rounded-lg shadow-xl border border-gray-100 p-6 min-w-max">
+            <div className="absolute  -left-100 top-full pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+              <div className="bg-white rounded-lg shadow-xl border border-gray-100 p-6 min-w-5xl  ">
                 <div className="grid grid-cols-2 gap-8">
                   {/* India Section */}
                   <div>
                     <h3 className="text-xs font-bold text-blue-600 uppercase tracking-wider mb-3">Study in India</h3>
-                    <div className="grid grid-cols-2 gap-2">
+                    <div className="grid grid-cols-3 gap-2">
                       {INDIA_STATES.map((state) => (
                         <Link
                           key={state.href}
