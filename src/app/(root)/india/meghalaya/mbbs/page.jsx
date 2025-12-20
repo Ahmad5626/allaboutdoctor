@@ -16,6 +16,14 @@ import WhyChooseMeghalaya from '@/components/mbbs/meghalaya/whyChooseAP'
 import WhyChooseUs from '@/components/mbbs/why-choose-us'
 import React from 'react'
 
+export const metadata = {
+  title: "MBBS in Meghalaya - All About Doctor",
+  description:
+    "Get expert guidance for MBBS in Meghalaya. Explore colleges, fees, cutoffs and admission support with All About Doctor Education Pvt Ltd. Apply now for free counseling. ",
+    alternates: {
+    canonical: "https://www.allaboutdoctor.in/india/meghalaya/mbbs",
+  },
+};
 const page = () => {
   return (
     <div>

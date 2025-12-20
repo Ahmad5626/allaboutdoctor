@@ -14,7 +14,14 @@ import TopCityUttarakhand from '@/components/mbbs/uttarakhand/topCitiesAP'
 import WhyChooseUttarakhand from '@/components/mbbs/uttarakhand/whyChooseAP'
 import WhyChooseUs from '@/components/mbbs/why-choose-us'
 import React from 'react'
-
+export const metadata = {
+  title: "MBBS in Uttarakhand - All About Doctor",
+  description:
+    "Get expert guidance for MBBS in Uttarakhand. Explore colleges, fees, cutoffs and admission support with All About Doctor Education Pvt Ltd. Apply now for free counseling. ",
+    alternates: {
+    canonical: "https://www.allaboutdoctor.in/india/uttarakhand/mbbs",
+  },
+};
 const page = () => {
   return (
     <div>

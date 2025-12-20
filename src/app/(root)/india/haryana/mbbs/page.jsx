@@ -14,7 +14,14 @@ import TopCityHaryana from '@/components/mbbs/haryana/topCitiesAP'
 import WhyChooseHaryana from '@/components/mbbs/haryana/whyChooseAP'
 import WhyChooseUs from '@/components/mbbs/why-choose-us'
 import React from 'react'
-
+export const metadata = {
+  title: "MBBS in Haryana - All About Doctor",
+  description:
+    "Get expert guidance for MBBS in Haryana. Explore colleges, fees, cutoffs and admission support with All About Doctor Education Pvt Ltd. Apply now for free counseling. ",
+    alternates: {
+    canonical: "https://www.allaboutdoctor.in/india/haryana/mbbs",
+  },
+};
 const page = () => {
   return (
     <div>

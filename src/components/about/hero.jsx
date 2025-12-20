@@ -14,11 +14,11 @@ export default function Hero() {
           </span>
 
           <h1
-            className="text-pretty text-4xl font-semibold leading-tight sm:text-5xl animate-fade-up mt-4"
-            style={{ animationDelay: "100ms" }}
+            className="text-5xl lg:text-6xl font-bold leading-tight bg-gradient-to-r from-primary via-blue-200 to-secondary bg-clip-text text-transparent animate-shimmer fade-item"
+            
           >
             About{" "}
-            <span className="text-primary">All About Doctor Education Pvt Ltd</span>
+            <span >All About Doctor Education Pvt Ltd</span>
           </h1>
 
           <div className="mt-6 space-y-4 text-muted-foreground text-sm/6 md:text-base/7">

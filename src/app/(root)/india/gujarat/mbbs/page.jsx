@@ -14,7 +14,14 @@ import TopCityGujarat from '@/components/mbbs/gujarat/topCitiesAP'
 import WhyChooseGujarat from '@/components/mbbs/gujarat/whyChooseAP'
 import WhyChooseUs from '@/components/mbbs/why-choose-us'
 import React from 'react'
-
+export const metadata = {
+  title: "MBBS in Gujarat - All About Doctor",
+  description:
+    "Get expert guidance for MBBS in Gujarat. Explore colleges, fees, cutoffs and admission support with All About Doctor Education Pvt Ltd. Apply now for free counseling. ",
+    alternates: {
+    canonical: "https://www.allaboutdoctor.in/india/gujarat/mbbs",
+  },
+};
 const page = () => {
   return (
     <div>

@@ -7,7 +7,7 @@ export default function EducationSystemAbroad() {
   ]
 
   return (
-    <section className="w-full py-10 bg-card">
+    <section className="w-full py-10  bg-primary/5">
       <div className="mx-auto max-w-7xl px-6">
         {/* Header */}
         <div className="space-y-4  mb-8">

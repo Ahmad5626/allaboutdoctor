@@ -14,7 +14,14 @@ import TopCityKashmir from '@/components/mbbs/kashmir/topCitiesAP'
 import WhyChooseKashmir from '@/components/mbbs/kashmir/whyChooseAP'
 import WhyChooseUs from '@/components/mbbs/why-choose-us'
 import React from 'react'
-
+export const metadata = {
+  title: "MBBS in Kashmir - All About Doctor",
+  description:
+    "Get expert guidance for MBBS in Kashmir. Explore colleges, fees, cutoffs and admission support with All About Doctor Education Pvt Ltd. Apply now for free counseling. ",
+    alternates: {
+    canonical: "https://www.allaboutdoctor.in/india/kashmir/mbbs",
+  },
+};
 const page = () => {
   return (
     <div>

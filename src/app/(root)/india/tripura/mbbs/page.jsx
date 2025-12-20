@@ -15,6 +15,14 @@ import WhyChooseTripura from '@/components/mbbs/tripura/whyChooseAP'
 import WhyChooseUs from '@/components/mbbs/why-choose-us'
 import React from 'react'
 
+export const metadata = {
+  title: "MBBS in Tripura - All About Doctor",
+  description:
+    "Get expert guidance for MBBS in Tripura. Explore colleges, fees, cutoffs and admission support with All About Doctor Education Pvt Ltd. Apply now for free counseling. ",
+    alternates: {
+    canonical: "https://www.allaboutdoctor.in/india/tripura/mbbs",
+  },
+};
 const page = () => {
   return (
     <div>

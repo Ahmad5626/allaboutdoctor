@@ -13,11 +13,11 @@ export default function NMCUpdatesHero() {
             </span>
 
             <h1
-              className="text-pretty text-4xl font-semibold leading-tight sm:text-5xl animate-fade-up my-4"
+              className="text-5xl lg:text-6xl font-bold leading-tight bg-gradient-to-r from-primary via-blue-200 to-secondary bg-clip-text text-transparent animate-shimmer fade-item"
               style={{ animationDelay: "100ms" }}
             >
               NMC Updates –{" "}
-              <span className="text-primary">All About Doctor Education Pvt. Ltd.</span>
+<span >All About Doctor Education Pvt. Ltd.</span>
             </h1>
 
             <div className="h-1 w-24 bg-primary rounded-full"></div>

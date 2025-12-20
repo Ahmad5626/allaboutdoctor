@@ -7,7 +7,7 @@ import { useRouter } from "next/navigation";
 import { toast, Toaster } from "sonner";
 import { createBlog, deleteBlog, getBlog } from "../services/blog";
 import { uploadFile } from "../services/uploadImg";
-
+import { usePathname } from "next/navigation";
 export const AuthContext = createContext(null);
 
 export default function AuthProvider({ children }) {
@@ -54,71 +54,99 @@ console.log("loginFormData",authenticatedAdmin );
   }
 
   //   sumbit register form
-  const registerHandleSubmit = async (e) => {
-    e.preventDefault();
+//   const registerHandleSubmit = async (e) => {
+//     e.preventDefault();
 
-    try {
-      const result = await registerService(formData);
-      console.log(result);
+//     try {
+//       const result = await registerService(formData);
+//       console.log(result);
 
-      if (result?.success) {
-        toast.success("Registered successfully!");
-        console.log("Registered successfully!");
+//       if (result?.success) {
+//         toast.success("Registered successfully!");
+//         console.log("Registered successfully!");
 
- router.push("/login");
-        setFormData({});
-      } else {
-        toast.error(result.message || "Registration failed");
-      }
-    } catch (error) {
-      // ✅ This handles unexpected server errors or non-JSON responses
-      const message = error?.response?.data?.message || error.message || "Something went wrong";
-      toast.error(message);
-    }
-  };
+//  router.push("/login");
+//         setFormData({});
+//       } else {
+//         toast.error(result.message || "Registration failed");
+//       }
+//     } catch (error) {
+//       // ✅ This handles unexpected server errors or non-JSON responses
+//       const message = error?.response?.data?.message || error.message || "Something went wrong";
+//       toast.error(message);
+//     }
+//   };
 
 
   // login data
-  const loginHandleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      const result = await loginUser(loginFormData);
-      if (result?.success) {
-        toast.success("Login successful!");
-        console.log("Login successful!");
-        const token=localStorage.getItem("token")
+  // const loginHandleSubmit = async (e) => {
+  //   e.preventDefault();
+  //   try {
+  //     const result = await loginUser(loginFormData);
+  //     if (result?.success) {
+  //       toast.success("Login successful!");
+  //       console.log("Login successful!");
+  //       const token=localStorage.getItem("token")
 
-        const decoded = JSON.parse(atob(token.split(".")[1]));
+  //       const decoded = JSON.parse(atob(token.split(".")[1]));
        
         
-        if ( decoded.role == "admin") {
-          router.push("/admin"); // not authorized
-          console.log("admin");
+  //       if ( decoded.role == "admin") {
+  //         router.push("/admin"); // not authorized
+  //         console.log("admin");
           
-        }
-        else if ( decoded.role == "user") {
-          router.push("/"); // not authorized
-          console.log("user");
+  //       }
+  //       else if ( decoded.role == "user") {
+  //         router.push("/"); // not authorized
+  //         console.log("user");
           
-        }
+  //       }
 
-    // if(authenticatedUser.role === "admin"){
-    //   router.push("/admin");
+  //   // if(authenticatedUser.role === "admin"){
+  //   //   router.push("/admin");
       
-    // }
-          // router.push("/");
-        // getLoginUserData()
-        getLoginAdminData()
-      } else {
-        toast.error(result.message || "Login failed");
-      }
-    } catch (error) {
-      // ✅ This handles unexpected server errors or non-JSON responses
-      const message = error?.response?.data?.message || error.message || "Something went wrong";
-      toast.error(message);
-    }
-  };
+  //   // }
+  //         // router.push("/");
+  //       // getLoginUserData()
+  //       getLoginAdminData()
+  //     } else {
+  //       toast.error(result.message || "Login failed");
+  //     }
+  //   } catch (error) {
+  //     // ✅ This handles unexpected server errors or non-JSON responses
+  //     const message = error?.response?.data?.message || error.message || "Something went wrong";
+  //     toast.error(message);
+  //   }
+  // };
 
+const pathname = usePathname();
+
+useEffect(() => {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+        } else {
+          // animation repeat ke liye
+          entry.target.classList.remove("show");
+        }
+      });
+    },
+    {
+      threshold: 0.2,
+    }
+  );
+
+  const items = document.querySelectorAll(".fade-item");
+  items.forEach((item) => observer.observe(item));
+
+  
+  return () => {
+    items.forEach((item) => observer.unobserve(item));
+    observer.disconnect();
+  };
+}, [pathname]); 
 
 
    async function getLoginUserData() {
@@ -240,12 +268,12 @@ useEffect(() => {
     <AuthContext.Provider
       value={{
 
-        registerHandleSubmit,
+        
         userType,
         setUserType,
         formData,
         setFormData,
-        loginHandleSubmit,
+        
         loginFormData,
         setLoginFormData,
         handleInputChange,

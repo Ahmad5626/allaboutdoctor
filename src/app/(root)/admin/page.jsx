@@ -10,22 +10,22 @@ import { Users, Building2, Calendar, CreditCard, TrendingUp, Clock } from "lucid
 
 export default function AdminDashboard() {
   const router = useRouter();
-  useEffect(() => {
-      const token = localStorage.getItem("token");
-      if (!token) {
-        router.push("/admin/login");
-        return;
-      }
+  // useEffect(() => {
+  //     const token = localStorage.getItem("token");
+  //     if (!token) {
+  //       router.push("/admin/login");
+  //       return;
+  //     }
 
-      try {
-        const decoded = JSON.parse(atob(token.split(".")[1]));
-        if ( decoded.role !== "admin") {
-          router.push("admin/login"); // not authorized
-        }
-      } catch (err) {
-        router.push("/login");
-      }
-    }, [router]);
+  //     try {
+  //       const decoded = JSON.parse(atob(token.split(".")[1]));
+  //       if ( decoded.role !== "admin") {
+  //         router.push("admin/login"); // not authorized
+  //       }
+  //     } catch (err) {
+  //       router.push("/login");
+  //     }
+  //   }, [router]);
   return (
     <AdminLayout>
       <div className="space-y-6">

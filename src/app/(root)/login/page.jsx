@@ -10,7 +10,7 @@ import Link from "next/link"
 import { AuthContext } from "@/app/context/page"
 
 export default function LoginPage() {
-  const {loginFormData,setLoginFormData,loginHandleSubmit,Toaster,handleInputChange} = useContext(AuthContext)
+  const {loginFormData,setLoginFormData,Toaster,handleInputChange} = useContext(AuthContext)
   const [activeTab, setActiveTab] = useState("user")
  
 
@@ -68,7 +68,7 @@ export default function LoginPage() {
                 </TabsList>
 
                 <TabsContent value="user" className="space-y-4 mt-6">
-                  <form onSubmit={loginHandleSubmit} className="space-y-4">
+                  <form  className="space-y-4">
                     <div className="relative">
                       <User className="absolute left-3 top-3 w-5 h-5 text-pink-500" />
                       <Input
@@ -99,7 +99,7 @@ export default function LoginPage() {
                 </TabsContent>
 
                 <TabsContent value="vendor" className="space-y-4 mt-6">
-                  <form onSubmit={loginHandleSubmit} className="space-y-4">
+                  <form  className="space-y-4">
                     <div className="relative">
                       <Building2 className="absolute left-3 top-3 w-5 h-5 text-blue-500" />
                       <Input

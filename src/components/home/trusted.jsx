@@ -1,8 +1,34 @@
+"use client"
 import { ArrowRight } from 'lucide-react'
 import Link from 'next/link'
-import React from 'react'
+import React, { useEffect } from 'react'
+
+
+
 
 const Trusted = () => {
+
+  useEffect(() => {
+  const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+      } else {
+        // REMOVE on scroll out → animation repeats every time
+        entry.target.classList.remove("show");
+      }
+    });
+  },
+  {
+    threshold: 0.2, // 20% visible → animate
+  }
+);
+
+document.querySelectorAll(".fade-item").forEach((item) => {
+  observer.observe(item);
+});
+}, []);
   return (
     <main className=" bg-gradient-to-b from-sky-100 to-white p-4 md:p-8">
       <div className="mx-auto max-w-7xl">
@@ -10,24 +36,24 @@ const Trusted = () => {
           {/* Content Container */}
           <div className="flex flex-col lg:flex-row pb-">
             {/* Left Content */}
-            <div className="flex-1 z-10   pb-10">
-              <p className="text-primary italic text-lg mb-4">All About Doctor – Global Medical Admission Program</p>
+            <div className="flex-1 z-10   pb-10 fade-section">
+              <p className="text-primary italic text-lg mb-4 fade-item">All About Doctor – Global Medical Admission Program</p>
 
-              <h1 className="text-3xl md:text-4xl lg:text-3xl font-bold text-secondary leading-tight ">
+              <h2 className="text-3xl md:text-4xl lg:text-3xl font-bold text-secondary leading-tight fade-item">
                 {"India's Trusted MBBS Admission Guidance Platform"}
-              </h1>
+              </h2>
 
-              <p className="text-primary text-lg mb-1">Secure admission in top medical universities</p>
-              <p className="text-primary text-lg ">In India & Abroad with expert counselling and full support</p>
+              <h3 className="text-primary text-lg mb-1 fade-item">Secure admission in top medical universities</h3>
+              <h4 className="text-primary text-lg fade-item">In India & Abroad with expert counselling and full support</h4>
 
-              <p className="text-primary text-sm mb-2">
+              <h4 className="text-primary text-sm mb-2 fade-item">
                 Start your MBBS journey with confidence, guidance & transparency
-              </p>
+              </h4>
 
-              <p className="text-secondary font-semibold text-sm mb-2">Get Admission Support For</p>
-              <p className="text-secondary text-sm mb-2">
+              <h4 className="text-secondary font-semibold text-sm mb-2 fade-item">Get Admission Support For</h4>
+              <h4 className="text-secondary text-sm mb-2 fade-item">
                 Russia • Uzbekistan • Kazakhstan • Georgia • Nepal • Bangladesh • India & more
-              </p>
+              </h4>
 
               {/* Feature Badges */}
               <div className="flex flex-wrap gap-6">
@@ -41,11 +67,11 @@ const Trusted = () => {
                       <path d="M20 6 L24 2 L28 6" stroke="#F97316" strokeWidth="2" fill="none" />
                     </svg>
                   </div>
-                  <p className="text-xs text-blue-800 font-medium leading-tight">
+                  <h4 className="text-xs text-blue-800 font-medium leading-tight">
                     15,000+ Successful
                     <br />
                     Admissions
-                  </p>
+                  </h4>
                 </div>
 
                 {/* Badge 2 */}
@@ -60,11 +86,11 @@ const Trusted = () => {
                       <rect x="32" y="25" width="8" height="15" fill="#EF4444" />
                     </svg>
                   </div>
-                  <p className="text-xs text-blue-800 font-medium leading-tight">
+                  <h4 className="text-xs text-blue-800 font-medium leading-tight">
                     Rated 4.9/5 by
                     <br />
                     Students & Parents
-                  </p>
+                  </h4>
                 </div>
 
                 {/* Badge 3 */}
@@ -77,17 +103,17 @@ const Trusted = () => {
                       <path d="M22 32 L26 32" stroke="#3B82F6" strokeWidth="3" />
                     </svg>
                   </div>
-                  <p className="text-xs text-blue-800 font-medium leading-tight">
+                  <h4 className="text-xs text-blue-800 font-medium leading-tight">
                     Official University
                     <br />
                     Collaboration
-                  </p>
+                  </h4>
                 </div>
               </div>
             </div>
 
             {/* Center Image */}
-            <div className="flex-1 flex items-end justify-center relative ">
+            <div className="flex-1 flex items-end justify-center relative fade-item">
               <img src="/assets/img/Gemini_Generated.png" alt="Medical students" className="w-full max-w-lg object-contain" />
             </div>
 
@@ -126,6 +152,18 @@ const Trusted = () => {
           </div>
         </div>
       </div>
+      <style jsx>{
+        `
+        .fade-item {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s ease-out;
+}
+
+.fade-item.show {
+  opacity: 1;
+  transform: translateY(0);
+}`}</style>
     </main>
 
 

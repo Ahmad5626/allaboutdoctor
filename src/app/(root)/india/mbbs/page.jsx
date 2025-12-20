@@ -15,7 +15,17 @@ import WhyChooseUs from "@/components/mbbs/why-choose-us"
 import Navbar from "@/components/Hedaer"
 import Footer from "@/components/Footer"
 import StatesList from "@/components/study-india/states-list"
-
+import AdmissionPage from "@/components/mbbs/admissionPage"
+import StartYourMBBS from "@/components/mbbs/startyourmbbs"
+import Complete from "@/components/mbbs/complete"
+export const metadata = {
+  title: "MBBS in India – Admission, Fees & Top Colleges | All About Doctor",
+  description:
+    "Learn everything about MBBS in India—eligibility, fees, NEET process, top colleges and admission steps. Start your medical career with All About Doctor Education Pvt. Ltd. ",
+    alternates: {
+    canonical: "https://www.allaboutdoctor.in/india/mbbs",
+  },
+};
 export default function MBBSInIndiaPage() {
   return (
     <main className="w-full">
@@ -26,13 +36,16 @@ export default function MBBSInIndiaPage() {
       <Eligibility />
       <EntranceExam />
       <AdmissionProcess />
+      <AdmissionPage/>
       <Costs />
       <Accreditation />
       <Syllabus />
       <Universities />
+      <StartYourMBBS/>
       <Advantages />
       <Career />
       <Documents />
+      <Complete/>
       <FAQs />
       <WhyChooseUs />
       <Footer/>

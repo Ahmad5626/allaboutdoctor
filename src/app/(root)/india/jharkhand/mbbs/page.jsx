@@ -13,7 +13,14 @@ import TopCityJharkhand from '@/components/mbbs/jharkhand/topCitiesAP'
 import WhyChooseJharkhand from '@/components/mbbs/jharkhand/whyChooseAP'
 import WhyChooseUs from '@/components/mbbs/why-choose-us'
 import React from 'react'
-
+export const metadata = {
+  title: "MBBS in Jharkhand - All About Doctor",
+  description:
+    "Secure your MBBS admission in Jharkhand with All About Doctor Education Pvt Ltd. Get expert guidance on NEET counseling, top medical cities, clinical exposure, internships, and career opportunities. ",
+    alternates: {
+    canonical: "https://www.allaboutdoctor.in/india/jharkhand/mbbs",
+  },
+};
 const page = () => {
   return (
     <div>

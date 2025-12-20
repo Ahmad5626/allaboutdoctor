@@ -4,14 +4,14 @@ import { Eye, EyeClosed } from 'lucide-react';
 import React, { useContext, useState } from 'react'
 
 const page = () => {
-    const {loginFormData,loginHandleSubmit,Toaster,handleInputChange} = useContext(AuthContext)
+    const {loginFormData,Toaster,handleInputChange} = useContext(AuthContext)
     const [showPassword, setShowPassword] = useState(false);
     return (
         <div>
             <main className="h-[100dvh] flex items-center justify-center  bg-center px-4 sm:px-6 lg:px-8">
                 <Toaster position="top-center" />
                 <div className="w-[320px] min-h-96 px-8 py-2 text-left bg-[#ffffff] border bg-opacity-100 backdrop-blur-lg rounded-xl shadow-2xl">
-                    <form onSubmit={loginHandleSubmit}>
+                    <form >
                         <div className="flex flex-col h-full select-none">
                             <div className="mb-2 flex justify-center">
                                 <div className="flex-shrink-0">

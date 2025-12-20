@@ -13,7 +13,7 @@ export const MsHero = () => {
           </span>
 
           <h1
-            className="text-pretty text-4xl font-semibold leading-tight sm:text-5xl animate-fade-up my-4"
+            className="text-5xl lg:text-6xl font-bold leading-tight bg-gradient-to-r from-primary via-blue-200 to-secondary bg-clip-text text-transparent animate-shimmer fade-item"
             style={{ animationDelay: "100ms" }}
           >
             MS (Master of Surgery) –{" "}

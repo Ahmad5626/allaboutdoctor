@@ -11,21 +11,21 @@ export default function Hero() {
             >
               All About Doctor Education Pvt Ltd
             </span>
-            <h1  className="text-pretty text-4xl font-semibold leading-tight sm:text-5xl animate-fade-up my-4"
+            <h1  className="text-5xl lg:text-6xl font-bold leading-tight bg-gradient-to-r from-primary via-blue-200 to-secondary bg-clip-text text-transparent animate-shimmer fade-item"
             style={{ animationDelay: "100ms" }}>
               NEET UG – Your Gateway to Medical
-Education with <span className="text-primary">All About Doctor
+Education with <span >All About Doctor
 Education Pvt Ltd
 </span> 
             </h1>
             <div className="h-1 w-24 bg-primary rounded-full"></div>
           </div>
 
-          <p className="mt-4 max-w-2xl text-sm/6 md:text-base/7 text-muted-foreground">
+          <h2 className="mt-4 max-w-2xl text-sm/6 md:text-base/7 text-muted-foreground fade-item">
             NEET UG (National Eligibility cum Entrance Test – Undergraduate) is the mandatory entrance exam for aspiring
             doctors in India. At All About Doctor Education Pvt Ltd, we guide students through every step of the NEET UG
             journey, helping you secure admissions in top medical colleges in India and abroad.
-          </p>
+          </h2>
 
         
         </div>
@@ -35,7 +35,7 @@ Education Pvt Ltd
           <img
             src="../assets/img/abroad.jpg"
             alt="Study MBBS Abroad"
-            className="w-full"
+            className="w-[800px]"
           />
         </div>
        </div>

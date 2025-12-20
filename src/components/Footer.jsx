@@ -9,9 +9,9 @@ export default function Footer() {
     { label: "Contact", href: "/contact" },
     { label: "About us", href: "/about-allaboutdoctor" },
     { label: "How it works", href: "#" },
-    { label: "Universities", href: "#" },
-    { label: "Costs", href: "#" },
-    { label: "Career Guidance Sessions", href: "#" },
+    { label: "India", href: "/india/mbbs" },
+    { label: "Abroad", href: "/abroad/mbbs" },
+    // { label: "Career Guidance Sessions", href: "#" },
   ]
 
   const socialLinks = [
@@ -40,9 +40,9 @@ export default function Footer() {
                 </div>
 
                 <div className="space-y-2 text-sm text-muted-foreground">
-                  <p>G-07, First Floor, RTech Capital Highstreet,</p>
-                  <p>Mahal Road, Jagatpura, Jaipur,</p>
-                  <p>Rajasthan – 302017</p>
+                  <p>2nd Floor, Santosh vihar, C-62, VIT Rd, Vishwa Vidhyalaya Nagar, Jagatpura, Jaipur, Rajasthan 302017</p>
+                  {/* <p>Mahal Road, Jagatpura, Jaipur,</p>
+                  <p>Rajasthan – 302017</p> */}
                 </div>
               </div>
 
@@ -68,7 +68,7 @@ export default function Footer() {
               <div className="space-y-3 pt-6 border-t border-border">
                 <h4 className="font-semibold text-foreground text-sm">International Offices</h4>
                 <div className="space-y-2 text-xs text-muted-foreground">
-                  <p>Lucknow, Dehradun, Pune, Panipat, Patna, Thane, Kota, Gurugram</p>
+                  <p>Armenia, Bulgaria, Georgia, Kazakhstan</p>
                 </div>
               </div>
             </div>
@@ -107,9 +107,9 @@ export default function Footer() {
               Take the first step and order request free study information today.
             </p>
 
-            <button className="px-8 py-3 bg-primary text-white rounded-full font-semibold hover:opacity-90 transition-opacity">
+            <a href="/#form" className="px-8 py-3 bg-primary text-white rounded-full font-semibold hover:opacity-90 transition-opacity">
               Request free information
-            </button>
+            </a>
           </div>
 
           {/* Right Column - Interesting Links */}

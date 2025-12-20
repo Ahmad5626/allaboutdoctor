@@ -20,7 +20,7 @@ export default function Overview() {
           {/* Mission */}
           <div className="rounded-2xl bg-card p-8 shadow-sm hover:shadow-md transition-all ring-1 ring-border">
             <h3 className="text-xl font-semibold flex items-center gap-2 mb-4">
-              <span className="text-primary">🎯</span> Our Mission
+<span >🎯</span> Our Mission
             </h3>
             <p className="text-muted-foreground leading-relaxed">
               Empowering Indian students to become world-class doctors by providing global medical
@@ -32,7 +32,7 @@ export default function Overview() {
           {/* Vision */}
           <div className="rounded-2xl bg-card p-8 shadow-sm hover:shadow-md transition-all ring-1 ring-border">
             <h3 className="text-xl font-semibold flex items-center gap-2 mb-4">
-              <span className="text-primary">🌟</span> Our Vision
+<span >🌟</span> Our Vision
             </h3>
             <p className="text-muted-foreground leading-relaxed">
               Our mission is to empower aspiring Indian doctors with ethical guidance, expert

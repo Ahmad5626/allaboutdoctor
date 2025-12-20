@@ -16,7 +16,14 @@ import TopCityDelhi from '@/components/mbbs/delhi/topCitiesAP'
 import WhyChooseDelhi from '@/components/mbbs/delhi/whyChooseAP'
 import WhyChooseUs from '@/components/mbbs/why-choose-us'
 import React from 'react'
-
+export const metadata = {
+  title: "MBBS in Delhi - All About Doctor",
+  description:
+    "Get expert guidance for MBBS in Delhi. Explore colleges, fees, cutoffs and admission support with All About Doctor Education Pvt Ltd. Apply now for free counseling. ",
+    alternates: {
+    canonical: "https://www.allaboutdoctor.in/india/delhi/mbbs",
+  },
+};
 const page = () => {
   return (
     <div>

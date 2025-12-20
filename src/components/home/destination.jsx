@@ -1,193 +1,174 @@
-"use client"
+"use client";
 
-import { useMemo, useRef } from "react"
-import { Splide, SplideSlide } from "@splidejs/react-splide"
-import "@splidejs/react-splide/css"
 
-// simple icon
-function ArrowIcon({ dir = "left", className = "" }) {
-  const d = dir === "left" ? "M15 19l-7-7 7-7" : "M9 5l7 7-7 7"
-  return (
-    <svg
-      className={className}
-      width="22"
-      height="22"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      aria-hidden="true"
-    >
-      <path d={d} />
-    </svg>
-  )
-}
+import Link from "next/link";
+import { useEffect, useRef } from "react";
 
 const destinations = [
   {
+    name: "Armenia",
+    image: "https://flagcdn.com/w640/am.png",
+    title: "Historic universities with advanced labs",
+    link : "/abroad/armenia/mbbs"
+  },
+  {
+    name: "Bulgaria",
+    image: "https://flagcdn.com/w640/bg.png",
+    title: "EU-recognized degrees & modern campuses",
+    link : "/abroad/bulgaria/mbbs"
+  },
+  {
+    name: "Georgia",
+    image: "https://flagcdn.com/w640/ge.png",
+    title: "European standards & safe student life",
+    link : "/abroad/georgia/mbbs"
+  },
+  {
+    name: "Kazakhstan",
+    image: "https://flagcdn.com/w640/kz.png",
+    title: "Modern infrastructure & clinical exposure",
+    link : "/abroad/kazakhstan/mbbs"
+  },
+  {
+    name: "Kyrgyzstan",
+    image: "https://flagcdn.com/w640/kg.png",
+    title: "Affordable MBBS with English-medium teaching",
+    link : "/abroad/kyrgyzstan/mbbs"
+  },
+  {
+    name: "Nepal",
+    image: "https://flagcdn.com/w640/np.png",
+    title: "Cultural proximity & NMC-approved colleges",
+    link : "/abroad/nepal/mbbs"
+  },
+  {
+    name: "Romania",
+    image: "https://flagcdn.com/w640/ro.png",
+    title: "EU medical education & clinical exposure",
+    link : "/abroad/romania/mbbs"
+  },
+  {
     name: "Russia",
-    image: "https://debright.org/wp-content/uploads/2025/02/University-of-Traditional-Medicine.jpg",
-    flag: "/flag-of-egypt.jpg",
-    title:"Globally recognized, affordable programs"
+    image: "https://flagcdn.com/w640/ru.png",
+    title: "Globally recognized, affordable programs",
+    link : "/abroad/russia/mbbs"
   },
-  {
-    name: "Kazakhstan ",
-    image: "https://debright.org/wp-content/uploads/2025/02/Yerevan-Haybusak-University.jpg",
-    flag: "/flag-of-georgia.jpg",
-    title:" Modern infrastructure & clinical exposure"
-  },
-  {
-    name: "Georgia ",
-    image: "https://debright.org/wp-content/uploads/2025/03/vitebsk-state-medical-university.jpeg",
-    flag: "/flag-of-kazakhstan.jpg",
-    title:" European standards & safe student life"
-  },
-  {
-    name: "Uzbekistan ",
-    image: "https://debright.org/wp-content/uploads/2025/02/The-University-of-East-Sarajevo.jpg",
-    flag: "/flag-of-kyrgyzstan.jpg",
-    title:" English-medium teaching & lower fees "
-  },
-  {
-    name: "Armenia ",
-    image: "https://debright.org/wp-content/uploads/2025/02/University-of-Traditional-Medicine.jpg",
-    flag: "/flag-of-latvia.jpg",
-    title:" Historic universities with advanced labs "
-  },
-  {
-    name: "Nepal ",
-    image: "https://debright.org/wp-content/uploads/2025/02/Yerevan-Haybusak-University.jpg",
-    flag: "/flag-of-lithuania.jpg",
-    title:" Cultural proximity & NMC-approved colleges "
-  }
-  
-]
 
-export default function FeaturedSlider() {
-  const splideRef = useRef(null)
+   {
+    name: "Serbia",
+    image: "/assets/img/Serbia.png",
+    title: "EU medical education & clinical exposure",
+    link : "/abroad/serbia/mbbs"
+  },
+  {
+    name: "Tajikistan",
+    image: "/assets/img/Tajikistan.png",
+    title: "Globally recognized, affordable programs",
+    link : "/abroad/tajikistan/mbbs"
+  },
+  {
+    name: "Uzbekistan",
+    image: "/assets/img/Uzbekistan.png",
+    title: "EU medical education & clinical exposure",
+    link : "/abroad/uzbekistan/mbbs"
+  },
+  {
+    name: "Vietnam",
+    image: "/assets/img/Vietnam.png",
+    title: "Globally recognized, affordable programs",
+    link : "/abroad/vietnam/mbbs"
+  },
+];
 
-  const options = useMemo(
-    () => ({
-      type: "loop",
-      autoplay: true,
-      interval: 3200,
-      pauseOnHover: true,
-      speed: 650,
-      focus: "center",
-      perPage: 3,
-      perMove: 1,
-      autoWidth: true,
-      gap: "1.25rem",
-      arrows: false,
-      pagination: false,
-      drag: "free",
-      snap: true,
-      breakpoints: {
-        1280: { gap: "1rem" },
-        1024: { gap: "1rem" },
-        768: { perPage: 1, gap: "0.75rem" },
-        480: { perPage: 1, gap: "0.5rem" },
+
+
+
+
+export default function FeaturedCountries() {
+  const itemsRef = useRef([]);
+
+  /* fade-up on scroll */
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+          }
+        });
       },
-    }),
-    [],
-  )
+      { threshold: 0.2 }
+    );
 
-  const go = (dir) => splideRef.current?.go(dir)
+    itemsRef.current.forEach((el) => el && observer.observe(el));
+    return () => observer.disconnect();
+  }, []);
 
   return (
-    <section className="w-full py-12 md:py-16">
-      <div className="mx-auto w-full max-w-7xl px-4 md:px-6">
-        <header className="mb-8 text-center md:mb-10">
-          <h2 className="text-pretty text-3xl font-semibold leading-tight sm:text-4xl md:text-5xl">
-            Popular Study <span className="text-primary">Destinations?</span>
+    <section className="py-14 bg-gradient-to-b from-slate-50 to-white dark:from-slate-950 dark:to-slate-900">
+      <div className="mx-auto max-w-7xl px-4 md:px-6">
+
+        {/* Heading */}
+        <div className="text-center max-w-3xl mx-auto mb-12">
+          <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+            Study Abroad Destinations
           </h2>
-          <p className="mt-3 text-lg font-semibold text-muted-foreground md:text-xl">Explore your medical career across the globe</p>
-        </header>
+          <p className="mt-3 text-slate-600 dark:text-slate-400">
+            Explore trusted countries for quality medical education
+          </p>
+        </div>
 
-        <div className="relative">
-          <div
-            aria-hidden="true"
-            className="pointer-events-none absolute inset-y-0 left-0 z-10 w-10 bg-gradient-to-r from-background to-transparent md:w-16"
-          />
-          <div
-            aria-hidden="true"
-            className="pointer-events-none absolute inset-y-0 right-0 z-10 w-10 bg-gradient-to-l from-background to-transparent md:w-16"
-          />
+        {/* Grid (2 rows automatically) */}
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-12">
+          {destinations.map((d, i) => (
+            <div
+              key={d.name}
+              ref={(el) => (itemsRef.current[i] = el)}
+              className="fade-item group relative rounded-2xl  overflow-hidden bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-2"
+            >
+              <Link href={d.link}>
+            
+              {/* Image */}
+              <div className="relative h-30 overflow-hidden">
+            
+                <img
+                  src={d.image}
+                  alt={d.name}
+                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  loading="lazy"
+                />
+               
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              </div>
 
-          <button
-            aria-label="Previous"
-            onClick={() => go("<")}
-            className="absolute left-2 top-1/2 z-20 -translate-y-1/2 rounded-full border border-border bg-card/80 p-3 text-foreground shadow-md backdrop-blur transition hover:bg-primary hover:text-primary-foreground md:left-4"
-          >
-            <ArrowIcon dir="left" />
-          </button>
-          <button
-            aria-label="Next"
-            onClick={() => go(">")}
-            className="absolute right-2 top-1/2 z-20 -translate-y-1/2 rounded-full border border-border bg-card/80 p-3 text-foreground shadow-md backdrop-blur transition hover:bg-primary hover:text-primary-foreground md:right-4"
-          >
-            <ArrowIcon dir="right" />
-          </button>
-
-          <Splide options={options} ref={splideRef} className="coverflow" aria-label="Destinations coverflow slider">
-            {destinations.map((d, i) => (
-              <SplideSlide key={i} className="px-2">
-                <article className="relative w-[240px] sm:w-[280px] md:w-[320px] overflow-hidden rounded-2xl border border-border bg-card/80 shadow-sm backdrop-blur">
-                  <div className="flex flex-col items-center px-5 pb-6 pt-14">
-                    {/* circular image with subtle radial glow */}
-                    <div className="relative -mt-16 mb-4">
-                      <span
-                        aria-hidden="true"
-                        className="absolute inset-0 -z-10 rounded-full bg-[radial-gradient(circle_at_30%_30%,rgba(0,0,0,0.06),transparent_60%)] blur-xl"
-                      />
-                      <div className="relative h-28 w-28 rounded-full bg-background p-1 ring-1 ring-border">
-                        <div className="h-full w-full overflow-hidden rounded-full ring-4 ring-primary/20">
-                          <img
-                            src={d.image || "/placeholder.svg?height=200&width=200&query=destination-image"}
-                            alt={d.name}
-                            className="h-full w-full object-cover"
-                            loading="lazy"
-                          />
-                        </div>
-                      </div>
-                    </div>
-
-                    <h3 className="text-lg font-semibold">{d.name}</h3>
-                    <p className="mt-1 text-xs text-muted-foreground">{d.title}</p>
-
-                    <a
-                      href="#"
-                      className="mt-4 inline-flex items-center gap-2 rounded-full bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow transition hover:shadow-md"
-                    >
-                      Explore
-                      <ArrowIcon dir="right" className="h-4 w-4" />
-                    </a>
-                  </div>
-                </article>
-              </SplideSlide>
-            ))}
-          </Splide>
+              {/* Content */}
+              <div className="px-4 py-4">
+                <h3 className="text-lg font-bold text-slate-900 dark:text-white">
+                  {d.name}
+                </h3>
+                <p className="mt-1 text-sm text-slate-600 dark:text-slate-400">
+                  {d.title}
+                </p>
+              </div>
+               </Link>
+            </div>
+          ))}
+          
         </div>
       </div>
 
-      <style jsx global>{`
-        .coverflow .splide__slide {
-          transition: transform 0.35s ease, opacity 0.35s ease;
-          opacity: 0.65;
+      {/* animations */}
+      <style jsx>{`
+        .fade-item {
+          opacity: 0;
+          transform: translateY(20px);
+          transition: all 0.7s ease;
         }
-        .coverflow .splide__slide.is-prev,
-        .coverflow .splide__slide.is-next {
-          transform: scale(0.92) translateY(6px);
-          opacity: 0.85;
-        }
-        .coverflow .splide__slide.is-active {
-          transform: scale(1.05) translateY(-6px);
+        .fade-item.show {
           opacity: 1;
-          z-index: 10;
+          transform: translateY(0);
         }
       `}</style>
     </section>
-  )
+  );
 }

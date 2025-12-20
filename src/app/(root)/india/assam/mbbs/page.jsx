@@ -18,7 +18,14 @@ import WhyChooseUs from '@/components/mbbs/why-choose-us'
 
 
 import React from 'react'
-
+export const metadata = {
+  title: "MBBS in Assam - All About Doctor",
+  description:
+    "Secure your MBBS admission in Assam with All About Doctor Education Pvt Ltd. Get expert guidance on NEET counseling, top medical cities, clinical exposure, internships, and career opportunitie ",
+    alternates: {
+    canonical: "https://www.allaboutdoctor.in/india/assam/mbbs",
+  },
+};
 const page = () => {
   return (
     <div>

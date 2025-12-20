@@ -14,7 +14,14 @@ import TopCityKerala from '@/components/mbbs/kerala/topCitiesAP'
 import WhyChooseKerala from '@/components/mbbs/kerala/whyChooseAP'
 import WhyChooseUs from '@/components/mbbs/why-choose-us'
 import React from 'react'
-
+export const metadata = {
+  title: "MBBS in Kerala - All About Doctor",
+  description:
+    "Discover MBBS opportunities in Kerala with All About Doctor Education Pvt Ltd. Get guidance on NEET admissions, internships, clinical exposure, and career paths. ",
+    alternates: {
+    canonical: "https://www.allaboutdoctor.in/india/kerala/mbbs",
+  },
+};
 const page = () => {
   return (
     <div>

@@ -27,7 +27,7 @@ function ArrowIcon({ dir = "left", className = "" }) {
 // Data
 const articles = [
   {
-    title: "How Leverage Edu weathered the pandemic storm with 'soul searching' on Saturdays",
+    title: "How All about doctor weathered the pandemic storm with 'soul searching' on Saturdays",
     logo: "https://lepublicassets.leverageedu.com/inTheNews/logo1.png",
     href: "#",
   },
@@ -37,17 +37,17 @@ const articles = [
     href: "#",
   },
   {
-    title: "Leverage reveals ‘1‑1‑1 Guarantee’ for partners",
+    title: "All about doctor ‘1‑1‑1 Guarantee’ for partners",
     logo: "https://lepublicassets.leverageedu.com/inTheNews/logo17.png",
     href: "#",
   },
   {
-    title: "Leverage Edu launches 'Fly Homes': accommodation platform in the UK",
+    title: "All about doctor launches 'Fly Homes': accommodation platform in the UK",
     logo: "https://lepublicassets.leverageedu.com/inTheNews/restOfWorld.png",
     href: "#",
   },
   {
-    title: "Airbnb partners with Leverage Edu to promote short‑term stays for students",
+    title: "Airbnb partners with All about doctor to promote short‑term stays for students",
     logo: "https://lepublicassets.leverageedu.com/inTheNews/logo1.png",
     href: "#",
   },
@@ -57,7 +57,7 @@ const articles = [
     href: "#",
   },
   {
-    title: "Leverage Edu crosses key milestones in FY25",
+    title: "All about doctor crosses key milestones in FY25",
     logo: "https://lepublicassets.leverageedu.com/inTheNews/logo17.png",
     href: "#",
   },
@@ -120,7 +120,7 @@ export default function FeaturedSlider() {
           <h2 className="text-pretty text-3xl font-semibold leading-tight sm:text-4xl md:text-5xl">
             Featured{" "}
             <span className="relative">
-              <span className="text-primary">Across</span>
+<span >Across</span>
               <span
                 aria-hidden="true"
                 className="pointer-events-none absolute -bottom-1 left-0 h-2 w-full rounded-full bg-primary/20"

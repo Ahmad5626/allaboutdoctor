@@ -6,16 +6,16 @@ export default function Hero() {
         Contact Us — All About Doctor Education Pvt. Ltd.
       </span>
     
-      <h1 className="text-pretty text-4xl font-semibold leading-tight sm:text-5xl animate-fade-up ">
-        From NEET to NExT — <span className="text-primary">Unlock Your Global Medical Dreams</span> 
+      <h1 className="text-5xl lg:text-6xl font-bold leading-tight bg-gradient-to-r from-primary via-blue-200 to-secondary bg-clip-text text-transparent animate-shimmer fade-item ">
+        From NEET to NExT — <span >Unlock Your Global Medical Dreams</span> 
       </h1>
-      <p className="mt-4 max-w-2xl text-sm/6 md:text-base/7 text-muted-foreground">
+      <h2 className="mt-4 max-w-2xl text-sm/6 md:text-base/7 text-muted-foreground fade-item">
         We’d love to hear from you!
  Whether you’re a student planning to pursue MBBS in India or abroad, a parent seeking trustworthy guidance, or a partner institution interested in collaboration — All About Doctor Education Pvt. Ltd. is here to help.
-      </p>
-      <p className="mt-4 max-w-2xl text-sm/6 md:text-base/7 text-muted-foreground">
+      </h2>
+      <h3 className="mt-4 max-w-2xl text-sm/6 md:text-base/7 text-muted-foreground fade-item">
         With a 95% admission success rate, 850+ global partner universities, and 10,000+ successful students, our expert counsellors ensure that your medical education journey is transparent, guided, and stress-free.
-      </p>
+      </h3>
       <div className="flex flex-wrap items-center gap-3 pt-2">
         <a
           href="#contact-form"

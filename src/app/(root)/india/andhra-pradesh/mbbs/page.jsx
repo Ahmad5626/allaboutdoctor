@@ -14,7 +14,14 @@ import TopCitiesAP from '@/components/mbbs/andhra-pradesh/topCitiesAP'
 import WhyChooseAP from '@/components/mbbs/andhra-pradesh/whyChooseAP'
 import WhyChooseUs from '@/components/mbbs/why-choose-us'
 import React from 'react'
-
+export const metadata = {
+  title: "MBBS in Andhra Pradesh - All About Doctor",
+  description:
+    "Get expert guidance for MBBS in Andhra Pradesh. Explore colleges, fees, cutoffs and admission support with All About Doctor Education Pvt Ltd. Apply now for free counseling. ",
+    alternates: {
+    canonical: "https://www.allaboutdoctor.in/india/andhra-pradesh/mbbs",
+  },
+};
 const page = () => {
   return (
     <div>

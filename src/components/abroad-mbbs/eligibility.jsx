@@ -9,7 +9,7 @@ export default function Eligibility() {
   ];
 
   return (
-    <section className="w-full">
+    <section className="w-full bg-primary/5">
       <div className="relative mx-auto max-w-7xl px-6 py-10 md:py-10">
         {/* Header */}
         <div className="mb-8">

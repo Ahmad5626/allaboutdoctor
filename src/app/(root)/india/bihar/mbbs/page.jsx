@@ -12,7 +12,14 @@ import BiharTopCities from '@/components/mbbs/bihar/topCitiesAP'
 import WhyChooseBihar from '@/components/mbbs/bihar/whyChooseAP'
 import WhyChooseUs from '@/components/mbbs/why-choose-us'
 import React from 'react'
-
+export const metadata = {
+  title: "MBBS in Bihar - All About Doctor",
+  description:
+    "Explore MBBS in Bihar with All About Doctor Education Pvt Ltd. Get guidance on NEET admission, clinical training, internships, and career opportunities.",
+    alternates: {
+    canonical: "https://www.allaboutdoctor.in/india/bihar/mbbs",
+  },
+};
 const page = () => {
   return (
     <div>

@@ -14,7 +14,14 @@ import TopCityUttarPradesh from '@/components/mbbs/uttar-pradesh/topCitiesAP'
 import WhyChooseUttarPradesh from '@/components/mbbs/uttar-pradesh/whyChooseAP'
 import WhyChooseUs from '@/components/mbbs/why-choose-us'
 import React from 'react'
-
+export const metadata = {
+  title: "MBBS in Uttar Pradesh - All About Doctor",
+  description:
+    "Get expert guidance for MBBS in Uttar Pradesh. Explore colleges, fees, cutoffs and admission support with All About Doctor Education Pvt Ltd. Apply now for free counseling. ",
+    alternates: {
+    canonical: "https://www.allaboutdoctor.in/india/uttar-pradesh/mbbs",
+  },
+};
 const page = () => {
   return (
     <div>

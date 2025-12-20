@@ -24,7 +24,7 @@ const vendorTypes = [
 ]
 
 export default function SignupPage() {
-  const {userType,setUserType,formData,setFormData,registerHandleSubmit,Toaster}=useContext(AuthContext)
+  const {userType,setUserType,formData,setFormData,Toaster}=useContext(AuthContext)
   
 
   
@@ -106,7 +106,7 @@ export default function SignupPage() {
               <p className="text-sm text-gray-600 mt-2">Create your {userType} account to get started</p>
             </CardHeader>
             <CardContent>
-              <form onSubmit={registerHandleSubmit} className="space-y-4">
+              <form  className="space-y-4">
                 {/* Hidden Registered Type */}
                 <input type="hidden" name="registeredType" value={formData.registeredType} />
 

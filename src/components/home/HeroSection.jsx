@@ -2,112 +2,118 @@
 
 import Image from "next/image"
 import { useEffect, useState } from "react";
+import EnrollmentForm from "./EnrollmentForm";
 
 export default function HeroSection() {
- const [show, setShow] = useState(false);
+  const [show, setShow] = useState(false);
 
-  // Auto open after 3 seconds
+
   useEffect(() => {
     const t = setTimeout(() => setShow(true), 3000);
     return () => clearTimeout(t);
+  }, []);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+          } else {
+
+            entry.target.classList.remove("show");
+          }
+        });
+      },
+      {
+        threshold: 0.2,
+      }
+    );
+
+    document.querySelectorAll(".fade-item").forEach((item) => {
+      observer.observe(item);
+    });
   }, []);
   return (
 
     <>
 
-   
-    <main className="relative overflow-hidden">
-      {/* Background accent (subtle, solid + light vignette) */}
-      <div className="pointer-events-none absolute inset-0 -z-10" aria-hidden="true">
-        {/* Soft vignette using tokens */}
-        <div className="absolute inset-0 bg-background" />
-        <div
-          className="absolute inset-0 opacity-[0.06]"
-          style={{
-            background: "radial-gradient(700px 340px at 80% 25%, currentColor, transparent 60%)",
-            color: "hsl(var(--primary))",
-          }}
-        />
-      </div>
 
-      <section className="mx-auto max-w-7xl px-4 py-12 md:py-10">
-        <div className="grid grid-cols-1  gap-10 lg:grid-cols-2">
-          {/* LEFT: Copy & CTAs */}
-          <div className="space-y-6">
-            <span
-              className="inline-flex items-center rounded-full border border-border/60 bg-card px-3 py-1 text-xs font-medium text-muted-foreground animate-fade-up"
-              style={{ animationDelay: "40ms" }}
-            >
-            All About Doctor Education Pvt Ltd
-            </span>
+      <main className="relative overflow-hidden" id="form">
 
-            <h1
-              className="text-pretty text-4xl font-semibold leading-tight sm:text-5xl animate-fade-up"
-              style={{ animationDelay: "100ms" }}
-            >
-            From NEET to NExT <span className="text-primary">Your Global Medical</span> Future Begins Here
+        <div className="pointer-events-none absolute inset-0 -z-10" aria-hidden="true">
 
-            </h1>
+          <div className="absolute inset-0 bg-background" />
+          <div
+            className="absolute inset-0 opacity-[0.06]"
+            style={{
+              background: "radial-gradient(700px 340px at 80% 25%, currentColor, transparent 60%)",
+              color: "hsl(var(--primary))",
+            }}
+          />
+        </div>
 
-            <p
-              className="max-w-xl text-muted-foreground leading-relaxed animate-fade-up"
-              style={{ animationDelay: "180ms" }}
-            >
-              At <b>All About Doctor</b> , we redefine the medical education journey. With Doctor-Led Mentorship and <b>Smart Education Technology</b>, we empower aspiring medical professionals to navigate every milestone with confidence — from NEET to NExT, in India or abroad.
-            </p>
+        <section className="mx-auto max-w-7xl px-4 py-12 md:py-10">
+          <div className="grid grid-cols-1  gap-10 lg:grid-cols-2">
 
-            <div className="flex flex-col gap-3 sm:flex-row animate-fade-up" style={{ animationDelay: "260ms" }}>
-              <a
-                href="#get-started"
-                className="inline-flex items-center justify-center rounded-xl bg-primary px-5 py-3 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+            <div className="space-y-6 fade-section fade-section">
+              <span
+                className="inline-flex items-center rounded-full border border-border/60 bg-card px-3 py-1 text-xs font-medium text-muted-foreground animate-fade-up"
+                style={{ animationDelay: "40ms" }}
               >
-                Get Your Free Plan
-              </a>
-              <a
-                href="#talk"
-                className="inline-flex items-center justify-center rounded-xl border border-input bg-background px-5 py-3 text-sm font-medium text-foreground hover:bg-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                All About Doctor Education Pvt Ltd
+              </span>
+
+              <h1
+                className="text-5xl lg:text-6xl font-bold leading-tight bg-gradient-to-r from-primary via-blue-200 to-secondary bg-clip-text text-transparent animate-shimmer fade-item"
+                style={{ animationDelay: "100ms" }}
               >
-                Talk to a Counsellor
-              </a>
+                From NEET to NExT <span className="">Your Global Medical</span> Future Begins Here
+
+              </h1>
+
+              <p
+                className="max-w-xl text-muted-foreground leading-relaxed poppins-regular  fade-item"
+                style={{ animationDelay: "180ms" }}
+              >
+                At <b>All About Doctor</b> , we redefine the medical education journey. With Doctor-Led Mentorship and <b>Smart Education Technology</b>, we empower aspiring medical professionals to navigate every milestone with confidence — from NEET to NExT, in India or abroad.
+              </p>
+
+              <div className="flex flex-col gap-3 sm:flex-row animate-fade-up" style={{ animationDelay: "260ms" }}>
+                <a
+                  href="#get-started"
+                  className="mt-6 px-6 py-3 rounded-lg bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 active:scale-95"
+                >
+                  Get Your Free Plan
+                </a>
+                <a
+                  href="#talk"
+                  className="mt-6 px-6 py-3 rounded-lg bg-gradient-to-r from-white to-white text-primary font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 active:scale-95"
+                >
+                  Talk to a Counsellor
+                </a>
+              </div>
+
+
+
+
+
             </div>
 
-            {/* Trust copy */}
-            <div className="space-y-3 animate-fade-up" style={{ animationDelay: "320ms" }}>
-              <p className="text-sm text-muted-foreground">95% Admission Success Rate</p>
-              <div className="flex flex-wrap items-center gap-3">
-                {/* Compact trust pills instead of only logos */}
-                <MetricPill label="850+ Partner Universities" />
-                <MetricPill label="12+ Countries" />
-                <MetricPill label="10000+ Students Guided" />
-              </div>
-            </div>
+            <div className="relative">
+              <div className="relative overflow-hidden rounded-3xl bg-card p-6 shadow-md ring-1 ring-border md:p-8">
 
-            {/* Partner logos */}
-            {/* <div className="animate-fade-up" style={{ animationDelay: "380ms" }}>
-              <p className="mb-3 text-xs font-medium text-muted-foreground">Proudly associated with</p>
-              <div className="flex items-center gap-6 opacity-80">
-                <Image src="/university-crest.jpg" alt="University Crest" width={80} height={28} />
-                <Image src="/british-council-logo.jpg" alt="British Council" width={120} height={28} />
-                <Image src="/icef-logo.jpg" alt="ICEF" width={80} height={28} />
-              </div>
-            </div> */}
-          </div>
-
-          {/* RIGHT: Visual Composition */}
-          <div className="relative">
-            <div className="relative overflow-hidden rounded-3xl bg-card p-6 shadow-md ring-1 ring-border md:p-8">
-              {/* rotating ring accent */}
-              <div
-                className="pointer-events-none absolute -right-10 -top-10 h-60 w-60 rounded-full border-2 border-primary/30 animate-spin-slow"
-                aria-hidden="true"
-              />
-              <div
-                className="pointer-events-none absolute -left-6 bottom-10 h-24 w-24 rounded-full border border-primary/20"
-                aria-hidden="true"
-              />
-
-              {/* Main Illustration */}
-              <div className="relative z-10 mt-2 flex items-end justify-center h-[450px]">
+                <div
+                  className="pointer-events-none absolute -right-10 -top-10 h-60 w-60 rounded-full border-2 border-primary/30 animate-spin-slow"
+                  aria-hidden="true"
+                />
+                <div
+                  className="pointer-events-none absolute -left-6 bottom-10 h-24 w-24 rounded-full border border-primary/20"
+                  aria-hidden="true"
+                />
+                <EnrollmentForm fade="fade-item" />
+                {/* Main Illustration */}
+                {/* <div className="relative z-10 mt-2 flex items-end justify-center h-[450px]">
                <img
                   src="/assets/img/desktopGirlImg.webp"
                   alt="Student with laptop and AI assistant"
@@ -115,18 +121,18 @@ export default function HeroSection() {
                   className="max-w-full animate-float drop-shadow-md w-full h-full object-cover rounded-3xl"
                   
                 />
-              </div>
+              </div> */}
 
-              {/* Floating badges */}
-              <FloatingBadge className="left-4 top-4" delay="120ms" text="1:1 Live Meeting " />
-              <FloatingBadge className="right-4 top-20" delay="220ms" text="Scholarship Guidance" />
+                {/* Floating badges */}
+                {/* <FloatingBadge className="left-4 top-4" delay="120ms" text="1:1 Live Meeting " />
+              <FloatingBadge className="right-4 top-20" delay="220ms" text="Scholarship Guidance" /> */}
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Updated animation set */}
-      <style jsx>{`
+
+        <style jsx>{`
         @keyframes fadeUp {
           0% { opacity: 0; transform: translateY(8px); }
           100% { opacity: 1; transform: translateY(0); }
@@ -143,145 +149,169 @@ export default function HeroSection() {
         .animate-fade-up { opacity: 0; animation: fadeUp 700ms ease forwards; }
         .animate-float { animation: floaty 6s ease-in-out infinite; }
         .animate-spin-slow { animation: spinSlow 24s linear infinite; }
+
+        .fade-item {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s ease-out;
+}
+
+.fade-item.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+ .reveal {
+          opacity: 0;
+          transform: translateY(64px);
+        }
+
+        .show {
+          opacity: 1 !important;
+          transform: translateY(0) !important;
+        }
+
+        /* Added new entrance and scroll animations */
+        @keyframes float {
+          0%, 100% {
+            transform: translateY(0px);
+          }
+          50% {
+            transform: translateY(-20px);
+          }
+        }
+
+        @keyframes pulse-slow {
+          0%, 100% {
+            opacity: 0.5;
+          }
+          50% {
+            opacity: 0.2;
+          }
+        }
+
+        @keyframes shimmer {
+          0% {
+            background-position: -1000px 0;
+          }
+          100% {
+            background-position: 1000px 0;
+          }
+        }
+
+        @keyframes button-entrance {
+          0% {
+            transform: scale(0.95) translateY(20px);
+            opacity: 0;
+          }
+          100% {
+            transform: scale(1) translateY(0);
+            opacity: 1;
+          }
+        }
+
+        .animate-shimmer {
+          background-size: 200% auto;
+          animation: shimmer 7s linear infinite;
+        }
+
+        .animate-button-entrance {
+          animation: button-entrance 0.8s ease-out forwards;
+        }
+
+        .show .animate-button-entrance {
+          animation: button-entrance 0.8s ease-out;
+        }
+          .fade-item {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s ease-out;
+}
+
+.fade-item.show {
+  opacity: 1;
+  transform: translateY(0);
+}
       `}</style>
-    </main>
+      </main>
 
-    {/* OPEN BUTTON */}
-     
 
-       {show && (
-        <div className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-[9999] p-6  lg:p-4  ">
 
-          {/* POPUP BOX */}
-          <div className="bg-white rounded-2xl max-w-4xl w-full shadow-2xl overflow-hidden relative animate-fadeIn">
-            <button
-              onClick={() => setShow(false)}
-              className="absolute top-3 right-3 bg-black/70 text-white w-8 h-8 rounded-full flex items-center justify-center text-xl z-50"
-            >
-              ×
-            </button>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2">
-              
-              {/* LEFT SIDE EXACT AS YOUR DESIGN */}
-              <div className="p-2 md:p-8 flex lg:flex-col justify-between bg-[#eaf6ff]">
-                
-                {/* Bullet Points */}
-                <div className="space-y-4 text-[#003b99] font-semibold text-[8px] md:text-sm">
-                  <p className="flex items-start gap-2">
-                    <span className="text-[#0057ff] text-sm">✔</span> Expert Guidance for MBBS Admissions
-                  </p>
-                  <p className="flex items-start gap-2 ml-6">
-                    <span className="text-[#0057ff] text-sm">✔</span> University Selection Based on Budget & NEET Score
-                  </p>
-                  <p className="flex items-start gap-2 ml-10">
-                    <span className="text-[#0057ff] text-sm">✔</span> Complete Support: Documentation, Visa & Hostel
-                  </p>
-                  <p className="flex items-start gap-2 ml-16">
-                    <span className="text-[#0057ff] text-sm">✔</span> Personal Counselling & Student Assistance
-                  </p>
-                </div>
+      {show && (
+       <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/70 backdrop-blur-sm p-4">
 
-                {/* Doctor Images */}
-                <div className=" mt-8 flex  justify-center">
-                  <img
-                    src="/assets/img/man-1.png"
-                    className="w-10 lg:w-54 object-cover z-10"
-                  />
-                  <img
-                    src="/assets/img/girl-1.png"
-                    className="w-10 lg:w-44 object-cover  bottom-0"
-                  />
-                </div>
-              </div>
+  <div className="relative w-full max-w-xl rounded-3xl bg-white shadow-2xl overflow-hidden animate-fadeIn ">
 
-              {/* RIGHT SIDE EXACT AS YOUR DESIGN */}
-              <div className="p-8">
-                <h2 className="text-[20px] md:text-[26px] font-bold text-[#f68b1e] leading-tight text-center">
-                  START YOUR MBBS <br /> JOURNEY WITH CONFIDENCE
-                </h2>
-
-                <p className="mt-3 text-[#003b99] font-semibold text-[12px] border-b pb-2 text-center">
-                  SECURE ADMISSION IN TOP MEDICAL UNIVERSITIES IN INDIA & ABROAD
-                </p>
-
-                {/* Icons Row */}
-                <p className="text-center mt-4 text-[12px] font-semibold text-[#003b99]">
-                  With All About Doctor Global Medical Admission Program
-                </p>
-
-                <div className="mt-3 grid grid-cols-4 gap-3 text-center text-[9px] font-semibold text-[#003b99]">
-                  <div>
-                    <img src="/assets/img/popup-icon-1.png" className="w-8 mx-auto" />
-                    15,000+ <br /> STUDENTS GUIDED
-                  </div>
-                  <div>
-                    <img src="/assets/img/popup-icon-2.png" className="w-8 mx-auto" />
-                    TRUSTED SINCE <br /> 2015
-                  </div>
-                  <div>
-                    <img src="/assets/img/popup-icon-3.png" className="w-8 mx-auto" />
-                    OFFICIAL TIE-UPS <br /> TOP UNIVERSITIES
-                  </div>
-                  <div>
-                    <img src="/assets/img/popup-icon-4.png" className="w-8 mx-auto" />
-                    DEDICATED <br /> COUNSELLOR SUPPORT
-                  </div>
-                </div>
-
-                {/* Form */}
-                <div className="mt-6 space-y-4">
-                  <input
-                    type="text"
-                    placeholder="Name"
-                    className="w-full border border-primary py-2 px-3 rounded-md text-[#003b99] font-semibold"
-                  />
-                  <input
-                    type="text"
-                    placeholder="Mobile"
-                    className="w-full border border-primary py-2 px-3 rounded-md text-[#003b99] "
-                  />
-                </div>
-
-                {/* Checkbox */}
-                <div className="mt-4 flex gap-3">
-                  <div className="bg-[#f68b1e] w-6 h-6 rounded flex items-center justify-center text-white font-bold">✔</div>
-                  <p className="text-[13px] text-[#003b99]">
-                    I agree to be contacted by All About Doctor Education through call, WhatsApp, and SMS for admission guidance.
-                  </p>
-                </div>
-
-                {/* Button */}
-                <button className="mt-6 w-full bg-[#f68b1e] hover:bg-[#e27a17] text-white font-bold py-3 rounded-xl text-lg">
-                  GET FREE COUNSELLING →
-                </button>
-              </div>
-
-            </div>
-          </div>
-        </div>
-      )}
-     </>
-  )
-}
-
-// New small UI helpers for the redesigned hero
-function MetricPill({ label }) {
-  return (
-    <span className="inline-flex items-center rounded-full border border-border bg-background px-3 py-1 text-xs font-medium text-foreground/80">
-      {label}
-    </span>
-  )
-}
-
-function FloatingBadge({ text, className = "", delay = "0ms" }) {
-  return (
-    <div
-      className={`absolute z-10 inline-flex items-center gap-2 rounded-xl border border-border bg-background/90 px-3 py-2 text-xs font-medium text-foreground shadow backdrop-blur animate-fade-up ${className}`}
-      style={{ animationDelay: delay }}
+    {/* CLOSE */}
+    <button
+      onClick={() => setShow(false)}
+      className="absolute right-5 top-5 text-2xl font-bold text-gray-500 hover:text-black transition"
     >
-      <span className="inline-block h-2.5 w-2.5 rounded-full bg-primary" aria-hidden="true" />
-      {text}
+      ×
+    </button>
+
+    <div className="">
+
+      {/* LEFT CONTENT */}
+    
+
+      {/* RIGHT FORM */}
+      <div className="px-8 py-12 lg:px-12">
+
+        <h3 className="text-2xl font-bold text-[#003b99] text-center">
+         START YOUR MBBS  JOURNEY WITH CONFIDENCE
+        </h3>
+
+        <p className="mt-1 text-sm text-gray-500 text-center">
+          SECURE ADMISSION IN TOP MEDICAL UNIVERSITIES IN INDIA & ABROAD
+        </p>
+
+        <div className="mt-8 space-y-5">
+
+          <input
+            type="text"
+            placeholder="Student Name"
+            className="w-full rounded-xl border border-gray-300 px-4 py-3 focus:border-[#0057ff] focus:ring-2 focus:ring-[#0057ff]/30 transition"
+          />
+
+          <input
+            type="tel"
+            placeholder="Mobile Number"
+            className="w-full rounded-xl border border-gray-300 px-4 py-3 focus:border-[#0057ff] focus:ring-2 focus:ring-[#0057ff]/30 transition"
+          />
+ <input
+            type="text"
+            placeholder="State"
+            className="w-full rounded-xl border border-gray-300 px-4 py-3 focus:border-[#0057ff] focus:ring-2 focus:ring-[#0057ff]/30 transition"
+          />
+          {/* NEET SCORE */}
+          <input
+            type="number"
+            placeholder="Neet Attempt"
+            className="w-full rounded-xl border border-gray-300 px-4 py-3 focus:border-[#0057ff] focus:ring-2 focus:ring-[#0057ff]/30 transition"
+          />
+
+        </div>
+
+        {/* CTA */}
+        <button className="mt-8 w-full rounded-2xl bg-[#f68b1e] py-4 text-lg font-bold text-white shadow-lg hover:scale-[1.03] transition">
+          Get Expert Counselling →
+        </button>
+
+        <p className="mt-3 text-xs text-gray-400 text-center">
+          100% free • No spam • Counsellor call within 24 hours
+        </p>
+
+      </div>
     </div>
+  </div>
+</div>
+
+
+      )}
+    </>
   )
 }
+
+

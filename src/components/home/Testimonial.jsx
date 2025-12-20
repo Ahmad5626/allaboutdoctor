@@ -6,7 +6,7 @@ export default function TestimonialsSection() {
   const splideRef = useRef(null)
 
   useEffect(() => {
-    const loadSplide = async () => {
+    const init = async () => {
       const { Splide } = await import("@splidejs/splide")
       await import("@splidejs/splide/css")
 
@@ -14,125 +14,108 @@ export default function TestimonialsSection() {
         new Splide(splideRef.current, {
           type: "loop",
           perPage: 2,
-          perMove: 1,
-          gap: "2rem",
-          arrows: false,
+          gap: "1.5rem",
+          arrows: true,
           pagination: false,
+          autoplay: true,
+          interval: 5000, // ⏳ slower
+          pauseOnHover: true,
           breakpoints: {
-            768: {
+            1024: { perPage: 1 },
+            640: {
               perPage: 1,
+              arrows: false, // 📱 hide arrows
             },
           },
         }).mount()
       }
     }
 
-    loadSplide()
+    init()
   }, [])
 
   const testimonials = [
     {
       id: 1,
-      text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown",
-      name: "Jennifer Lee",
-      role: "Freelance Photographer",
-      avatar: "https://i.pravatar.cc/300",
+      text: "All About Doctor guided me at every step for MBBS admission abroad. The counselling was honest and very professional.",
+      name: "Aman Verma",
+      role: "MBBS Student, Russia",
+      avatar: "https://randomuser.me/api/portraits/men/32.jpg",
     },
     {
       id: 2,
-      text: "CLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown",
-      name: "Michael Collins",
-      role: "Marketing Manager",
-      avatar: "https://i.pravatar.cc/300",
+      text: "I was confused about university selection. Their team explained fees, eligibility and future scope very clearly.",
+      name: "Neha Sharma",
+      role: "Medical Aspirant",
+      avatar: "https://randomuser.me/api/portraits/women/44.jpg",
     },
     {
       id: 3,
-      text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown",
-      name: "Sarah Johnson",
-      role: "Small Business Owner",
-      avatar: "https://i.pravatar.cc/300",
+      text: "As a parent, I felt confident after talking to them. Transparent process and no false promises.",
+      name: "Rajesh Kumar",
+      role: "Parent",
+      avatar: "https://randomuser.me/api/portraits/men/51.jpg",
     },
     {
       id: 4,
-      text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown",
-      name: "David Wilson",
-      role: "Event Coordinator",
-      avatar: "https://i.pravatar.cc/300",
+      text: "From documentation to visa guidance, everything was smooth. Highly recommended for MBBS abroad.",
+      name: "Pooja Singh",
+      role: "MBBS Student, Kazakhstan",
+      avatar: "https://randomuser.me/api/portraits/women/65.jpg",
     },
   ]
 
-  const nextSlide = () => {
-    if (splideRef.current && splideRef.current.splide) {
-      splideRef.current.splide.go("+1")
-    }
-  }
-
-  const prevSlide = () => {
-    if (splideRef.current && splideRef.current.splide) {
-      splideRef.current.splide.go("-1")
-    }
-  }
-
   return (
-    <section className="py-16 px-4 bg-white relative overflow-hidden">
-      {/* Background decorative elements */}
-      <div className="absolute top-0 left-0 w-32 h-32 bg-pink-200 rounded-full opacity-50 -translate-x-8 -translate-y-8"></div>
-      <div className="absolute bottom-0 left-0 w-24 h-24 border-2 border-gray-300 rounded-full opacity-30 translate-x-4 translate-y-4"></div>
-      <div className="absolute top-1/2 right-0 w-16 h-16 border-2 border-gray-300 rounded-full opacity-30 translate-x-8"></div>
-      <div className="absolute bottom-0 right-0 w-20 h-20 bg-green-200 rounded-full opacity-50 translate-x-4 translate-y-4"></div>
+    <section className="bg-primary py-16 md:py-20 overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 md:px-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 
-      <div className="max-w-7xl mx-auto">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Left side - Title and Testimonials */}
-          <div>
-            <div className="mb-8">
-              <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-                What Clients Say About
-                <br />
-                 All About Doctor
-              </h2>
+          {/* LEFT CONTENT */}
+          <div className="text-white text-center lg:text-left">
+            <h2 className="text-5xl lg:text-6xl font-bold leading-tight bg-gradient-to-r from-white via-blue-200 to-secondary bg-clip-text text-transparent animate-shimmer">
+              Trusted by Students <br className="hidden sm:block" />
+              & Parents Across India
+            </h2>
 
-             
-            </div>
+            <p className="text-sm md:text-base text-blue-100 leading-relaxed mt-4 md:mt-6 max-w-xl mx-auto lg:mx-0">
+              Real experiences from students who achieved their dream
+              of studying MBBS abroad with All About Doctor.
+            </p>
+          </div>
 
-            {/* Testimonials Slider */}
-            <div ref={splideRef} className="splide">
-              <div className="splide__track">
-                <ul className="splide__list">
-                  {testimonials.map((testimonial) => (
-                    <li key={testimonial.id} className="splide__slide">
-                      <div className="bg-white p-6 rounded-lg">
-                        <div className="text-coral-500 text-6xl mb-4 ">"</div>
-                        <p className="text-gray-600 text-lg mb-6 leading-relaxed">{testimonial.text}</p>
-                        <div className="flex items-center gap-4">
-                          <img
-                            src={testimonial.avatar || "/placeholder.svg"}
-                            alt={testimonial.name}
-                            className="w-12 h-12 rounded-full object-cover"
-                          />
-                          <div>
-                            <h4 className="font-semibold text-gray-900">{testimonial.name}</h4>
-                            <p className="text-gray-500 text-sm">{testimonial.role}</p>
-                          </div>
+          {/* RIGHT SLIDER */}
+          <div ref={splideRef} className="splide w-full max-w-full mx-auto">
+            <div className="splide__track">
+              <ul className="splide__list">
+                {testimonials.map((item) => (
+                  <li key={item.id} className="splide__slide">
+                    <div className="bg-white rounded-xl p-5 md:p-6 shadow-lg h-auto">
+                      <p className="text-gray-700 text-sm md:text-base leading-relaxed mb-5">
+                        “{item.text}”
+                      </p>
+
+                      <div className="flex items-center gap-4">
+                        <img
+                          src={item.avatar}
+                          alt={item.name}
+                          className="w-11 h-11 md:w-12 md:h-12 rounded-full object-cover"
+                        />
+                        <div>
+                          <h4 className="font-semibold text-gray-900 text-sm md:text-base">
+                            {item.name}
+                          </h4>
+                          <p className="text-xs md:text-sm text-gray-500">
+                            {item.role}
+                          </p>
                         </div>
                       </div>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+                    </div>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
 
-          {/* Right side - Hero Image */}
-          <div className="relative">
-            <div className="bg-gradient-to-br from-primary to-coral-500 rounded-2xl p-8 lg:p-12 w-[300] md:w-auto">
-              <img
-                src="https://i.pravatar.cc/300"
-                alt="Happy client making OK gesture"
-                className="w-full h-auto max-w-md mx-auto"
-              />
-            </div>
-          </div>
         </div>
       </div>
     </section>

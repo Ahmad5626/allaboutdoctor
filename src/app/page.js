@@ -22,6 +22,9 @@ import DoctorServicesSlider from '@/components/home/doctor-services-slider'
 import HowWeWork from '@/components/home/how-we-work'
 import Trusted from '@/components/home/trusted'
 import MedicalCareer from '@/components/home/medicalCareer'
+import LatestUpdates from '@/components/home/LatestUpdates'
+import Download from '@/components/home/Download'
+import InternationalCollaboration from '@/components/home/International'
 
 const page = () => {
   return (
@@ -29,25 +32,26 @@ const page = () => {
       <Hedaer />
       <HeroSection />
       <MbbsCta />
-      <SuccessStories />
-      <FeaturedSlider />
+      {/* <SuccessStories /> */}
+      {/* <FeaturedSlider /> */}
       <Destination />
+      <InternationalCollaboration/>
 
-      <VideoSection />
+      {/* <VideoSection /> */}
 
-      <DoctorServicesSlider />
-      <Trusted/>
+       {/* <DoctorServicesSlider />  */}
+      <Trusted />
+      {/* <Download/> */}
+       <LatestUpdates/>
       <HowWeWork />
-      <DownloadAppSection />
-<MedicalCareer/>
-      {/* <PopularSearches />
-         
-      <ServicesSection/>
-      <CategoriesSlider/>
-      <Listing/>
+
      
-      <WeddingStoriesSection/>
-      <GallerySection/>  */}
+      <DownloadAppSection />
+      <MedicalCareer />
+    
+     
+      
+      {/* <GallerySection/>  */}
       <TestimonialsSection />
       {/* <HomeBlogSection/> */}
 

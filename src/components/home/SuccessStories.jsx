@@ -13,7 +13,7 @@ export default function SuccessStories() {
       {
         id: "s1",
         quote:
-          "I decided to pursue an MS and Leverage Edu’s guidance helped me focus on the right universities and move fast.",
+          "I decided to pursue an MS and All about doctor’s guidance helped me focus on the right universities and move fast.",
         name: "Shrey Talan",
         at: "University of Glasgow",
         flag: "🇬🇧",
@@ -33,7 +33,7 @@ export default function SuccessStories() {
       {
         id: "s3",
         quote:
-          "I was rejected multiple times during VISA stage until Leverage Edu helped me find clarity. That changed everything.",
+          "I was rejected multiple times during VISA stage until All about doctor helped me find clarity. That changed everything.",
         name: "Ramasheesh",
         at: "UEA",
         flag: "🇬🇧",
@@ -42,7 +42,7 @@ export default function SuccessStories() {
       },
       {
         id: "s4",
-        quote: "I’m really grateful that I chose Leverage Edu. I’ll forever be thankful for their help and support.",
+        quote: "I’m really grateful that I chose All about doctor. I’ll forever be thankful for their help and support.",
         name: "Palak Bhatt",
         at: "Cranfield University",
         flag: "🇬🇧",
@@ -64,7 +64,7 @@ export default function SuccessStories() {
           <h2 className="text-pretty text-3xl font-semibold leading-tight sm:text-4xl md:text-5xl">
             From Dreamers{" "}
             <span className="relative">
-              <span className="text-primary">to Achievers</span>
+<span >to Achievers</span>
               <span
                 aria-hidden="true"
                 className="pointer-events-none absolute -bottom-1 left-0 h-2 w-full rounded-full bg-primary/20"

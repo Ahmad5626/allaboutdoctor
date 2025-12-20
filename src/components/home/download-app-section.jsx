@@ -1,7 +1,32 @@
+"use client"
 import { Button } from "@/components/ui/button"
 import { Smartphone, Download, Star, ArrowUpRightFromSquare } from "lucide-react"
+import { useEffect } from "react";
 
 export default function DownloadAppSection() {
+
+
+    useEffect(() => {
+  const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+      } else {
+        // REMOVE on scroll out → animation repeats every time
+        entry.target.classList.remove("show");
+      }
+    });
+  },
+  {
+    threshold: 0.2, // 20% visible → animate
+  }
+);
+
+document.querySelectorAll(".fade-item").forEach((item) => {
+  observer.observe(item);
+});
+}, []);
   return (
     <section className="py-12  max-w-7xl mx-auto my-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -9,11 +34,11 @@ export default function DownloadAppSection() {
           {/* Left Content */}
           <div className="space-y-6">
             <div>
-            <h1 className="text-4xl font-bold text-slate-900 mb-4"> Our Mobile App</h1>
-              <h2 className="text-2xl font-bold text-slate-900 mb-4"> Plan Your Medical Future, Anytime!</h2>
-              <p className="text-lg text-slate-600 mb-6">
-              Download All About Doctor App — End-to-end medical education support , study material, NEET coaching, and expert doctors to guide your journey.
-              </p>
+            <h2 className="text-4xl font-bold text-slate-900 mb-4 fade-item"> Our Mobile App</h2>
+              <h3 className="text-2xl font-bold text-slate-900 mb-4 fade-item"> Plan Your Medical Future, Anytime!</h3>
+              <h4 className="text-lg text-slate-600 mb-6 fade-item">
+              Download All About Doctor App — End-to-end  medical education support , study material, NEET coaching, and expert doctors to guide your journey.
+              </h4>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
@@ -21,19 +46,19 @@ export default function DownloadAppSection() {
                 <div className="bg-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-2 shadow-md">
                   <Smartphone className="w-8 h-8 text-rose-600" />
                 </div>
-                <p className="text-sm font-medium text-slate-700">Download on Google Play</p>
+                <h4 className="text-sm font-medium text-slate-700 fade-item">Download on Google Play</h4>
               </div>
               <div className="text-center">
                 <div className="bg-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-2 shadow-md">
                   <Star className="w-8 h-8 text-rose-600" />
                 </div>
-                <p className="text-sm font-medium text-slate-700">Download on App Store</p>
+                <h4 className="text-sm font-medium text-slate-700 fade-item">Download on App Store</h4>
               </div>
               <div className="text-center">
                 <div className="bg-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-2 shadow-md">
                   <Download className="w-8 h-8 text-rose-600" />
                 </div>
-                <p className="text-sm font-medium text-slate-700">Free Download</p>
+                <h4 className="text-sm font-medium text-slate-700 fade-item">Free Download</h4>
               </div>
             </div>
 
@@ -61,6 +86,18 @@ export default function DownloadAppSection() {
           </div>
         </div>
       </div>
+        <style jsx>{
+        `
+        .fade-item {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s ease-out;
+}
+
+.fade-item.show {
+  opacity: 1;
+  transform: translateY(0);
+}`}</style>
     </section>
   )
 }

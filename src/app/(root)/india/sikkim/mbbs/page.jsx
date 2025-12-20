@@ -15,6 +15,14 @@ import WhyChooseSikkim from '@/components/mbbs/sikkim/whyChooseAP'
 import WhyChooseUs from '@/components/mbbs/why-choose-us'
 import React from 'react'
 
+export const metadata = {
+  title: "MBBS in Sikkim - All About Doctor",
+  description:
+    "Get expert guidance for MBBS in Sikkim. Explore colleges, fees, cutoffs and admission support with All About Doctor Education Pvt Ltd. Apply now for free counseling. ",
+    alternates: {
+    canonical: "https://www.allaboutdoctor.in/india/sikkim/mbbs",
+  },
+};
 const page = () => {
   return (
     <div>

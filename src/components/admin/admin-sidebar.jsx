@@ -48,11 +48,11 @@ const sidebarItems = [
     href: "/admin/blogs",
     icon: BarChart3,
   },
-  // {
-  //   title: "Reports",
-  //   href: "/admin/reports",
-  //   icon: FileText,
-  // },
+  {
+    title: "Create city Page ",
+    href: "/admin/createcity",
+    icon: FileText,
+  },
   // {
   //   title: "Payments",
   //   href: "/admin/payments",
