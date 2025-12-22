@@ -47,12 +47,13 @@ const page = () => {
 
      
       <DownloadAppSection />
+       <TestimonialsSection />
       <MedicalCareer />
     
      
       
       {/* <GallerySection/>  */}
-      <TestimonialsSection />
+     
       {/* <HomeBlogSection/> */}
 
       <Footer />

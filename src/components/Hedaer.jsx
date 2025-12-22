@@ -119,10 +119,18 @@ export default function Header() {
 
               <Link
                 href="/counseling"
-                className="flex  gap-2 px-4 py-1.5 bg-white text-red-600 font-semibold text-sm rounded hover:bg-red-50 hover:scale-105 transition-all duration-300 shadow-md"
+                className="flex  gap-2 px-2 md:px-4 py-1.5 bg-white text-red-600 font-semibold text-[9px] md:text-sm rounded hover:bg-red-50 hover:scale-105 transition-all duration-300 shadow-md"
               >
-                <img src="/assets/img/playstore.png" className="w-4 h-4 " alt="" />
-                Download Application
+                <img src="/assets/img/playstore.png" className="w-2 md:w-4 h-2 md:h-4 " alt="" />
+                Download android  app
+              </Link>
+
+                <Link
+                href="/counseling"
+                className="flex  gap-2 px-2 md:px-4 py-1.5 bg-white text-red-600 font-semibold text-[9px] md:text-sm rounded hover:bg-red-50 hover:scale-105 transition-all duration-300 shadow-md"
+              >
+                <img src="/assets/img/iosapp.png" className="w-2 md:w-4 h-2 md:h-4 " alt="" />
+                Download ios app
               </Link>
             </div>
 
@@ -132,14 +140,14 @@ export default function Header() {
                 <Link href="https://facebook.com" className="hover:scale-110 transition-transform duration-300">
                   <img src="/assets/img/facebook.webp" className="w-6 h-6" alt="" />
                 </Link>
-                <Link href="https://instagram.com" className="hover:scale-110 transition-transform duration-300">
-                  <img src="/assets/img/instagram.png" className="w-6 h-6" alt="" />
+                <Link href="https://www.instagram.com/all_about_doctor_" className="hover:scale-110 transition-transform duration-300">
+                  <img src="/assets/img/instagram.png" className="w-7 h-7" alt="" />
                 </Link>
 
 
 
 
-                <Link href="https://telegram.org" className="hover:scale-110 transition-transform duration-300">
+                <Link href="https://twitter.com/allaboutdoctor" className="hover:scale-110 transition-transform duration-300">
                   <img src="/assets/img/twitter.png" className="w-6 h-6" alt="" />
                 </Link>
               </div>
@@ -293,19 +301,18 @@ export default function Header() {
                   <span className="absolute left-3 bottom-1 h-[2px] w-0 bg-gradient-to-r from-blue-500 to-indigo-500 transition-all duration-300 group-hover/state:w-1/2"></span>
                     Our Team
                   </Link>
-                  <Link
-                    href="/others/paramedical"
-                    className="relative group/state px-3 py-2 text-sm font-medium text-gray-700 rounded-lg
-            transition-all duration-300
-            hover:text-blue-700 hover:bg-blue-50"
-                  >
-                  <span className="absolute left-3 bottom-1 h-[2px] w-0 bg-gradient-to-r from-blue-500 to-indigo-500 transition-all duration-300 group-hover/state:w-1/2"></span>
-                    Our Branches
-                  </Link>
+                 
                 </div>
               </div>
             </div>
 
+  <Link
+              href="/"
+              className="px-4 py-4 text-sm font-semibold text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-all duration-300 relative group"
+            >
+             OUR BRANCHES 
+              <span className="absolute bottom-0 left-0 w-full h-1 bg-blue-600 scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
+            </Link>
             <Link
               href="/neet-ug-counselling"
               className="px-4 py-4 text-sm font-semibold text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-all duration-300 relative group"
@@ -533,14 +540,14 @@ export default function Header() {
               href="/nmc-updates"
               className="px-4 py-4 text-sm font-semibold text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-all duration-300 relative group"
             >
-              NMC Updates
+              News
               <span className="absolute bottom-0 left-0 w-full h-1 bg-blue-600 scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
             </Link>
             <Link
               href="/"
               className="px-4 py-4 text-sm font-semibold text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-all duration-300 relative group"
             >
-              OUR SUCCESS STORIES
+              Vlogs
               <span className="absolute bottom-0 left-0 w-full h-1 bg-blue-600 scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
             </Link>
             <Link
@@ -607,19 +614,17 @@ export default function Header() {
                      <span className="absolute left-3 bottom-1 h-[2px] w-0 bg-gradient-to-r from-blue-500 to-indigo-500 transition-all duration-300 group-hover/state:w-1/2"></span>
                       Our Team
                     </Link>
-                    <Link
-                      href="/"
-                      className="relative group/state px-3 py-2 text-sm font-medium text-gray-700 rounded-lg
-            transition-all duration-300
-            hover:text-blue-700 hover:bg-blue-50"
-                    >
-                     <span className="absolute left-3 bottom-1 h-[2px] w-0 bg-gradient-to-r from-blue-500 to-indigo-500 transition-all duration-300 group-hover/state:w-1/2"></span>
-                      Our Branches
-
-                    </Link>
+                   
                   </div>
                 )}
               </div>
+
+                <Link
+                href="/"
+                className="block px-4 py-2 text-sm font-semibold text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded transition-colors"
+              >
+                OUR BRANCHES
+              </Link>
             
               <Link
                 href="/neet-ug-counselling"
@@ -752,14 +757,14 @@ export default function Header() {
                 href="/"
                 className="block px-4 py-2 text-sm font-semibold text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded transition-colors"
               >
-                NMC UPDATES 
+              NEWS 
               </Link>
 
               <Link
                 href="/"
                 className="block px-4 py-2 text-sm font-semibold text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded transition-colors"
               >
-              OUR SUCCESS STORIES
+             VLOGS
               </Link>
 
               <Link

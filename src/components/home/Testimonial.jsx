@@ -37,31 +37,55 @@ export default function TestimonialsSection() {
   const testimonials = [
     {
       id: 1,
-      text: "All About Doctor guided me at every step for MBBS admission abroad. The counselling was honest and very professional.",
-      name: "Aman Verma",
-      role: "MBBS Student, Russia",
+      text: "All About Doctor helped me secure a top MBBS college in India. Truly supportive and professional!",
+      name: " Rohan Sharma",
+      role: "MBBS Student, ",
       avatar: "https://randomuser.me/api/portraits/men/32.jpg",
     },
     {
       id: 2,
-      text: "I was confused about university selection. Their team explained fees, eligibility and future scope very clearly.",
-      name: "Neha Sharma",
+      text: "Their guidance made my MBBS abroad admission completely smooth. Highly recommended!",
+      name: " Priya Verma",
       role: "Medical Aspirant",
       avatar: "https://randomuser.me/api/portraits/women/44.jpg",
     },
     {
       id: 3,
-      text: "As a parent, I felt confident after talking to them. Transparent process and no false promises.",
-      name: "Rajesh Kumar",
+      text: "All procedures for MBBS abroad became easy with their expert guidance.",
+      name: "Rahul Mehta",
       role: "Parent",
       avatar: "https://randomuser.me/api/portraits/men/51.jpg",
     },
     {
       id: 4,
-      text: "From documentation to visa guidance, everything was smooth. Highly recommended for MBBS abroad.",
-      name: "Pooja Singh",
+      text: "From eligibility to fees, they clarified everything. Amazing support for MBBS admissions!",
+      name: " Ankit Gupta",
       role: "MBBS Student, Kazakhstan",
       avatar: "https://randomuser.me/api/portraits/women/65.jpg",
+    },
+
+     {
+      id: 5,
+      text: "Best MBBS counselling for India and abroad. Thanks to their team, I got my dream course!",
+      name: " Sneha Kapoor",
+      role: "MBBS Student, ",
+      avatar: "https://randomuser.me/api/portraits/women/67.jpg",
+    },
+
+       {
+      id: 6,
+      text: "Proper guidance for MBBS in India and excellent follow-up. Very satisfied!",
+      name: "  Neha Singh",
+      role: "MBBS Student, ",
+      avatar: "https://randomuser.me/api/portraits/women/69.jpg",
+    },
+
+      {
+      id: 7,
+      text: "They provided a complete roadmap for MBBS abroad. Confidently pursuing my dream now!",
+      name: "   Vikram Joshi ",
+      role: "MBBS Student, ",
+      avatar: "https://randomuser.me/api/portraits/man/69.jpg",
     },
   ]
 

@@ -1,163 +1,157 @@
 "use client"
 
-import { Mail, Phone, Facebook, Instagram, Youtube, Twitter, MessageCircle, Linkedin, ArrowRight } from "lucide-react"
+import {
+  Mail,
+  Phone,
+  Facebook,
+  Instagram,
+  Youtube,
+  Twitter,
+  MessageCircle,
+  Linkedin,
+  ArrowRight,
+  GraduationCap,
+} from "lucide-react"
+import Link from "next/link"
 
 export default function Footer() {
-  const currentYear = new Date().getFullYear()
+  const year = new Date().getFullYear()
 
-  const interestingLinks = [
+  const links = [
+    { label: "About Us", href: "/about-allaboutdoctor" },
     { label: "Contact", href: "/contact" },
-    { label: "About us", href: "/about-allaboutdoctor" },
-    { label: "How it works", href: "#" },
-    { label: "India", href: "/india/mbbs" },
-    { label: "Abroad", href: "/abroad/mbbs" },
-    // { label: "Career Guidance Sessions", href: "#" },
+    { label: "MBBS in India", href: "/india/mbbs" },
+    { label: "MBBS Abroad", href: "/abroad/mbbs" },
+    { label: "NEET UG", href: "/neet-ug-counselling" },
+    { label: "NEET PG", href: "/neet-pg-counselling" },
   ]
 
-  const socialLinks = [
-    { icon: Facebook, href: "#", label: "Facebook" },
-    { icon: Instagram, href: "#", label: "Instagram" },
-    { icon: Youtube, href: "#", label: "YouTube" },
-    { icon: Twitter, href: "#", label: "Twitter" },
-    { icon: MessageCircle, href: "#", label: "WhatsApp" },
-    { icon: Linkedin, href: "#", label: "LinkedIn" },
+  const socials = [
+    Facebook,
+    Instagram,
+    Youtube,
+    Twitter,
+    MessageCircle,
+    Linkedin,
   ]
 
   return (
-    <footer className="border-t border-border">
-      {/* Main Footer Content */}
-      <div className="max-w-7xl mx-auto px-4 py-16 md:py-20">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 mb-12">
-          {/* Left Column - Contact */}
-          <div className="space-y-8">
-            <div>
-              <h3 className="text-3xl font-bold text-foreground mb-6">Contact</h3>
+    <footer className="relative overflow-hidden">
+      {/* Gradient Background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-primary via-[#0b5ed7] to-[#031b4e]" />
 
-              {/* Logo & Main Address */}
-              <div className="space-y-4 mb-8">
-                <div className="flex items-center gap-2">
-                  <img src="/assets/img/logo.png" className="w-[150]"></img>
-                </div>
+      {/* Glow */}
+      <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-white/10 blur-3xl rounded-full" />
 
-                <div className="space-y-2 text-sm text-muted-foreground">
-                  <p>2nd Floor, Santosh vihar, C-62, VIT Rd, Vishwa Vidhyalaya Nagar, Jagatpura, Jaipur, Rajasthan 302017</p>
-                  {/* <p>Mahal Road, Jagatpura, Jaipur,</p>
-                  <p>Rajasthan – 302017</p> */}
-                </div>
-              </div>
+      <div className="relative max-w-7xl mx-auto px-4 py-20 text-white">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
 
-              {/* Contact Info */}
-              <div className="space-y-3 mb-8">
-                <a
-                  href="tel:+919351018577"
-                  className="flex items-center gap-3 text-sm text-muted-foreground hover:text-primary transition-colors"
-                >
-                  <Phone size={16} className="text-primary flex-shrink-0" />
-                  <span>+91 93510 18577</span>
-                </a>
-                <a
-                  href="mailto:info@allaboutdoctor.in"
-                  className="flex items-center gap-3 text-sm text-muted-foreground hover:text-primary transition-colors"
-                >
-                  <Mail size={16} className="text-primary flex-shrink-0" />
-                  <span>info@allaboutdoctor.in</span>
-                </a>
-              </div>
+          {/* LEFT */}
+          <div className="space-y-6">
+            <img src="/assets/img/logo.png" className="w-44 brightness-200" />
 
-              {/* International Offices */}
-              <div className="space-y-3 pt-6 border-t border-border">
-                <h4 className="font-semibold text-foreground text-sm">International Offices</h4>
-                <div className="space-y-2 text-xs text-muted-foreground">
-                  <p>Armenia, Bulgaria, Georgia, Kazakhstan</p>
-                </div>
-              </div>
-            </div>
-
-            {/* Social Media Icons */}
-            <div className="flex gap-4 pt-6 border-t border-border">
-              {socialLinks.map((social) => {
-                const Icon = social.icon
-                return (
-                  <a
-                    key={social.label}
-                    href={social.href}
-                    aria-label={social.label}
-                    className="w-10 h-10 rounded-full border border-border flex items-center justify-center text-foreground hover:border-primary hover:text-primary transition-colors"
-                  >
-                    <Icon size={18} />
-                  </a>
-                )
-              })}
-            </div>
-          </div>
-
-          {/* Center Column - Request Information */}
-          <div className=" text-center space-y-6">
-            <h3 className="text-3xl font-bold text-foreground">Request Information</h3>
-
-            {/* Placeholder for 3D Character - Using a styled div */}
-            <div className="w-full h-48 rounded-lg border-2 border-dashed border-border flex items-center justify-center bg-opacity-5">
-              <div className="text-center">
-                <div className="text-5xl mb-2">👨‍💼</div>
-                <p className="text-xs text-muted-foreground">3D Character</p>
-              </div>
-            </div>
-
-            <p className="text-sm text-muted-foreground max-w-xs">
-              Take the first step and order request free study information today.
+            <p className="text-sm text-white/80 leading-relaxed max-w-sm">
+              2nd Floor, Santosh Vihar, C-62, VIT Rd, Vishwa Vidhyalaya Nagar,
+              Jagatpura, Jaipur – 302017
             </p>
 
-            <a href="/#form" className="px-8 py-3 bg-primary text-white rounded-full font-semibold hover:opacity-90 transition-opacity">
-              Request free information
-            </a>
-          </div>
-
-          {/* Right Column - Interesting Links */}
-          <div className="space-y-8">
-            <div>
-              <h3 className="text-3xl font-bold text-foreground mb-6">Interesting links</h3>
-
-              <nav className="space-y-3">
-                {interestingLinks.map((link) => (
-                  <a
-                    key={link.label}
-                    href={link.href}
-                    className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors group"
-                  >
-                    <ArrowRight
-                      size={16}
-                      className="text-primary flex-shrink-0 group-hover:translate-x-1 transition-transform"
-                    />
-                    <span className="text-sm">{link.label}</span>
-                  </a>
-                ))}
-              </nav>
+            <div className="space-y-3 text-sm">
+              <div className="flex gap-3 items-center">
+                <Phone size={16} className="text-white/70" />
+                +91 93510 18577
+              </div>
+              <div className="flex gap-3 items-center">
+                <Mail size={16} className="text-white/70" />
+                info@allaboutdoctor.in
+              </div>
             </div>
 
-            {/* Sister Company */}
-            {/* <div className="pt-6 border-t border-border space-y-3">
-              <div className="flex items-center gap-2">
-                <span className="text-2xl">🇩🇪</span>
-                <h4 className="font-semibold text-foreground text-sm">Our German sister company</h4>
+            <div className="flex items-center gap-4">
+              <div className=" flex items-center gap-3">
+                <Link href="https://facebook.com" className="hover:scale-110 transition-transform duration-300">
+                  <img src="/assets/img/facebook.webp" className="w-6 h-6" alt="" />
+                </Link>
+                <Link href="https://www.instagram.com/all_about_doctor_" className="hover:scale-110 transition-transform duration-300">
+                  <img src="/assets/img/instagram.png" className="w-8 h-8" alt="" />
+                </Link>
+
+
+
+
+                <Link href="https://twitter.com/allaboutdoctor" className="hover:scale-110 transition-transform duration-300">
+                  <img src="/assets/img/twitter.png" className="w-6 h-6" alt="" />
+                </Link>
+                 <Link href="https://youtube.com/@allaboutdoctor05?si=F9zJS8-n2ENlotQZ" className="hover:scale-110 transition-transform duration-300">
+                  <img src="/assets/img/youtube.png" className="w-6 h-6" alt="" />
+                </Link>
               </div>
-              <a
-                href="https://www.future-doctor.de"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 text-primary hover:text-primary/80 transition-colors text-sm"
-              >
-                <ArrowRight size={14} />
-                <span>www.future-doctor.de</span>
-              </a>
+              <div className="relative">
+
+              </div>
+            </div>
+            {/* <div className="flex gap-3 pt-2">
+              {socials.map((Icon, i) => (
+                <div
+                  key={i}
+                  className="w-9 h-9 rounded-full bg-white/10 backdrop-blur flex items-center justify-center hover:bg-white hover:text-primary transition cursor-pointer"
+                >
+                  <Icon size={16} />
+                </div>
+              ))}
             </div> */}
+          </div>
+
+          {/* CENTER GLASS CARD */}
+          <div className="relative">
+            <div className="bg-white/10 backdrop-blur-xl border border-white/20 rounded-3xl p-10 text-center shadow-xl">
+              <div className="w-20 h-20 mx-auto rounded-full bg-white/20 flex items-center justify-center text-4xl mb-6">
+                <GraduationCap className="h-10 w-10 text-secondary " />
+              </div>
+
+              <h3 className="text-2xl font-semibold">
+                Start Your MBBS Journey
+              </h3>
+
+              <p className="text-sm text-white/80 mt-4">
+                Get expert counselling for MBBS in India & abroad.
+              </p>
+
+              <a
+                href="/#form"
+                className="inline-flex items-center gap-2 mt-6 px-8 py-3 bg-white text-primary font-semibold rounded-full hover:scale-105 transition"
+              >
+                Request Free Info
+                <ArrowRight size={16} />
+              </a>
+            </div>
+          </div>
+
+          {/* RIGHT */}
+          <div className="space-y-6">
+            <h4 className="text-xl font-semibold">Quick Links</h4>
+
+            <nav className="space-y-3 text-sm text-white/80">
+              {links.map((l) => (
+                <a
+                  key={l.label}
+                  href={l.href}
+                  className="flex items-center gap-2 hover:text-white transition"
+                >
+                  <ArrowRight size={14} />
+                  {l.label}
+                </a>
+              ))}
+            </nav>
+
+            <div className="pt-4 border-t border-white/20 text-xs text-white/70">
+              International Offices: Armenia, Georgia, Kazakhstan, Bulgaria
+            </div>
           </div>
         </div>
 
-        {/* Bottom Border */}
-        <div className="border-t border-border pt-6">
-          <p className="text-center text-xs text-muted-foreground">
-            Copyright © {currentYear} All About Doctor Education Pvt. Ltd. All rights reserved.
-          </p>
+        {/* BOTTOM */}
+        <div className="border-t border-white/20 mt-16 pt-6 text-center text-xs text-white/60">
+          © {year} All About Doctor Education Pvt. Ltd. All rights reserved.
         </div>
       </div>
     </footer>

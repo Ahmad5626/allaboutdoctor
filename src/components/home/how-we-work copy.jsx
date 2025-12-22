@@ -60,9 +60,9 @@ function StepCard({ step, index, activeIndex, totalSteps }) {
 
   if (diff > 0) {
     // Cards below active
-   scale = 1 - diff * 0.04
-opacity = 1 - diff * 0.12
-translateY = diff * 34
+    scale = 1 - diff * 0.04
+    opacity = 1 - diff * 0.12
+    translateY = diff * 34
     zIndex = totalSteps - diff
   } else if (diff < 0) {
     // Cards above (past)
