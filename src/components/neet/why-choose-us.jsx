@@ -1,35 +1,42 @@
 export default function WhyChooseUs() {
-  const strengths = [
-    { title: "850+ Partner Colleges", desc: "NMC-approved medical institutions" },
-    { title: "Doctor-Led Counseling", desc: "Expert mentorship from experienced physicians" },
-    { title: "NEET Guidance", desc: "Comprehensive admission support" },
-    { title: "Transparent Process", desc: "Ethical and honest guidance" },
-    { title: "95% Success Rate", desc: "Proven track record of admissions" },
-    { title: "10,000+ Students", desc: "Successfully guided globally" },
-  ]
+  
 
   return (
-    <section className="w-full ">
-      <div className="relative mx-auto max-w-7xl px-6 py-10 md:py-10">
-        <h1 className="text-pretty text-4xl font-semibold leading-tight sm:text-4xl animate-fade-up my-4"
-            style={{ animationDelay: "100ms" }}>
-          Why Choose <span className="text-primary">All About Doctor Education Pvt. Ltd.?</span> 
-        </h1>
-        <p className="text-foreground/70 mb-12 max-w-2xl">
-          Founded in 2015, we are India's most trusted medical education consultancy, guiding over 10,000+ students
-          toward successful MBBS admissions across the world.
-        </p>
+   <section className="bg-white ">
+      <div className="max-w-6xl mx-auto px-6">
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {strengths.map((strength, idx) => (
-            <div key={idx} className="p-6 border border-border rounded-lg hover:border-primary transition-colors group">
-              <h3 className="text-lg font-semibold text-primary group-hover:text-secondary transition-colors mb-2">
-                {strength.title}
-              </h3>
-              <p className="text-foreground/70">{strength.desc}</p>
-            </div>
-          ))}
+        {/* Accent wrapper */}
+        <div className="relative rounded-[36px] overflow-hidden">
+
+          {/* Top accent strip */}
+          <div className="absolute top-0 left-0 h-2 w-full bg-gradient-to-r from-primary via-blue-400 to-secondary" />
+
+          {/* Content */}
+          <div className="relative bg-gradient-to-br from-white to-slate-50 px-14 py-20 text-center shadow-[0_40px_90px_rgba(0,0,0,0.08)] rounded-[36px]">
+
+            {/* Small tag */}
+            <span className="inline-block mb-6 rounded-full bg-primary/10 px-5 py-2 text-xs font-semibold tracking-widest text-primary uppercase">
+              Trusted NEET UG Counselling Partner
+            </span>
+
+            {/* Heading */}
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight bg-gradient-to-r from-primary via-blue-300 to-secondary bg-clip-text text-transparent">
+              Why Choose All About Doctor
+              <span className="block mt-3">
+                for NEET UG Counselling Support
+              </span>
+            </h2>
+
+            {/* Description */}
+            <p className="mt-10 max-w-4xl mx-auto text-lg md:text-xl leading-relaxed text-muted-foreground">
+              We provide end-to-end counselling assistance, from document
+              preparation to final college reporting, ensuring students make
+              confident and informed decisions for their medical careers.
+            </p>
+
+          </div>
         </div>
+
       </div>
     </section>
   )

@@ -120,7 +120,7 @@ export default function Footer() {
                 href="/#form"
                 className="inline-flex items-center gap-2 mt-6 px-8 py-3 bg-white text-primary font-semibold rounded-full hover:scale-105 transition"
               >
-                Request Free Info
+                Talk to Experts
                 <ArrowRight size={16} />
               </a>
             </div>
@@ -144,7 +144,7 @@ export default function Footer() {
             </nav>
 
             <div className="pt-4 border-t border-white/20 text-xs text-white/70">
-              International Offices: Armenia, Georgia, Kazakhstan, Bulgaria
+              International Offices: India, Vietnam, Russia, Uzbekistan
             </div>
           </div>
         </div>

@@ -1,72 +1,97 @@
 "use client"
-
 import { useState } from "react"
 
-export default function FAQ() {
-  const [openIdx, setOpenIdx] = useState(null)
+const FAQS = [
+  {
+    q: "How many counselling rounds are conducted in NEET UG?",
+    a: "Usually multiple counselling rounds are conducted, including Round 1, Round 2, Mop-Up Round, and Stray Vacancy Round depending on seat availability.",
+  },
+  {
+    q: "Can I participate in both AIQ and State counselling?",
+    a: "Yes, eligible candidates can apply for both All India Quota (AIQ) and State Quota counselling simultaneously.",
+  },
+  {
+    q: "Is choice filling mandatory?",
+    a: "Yes, choice filling is mandatory. Without completing choice filling, seat allotment is not possible in any counselling round.",
+  },
+  {
+    q: "What happens if I miss choice filling?",
+    a: "If you miss choice filling, you may lose the opportunity to get a seat in that particular counselling round.",
+  },
+]
 
-  const faqs = [
-    {
-      q: "What is NEET UG Counselling?",
-      a: "NEET UG Counselling is the official process conducted by medical authorities to allot seats in MBBS, BDS, and AYUSH courses for candidates who have qualified NEET UG.",
-    },
-    {
-      q: "Where can I check the NEET UG Counselling schedule?",
-      a: "The NEET UG Counselling schedule is published on the official counselling portal and includes round-wise registration, choice filling, and seat allotment dates.",
-    },
-    {
-      q: "How many rounds of NEET UG Counselling are there?",
-      a: "Typically, there are multiple rounds including Round 1, Round 2, and Round 3, depending on seat availability and candidate participation.",
-    },
-    {
-      q: "What is a NEET UG Counselling extension?",
-      a: "A counselling extension occurs when the authorities extend the registration or choice filling deadline, giving candidates additional time to complete the process.",
-    },
-    {
-      q: "Can a candidate resign after seat allotment?",
-      a: "Yes, candidates can resign or withdraw after seat allotment. However, it must be done within the official resignation period announced by the counselling authorities.",
-    },
-    {
-      q: "Where can I check the NEET UG Counselling results?",
-      a: "The NEET UG Counselling results are released on the official counselling portal and indicate seat allotment based on merit and category.",
-    },
-    {
-      q: "How is seat allocation done during NEET UG Counselling?",
-      a: "Seats are allotted based on NEET UG scores, category reservation, and choices filled by the candidates. Subsequent rounds consider vacant seats from previous rounds.",
-    },
-  ]
+export default function NeetFaqUltraModern() {
+  const [active, setActive] = useState(0)
 
   return (
-    <section className="w-full ">
-      <div className="relative mx-auto max-w-7xl px-6 py-10 md:py-10">
-        <h1
-            className="text-pretty text-4xl font-semibold leading-tight sm:text-4xl animate-fade-up my-4"
-            style={{ animationDelay: "100ms" }}>Frequently Asked <span className="text-primary">Questions</span> </h1>
+    <section className="relative bg-primary py-10 overflow-hidden">
+      
+      
+      <div className="absolute -top-40 -left-40 h-96 w-96 rounded-full bg-white/10 blur-3xl" />
+      <div className="absolute bottom-0 -right-40 h-96 w-96 rounded-full bg-secondary/20 blur-3xl" />
 
-        <div className="space-y-4 py-6">
-          {faqs.map((faq, idx) => (
-            <div
-              key={idx}
-              className="border border-border rounded-lg overflow-hidden hover:border-primary transition-colors"
-            >
-              <button
-                onClick={() => setOpenIdx(openIdx === idx ? null : idx)}
-                className="w-full p-6 flex items-center justify-between hover:bg-foreground/5 transition-colors text-left"
-              >
-                <h3 className="font-semibold text-foreground pr-4">{faq.q}</h3>
-                <span
-                  className={`text-primary text-xl flex-shrink-0 transition-transform ${openIdx === idx ? "rotate-180" : ""}`}
-                >
-                  ▼
-                </span>
-              </button>
+      <div className="relative max-w-7xl mx-auto px-6">
 
-              {openIdx === idx && (
-                <div className="px-6 pb-6 border-t border-border text-foreground/80 leading-relaxed">{faq.a}</div>
-              )}
-            </div>
-          ))}
+       
+        <div className="mb-24 max-w-4xl">
+          <h2 className="text-5xl lg:text-6xl font-bold leading-tight bg-gradient-to-r from-primary via-blue-200 to-secondary bg-clip-text text-transparent animate-shimmer fade-item">
+            Frequently Asked Questions
+          </h2>
+        
         </div>
+
+        
+        <div className="grid lg:grid-cols-2 gap-20 items-start">
+
+   
+          <div className="space-y-6">
+            {FAQS.map((item, index) => {
+              const isActive = active === index
+
+              return (
+                <button
+                  key={index}
+                  onClick={() => setActive(index)}
+                  className={`w-full text-left rounded-2xl px-8 py-6 transition-all backdrop-blur
+                    ${
+                      isActive
+                        ? "bg-white text-primary shadow-[0_20px_50px_rgba(0,0,0,0.3)] scale-[1.03]"
+                        : "bg-white/15 text-white hover:bg-white/25"
+                    }
+                  `}
+                >
+                  <span className="text-lg md:text-xl font-semibold">
+                    {item.q}
+                  </span>
+                </button>
+              )
+            })}
+          </div>
+
+         
+<div className="relative">
+
+ 
+  <div className="absolute inset-0 rounded-[32px] bg-gradient-to-br from-white/40 via-blue-200/30 to-secondary/40 blur-2xl opacity-70" />
+
+  
+  <div className="relative rounded-[32px] bg-gradient-to-br from-white to-white/95 p-14 shadow-[0_40px_90px_rgba(0,0,0,0.35)]">
+
+   
+    <span className="inline-flex items-center rounded-full bg-primary/10 px-4 py-1 text-xs font-semibold tracking-widest text-primary uppercase">
+      Answer
+    </span>
+
+    <p className="mt-8 text-xl md:text-2xl leading-relaxed text-foreground font-medium">
+     {FAQS[active].a}
+    </p>
+
+  </div>
+</div>
+
+
+        </div>
+
       </div>
     </section>
   )

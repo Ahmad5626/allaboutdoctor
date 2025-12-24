@@ -15,12 +15,31 @@ import FAQ from "@/components/neet/faq"
 import Navbar from "@/components/Hedaer"
 import Footer from "@/components/Footer"
 
+import WhyNeetCounselling from "@/components/neet/WhyNeetCounselling"
+import NeetCounsellingOverview from "@/components/neet/NeetCounsellingOverview"
+import { Counter } from "@/components/neet/Couter"
+import NeetCounsellingProcess from "@/components/neet/NeetCounsellingProcess"
+import NeetDocumentsRequired from "@/components/neet/NeetDocumentsRequired"
+import NeetReservationPolicy from "@/components/neet/NeetReservationPolicy"
+import NeetStateCoverage from "@/components/neet/NeetStateCoverage"
+import NeetRankPredictorAnalysis from "@/components/neet/NeetRankPredictorAnalysis"
+
 export default function NEETUGPage() {
   return (
     <main className="w-full">
     <Navbar/>
       <Hero />
-      <Highlights />
+      <Counter/>
+      <WhyNeetCounselling/>
+      <NeetCounsellingOverview/>
+      <NeetCounsellingProcess/>
+      <NeetDocumentsRequired/>
+      <NeetReservationPolicy/>
+      <NeetStateCoverage/>
+      <NeetRankPredictorAnalysis/>
+      <FAQ />
+      <WhyChooseUs />
+      {/* <Highlights />
       <CounsellingDates />
       <Eligibility />
       <CounsellingFees />
@@ -29,8 +48,8 @@ export default function NEETUGPage() {
       <Documents />
       <ExamOverview />
       <StudyOpportunities />
-      <WhyChooseUs />
-      <FAQ />
+      
+       */}
       <Footer/>
     </main>
   )
