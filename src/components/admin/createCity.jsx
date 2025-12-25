@@ -9,24 +9,14 @@ import { baseUrl } from "@/app/utils/Constant";
 const CreateCity = () => {
 
      const { Toaster,
-      
-        handleSubmitCreateBlog,
-        handleChangeCreateBlog,
-      createBlogFormData,
-      uploadingHero
+      createCityFormData,
+        handleChangeCreateCity,
+      uploadingHero,
+      handleCreateCity
     }=useContext(AuthContext)
 
   
- 
 
-  
-  
-
-  
-
- 
- 
-  
   return (
     <div>
  <section className="my-4">
@@ -37,7 +27,7 @@ const CreateCity = () => {
             <h2 className="flex items-center gap-2 text-2xl font-semibold border-neutral-200">Create City</h2>
           </div>
 
-          <form className="space-y-4 my-4" onSubmit={handleSubmitCreateBlog}>
+          <form className="space-y-4 my-4" onSubmit={handleCreateCity}>
             {/* Title and Slug Row */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="flex flex-col gap-2">
@@ -47,8 +37,8 @@ const CreateCity = () => {
                   className="border rounded-lg px-3 py-2 text-sm w-full outline-none border-gray-200 bg-gray-100"
                   placeholder="Enter City headLine"
                   name="headLine"
-                  value={createBlogFormData.title}
-                  onChange={handleChangeCreateBlog}
+                  value={createCityFormData.headLine}
+                  onChange={handleChangeCreateCity}
                   
                 />
               </div>
@@ -57,10 +47,10 @@ const CreateCity = () => {
                 <input
                   type="text"
                   className="border rounded-lg px-3 py-2 text-sm w-full outline-none border-gray-200 bg-gray-100"
-                  placeholder="blog-slug"
+                  placeholder="City-slug"
                   name="slug"
-                  value={createBlogFormData.slug}
-                  onChange={handleChangeCreateBlog}
+                  value={createCityFormData.slug}
+                  onChange={handleChangeCreateCity}
                   
                 />
               </div>
@@ -77,10 +67,10 @@ const CreateCity = () => {
                 <input
                   type="text"
                   className="border rounded-lg px-3 py-2 text-sm w-full outline-none border-gray-200 bg-gray-100"
-                  placeholder="blog-slug"
+                  placeholder="Enter city"
                   name="city"
-                  value={createBlogFormData.slug}
-                  onChange={handleChangeCreateBlog}
+                  value={createCityFormData.city}
+                  onChange={handleChangeCreateCity}
                   
                 />
               </div>
@@ -89,8 +79,8 @@ const CreateCity = () => {
                 <label className="font-semibold text-xs text-gray-500">Upload Image *</label>
                 {uploadingHero ? (
                   <>
-                    <Loader2 className="w-8 h-8 mb-4 text-[#ce3c3d] animate-spin" />
-                    <p className="mb-2 text-sm text-[#ce3c3d] font-semibold">Uploading ...</p>
+                    <Loader2 className="w-8 h-8 mb-4 text-primary animate-spin" />
+                    <p className="mb-2 text-sm text-primary font-semibold">Uploading ...</p>
                   </>
                 ) : (
                   <input
@@ -98,7 +88,7 @@ const CreateCity = () => {
                     className="border rounded-lg px-3 py-2 text-sm w-full outline-none border-gray-200 bg-gray-100"
                     placeholder="Choose image file"
                     name="image"
-                    onChange={handleChangeCreateBlog}
+                    onChange={handleChangeCreateCity}
                     
                   />
                 )}
@@ -115,8 +105,8 @@ const CreateCity = () => {
                   className="border rounded-lg px-3 py-2 text-sm w-full outline-none border-gray-200 bg-gray-100"
                   placeholder="Enter Short Description"
                   name="shotDescription"
-                  value={createBlogFormData.shotDescription}
-                  onChange={handleChangeCreateBlog}
+                  value={createCityFormData.shotDescription}
+                  onChange={handleChangeCreateCity}
                 />
               </div>
               <div className="flex flex-col gap-2">
@@ -126,8 +116,8 @@ const CreateCity = () => {
                   className="border rounded-lg px-3 py-2 text-sm w-full outline-none border-gray-200 bg-gray-100"
                   placeholder="Enter Meta Title"
                   name="metaTittle"
-                  value={createBlogFormData.metaTittle}
-                  onChange={handleChangeCreateBlog}
+                  value={createCityFormData.metaTittle}
+                  onChange={handleChangeCreateCity}
                 />
               </div>
             </div>
@@ -137,10 +127,10 @@ const CreateCity = () => {
               <label className="font-semibold text-xs text-gray-500">Paragraph *</label>
               <textarea
                 className="border rounded-lg px-3 py-2 text-sm w-full outline-none border-gray-200 bg-gray-100"
-                placeholder="Enter Meta Description"
-                name="metaDescription"
-                value={createBlogFormData.metaDescription}
-                onChange={handleChangeCreateBlog}
+                placeholder="Enter  Description"
+                name="description"
+                value={createCityFormData.description}
+                onChange={handleChangeCreateCity}
                 rows={3}
               />
             </div>
@@ -154,8 +144,8 @@ const CreateCity = () => {
                   className="border rounded-lg px-3 py-2 text-sm w-full outline-none border-gray-200 bg-gray-100"
                   placeholder="Enter Meta Keywords (comma separated)"
                   name="metaKeyword"
-                  value={createBlogFormData.metaKeyword}
-                  onChange={handleChangeCreateBlog}
+                  value={createCityFormData.metaKeyword}
+                  onChange={handleChangeCreateCity}
                 />
               </div>
               <div className="flex flex-col gap-2">
@@ -165,8 +155,8 @@ const CreateCity = () => {
                   className="border rounded-lg px-3 py-2 text-sm w-full outline-none border-gray-200 bg-gray-100"
                   placeholder="Enter Author Name"
                   name="updatedBy"
-                  value={createBlogFormData.updatedBy}
-                  onChange={handleChangeCreateBlog}
+                  value={createCityFormData.updatedBy}
+                  onChange={handleChangeCreateCity}
                 />
               </div>
             </div>
@@ -178,8 +168,8 @@ const CreateCity = () => {
                 className="border rounded-lg px-3 py-2 text-sm w-full outline-none border-gray-200 bg-gray-100"
                 placeholder="Enter Meta Description"
                 name="metaDescription"
-                value={createBlogFormData.metaDescription}
-                onChange={handleChangeCreateBlog}
+                value={createCityFormData.metaDescription}
+                onChange={handleChangeCreateCity}
                 rows={3}
               />
             </div>
@@ -189,7 +179,7 @@ const CreateCity = () => {
                 type="submit"
                 className="px-8 py-3 bg-[#ce3c3d] text-white font-medium rounded-full hover:shadow-lg transition-all duration-300"
               >
-                Publish Blog
+                Create City
               </button>
             </div>
           </form>

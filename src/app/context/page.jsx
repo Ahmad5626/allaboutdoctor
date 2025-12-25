@@ -8,6 +8,7 @@ import { toast, Toaster } from "sonner";
 import { createBlog, deleteBlog, getBlog } from "../services/blog";
 import { uploadFile } from "../services/uploadImg";
 import { usePathname } from "next/navigation";
+import { createCity, getCity } from "../services/city";
 export const AuthContext = createContext(null);
 
 export default function AuthProvider({ children }) {
@@ -15,21 +16,35 @@ export default function AuthProvider({ children }) {
   const [userType, setUserType] = useState("user")
   const [authenticatedUser, setAuthenticatedUser] = useState({});
   const [authenticatedAdmin, setAuthenticatedAdmin] = useState({});
-  const [allUsers, setAllUsers] = useState([]); 
-    const [blogData, setBlogData] = useState([])
-     const [uploadingHero, setUploadingHero] = useState(false)
-     const [createBlogFormData, setCreateBlogFormData]=useState({
-       title: "",
+  const [allUsers, setAllUsers] = useState([]);
+  const [blogData, setBlogData] = useState([])
+  const [cityData, setCityData] = useState([])
+  const [uploadingHero, setUploadingHero] = useState(false)
+  const [createBlogFormData, setCreateBlogFormData] = useState({
+    title: "",
     slug: "",
     shotDescription: "",
     description: "",
     image: "",
-    date:"",
+    date: "",
     metaTittle: "",
     metaKeyword: "",
     metaDescription: "",
-     })
-  const [formData, setFormData] = useState({
+  })
+
+  const [createCityFormData, setCreateCityFormData] = useState({
+    headLine: "",
+    slug: "",
+    paragraph: "",
+    image: "",
+    state: "",
+    city: "",
+    metaTittle: "",
+    metaKeyword: "",
+    metaDescription: "",
+  })
+
+    const [formData, setFormData] = useState({
     fullName: "",
     email: "",
     phone: "",
@@ -43,10 +58,64 @@ export default function AuthProvider({ children }) {
     email: "",
     password: "",
   })
-console.log("loginFormData",authenticatedAdmin );
+console.log(cityData);
 
-//  login form data
- const handleInputChange = (e) => {
+
+  const handleChangeCreateCity = async (e) => {
+   
+    const { name, value, files } = e.target;
+    setCreateCityFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }))
+    try {
+      setUploadingHero(true)
+      if (files && files[0]) {
+        const file = files[0];
+        const uploadedUrl = await uploadFile(file);
+        setCreateCityFormData((prevData) => ({
+          ...prevData,
+          [name]: uploadedUrl,
+        }));
+      }
+    } catch (error) {
+      return error
+    } finally {
+      setUploadingHero(false)
+    }
+
+  }
+
+const handleGetcity=async()=>{
+  const data=await getCity()
+  setCityData(data)
+}
+
+  const handleCreateCity=async(e)=>{
+   e.preventDefault()
+    const data=await createCity(createCityFormData)
+      try {
+      if (data.success) {
+        toast.success("City Created successfully");
+        handleGetcity()}
+      else {
+        toast.error("  update failed");
+        console.log(data);
+
+      }
+    } catch (error) {
+
+    } finally {
+      handleGetcity()
+    }
+   
+  }
+
+
+  console.log("loginFormData", authenticatedAdmin);
+
+  //  login form data
+  const handleInputChange = (e) => {
     setLoginFormData({
       ...loginFormData,
       [e.target.name]: e.target.value,
@@ -54,28 +123,28 @@ console.log("loginFormData",authenticatedAdmin );
   }
 
   //   sumbit register form
-//   const registerHandleSubmit = async (e) => {
-//     e.preventDefault();
+  //   const registerHandleSubmit = async (e) => {
+  //     e.preventDefault();
 
-//     try {
-//       const result = await registerService(formData);
-//       console.log(result);
+  //     try {
+  //       const result = await registerService(formData);
+  //       console.log(result);
 
-//       if (result?.success) {
-//         toast.success("Registered successfully!");
-//         console.log("Registered successfully!");
+  //       if (result?.success) {
+  //         toast.success("Registered successfully!");
+  //         console.log("Registered successfully!");
 
-//  router.push("/login");
-//         setFormData({});
-//       } else {
-//         toast.error(result.message || "Registration failed");
-//       }
-//     } catch (error) {
-//       // ✅ This handles unexpected server errors or non-JSON responses
-//       const message = error?.response?.data?.message || error.message || "Something went wrong";
-//       toast.error(message);
-//     }
-//   };
+  //  router.push("/login");
+  //         setFormData({});
+  //       } else {
+  //         toast.error(result.message || "Registration failed");
+  //       }
+  //     } catch (error) {
+  //       // ✅ This handles unexpected server errors or non-JSON responses
+  //       const message = error?.response?.data?.message || error.message || "Something went wrong";
+  //       toast.error(message);
+  //     }
+  //   };
 
 
   // login data
@@ -89,22 +158,22 @@ console.log("loginFormData",authenticatedAdmin );
   //       const token=localStorage.getItem("token")
 
   //       const decoded = JSON.parse(atob(token.split(".")[1]));
-       
-        
+
+
   //       if ( decoded.role == "admin") {
   //         router.push("/admin"); // not authorized
   //         console.log("admin");
-          
+
   //       }
   //       else if ( decoded.role == "user") {
   //         router.push("/"); // not authorized
   //         console.log("user");
-          
+
   //       }
 
   //   // if(authenticatedUser.role === "admin"){
   //   //   router.push("/admin");
-      
+
   //   // }
   //         // router.push("/");
   //       // getLoginUserData()
@@ -119,37 +188,37 @@ console.log("loginFormData",authenticatedAdmin );
   //   }
   // };
 
-const pathname = usePathname();
+  const pathname = usePathname();
 
-useEffect(() => {
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("show");
-        } else {
-          // animation repeat ke liye
-          entry.target.classList.remove("show");
-        }
-      });
-    },
-    {
-      threshold: 0.2,
-    }
-  );
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+          } else {
+            // animation repeat ke liye
+            entry.target.classList.remove("show");
+          }
+        });
+      },
+      {
+        threshold: 0.2,
+      }
+    );
 
-  const items = document.querySelectorAll(".fade-item");
-  items.forEach((item) => observer.observe(item));
-
-  
-  return () => {
-    items.forEach((item) => observer.unobserve(item));
-    observer.disconnect();
-  };
-}, [pathname]); 
+    const items = document.querySelectorAll(".fade-item");
+    items.forEach((item) => observer.observe(item));
 
 
-   async function getLoginUserData() {
+    return () => {
+      items.forEach((item) => observer.unobserve(item));
+      observer.disconnect();
+    };
+  }, [pathname]);
+
+
+  async function getLoginUserData() {
     const user = await getAuthenticatedUser();
     if (user) setAuthenticatedUser(user);
   }
@@ -158,12 +227,12 @@ useEffect(() => {
     const user = await getAuthenticatedAdmin();
     if (user) setAuthenticatedAdmin(user);
   }
-const getUserData = async () => {
-  const user = await getData();
-  if (user) {
-   setAllUsers(user)
+  const getUserData = async () => {
+    const user = await getData();
+    if (user) {
+      setAllUsers(user)
+    }
   }
-}
   const handleLogout = () => {
     localStorage.removeItem("token");
     setAuthenticatedUser(null);
@@ -183,97 +252,95 @@ const getUserData = async () => {
 
 
 
- 
 
-const handleChangeCreateBlog=async(e)=>{
-  const {name, value,files} = e.target;
-  setCreateBlogFormData((prevData) => ({
-    ...prevData,
-    [name]: value,
-  }))
- try {
-  setUploadingHero(true)
-   if (files && files[0]) {
-    const file = files[0];
-    const uploadedUrl = await uploadFile(file);
+
+  const handleChangeCreateBlog = async (e) => {
+    const { name, value, files } = e.target;
     setCreateBlogFormData((prevData) => ({
       ...prevData,
-      [name]: uploadedUrl,
-    }));
+      [name]: value,
+    }))
+    try {
+      setUploadingHero(true)
+      if (files && files[0]) {
+        const file = files[0];
+        const uploadedUrl = await uploadFile(file);
+        setCreateBlogFormData((prevData) => ({
+          ...prevData,
+          [name]: uploadedUrl,
+        }));
+      }
+    } catch (error) {
+      return error
+    } finally {
+      setUploadingHero(false)
+    }
   }
- } catch (error) {
-  return error
- }finally{
-  setUploadingHero(false)
- }
-}
-   
 
-const handleSubmitCreateBlog=async(e)=>{
-  e.preventDefault();
-  const data =await createBlog(createBlogFormData)
-try {
-    if(data.success){
-    toast.success("Blog Created successfully");
+
+  const handleSubmitCreateBlog = async (e) => {
+    e.preventDefault();
+    const data = await createBlog(createBlogFormData)
+    try {
+      if (data.success) {
+        toast.success("Blog Created successfully");
+        getBlogData()
+      }
+      else {
+        toast.error("Blog update failed");
+        console.log(data);
+
+      }
+    } catch (error) {
+
+    } finally {
+      getBlogData()
+    }
+  }
+
+
+
+  const handleDeleteBlog = async (id) => {
+    const isConfirmed = window.confirm("Are you sure you want to delete this destinations? This action cannot be undone.")
+    if (isConfirmed) {
+
+      const data = await deleteBlog(id)
+    }
+    try {
+      if (data.success) {
+        toast.success("Blog deleted successfully");
+        getBlogData()
+      }
+      else {
+        toast.error("Blog deletion failed");
+        console.log(data);
+
+      }
+    } catch (error) {
+
+    } finally {
+      getBlogData()
+    }
+
+
+
+
+  }
+  useEffect(() => {
     getBlogData()
-  }
-  else{
-    toast.error("Blog update failed");
-    console.log(data);
-    
-  }
-} catch (error) {
-  
-}finally{
-  getBlogData()
-}
-}
+    getLoginUserData()
+    getUserData()
+    handleGetcity()
+    // getLoginAdminData()
 
-
-   
-const handleDeleteBlog=async(id)=>{
-  const isConfirmed = window.confirm("Are you sure you want to delete this destinations? This action cannot be undone.")
-  if(isConfirmed){
-    
-    const data=await deleteBlog(id)
-  }
- try {
-   if(data.success){
-    toast.success("Blog deleted successfully");
-    getBlogData()
-  }
-  else{
-    toast.error("Blog deletion failed");
-    console.log(data);
-    
-  }
- } catch (error) {
-  
- }finally{
-  getBlogData()
- }
-
-  
-
-
-}
-useEffect(() => {
-  getBlogData()
-  getLoginUserData()
-  getUserData()
-  // getLoginAdminData()
-  
-}, [])
+  }, [])
   return (
     <AuthContext.Provider
       value={{
-
-        
         userType,
         setUserType,
         formData,
         setFormData,
-        
         loginFormData,
         setLoginFormData,
         handleInputChange,
@@ -284,7 +351,11 @@ useEffect(() => {
         handleSubmitCreateBlog,
         handleChangeCreateBlog,
         createBlogFormData,
-        uploadingHero
+        uploadingHero,
+        handleChangeCreateCity,
+        createCityFormData,
+        handleCreateCity,
+        cityData
       }}
     >
       {children}

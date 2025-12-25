@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useRef, useState } from "react"
-import { Eye, Handshake, Award, HandHelping, MessageCircle,GraduationCap, Globe, Users } from "lucide-react"
+import { Eye, Handshake, Award, MessageCircle, GraduationCap, Globe, Users } from "lucide-react"
 import Link from "next/link"
 
 const stats = [
@@ -20,73 +20,67 @@ const stats = [
     label: "Students Guided",
     icon: Users,
   },
-  
-];
-
-
+  {
+    value: 24,
+    label: "Our Branches",
+    icon: Users,
+  },
+]
 
 function CounterCard({ value, label, icon: Icon }) {
-  const [count, setCount] = useState(0);
-  const [started, setStarted] = useState(false);
-  const ref = useRef(null);
+  const [count, setCount] = useState(0)
+  const [started, setStarted] = useState(false)
+  const ref = useRef(null)
 
-  /* 👀 Detect when card enters viewport */
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting && !started) {
-          setStarted(true);
+          setStarted(true)
         }
       },
-      { threshold: 0.4 }
-    );
+      { threshold: 0.4 },
+    )
 
-    if (ref.current) observer.observe(ref.current);
+    if (ref.current) observer.observe(ref.current)
 
-    return () => observer.disconnect();
-  }, [started]);
+    return () => observer.disconnect()
+  }, [started])
 
-  /* ▶️ Start counter only when visible */
   useEffect(() => {
-    if (!started) return;
+    if (!started) return
 
-    let start = 0;
-    const duration = 2000;
-    const increment = value / (duration / 16);
+    let start = 0
+    const duration = 2000
+    const increment = value / (duration / 16)
 
     const timer = setInterval(() => {
-      start += increment;
+      start += increment
       if (start >= value) {
-        setCount(value);
-        clearInterval(timer);
+        setCount(value)
+        clearInterval(timer)
       } else {
-        setCount(Math.floor(start));
+        setCount(Math.floor(start))
       }
-    }, 16);
+    }, 16)
 
-    return () => clearInterval(timer);
-  }, [started, value]);
+    return () => clearInterval(timer)
+  }, [started, value])
 
   return (
     <div
       ref={ref}
-      className="flex min-w-[260px] items-center justify-between rounded-2xl bg-white/10 px-6 py-5 backdrop-blur-md shadow-lg"
+      className="flex flex-col items-center justify-center rounded-2xl bg-gradient-to-br from-blue-50 to-cyan-50 backdrop-blur-md border border-blue-200/40 px-6 py-6 text-center transition-all hover:bg-blue-100/50 hover:border-blue-300/60 shadow-sm hover:shadow-md"
     >
-      {/* Left */}
-      <div>
-        <h3 className="text-4xl font-bold text-white">
-          {count}+
-        </h3>
-        <p className="mt-1 text-sm text-white/80">{label}</p>
+      <div className="flex h-12 w-12 items-center justify-center rounded-full mb-3">
+        <Icon className="h-6 w-6 text-blue-600" />
       </div>
-
-      {/* Right Icon */}
-      <div className="flex h-12 w-12 items-center justify-center rounded-full ">
-        <Icon className="h-8 w-8 text-secondary" />
-      </div>
+      <h3 className="text-3xl font-bold text-gray-900">{count}+</h3>
+      <p className="mt-2 text-sm text-gray-600">{label}</p>
     </div>
-  );
+  )
 }
+
 export default function MbbsCta() {
   const ref = useRef(null)
   const [scrollY, setScrollY] = useState(0)
@@ -95,8 +89,8 @@ export default function MbbsCta() {
   useEffect(() => {
     const handleMouseMove = (e) => {
       setMousePosition({
-        x: (e.clientX / window.innerWidth) * 20 - 10,
-        y: (e.clientY / window.innerHeight) * 20 - 10,
+        x: (e.clientX / window.innerWidth) * 30 - 15,
+        y: (e.clientY / window.innerHeight) * 30 - 15,
       })
     }
 
@@ -137,141 +131,150 @@ export default function MbbsCta() {
     }
   }, [])
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("show")
+          } else {
+            entry.target.classList.remove("show")
+          }
+        })
+      },
+      { threshold: 0.2 },
+    )
 
-    useEffect(() => {
-  const observer = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("show");
-      } else {
-        // REMOVE on scroll out → animation repeats every time
-        entry.target.classList.remove("show");
-      }
-    });
-  },
-  {
-    threshold: 0.2, // 20% visible → animate
-  }
-);
+    document.querySelectorAll(".fade-item").forEach((item) => {
+      observer.observe(item)
+    })
+  }, [])
 
-document.querySelectorAll(".fade-item").forEach((item) => {
-  observer.observe(item);
-});
-}, []);
   const parallaxOffset = scrollY * 0.5
   const rotateOffset = scrollY * 0.1
-
-
-
-  
 
   return (
     <section
       ref={ref}
-      className="relative pt-6 pb-24  bg-gradient-to-br from-primary via-primary to-[#0d1929] text-white overflow-hidden"
+      className="relative py-10 bg-gradient-to-br from-slate-50 via-blue-50 to-cyan-50 text-gray-900 overflow-hidden"
     >
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div
-          className="absolute top-10 left-10 w-80 h-80 bg-blue-500/15 rounded-full blur-3xl"
+          className="absolute top-20 left-10 w-96 h-96 bg-blue-300/15 rounded-full blur-3xl"
           style={{
             transform: `translate(${mousePosition.x}px, ${mousePosition.y}px)`,
-            animation: "float 6s ease-in-out infinite",
+            animation: "float 8s ease-in-out infinite",
           }}
         ></div>
         <div
-          className="absolute -bottom-40 right-20 w-96 h-96 bg-cyan-400/10 rounded-full blur-3xl"
+          className="absolute -bottom-32 right-10 w-full h-96 bg-cyan-300/10 rounded-full blur-3xl"
           style={{
-            transform: `translateY(${parallaxOffset * 0.3}px) translate(${-mousePosition.x * 0.5}px, ${-mousePosition.y * 0.5}px)`,
-            animation: "float 8s ease-in-out infinite reverse",
+            transform: `translateY(${parallaxOffset * 0.3}px)`,
+            animation: "float 10s ease-in-out infinite reverse",
           }}
         ></div>
         <div
-          className="absolute top-1/3 left-1/4 w-72 h-72 bg-blue-600/8 rounded-full blur-3xl"
+          className="absolute top-1/2 -left-40 w-80 h-80 bg-blue-400/8 rounded-full blur-3xl"
           style={{
             transform: `translateY(${parallaxOffset * 0.6}px) rotate(${rotateOffset}deg)`,
-            animation: "pulse-slow 5s ease-in-out infinite",
+            animation: "pulse-slow 6s ease-in-out infinite",
           }}
         ></div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 relative z-10 ">
-        {/* LEFT CONTENT */}
-        <div className="space-y-8">
-          <div
-            className="reveal opacity-0 translate-y-16 transition-all duration-900 ease-out"
-            style={{ transform: `translateY(${Math.max(0, 80 - scrollY / 4)}px)` }}
-          >
-            <h2 className="text-5xl lg:text-6xl font-bold leading-tight bg-gradient-to-r from-white via-blue-200 to-secondary bg-clip-text text-transparent animate-shimmer">
-             Introducing India's leading medical education Platform
-            </h2>
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20">
+          {/* LEFT CONTENT */}
 
-            <h3 className="text-base text-blue-100 leading-relaxed mt-6 font-light">
-              Founded in <span className="font-semibold text-white">2015</span>, India's most trusted medical
-              education consultancy.
-            </h3>
-
-            <h3 className="text-base text-blue-100 leading-relaxed font-light">
-              We help students pursue <span className="font-semibold text-white">MBBS, MD, MS</span> degrees from
-              top universities globally.
-            </h3>
+          <div className="reveal opacity-0 translate-y-16 transition-all duration-900 ease-out hidden lg:flex items-center justify-center">
+            <div className="relative w-full aspect-square rounded-2xl overflow-hidden bg-gradient-to-br from-blue-100 to-cyan-100 backdrop-blur-sm border border-blue-200 flex items-center justify-center">
+             <img
+                src="/assets/img/leader.jpeg"
+                alt="Dr. Anand Sharma — Founder & Managing Director"
+                className="w-full h-full object-cover"
+              />
+            </div>
           </div>
+          <div className="space-y-8 flex flex-col justify-center">
+            <div
+              className="reveal opacity-0 translate-y-16 transition-all duration-900 ease-out"
+              style={{ transform: `translateY(${Math.max(0, 80 - scrollY / 4)}px)` }}
+            >
+              <h2 className="text-5xl lg:text-6xl font-bold leading-tight text-gray-900">
+                Introducing India's leading medical education Platform
+              </h2>
 
-          <div
-            className="reveal opacity-0 translate-y-16 transition-all duration-900 ease-out"
-            style={{ transitionDelay: "100ms" }}
-          >
-            <div className="flex flex-wrap gap-8 text-blue-100 fade-section" >
-              <span className="flex items-center gap-2 group cursor-pointer fade-item">
-                <Eye className="h-5 text-cyan-400 group-hover:text-cyan-300 transition-colors" />
-                <span className="group-hover:text-cyan-300 transition-colors">Transparency</span>
-              </span>
-              <span className="flex items-center gap-2 group cursor-pointer fade-item">
-                <Handshake className="h-5 text-cyan-400 group-hover:text-cyan-300 transition-colors" />
-                <span className="group-hover:text-cyan-300 transition-colors">Integrity</span>
-              </span>
-              <span className="flex items-center gap-2 group cursor-pointer fade-item">
-                <Award className="h-5 text-cyan-400 group-hover:text-cyan-300 transition-colors" />
-                <span className="group-hover:text-cyan-300 transition-colors">Excellence</span>
-              </span>
+              <p className="text-base text-gray-700 leading-relaxed mt-6 font-light">
+                Founded in <span className="font-semibold text-gray-900">2015</span>, India's most trusted medical
+                education consultancy.
+              </p>
+
+              <p className="text-base text-gray-700 leading-relaxed font-light">
+                We help students pursue <span className="font-semibold text-gray-900">MBBS, MD, MS</span> degrees from
+                top universities globally.
+              </p>
+            </div>
+
+            <div
+              className="reveal opacity-0 translate-y-16 transition-all duration-900 ease-out"
+              style={{ transitionDelay: "100ms" }}
+            >
+              <div className="flex flex-wrap gap-6 text-gray-700">
                 <span className="flex items-center gap-2 group cursor-pointer fade-item">
-                <MessageCircle  className="h-5 text-cyan-400 group-hover:text-cyan-300 transition-colors" />
-                <span className="group-hover:text-cyan-300 transition-colors">24/7 Support</span>
-              </span>
+                  <Eye className="h-5 text-blue-600 group-hover:text-blue-700 transition-colors" />
+                  <span className="group-hover:text-gray-900 transition-colors">Transparency</span>
+                </span>
+                <span className="flex items-center gap-2 group cursor-pointer fade-item">
+                  <Handshake className="h-5 text-blue-600 group-hover:text-blue-700 transition-colors" />
+                  <span className="group-hover:text-gray-900 transition-colors">Integrity</span>
+                </span>
+                <span className="flex items-center gap-2 group cursor-pointer fade-item">
+                  <Award className="h-5 text-blue-600 group-hover:text-blue-700 transition-colors" />
+                  <span className="group-hover:text-gray-900 transition-colors">Excellence</span>
+                </span>
+                <span className="flex items-center gap-2 group cursor-pointer fade-item">
+                  <MessageCircle className="h-5 text-blue-600 group-hover:text-blue-700 transition-colors" />
+                  <span className="group-hover:text-gray-900 transition-colors">24/7 Support</span>
+                </span>
+              </div>
+            </div>
+
+            <div
+              className="reveal opacity-0 translate-y-16 transition-all duration-900 ease-out"
+              style={{ transitionDelay: "200ms" }}
+            >
+              <h3 className="text-lg font-bold text-blue-600 mb-3">Leadership</h3>
+              <p className="text-gray-700 font-light">
+                <span className="font-semibold text-gray-900 text-base">Dr. Anand Sharma</span> — Founder & Managing
+                Director
+              </p>
+            </div>
+
+            <div
+              className="reveal opacity-0 translate-y-16 transition-all duration-900 ease-out"
+              style={{ transitionDelay: "300ms" }}
+            >
+              <Link
+                href="/about-allaboutdoctor"
+                className="group inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-blue-600 to-cyan-600 px-8 py-4 text-base font-semibold text-white shadow-lg hover:shadow-xl hover:shadow-blue-400/40 transition-all duration-300 transform hover:scale-105 active:scale-95"
+              >
+                Read More
+                <span className="group-hover:translate-x-1 transition-transform duration-300">→</span>
+              </Link>
             </div>
           </div>
 
-          <div
-            className="reveal opacity-0 translate-y-16 transition-all duration-900 ease-out"
-            style={{ transitionDelay: "200ms" }}
-          >
-            <h3 className="text-xl font-bold text-cyan-300 mb-2">Leadership</h3>
-            <p className="text-blue-100 font-light">
-              <span className="font-semibold text-white">Dr. Anand Sharma</span> — Founder & Managing Director
-            </p>
-
-            <img src="" alt="" />
-          </div>
-
-          <div
-            className="reveal opacity-0 translate-y-16 transition-all duration-900 ease-out"
-            style={{ transitionDelay: "300ms" }}
-          >
-            <Link href="/about-allaboutdoctor" className="group inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-cyan-500 to-blue-600 px-8 py-4 text-base font-semibold text-white shadow-lg hover:shadow-xl hover:shadow-cyan-500/50 transition-all duration-300 transform hover:scale-110 active:scale-95 animate-button-entrance">
-              Read More
-              <span className="group-hover:translate-x-1 transition-transform duration-300">→</span>
-            </Link>
-          </div>
+          
         </div>
 
-        {/* RIGHT CARDS */}
- <div className="mt-10 flex flex-wrap gap-6 animate-fade-up">
-      {stats.map((item, index) => (
-        <CounterCard key={index} {...item} />
-      ))}
-    </div>
-     
-        
+        <div className="mt-16 pt-16 border-t border-blue-200/50">
+         
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+            {stats.map((item, index) => (
+              <CounterCard key={index} {...item} />
+            ))}
+          </div>
+        </div>
       </div>
 
       <style jsx>{`
@@ -285,68 +288,34 @@ document.querySelectorAll(".fade-item").forEach((item) => {
           transform: translateY(0) !important;
         }
 
-        /* Added new entrance and scroll animations */
         @keyframes float {
           0%, 100% {
             transform: translateY(0px);
           }
           50% {
-            transform: translateY(-20px);
+            transform: translateY(-30px);
           }
         }
 
         @keyframes pulse-slow {
           0%, 100% {
-            opacity: 0.5;
+            opacity: 0.4;
           }
           50% {
-            opacity: 0.2;
+            opacity: 0.1;
           }
         }
 
-        @keyframes shimmer {
-          0% {
-            background-position: -1000px 0;
-          }
-          100% {
-            background-position: 1000px 0;
-          }
+        .fade-item {
+          opacity: 0;
+          transform: translateY(20px);
+          transition: all 0.8s ease-out;
         }
 
-        @keyframes button-entrance {
-          0% {
-            transform: scale(0.95) translateY(20px);
-            opacity: 0;
-          }
-          100% {
-            transform: scale(1) translateY(0);
-            opacity: 1;
-          }
+        .fade-item.show {
+          opacity: 1;
+          transform: translateY(0);
         }
-
-        .animate-shimmer {
-          background-size: 200% auto;
-          animation: shimmer 3s linear infinite;
-        }
-
-        .animate-button-entrance {
-          animation: button-entrance 0.8s ease-out forwards;
-        }
-
-        .show .animate-button-entrance {
-          animation: button-entrance 0.8s ease-out;
-        }
-
-          .fade-item {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.8s ease-out;
-}
-
-.fade-item.show {
-  opacity: 1;
-  transform: translateY(0);
-}
       `}</style>
     </section>
   )

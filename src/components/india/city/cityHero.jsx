@@ -1,9 +1,29 @@
-import EnrollmentForm from "@/components/home/EnrollmentForm";
+"use client"
 
-export default function CityHero() {
+import { AuthContext } from "@/app/context/page";
+import EnrollmentForm from "@/components/home/EnrollmentForm";
+import { useContext } from "react";
+
+export default function CityHero({state,city}) {
+
+
+
+    const {cityData}=useContext(AuthContext)
+
+const matchedCity=cityData.find((item)=>{
+    return (
+    item.state.toLowerCase() === state.toLowerCase() &&
+    item.city.toLowerCase() === city.toLowerCase()
+  );
+})
+
+
+    console.log(matchedCity);
+    
+    
     return (
         <section className="w-full ">
-            <div className="md:flex justify-between items-center mx-auto max-w-7xl px-6 py-10 md:py-10">
+            <div className="md:flex justify-between  mx-auto max-w-7xl px-6 py-10 md:py-10">
                 <div className="space-y-6 md:w-1/2 ">
                     <div className="space-y-3">
                         <span
@@ -17,7 +37,7 @@ export default function CityHero() {
                             className="text-5xl lg:text-6xl font-bold leading-tight bg-gradient-to-r from-primary via-blue-200 to-secondary bg-clip-text text-transparent animate-shimmer fade-item"
                             style={{ animationDelay: "100ms" }}
                         >
-                            MBBS in Andhra Pradesh
+                            MBBS in {matchedCity?.state} -
                            Complete Admission Guidance
                         </h1>
 
@@ -26,18 +46,9 @@ export default function CityHero() {
 
                  
 
-                    <div clah3ssName="pt-0 space-y-4 ">
+                    <div className="pt-0 space-y-4 ">
                         <h3 className="mt-4   text-muted-foreground fade-item">
-                            Studying MBBS in Andhra Pradesh is an excellent opportunity for
-                            medical aspirants who want strong academic foundations, modern
-                            medical facilities, and high clinical exposure. The state is home
-                            to multiple NMC-approved medical colleges offering an updated
-                            curriculum, structured internships, and excellent patient flow.
-                            <br />
-                            <br />
-                            With personalized guidance and complete admission support, All
-                            About Doctor Education Pvt Ltd helps students secure MBBS
-                            admissions across Andhra Pradesh’s major medical education cities.
+                            {matchedCity?.paragraph} 
                         </h3>
                     </div>
                 </div>

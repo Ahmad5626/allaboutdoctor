@@ -1,287 +1,149 @@
-"use client"
-
-import { useEffect, useRef, useState } from "react"
+"use client";
+import { motion } from "framer-motion";
 
 const steps = [
   {
     number: 1,
+    color: "bg-blue-500",
     title: "Apply",
     desc: "We are connected to several NMC-approved universities and guide our candidates to get admission.",
     icon: "/assets/img/work/work-1.png",
   },
   {
     number: 2,
+    color: "bg-green-500",
     title: "Receive Offer",
     desc: "As you finish your MBBS course, we guide you ahead for further studies.",
     icon: "/assets/img/work/work-2.png",
   },
   {
     number: 3,
+    color: "bg-yellow-500",
     title: "Accept and Pay",
     desc: "We help you manage tuition fees, food expenses, and air tickets.",
     icon: "/assets/img/work/work-3.png",
   },
   {
     number: 4,
+    color: "bg-red-500",
     title: "Invitation Letter",
     desc: "Our faculty checks your educational details and helps find the right university.",
     icon: "/assets/img/work/work-4.png",
   },
   {
     number: 5,
+    color: "bg-pink-500",
     title: "Apply for Visa",
     desc: "We assist you with course details and guide you to apply for a visa.",
     icon: "/assets/img/work/work-5.png",
   },
   {
     number: 6,
+    color: "bg-indigo-500",
     title: "Ready to Fly",
     desc: "We help you book flight tickets and find accommodations near the university.",
     icon: "/assets/img/work/work-6.png",
   },
   {
     number: 7,
+    color: "bg-cyan-500",
     title: "Pay Tuition Fee & Hostel",
     desc: "We are connected to NMC-approved universities and guide our candidates to get admission.",
     icon: "/assets/img/work/work-7.png",
   },
 ];
 
-function StepCard({ step, index, activeIndex, totalSteps }) {
-  const diff = index - activeIndex
-  const isActive = diff === 0
-  const isPast = diff < 0
-
-  // Calculate position and styling based on index difference
-  let scale = 1
-  let opacity = 1
-  let translateY = 0
-  let zIndex = totalSteps - Math.abs(diff)
-
-  if (diff > 0) {
-    // Cards below active
-   scale = 1 - diff * 0.04
-opacity = 1 - diff * 0.12
-translateY = diff * 34
-    zIndex = totalSteps - diff
-  } else if (diff < 0) {
-    // Cards above (past)
-    opacity = 0
-    translateY = diff * 70
-  }
-
+export default function ProcessSteps() {
   return (
-    <div
-      className="absolute inset-x-0 transition-all duration-700 ease-out"
-      style={{
-        transform: `translateY(${translateY}px) scale(${scale})`,
-        opacity: opacity,
-        zIndex: zIndex,
-      }}
-    >
-      <article
-       className={`
-    relative mx-auto max-w-3xl rounded-2xl
-    bg-white border border-gray-200
-    p-6 md:p-7
-    transition-all duration-[900ms] ease-out
+    <section className="relative overflow-hidden py-20 
+  bg-gradient-to-br from-primary/10 via-secondary/10 to-primary/5">
+      <div className="max-w-7xl mx-auto px-4">
 
-    ${isActive
-      ? "shadow-xl ring-2 ring-primary/30 scale-[1.02]"
-      : "shadow-sm opacity-80"}
-  `}
-      >
-        {/* Soft subtle corner gradient */}
-        <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/5 to-transparent" />
-
-        {/* CONTENT */}
-        <div className="relative">
-
-          {/* Top Row */}
-          <div className="mb-6 flex items-center justify-between">
-
-            {/* Number Badge */}
-            <div className="
-        flex h-14 w-14 items-center justify-center 
-        rounded-xl bg-primary text-white 
-        text-xl font-bold shadow-sm
-      ">
-              {step.number.toString().padStart(2, "0")}
-            </div>
-
-            {/* Icon Box */}
-            <div className="
-        flex h-14 w-14 items-center justify-center 
-        rounded-xl bg-gray-100 border
-      ">
-              <img src={step.icon} alt="" className="h-8 w-8 opacity-80" />
-            </div>
-
-          </div>
-
-          {/* Title */}
-          <h3 className="mb-3 text-2xl md:text-3xl font-semibold text-gray-900">
-            {step.title}
-          </h3>
-
-          {/* Description */}
-          <p className="text-base md:text-lg text-gray-600 leading-relaxed">
-            {step.desc}
+        {/* Header */}
+        <div className="text-center max-w-4xl mx-auto mb-16">
+          <h2 className="text-5xl lg:text-6xl font-bold leading-tight bg-secondary bg-clip-text text-transparent animate-shimmer">
+           How We Work
+            
+          </h2>
+          <p className="mt-4 text-gray-600 text-sm md:text-base leading-relaxed">
+         A clear, student‑first process from application to arrival.
           </p>
+        </div>
 
-          {/* Progress */}
-          <div className="mt-6 flex items-center gap-2">
-            {steps.map((_, i) => (
-              <div
-                key={i}
-                className={`
-            h-1.5 flex-1 rounded-full transition-all duration-500 
-            ${i === index ? "bg-primary" : i < index ? "bg-primary/30" : "bg-gray-200"}
-          `}
-              />
+        {/* Desktop Layout */}
+        <div className="relative hidden lg:block">
+
+          {/* Dotted Curve */}
+          <svg
+            className="absolute top-1/2 left-0 w-full -translate-y-1/2"
+            viewBox="0 0 1200 300"
+            fill="none"
+          >
+            <path
+              d="M50 150 C250 20, 450 20, 650 150 C850 280, 1050 280, 1150 150"
+              stroke="#1f3b2c"
+              strokeWidth="2"
+              strokeDasharray="6 8"
+              opacity="0.4"
+            />
+          </svg>
+
+          {/* Cards */}
+          <div className="grid grid-cols-4 gap-8 relative z-10">
+            {steps.map((step, i) => (
+              <motion.div
+                key={step.number}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: i * 0.15 }}
+                viewport={{ once: true }}
+                className="relative bg-white rounded-2xl p-6 shadow-xl hover:translate-2 transition-all"
+              >
+                {/* Number */}
+                <div
+                  className={`absolute -top-6 left-6 w-12 h-12 rounded-full ${step.color} flex items-center justify-center text-white font-bold text-lg`}
+                >
+                  {step.number}
+                </div>
+
+                <h3 className="mt-6 font-semibold text-gray-800 text-sm">
+                  {step.title}
+                </h3>
+                <p className="mt-2 text-xs text-gray-600 leading-relaxed">
+                  {step.desc}
+                </p>
+              </motion.div>
             ))}
           </div>
 
+          {/* Paper Plane */}
+          <div className="absolute -right-6 top-1/3 -translate-y-1/2 text-[#1f3b2c]">
+            ✈️
+          </div>
         </div>
-      </article>
 
-
-    </div>
-  )
-}
-
-export default function VerticalStackingSlider() {
-  const [activeIndex, setActiveIndex] = useState(0)
-  const containerRef = useRef(null)
-  const [isAutoPlaying, setIsAutoPlaying] = useState(false)
-
-  // Auto-play functionality
-  useEffect(() => {
-    if (!isAutoPlaying) return
-
-    const interval = setInterval(() => {
-      setActiveIndex((prev) => (prev + 1) % steps.length)
-    }, 9000)
-
-    return () => clearInterval(interval)
-  }, [isAutoPlaying])
-
-  // Scroll handler for manual control
-useEffect(() => {
-  const container = containerRef.current
-  if (!container) return
-
-  let lastScrollTime = 0
-
-  const handleScroll = (e) => {
-    e.preventDefault()
-
-    const now = Date.now()
-    if (now - lastScrollTime < 1200) return // ⛔ throttle
-    lastScrollTime = now
-
-    setIsAutoPlaying(false)
-
-    if (e.deltaY > 0 && activeIndex < steps.length - 1) {
-      setActiveIndex((prev) => prev + 1)
-    } else if (e.deltaY < 0 && activeIndex > 0) {
-      setActiveIndex((prev) => prev - 1)
-    }
-
-    setTimeout(() => setIsAutoPlaying(true), 9000)
-  }
-
-  container.addEventListener("wheel", handleScroll, { passive: false })
-  return () => container.removeEventListener("wheel", handleScroll)
-}, [activeIndex])
-
-  const goToSlide = (index) => {
-    setActiveIndex(index)
-    setIsAutoPlaying(false)
-    setTimeout(() => setIsAutoPlaying(true), 6000)
-  }
-
-  const goNext = () => {
-    if (activeIndex < steps.length - 1) {
-      goToSlide(activeIndex + 1)
-    }
-  }
-
-  const goPrev = () => {
-    if (activeIndex > 0) {
-      goToSlide(activeIndex - 1)
-    }
-  }
-
-  return (
-    <section className="relative mx-auto  w-full overflow-hidden bg-primary px-4 py-6">
-      {/* Header */}
-      <header className="relative z-10 mx-auto mb-8 max-w-3xl text-center">
-        <h2 className="text-5xl lg:text-6xl font-bold leading-tight bg-gradient-to-r from-white via-blue-200 to-secondary bg-clip-text text-transparent animate-shimmer">
-          How We Work
-        </h2>
-        <h3 className="mt-3 text-pretty text-sm leading-relaxed text-secondary md:text-base">
-          A clear, student‑first process from application to arrival.
-        </h3>
-      </header>
-
-      {/* Main slider container */}
-      <div ref={containerRef} className="relative mx-auto h-[300px] w-full max-w-4xl px-4 md:h-[400px]">
-        {steps.map((step, index) => (
-          <StepCard key={step.number} step={step} index={index} activeIndex={activeIndex} totalSteps={steps.length} />
-        ))}
-      </div>
-
-      {/* Navigation controls */}
-      <div className="relative z-10 mx-auto mt-0 flex max-w-4xl items-center justify-center gap-4">
-        <button
-          onClick={goPrev}
-          disabled={activeIndex === 0}
-          className="flex h-12 w-12 items-center justify-center rounded-full border border-border bg-card text-foreground shadow-lg transition-all hover:scale-110 hover:bg-primary hover:text-primary-foreground disabled:opacity-30 disabled:hover:scale-100 disabled:hover:bg-card"
-          aria-label="Previous step"
-        >
-          <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 15l7-7 7 7" />
-          </svg>
-        </button>
-
-        {/* Dot navigation */}
-        <div className="flex gap-2">
-          {steps.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => goToSlide(index)}
-              className={`h-2.5 rounded-full transition-all duration-300 ${index === activeIndex ? "w-8 bg-primary" : "w-2.5 bg-muted hover:bg-muted-foreground/50"
-                }`}
-              aria-label={`Go to step ${index + 1}`}
-            />
+        {/* Mobile Layout */}
+        <div className="lg:hidden space-y-8">
+          {steps.map((step) => (
+            <div
+              key={step.number}
+              className="relative bg-white rounded-xl p-5 shadow-lg"
+            >
+              <div
+                className={`absolute -top-5 left-5 w-10 h-10 rounded-full ${step.color} flex items-center justify-center text-white font-bold`}
+              >
+                {step.number}
+              </div>
+              <h3 className="mt-6 font-semibold text-gray-800 text-sm">
+                {step.title}
+              </h3>
+              <p className="mt-2 text-xs text-gray-600">
+                {step.desc}
+              </p>
+            </div>
           ))}
         </div>
-
-        <button
-          onClick={goNext}
-          disabled={activeIndex === steps.length - 1}
-          className="flex h-12 w-12 items-center justify-center rounded-full border border-border bg-card text-foreground shadow-lg transition-all hover:scale-110 hover:bg-primary hover:text-primary-foreground disabled:opacity-30 disabled:hover:scale-100 disabled:hover:bg-card"
-          aria-label="Next step"
-        >
-          <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-          </svg>
-        </button>
       </div>
-
-      {/* Auto-play indicator */}
-      {/* <div className="relative z-10 mx-auto mt-6 text-center">
-        <button
-          onClick={() => setIsAutoPlaying(!isAutoPlaying)}
-          className="text-sm text-muted-foreground transition-colors hover:text-foreground"
-        >
-          {isAutoPlaying ? "⏸ Pause Auto-play" : "▶ Resume Auto-play"}
-        </button>
-      </div> */}
-
-      {/* Background decoration */}
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,hsl(var(--primary)/0.05),transparent_70%)]" />
     </section>
-  )
+  );
 }

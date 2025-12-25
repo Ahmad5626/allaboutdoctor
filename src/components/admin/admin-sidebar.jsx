@@ -114,7 +114,7 @@ export function AdminSidebar({ className }) {
                 )}
               >
                 <Icon className="h-5 w-5 flex-shrink-0" />
-                {!isCollapsed && <span classNme="font-medium">{item.title}</span>}
+                {!isCollapsed && <span className="font-medium">{item.title}</span>}
               </div>
             </Link>
           )

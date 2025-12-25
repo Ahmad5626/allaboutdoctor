@@ -3,11 +3,14 @@ import Navbar from '@/components/Hedaer'
 import CityHero from '@/components/india/city/cityHero'
 import React from 'react'
 
-const mbbs = () => {
+const mbbs = ({params}) => {
+    const {state,city}=params
+
+
   return (
     <div>
     <Navbar/>
-    <CityHero/>
+    <CityHero state={state} city={city}/>
     <Footer/>
       
     </div>
