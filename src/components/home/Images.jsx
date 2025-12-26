@@ -2,7 +2,7 @@ import React from 'react'
 
 const Images = () => {
     return (
-        <div className='relative overflow-hidden py-20 
+        <div className='relative overflow-hidden py-10 
   bg-gradient-to-br from-primary/10 via-secondary/10 to-primary/5'>
 
             <div className='max-w-7xl mx-auto py-10 '>
