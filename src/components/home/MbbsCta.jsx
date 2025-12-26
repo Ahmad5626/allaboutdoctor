@@ -5,26 +5,10 @@ import { Eye, Handshake, Award, MessageCircle, GraduationCap, Globe, Users } fro
 import Link from "next/link"
 
 const stats = [
-  {
-    value: 850,
-    label: "Partner Universities",
-    icon: GraduationCap,
-  },
-  {
-    value: 12,
-    label: "Countries",
-    icon: Globe,
-  },
-  {
-    value: 10000,
-    label: "Students Guided",
-    icon: Users,
-  },
-  {
-    value: 24,
-    label: "Our Branches",
-    icon: Users,
-  },
+  { value: 850, label: "Partner Universities", icon: GraduationCap, color: "blue" },
+  { value: 12, label: "Countries", icon: Globe, color: "yellow" },
+  { value: 10000, label: "Students Guided", icon: Users, color: "red" },
+  { value: 12, label: "Our Branches", icon: Users, color: "blue" },
 ]
 
 function CounterCard({ value, label, icon: Icon }) {
@@ -68,16 +52,40 @@ function CounterCard({ value, label, icon: Icon }) {
   }, [started, value])
 
   return (
-    <div
-      ref={ref}
-      className="flex flex-col items-center justify-center rounded-2xl bg-gradient-to-br from-blue-50 to-cyan-50 backdrop-blur-md border border-blue-200/40 px-6 py-6 text-center transition-all hover:bg-blue-100/50 hover:border-blue-300/60 shadow-sm hover:shadow-md"
-    >
-      <div className="flex h-12 w-12 items-center justify-center rounded-full mb-3">
-        <Icon className="h-6 w-6 text-blue-600" />
-      </div>
-      <h3 className="text-3xl font-bold text-gray-900">{count}+</h3>
-      <p className="mt-2 text-sm text-gray-600">{label}</p>
-    </div>
+  <div
+  ref={ref}
+  className="
+    relative flex flex-col items-center justify-center
+    rounded-2xl
+    bg-gradient-to-br from-[#f5fbff] to-[#eaf6ff]
+    border border-blue-200/50
+    px-8 py-8
+    text-center
+    shadow-[0_10px_30px_rgba(0,120,255,0.08)]
+    transition-all duration-300
+    hover:-translate-y-1 hover:shadow-[0_20px_40px_rgba(0,120,255,0.15)]
+  "
+>
+  {/* Up to */}
+  <p className="text-sm text-gray-400 mb-2">
+    Up to
+  </p>
+
+  {/* Value */}
+  <h3 className="text-5xl font-extrabold tracking-tight text-[#0b3ea8]">
+    {count}+
+  </h3>
+
+  {/* Label */}
+  <p className="mt-3 text-sm font-medium text-gray-600">
+    {label}
+  </p>
+
+  {/* Decorative Icon */}
+  <div className="absolute bottom-5 right-5 opacity-20">
+    <Icon className="h-12 w-12 text-[#0b3ea8]" />
+  </div>
+</div>
   )
 }
 
@@ -211,7 +219,7 @@ export default function MbbsCta() {
 
               <p className="text-base text-gray-700 leading-relaxed font-light">
                 We help students pursue <span className="font-semibold text-gray-900">MBBS, MD, MS</span> degrees from
-                top universities globally.
+                top universities globally and 50+ expirenced doctors
               </p>
             </div>
 
@@ -247,6 +255,10 @@ export default function MbbsCta() {
               <p className="text-gray-700 font-light">
                 <span className="font-semibold text-gray-900 text-base">Dr. Anand Sharma</span> — Founder & Managing
                 Director
+              </p>
+
+               <p className="text-gray-700 font-light py-2">
+                <span className="font-semibold text-gray-900 text-base">Ms. Deeksha Bhargava</span> —Co-Founder & CEO
               </p>
             </div>
 

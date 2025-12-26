@@ -25,18 +25,20 @@ import MedicalCareer from '@/components/home/medicalCareer'
 import LatestUpdates from '@/components/home/LatestUpdates'
 import Download from '@/components/home/Download'
 import InternationalCollaboration from '@/components/home/International'
+import Images from '@/components/home/Images'
 
 const page = () => {
   return (
     <div>
       <Hedaer />
       <HeroSection />
+   
       <MbbsCta />
       {/* <SuccessStories /> */}
       {/* <FeaturedSlider /> */}
       <Destination />
       <InternationalCollaboration/>
-
+   <Images/>
       {/* <VideoSection /> */}
 
        {/* <DoctorServicesSlider />  */}

@@ -58,6 +58,16 @@ export default function Header() {
     { label: "BVSc", href: "/courses/bvsc" }
   ];
 
+    const Serives = [
+    { label: "Counselling", href: "/" },
+    { label: " Admissions", href: "/" },
+    { label: "Clinical Trainings", href: "/" },
+    { label: "Learning Hub", href: "/" },
+    { label: "Internships", href: "/" },
+    { label: "Preparations Coaching", href: "/" },
+    { label: "Medical Tourism", href: "/" },
+   
+  ];
   const ABROAD_COUNTRIES = [
     { label: "Armenia", href: "/abroad/armenia/mbbs" },
     { label: "Bulgaria", href: "/abroad/bulgaria/mbbs" },
@@ -125,7 +135,7 @@ export default function Header() {
                 Download android  app
               </Link>
 
-                <Link
+              <Link
                 href="/counseling"
                 className="flex  gap-2 px-2 md:px-4 py-1.5 bg-white text-red-600 font-semibold text-[9px] md:text-sm rounded hover:bg-red-50 hover:scale-105 transition-all duration-300 shadow-md"
               >
@@ -256,8 +266,7 @@ export default function Header() {
 
       {/* Navigation Menu */}
       <nav className="bg-white border-t border-gray-200 shadow-sm">
-        <div className="max-w-7xl mx-auto px-4">
-          {/* Desktop Menu */}
+        <div className="mx-auto" >
           <div className="hidden lg:flex items-center justify-center">
             <Link
               href="/"
@@ -267,7 +276,7 @@ export default function Header() {
               <span className="absolute bottom-0 left-0 w-full h-1 bg-blue-600 scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
             </Link>
 
-          <div className="relative group">
+            <div className="relative group">
               <button className="px-4 py-4 text-sm font-semibold text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-all duration-300 flex items-center gap-1">
                 ABOUT US
                 <svg
@@ -289,28 +298,118 @@ export default function Header() {
             transition-all duration-300
             hover:text-blue-700 hover:bg-blue-50"
                   >
-                  <span className="absolute left-3 bottom-1 h-[2px] w-0 bg-gradient-to-r from-blue-500 to-indigo-500 transition-all duration-300 group-hover/state:w-1/2"></span>
+                    <span className="absolute left-3 bottom-1 h-[2px] w-0 bg-gradient-to-r from-blue-500 to-indigo-500 transition-all duration-300 group-hover/state:w-1/2"></span>
                     About us
                   </Link>
                   <Link
-                    href="/others/ayush"
+                    href="/"
                     className="relative group/state px-3 py-2 text-sm font-medium text-gray-700 rounded-lg
             transition-all duration-300
             hover:text-blue-700 hover:bg-blue-50 block"
                   >
-                  <span className="absolute left-3 bottom-1 h-[2px] w-0 bg-gradient-to-r from-blue-500 to-indigo-500 transition-all duration-300 group-hover/state:w-1/2"></span>
+                    <span className="absolute left-3 bottom-1 h-[2px] w-0 bg-gradient-to-r from-blue-500 to-indigo-500 transition-all duration-300 group-hover/state:w-1/2"></span>
                     Our Team
                   </Link>
-                 
+
                 </div>
               </div>
             </div>
 
-  <Link
+
+            {/* services */}
+
+            <div className="relative group">
+              <button className="px-4 py-4 text-sm font-semibold text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-all duration-300 flex items-center gap-1">
+                SERVICES
+                <svg
+                  className="w-4 h-4 group-hover:rotate-180 transition-transform duration-300"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M19 9l-7 7-7-7" />
+                </svg>
+                <span className="absolute bottom-0 left-0 w-full h-1 bg-blue-600 scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
+              </button>
+              <div className="absolute left-0 top-full pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                <div className="bg-white rounded-lg shadow-xl border border-gray-200 p-4 min-w-[200px]">
+                  <Link
+                    href="/"
+                    className="relative group/state px-3 py-2 text-sm font-medium text-gray-700 rounded-lg
+            transition-all duration-300
+            hover:text-blue-700 hover:bg-blue-50"
+                  >
+                    <span className="absolute left-3 bottom-1 h-[2px] w-0 bg-gradient-to-r from-blue-500 to-indigo-500 transition-all duration-300 group-hover/state:w-1/2"></span>
+                    Counselling
+                  </Link>
+
+
+
+                  <Link
+                    href="/"
+                    className="relative group/state px-3 py-2 text-sm font-medium text-gray-700 rounded-lg
+            transition-all duration-300
+            hover:text-blue-700 hover:bg-blue-50 block"
+                  >
+                    <span className="absolute left-3 bottom-1 h-[2px] w-0 bg-gradient-to-r from-blue-500 to-indigo-500 transition-all duration-300 group-hover/state:w-1/2"></span>
+                    Admissions
+                  </Link>
+                  <Link
+                    href="/"
+                    className="relative group/state px-3 py-2 text-sm font-medium text-gray-700 rounded-lg
+            transition-all duration-300
+            hover:text-blue-700 hover:bg-blue-50 block"
+                  >
+                    <span className="absolute left-3 bottom-1 h-[2px] w-0 bg-gradient-to-r from-blue-500 to-indigo-500 transition-all duration-300 group-hover/state:w-1/2"></span>
+                    Clinical Trainings
+                  </Link>
+                  <Link
+                    href="/"
+                    className="relative group/state px-3 py-2 text-sm font-medium text-gray-700 rounded-lg
+            transition-all duration-300
+            hover:text-blue-700 hover:bg-blue-50 block"
+                  >
+                    <span className="absolute left-3 bottom-1 h-[2px] w-0 bg-gradient-to-r from-blue-500 to-indigo-500 transition-all duration-300 group-hover/state:w-1/2"></span>
+                    Learning Hub
+                  </Link>
+                  <Link
+                    href="/"
+                    className="relative group/state px-3 py-2 text-sm font-medium text-gray-700 rounded-lg
+            transition-all duration-300
+            hover:text-blue-700 hover:bg-blue-50 block"
+                  >
+                    <span className="absolute left-3 bottom-1 h-[2px] w-0 bg-gradient-to-r from-blue-500 to-indigo-500 transition-all duration-300 group-hover/state:w-1/2"></span>
+                    Internships
+                  </Link><Link
+                    href="/"
+                    className="relative group/state px-3 py-2 text-sm font-medium text-gray-700 rounded-lg
+            transition-all duration-300
+            hover:text-blue-700 hover:bg-blue-50 block"
+                  >
+                    <span className="absolute left-3 bottom-1 h-[2px] w-0 bg-gradient-to-r from-blue-500 to-indigo-500 transition-all duration-300 group-hover/state:w-1/2"></span>
+                    Preparations Coaching
+                  </Link>
+
+                  <Link
+                    href="/"
+                    className="relative group/state px-3 py-2 text-sm font-medium text-gray-700 rounded-lg
+            transition-all duration-300
+            hover:text-blue-700 hover:bg-blue-50 block"
+                  >
+                    <span className="absolute left-3 bottom-1 h-[2px] w-0 bg-gradient-to-r from-blue-500 to-indigo-500 transition-all duration-300 group-hover/state:w-1/2"></span>
+                    Medical Tourism
+                  </Link>
+
+                </div>
+              </div>
+            </div>
+
+            <Link
               href="/"
               className="px-4 py-4 text-sm font-semibold text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-all duration-300 relative group"
             >
-             OUR BRANCHES 
+              OUR BRANCHES
               <span className="absolute bottom-0 left-0 w-full h-1 bg-blue-600 scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
             </Link>
             <Link
@@ -575,10 +674,10 @@ export default function Header() {
                 href="/"
                 className="block px-4 py-2 text-sm font-semibold text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded transition-colors"
               >
-               HOME
+                HOME
               </Link>
 
-               <div>
+              <div>
                 <button
                   onClick={() => toggleDropdown("about")}
                   className="w-full flex items-center justify-between px-4 py-2 text-sm font-semibold text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded transition-colors"
@@ -602,8 +701,8 @@ export default function Header() {
             transition-all duration-300
             hover:text-blue-700 hover:bg-blue-50"
                     >
-                     <span className="absolute left-3 bottom-1 h-[2px] w-0 bg-gradient-to-r from-blue-500 to-indigo-500 transition-all duration-300 group-hover/state:w-1/2"></span>
-                    About us
+                      <span className="absolute left-3 bottom-1 h-[2px] w-0 bg-gradient-to-r from-blue-500 to-indigo-500 transition-all duration-300 group-hover/state:w-1/2"></span>
+                      About us
                     </Link>
                     <Link
                       href="/"
@@ -611,21 +710,61 @@ export default function Header() {
             transition-all duration-300
             hover:text-blue-700 hover:bg-blue-50"
                     >
-                     <span className="absolute left-3 bottom-1 h-[2px] w-0 bg-gradient-to-r from-blue-500 to-indigo-500 transition-all duration-300 group-hover/state:w-1/2"></span>
+                      <span className="absolute left-3 bottom-1 h-[2px] w-0 bg-gradient-to-r from-blue-500 to-indigo-500 transition-all duration-300 group-hover/state:w-1/2"></span>
                       Our Team
                     </Link>
-                   
+
                   </div>
                 )}
               </div>
 
-                <Link
+
+              {/* Services */}
+ <div>
+                <button
+                  onClick={() => toggleDropdown("services")}
+                  className="w-full flex items-center justify-between px-4 py-2 text-sm font-semibold text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded transition-colors"
+                >
+                  SERVICES
+                  <svg
+                    className={`w-4 h-4 transition-transform ${activeDropdown === "services" ? "rotate-180" : ""}`}
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                {activeDropdown === "services" && (
+                  <div className="pl-4 py-2 space-y-1">
+                    <div className="grid grid-cols-2 gap-x-4 gap-y-1 max-h-72 overflow-y-auto pr-2">
+                      {Serives.map((state) => (
+                        <Link
+                          key={state.href}
+                          href={state.href}
+                          className="relative group/state px-3 py-2 text-sm font-medium text-gray-700 rounded-lg
+            transition-all duration-300
+            hover:text-blue-700 hover:bg-blue-50"
+                        >
+                          {/* underline animation */}
+                          <span className="absolute left-3 bottom-1 h-[2px] w-0 bg-gradient-to-r from-blue-500 to-indigo-500 transition-all duration-300 group-hover/state:w-1/2"></span>
+
+                          {state.label}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </div>
+              
+              <Link
                 href="/"
                 className="block px-4 py-2 text-sm font-semibold text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded transition-colors"
               >
                 OUR BRANCHES
               </Link>
-            
+
               <Link
                 href="/neet-ug-counselling"
                 className="block px-4 py-2 text-sm font-semibold text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded transition-colors"
@@ -695,7 +834,7 @@ export default function Header() {
                 </button>
                 {activeDropdown === "abroad" && (
                   <div className="pl-4 py-2 space-y-1">
-                     <div className="grid grid-cols-2 gap-x-4 gap-y-1 max-h-72 overflow-y-auto pr-2">
+                    <div className="grid grid-cols-2 gap-x-4 gap-y-1 max-h-72 overflow-y-auto pr-2">
                       {ABROAD_COUNTRIES.map((state) => (
                         <Link
                           key={state.href}
@@ -715,12 +854,12 @@ export default function Header() {
                 )}
               </div>
 
-               <div>
+              <div>
                 <button
                   onClick={() => toggleDropdown("COURSES")}
                   className="w-full flex items-center justify-between px-4 py-2 text-sm font-semibold text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded transition-colors"
                 >
-                 COURSES
+                  COURSES
                   <svg
                     className={`w-4 h-4 transition-transform ${activeDropdown === "COURSES" ? "rotate-180" : ""}`}
                     fill="none"
@@ -733,7 +872,7 @@ export default function Header() {
                 </button>
                 {activeDropdown === "COURSES" && (
                   <div className="pl-4 py-2 space-y-1">
-                     <div className="grid grid-cols-2 gap-x-4 gap-y-1 max-h-72 overflow-y-auto pr-2">
+                    <div className="grid grid-cols-2 gap-x-4 gap-y-1 max-h-72 overflow-y-auto pr-2">
                       {COURSES.map((state) => (
                         <Link
                           key={state.href}
@@ -757,14 +896,14 @@ export default function Header() {
                 href="/"
                 className="block px-4 py-2 text-sm font-semibold text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded transition-colors"
               >
-              NEWS 
+                NEWS
               </Link>
 
               <Link
                 href="/"
                 className="block px-4 py-2 text-sm font-semibold text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded transition-colors"
               >
-             VLOGS
+                VLOGS
               </Link>
 
               <Link

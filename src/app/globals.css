@@ -247,3 +247,37 @@
   background-size: 200% 200%;
   animation: borderMove 2s linear infinite;
 }
+
+
+
+@keyframes marquee-1 {
+  0% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+.animate-marquee-1 {
+  animation: marquee-1 12s linear infinite;
+}
+
+
+
+@keyframes marquee-reverse {
+    0% {
+    transform: translateY(-50%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.animate-marquee-reverse {
+  animation: marquee-reverse 12s linear infinite;
+}
+
+
+
+
