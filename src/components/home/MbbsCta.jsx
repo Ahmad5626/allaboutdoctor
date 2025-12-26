@@ -72,7 +72,7 @@ function CounterCard({ value, label, icon: Icon }) {
   </p>
 
   {/* Value */}
-  <h3 className="text-5xl font-extrabold tracking-tight text-[#0b3ea8]">
+  <h3 className="text-3xl md:text-5xl font-extrabold tracking-tight text-[#0b3ea8]">
     {count}+
   </h3>
 

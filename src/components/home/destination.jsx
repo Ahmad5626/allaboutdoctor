@@ -7,76 +7,100 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 const destinations = [
   {
     name: "Armenia",
-    image: "https://flagcdn.com/w640/am.png",
+    flag: "/assets/img/Armenia-flag.png",
     title: "Historic universities with advanced labs",
-    link: "/abroad/armenia/mbbs"
+    link: "/abroad/armenia/mbbs",
+    image: "/assets/img/Armenia.jpg",
+    gradient: "from-yellow-400 via-amber-500 to-orange-500",
   },
   {
     name: "Bulgaria",
-    image: "https://flagcdn.com/w640/bg.png",
+    flag: "/assets/img/Bulgaria-flag.png",
     title: "EU-recognized degrees & modern campuses",
-    link: "/abroad/bulgaria/mbbs"
+    link: "/abroad/bulgaria/mbbs",
+    image: "/assets/img/Bulgaria.jpg",
+    gradient: "from-blue-500 via-sky-500 to-cyan-500",
   },
   {
     name: "Georgia",
-    image: "https://flagcdn.com/w640/ge.png",
+    flag: "/assets/img/Georgia-flag.png",
     title: "European standards & safe student life",
-    link: "/abroad/georgia/mbbs"
+    link: "/abroad/georgia/mbbs",
+    image: "/assets/img/Georgia.jpg",
+    gradient: "from-emerald-500 via-teal-500 to-cyan-500",
   },
   {
     name: "Kazakhstan",
-    image: "https://flagcdn.com/w640/kz.png",
+    flag: "/assets/img/Kazakhstan-flag.png",
     title: "Modern infrastructure & clinical exposure",
-    link: "/abroad/kazakhstan/mbbs"
+    link: "/abroad/kazakhstan/mbbs",
+    image: "/assets/img/Kazakhstan.jpg",
+    gradient: "from-indigo-500 via-blue-600 to-sky-500",
   },
   {
     name: "Kyrgyzstan",
-    image: "https://flagcdn.com/w640/kg.png",
+    flag: "/assets/img/Kyrgyzstan-flag.png",
     title: "Affordable MBBS with English-medium teaching",
-    link: "/abroad/kyrgyzstan/mbbs"
+    link: "/abroad/kyrgyzstan/mbbs",
+    image: "/assets/img/Kyrgyzstan.jpeg",
+    gradient: "from-purple-500 via-fuchsia-500 to-pink-500",
   },
   {
     name: "Nepal",
-    image: "https://flagcdn.com/w640/np.png",
+    flag: "/assets/img/Nepal-flag.png",
     title: "Cultural proximity & NMC-approved colleges",
-    link: "/abroad/nepal/mbbs"
+    link: "/abroad/nepal/mbbs",
+    image: "/assets/img/Nepal.jpg",
+    gradient: "from-rose-500 via-red-500 to-orange-500",
   },
   {
     name: "Romania",
-    image: "https://flagcdn.com/w640/ro.png",
+    flag: "/assets/img/Romania-flag.png",
     title: "EU medical education & clinical exposure",
-    link: "/abroad/romania/mbbs"
+    link: "/abroad/romania/mbbs",
+    image: "/assets/img/Romania.jpg",
+    gradient: "from-amber-500 via-orange-500 to-red-500",
   },
   {
     name: "Russia",
-    image: "https://flagcdn.com/w640/ru.png",
+    flag: "/assets/img/Russia-flag.png",
     title: "Globally recognized, affordable programs",
-    link: "/abroad/russia/mbbs"
+    link: "/abroad/russia/mbbs",
+    image: "/assets/img/Russia.jpg",
+    gradient: "from-slate-600 via-slate-700 to-slate-800",
   },
 
   {
-    name: "Serbia",
-    image: "/assets/img/Serbia.png",
+    name: "Seriba",
+    flag: "/assets/img/Serbia.png",
     title: "EU medical education & clinical exposure",
-    link: "/abroad/serbia/mbbs"
+    link: "/abroad/serbia/mbbs",
+    image: "/assets/img/Russia.jpg",
+    gradient: "from-cyan-600 via-blue-600 to-indigo-600",
   },
   {
     name: "Tajikistan",
-    image: "/assets/img/Tajikistan.png",
+    flag: "/assets/img/Tajikistan.png",
     title: "Globally recognized, affordable programs",
-    link: "/abroad/tajikistan/mbbs"
+    link: "/abroad/tajikistan/mbbs",
+    image: "/assets/img/Tajikistan1.jpg",
+    gradient: "from-lime-500 via-green-500 to-emerald-500",
   },
   {
     name: "Uzbekistan",
-    image: "/assets/img/Uzbekistan.png",
+    flag: "/assets/img/Uzbekistan.png",
     title: "EU medical education & clinical exposure",
-    link: "/abroad/uzbekistan/mbbs"
+    link: "/abroad/uzbekistan/mbbs",
+    image: "/assets/img/Uzbekistan1.jpg",
+    gradient: "from-sky-500 via-cyan-500 to-teal-500",
   },
   {
     name: "Vietnam",
-    image: "/assets/img/Vietnam.png",
+    flag: "/assets/img/Vietnam.png",
     title: "Globally recognized, affordable programs",
-    link: "/abroad/vietnam/mbbs"
+    link: "/abroad/vietnam/mbbs",
+    image: "/assets/img/Vietnam1.jpg",
+    gradient: "from-orange-500 via-red-500 to-rose-500",
   },
 ];
 
@@ -125,32 +149,40 @@ export default function FeaturedCountriesSlider() {
           {destinations.map((d) => (
             <Link
               href={d.link}
+              key={d.name}
               className="group relative min-w-[220px] md:min-w-[300px] h-[210px] rounded-[28px] overflow-hidden"
             >
-              {/* Background Image */}
+              {/* BIG Background Image */}
               <img
                 src={d.image}
                 alt={d.name}
                 className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
               />
 
-              {/* Soft dark overlay */}
+              {/* Soft overlay */}
               <div className="absolute inset-0 bg-black/10" />
 
-              {/* Bottom curved gradient shape */}
+              {/* Bottom curved gradient */}
               <div
-                className="absolute bottom-0 left-0 w-full h-[50%]"
+                className={`absolute bottom-0 left-0 w-full h-[50%] bg-gradient-to-tr ${d.gradient}`}
                 style={{
-                  background:
-                    "linear-gradient(135deg, rgba(234,179,8,0.9) 0%, rgba(59,130,246,0.85) 50%, rgba(14,165,233,0.85) 100%)",
-                  clipPath: "ellipse(60% 100% at 0% 100%)",
+                  clipPath: "ellipse(70% 100% at 0% 100%)",
                 }}
               />
 
-              {/* Text */}
-              <div className="absolute bottom-5 left-6 text-white z-10">
-                <h3 className="text-xl font-bold leading-tight">{d.name}</h3>
-                <p className="text-sm opacity-90">{d.country}</p>
+              {/* TEXT + FLAG */}
+              <div className="absolute bottom-5 left-6 z-10 flex items-center gap-2 text-white">
+                {/* Small Flag */}
+                <img
+                  src={d.flag}
+                  alt={`${d.name} flag`}
+                  className="h-5 w-7 rounded-sm object-cover shadow"
+                />
+
+                <div>
+                  <h3 className="text-xl font-bold leading-tight">{d.name}</h3>
+                  <p className="text-sm opacity-90">{d.country}</p>
+                </div>
               </div>
             </Link>
           ))}
