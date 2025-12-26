@@ -80,7 +80,7 @@ const Images = () => {
 
                     </div>
 
-                    <div className='animate-marquee-1 flex flex-col gap-4'>
+                    <div className='hidden animate-marquee-1 md:flex flex-col gap-4'>
                         <div className='img  '>
                             <img src="/assets/img/leaders/12.jpeg" className='w-100 h-70 rounded-2xl object-cover' alt="" />
                         </div>
@@ -108,7 +108,7 @@ const Images = () => {
                         </div>
 
                     </div>
-                    <div className='animate-marquee-reverse flex flex-col gap-4' >
+                    <div className='animate-marquee-reverse hidden md:flex flex-col gap-4' >
                         <div className='img  '>
                             <img src="/assets/img/leaders/1.jpeg" className='w-100 h-70 rounded-2xl object-cover' alt="" />
                         </div>
