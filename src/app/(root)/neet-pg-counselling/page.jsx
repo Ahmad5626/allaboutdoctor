@@ -16,20 +16,47 @@ import StudyOpportunities from '@/components/neet-pg/study-opportunities'
 import WhyChooseUs from '@/components/mbbs/why-choose-us'
 import React from 'react'
 import Packages from '@/components/neet-pg/packages'
+import { Counter } from '@/components/neet-pg/Couter'
+import WhyNeetCounselling from '@/components/neet-pg/WhyNeetCounselling'
+import EligibilityPg from '@/components/neet-pg/eligibility'
+import NeetCounsellingOverviewPg from '@/components/neet-pg/NeetCounsellingOverview'
+import NeetCounsellingProcessPg from '@/components/neet-pg/NeetCounsellingProcess'
+import NeetDocumentsRequiredPg from '@/components/neet-pg/NeetDocumentsRequired'
+import NeetReservationPolicyPg from '@/components/neet-pg/NeetReservationPolicy'
+import NeetStateCoveragePg from '@/components/neet-pg/NeetStateCoverage'
+import NeetRankPredictorPg from '@/components/neet-pg/NeetRankPredictorAnalysis'
+import WhyChooseUsPg from '@/components/neet-pg/why-choose-us'
 
 const page = () => {
   return (
     <div>
     <Navbar/>
     <Hero/>
-    <Highlights />
+    <Counter/>
+    <WhyNeetCounselling/>
+    <EligibilityPg/>
+<NeetCounsellingOverviewPg/>
+<NeetCounsellingProcessPg/>
+<NeetDocumentsRequiredPg/>
+ <NeetReservationPolicyPg/>
+  <NeetStateCoveragePg/>
+   <NeetRankPredictorPg/> 
+        {/* 
+          
+          
+         
+         
+         */}
+    {/* <Highlights />
      
       <CounsellingProcess/>
       <KeyHighlights/>
       
-      <WhyChooseUs />
-      <Packages/>
+      <WhyChooseUs /> */}
+      {/* <Packages/> */}
       <FAQ />
+<WhyChooseUsPg/>
+
     <Footer/>
       
     </div>

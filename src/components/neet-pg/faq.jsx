@@ -1,76 +1,97 @@
-"use client";
+"use client"
+import { useState } from "react"
 
-import { useState } from "react";
+const FAQS = [
+  {
+    q: "How many rounds are conducted in NEET PG counselling?",
+    a: " Multiple rounds including mop-up and stray vacancy rounds.",
+  },
+  {
+    q: "Can I apply for both AIQ and State counselling?",
+    a: "Yes, eligible candidates can participate in both.",
+  },
+  {
+    q: "Is choice filling mandatory in NEET PG counselling?",
+    a: " Yes, without choice filling, seat allotment is not possible.",
+  },
+  {
+    q: "What happens if I miss a counselling round?",
+    a: "You may lose the opportunity to secure a seat in that round.",
+  },
+]
 
-export default function FAQ() {
-  const [openIdx, setOpenIdx] = useState(null);
-
-  const faqs = [
-    {
-      q: "How do I register for NEET PG Counselling?",
-      a: "Visit the MCC website for AIQ seats or your respective State DME portal for State Quota.",
-    },
-    {
-      q: "Can I apply for both AIQ and State Quota counselling?",
-      a: "Yes, candidates are allowed to participate in both simultaneously.",
-    },
-    {
-      q: "What if I miss the first round of counselling?",
-      a: "You may still participate in Round 2, Mop-Up Round, or Stray Vacancy Round depending on availability.",
-    },
-    {
-      q: "Are Deemed University admissions handled differently?",
-      a: "Yes. Deemed Universities are allotted seats under MCC counselling with separate fee norms.",
-    },
-    {
-      q: "Can I change my reservation/category after registration?",
-      a: "No. Category once registered cannot be modified later, so ensure accuracy at the time of submission.",
-    },
-  ];
+export default function NeetFaqUltraModern() {
+  const [active, setActive] = useState(0)
 
   return (
-    <section className="w-full">
-      <div className="relative mx-auto max-w-7xl px-6 py-10 md:py-14">
-        <div className="mb-8">
-          <h1
-            className="text-pretty text-4xl font-semibold leading-tight sm:text-4xl animate-fade-up"
-            style={{ animationDelay: "100ms" }}
-          >
-            Frequently Asked <span className="text-primary">Questions (FAQs)</span>
-          </h1>
-          
+    <section className="relative bg-primary py-10 overflow-hidden">
+
+
+      <div className="absolute -top-40 -left-40 h-96 w-96 rounded-full bg-white/10 blur-3xl" />
+      <div className="absolute bottom-0 -right-40 h-96 w-96 rounded-full bg-secondary/20 blur-3xl" />
+
+      <div className="relative max-w-7xl mx-auto px-6">
+
+
+        <div className="mb-24 max-w-4xl">
+          <h2 className="text-5xl lg:text-6xl font-bold leading-tight bg-gradient-to-r from-primary via-blue-200 to-secondary bg-clip-text text-transparent animate-shimmer fade-item">
+            Frequently Asked Questions
+          </h2>
+
         </div>
 
-        <div className="space-y-4 py-6">
-          {faqs.map((faq, idx) => (
-            <div
-              key={idx}
-              className="border border-border rounded-lg overflow-hidden hover:border-primary transition-colors"
-            >
-              <button
-                onClick={() => setOpenIdx(openIdx === idx ? null : idx)}
-                className="w-full px-6 py-4 flex items-center justify-between hover:bg-foreground/5 transition-colors text-left"
-              >
-                <span className="font-semibold text-foreground">
-                  Q{idx + 1}. {faq.q}
-                </span>
-                <span
-                  className={`text-primary text-xl flex-shrink-0 transition-transform ${
-                    openIdx === idx ? "rotate-180" : ""
-                  }`}
+
+        <div className="grid lg:grid-cols-2 gap-20 items-start">
+
+
+          <div className="space-y-6">
+            {FAQS.map((item, index) => {
+              const isActive = active === index
+
+              return (
+                <button
+                  key={index}
+                  onClick={() => setActive(index)}
+                  className={`w-full text-left rounded-2xl px-8 py-6 transition-all backdrop-blur
+                    ${isActive
+                      ? "bg-white text-primary shadow-[0_20px_50px_rgba(0,0,0,0.3)] scale-[1.03]"
+                      : "bg-white/15 text-white hover:bg-white/25"
+                    }
+                  `}
                 >
-                  ▼
-                </span>
-              </button>
-              {openIdx === idx && (
-                <div className="px-6 py-4 border-t border-border bg-foreground/2">
-                  <p className="text-foreground/80 leading-relaxed">{faq.a}</p>
-                </div>
-              )}
+                  <span className="text-lg md:text-xl font-semibold">
+                    {item.q}
+                  </span>
+                </button>
+              )
+            })}
+          </div>
+
+
+          <div className="relative">
+
+
+            <div className="absolute inset-0 rounded-[32px] bg-gradient-to-br from-white/40 via-blue-200/30 to-secondary/40 blur-2xl opacity-70" />
+
+
+            <div className="relative rounded-[32px] bg-gradient-to-br from-white to-white/95 p-14 shadow-[0_40px_90px_rgba(0,0,0,0.35)]">
+
+
+              <span className="inline-flex items-center rounded-full bg-primary/10 px-4 py-1 text-xs font-semibold tracking-widest text-primary uppercase">
+                Answer
+              </span>
+
+              <p className="mt-8 text-xl md:text-2xl leading-relaxed text-foreground font-medium">
+                {FAQS[active].a}
+              </p>
+
             </div>
-          ))}
+          </div>
+
+
         </div>
+
       </div>
     </section>
-  );
+  )
 }

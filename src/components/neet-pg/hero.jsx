@@ -1,46 +1,57 @@
+"use client"
+import Link from "next/link"
+import { useEffect, useRef, useState } from "react"
+
+
+
 export default function Hero() {
   return (
-    <section className="w-full">
-      <div className="mx-auto max-w-7xl px-6 py-10 md:py-10">
-        <div className="md:flex justify-between items-center gap-4">
+    <section className="relative overflow-hidden">
+      
+      {/* Background glow */}
+      <div className="" />
+      <div className="" />
+
+      <div className="relative mx-auto max-w-7xl px-6 py-10">
+        
+        {/* Hero Grid */}
+        <div className="grid lg:grid-cols-2 gap-16 items-center-safe">
+          
+          {/* Left */}
           <div className="space-y-6">
-            <div className="space-y-4">
-              <span
+           <span
                 className="inline-flex items-center rounded-full border border-border/60 bg-card px-3 py-1 text-xs font-medium text-muted-foreground animate-fade-up"
                 style={{ animationDelay: "40ms" }}
               >
-                All About Doctor Education Pvt. Ltd.
+                All About Doctor Education Pvt Ltd
               </span>
 
-              <h1
-                className="text-5xl lg:text-6xl font-bold leading-tight bg-gradient-to-r from-primary via-blue-200 to-secondary bg-clip-text text-transparent animate-shimmer fade-item"
-                style={{ animationDelay: "100ms" }}
-              >
-                NEET PG Counselling – Complete Guidance for{" "}
-  <span >MD/MS Admissions</span>
-              </h1>
+            <h1 className="text-5xl lg:text-6xl font-bold leading-tight bg-gradient-to-r from-primary via-blue-200 to-secondary bg-clip-text text-transparent animate-shimmer fade-item">
+            NEET PG Counselling Complete Guidance for MD, MS & PG Diploma Admissions
+            </h1>
 
-              <div className="h-1 w-24 bg-primary rounded-full"></div>
-            </div>
+            <h2 className="text-lg md:text-xl text-primary font-semibold fade-item"> Expert Counselling Support to Secure the Right Postgraduate Medical Seat </h2>
 
-            <h2 className="mt-4 max-w-2xl text-sm/6 md:text-base/7 text-muted-foreground fade-item">
-              The NEET PG Counselling process is a decisive step for medical graduates
-              aspiring to pursue MD, MS, and PG Diploma programs in India. After qualifying
-              the NEET-PG entrance exam, candidates must undergo the official counselling
-              procedure to secure seats across Government Colleges, Private Medical
-              Universities, and Deemed Institutions.
-            </h2>
+            <h2 className="mt-4 max-w-2xl text-sm/6 md:text-base/7 text-muted-foreground fade-item"> NEET PG counselling is the centralized admission process through which eligible doctors secure seats in MD, MS, and PG Diploma courses across India. Qualifying NEET PG alone does not guarantee admission—strategic counselling, correct choice filling, and timely decision-making are critical to securing the best possible postgraduate medical seat. </h2>
 
-            <h3 className="mt-4 max-w-2xl text-sm/6 md:text-base/7 text-muted-foreground fade-item">
-              The Medical Counselling Committee (MCC) conducts the All India Quota (AIQ)
-              counselling, while individual State Authorities manage the State Quota
-              admissions. This structured process ensures transparent, merit-based
-              allocation of seats based on rank, category, and preferences.
-            </h3>
+            <div className="flex flex-col gap-3 sm:flex-row animate-fade-up" style={{ animationDelay: "260ms" }}>
+                <Link
+                  href="#get-started"
+                  className="mt-6 px-6 py-3 rounded-lg bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 active:scale-95"
+                >
+                  Get Your Free Plan
+                </Link>
+                <Link
+                  href="#talk"
+                  className="mt-6 px-6 py-3 rounded-lg bg-gradient-to-r from-white to-white text-primary font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 active:scale-95"
+                >
+                  Talk to a Counsellor
+                </Link>
+              </div>
           </div>
 
-          {/* Right Image */}
-          <div className="pt-10 md:pt-0">
+          {/* Right Image Card */}
+           <div className="pt-10 md:pt-0">
             <img
               src="../assets/img/abroad.jpg"
               alt="NEET PG Counselling"
@@ -49,24 +60,9 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Stats Section */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8">
-          <div className="p-4 border border-primary/30 rounded-lg hover:border-primary transition-colors">
-            <div className="text-3xl font-bold text-primary mb-2">10,000+</div>
-            <p className="text-sm text-foreground/70">Students Successfully Guided</p>
-          </div>
-
-          <div className="p-4 border border-secondary/30 rounded-lg hover:border-secondary transition-colors">
-            <div className="text-3xl font-bold text-secondary mb-2">95%</div>
-            <p className="text-sm text-foreground/70">Admission Success Rate</p>
-          </div>
-
-          <div className="p-4 border border-primary/30 rounded-lg hover:border-primary transition-colors">
-            <div className="text-3xl font-bold text-primary mb-2">850+</div>
-            <p className="text-sm text-foreground/70">Partner Medical Colleges</p>
-          </div>
-        </div>
+      
       </div>
     </section>
-  );
+  )
 }
+

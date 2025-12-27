@@ -31,7 +31,7 @@ export default function NEETUGPage() {
       <Hero />
       <Counter/>
       <WhyNeetCounselling/>
-          <Eligibility />
+      <Eligibility />
       <NeetCounsellingOverview/>
       <NeetCounsellingProcess/>
       <NeetDocumentsRequired/>

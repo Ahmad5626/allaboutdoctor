@@ -1,16 +1,17 @@
-export default function NeetReservationPolicyModern() {
+export default function NeetReservationPolicyPg() {
   return (
     <section className="bg-white py-20">
       <div className="max-w-7xl mx-auto px-6">
 
         {/* Heading */}
         <h2 className="text-5xl lg:text-6xl font-bold leading-tight bg-gradient-to-r from-primary via-blue-200 to-secondary bg-clip-text text-transparent animate-shimmer fade-item">
-          NEET UG Reservation Policy & Seat Quota System
+          NEET PG Reservation Policy & Seat Distribution
         </h2>
 
         <p className="mt-6 text-lg text-muted-foreground max-w-4xl">
-          Seat allocation follows central and state reservation guidelines,
-          ensuring equal opportunities for all categories.
+          NEET PG seat allocation follows central and state reservation
+          guidelines to ensure fair representation across all eligible
+          categories.
         </p>
 
         {/* Modern Table Card */}
@@ -25,11 +26,11 @@ export default function NeetReservationPolicyModern() {
           {/* Rows */}
           <TableRow
             category="General / UR"
-            type="Unreserved"
+            type="Unreserved Category"
             badge="default"
           />
           <TableRow
-            category="OBC – NCL"
+            category="OBC (NCL)"
             type="Central Reservation"
             badge="info"
           />
@@ -53,10 +54,11 @@ export default function NeetReservationPolicyModern() {
 
         {/* Note */}
         <p className="mt-8 text-base text-muted-foreground max-w-4xl">
-          State-level counselling may also include{" "}
-          <span className="font-medium text-foreground">Home State</span> and{" "}
-          <span className="font-medium text-foreground">Other State</span>{" "}
-          quota distinctions depending on domicile rules.
+          State counselling may also include additional{" "}
+          <span className="font-medium text-foreground">
+            service or in-service quota rules
+          </span>{" "}
+          as per respective state policies.
         </p>
 
       </div>

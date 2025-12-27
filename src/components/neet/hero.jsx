@@ -27,7 +27,7 @@ export default function Hero() {
               </span>
 
             <h1 className="text-5xl lg:text-6xl font-bold leading-tight bg-gradient-to-r from-primary via-blue-200 to-secondary bg-clip-text text-transparent animate-shimmer fade-item">
-              NEET UG Counsng  Complete Guidance for MBBS & BDS Admissions
+              NEET UG Counselling  Complete Guidance for MBBS & BDS Admissions
             </h1>
 
             <h2 className="text-lg md:text-xl text-primary font-semibold fade-item"> Expert Support to Convert Your NEET UG Rank into the Right Medical College Seat </h2>

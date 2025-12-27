@@ -1,4 +1,4 @@
-export default function WhyChooseUsPg() {
+export default function WhyChooseUs() {
   
 
   return (
@@ -23,13 +23,15 @@ export default function WhyChooseUsPg() {
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight bg-gradient-to-r from-primary via-blue-300 to-secondary bg-clip-text text-transparent">
               Why Choose All About Doctor
               <span className="block mt-3">
-                for NEET PG Counselling Support
+                for NEET UG Counselling Support
               </span>
             </h2>
 
             {/* Description */}
             <p className="mt-10 max-w-4xl mx-auto text-lg md:text-xl leading-relaxed text-muted-foreground">
-            We offer end-to-end NEET PG counselling support—from registration and document verification to seat allotment and college reporting—helping doctors secure the right postgraduate seat with clarity and confidenc
+              We provide end-to-end counselling assistance, from document
+              preparation to final college reporting, ensuring students make
+              confident and informed decisions for their medical careers.
             </p>
 
           </div>
