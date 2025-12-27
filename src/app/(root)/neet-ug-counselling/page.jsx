@@ -31,6 +31,7 @@ export default function NEETUGPage() {
       <Hero />
       <Counter/>
       <WhyNeetCounselling/>
+          <Eligibility />
       <NeetCounsellingOverview/>
       <NeetCounsellingProcess/>
       <NeetDocumentsRequired/>
@@ -41,7 +42,7 @@ export default function NEETUGPage() {
       <WhyChooseUs />
       {/* <Highlights />
       <CounsellingDates />
-      <Eligibility />
+  
       <CounsellingFees />
       <CounsellingProcedure />
       <Reservation />
