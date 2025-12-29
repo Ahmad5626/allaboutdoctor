@@ -7,45 +7,31 @@ export default function FAQs() {
 
   const faqs = [
     {
-      q: "What is the full form of MBBS?",
-      a: "MBBS stands for Bachelor of Medicine, Bachelor of Surgery, the primary undergraduate degree for aspiring doctors in India.",
+      q: "Is NEET mandatory for MBBS in India?",
+      a: " Yes, NEET-UG is compulsory.",
     },
     {
-      q: "What are the fees for MBBS in India?",
-      a: "Government Universities: ₹2 – ₹5 lakh | Private Universities: ₹30 – ₹80 lakh | Deemed Universities: ₹75 lakh – ₹1 crore. Additional expenses may include hostel, food, exams, and study materials.",
+      q: "Can I apply to multiple state counsellings?",
+      a: " Yes, eligible candidates can apply to AIQ and multiple states.",
     },
     {
-      q: "What is the MBBS course duration in India?",
-      a: "The MBBS program in India lasts 5.5 years, which includes 4.5 years of academic study and 1-year compulsory internship.",
+      q: "Are private medical colleges safe to choose?",
+      a: " Yes, NMC-approved private colleges offer good academics and clinical exposure.",
     },
     {
-      q: "Can I pursue MBBS in India after 12th?",
-      a: "Yes, students who have completed 10+2 with Physics, Chemistry, Biology, and English are eligible to apply for MBBS, provided they qualify NEET-UG.",
+      q: "Does All About Doctor provide state-wise counselling support?",
+      a: " Yes, complete AIQ and state-wise counselling assistance is provided.",
     },
-    {
-      q: "Which are the top government MBBS universities in India?",
-      a: "AIIMS New Delhi, KGMU Lucknow, JIPMER Puducherry, Maulana Azad Medical College New Delhi, and Grant Medical College Mumbai.",
-    },
-    {
-      q: "What is the starting salary after MBBS in India?",
-      a: "The starting salary for MBBS graduates ranges between ₹6 – ₹12 lakh per annum, depending on specialization, experience, and type of healthcare facility.",
-    },
-    {
-      q: "Is NEET mandatory for MBBS admission in India?",
-      a: "Yes, NEET-UG is compulsory for all Indian students seeking admission to MBBS programs.",
-    },
-    {
-      q: "Can I study MBBS in India at an affordable cost?",
-      a: "Yes, government universities provide subsidized education, making MBBS highly affordable compared to private institutions.",
-    },
+    
   ]
 
   return (
     <section className="w-full ">
       <div className="relative mx-auto max-w-7xl px-6 py-10 md:py-10">
         <div>
-          <h1 className="text-pretty text-4xl font-semibold leading-tight sm:text-4xl animate-fade-up my-4"
-              style={{ animationDelay: "100ms" }}>Frequently Asked <span className="text-primary">Questions</span> </h1>
+          <h1 className="text-5xl lg:text-6xl font-bold leading-tight bg-gradient-to-r from-primary via-blue-200 to-secondary bg-clip-text text-transparent animate-shimmer fade-item">
+              
+              Frequently Asked Questions</h1>
           
         </div>
 

@@ -17,13 +17,14 @@ export default function StatesList() {
     <section className="bg-primary text-[#f5f5f5] py-16">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center space-y-4 mb-10">
-          <h1 className="text-4xl font-semibold">
+          <h1 className="text-4xl font-semibold fade-item">
             Medical Colleges Across{" "}
             <span className="text-secondary">Indian States</span>
           </h1>
-          <p className="text-gray-400 max-w-2xl mx-auto">
-            Select a state from the list below to find top-ranked medical
-            institutions and admission information.
+          <p className="text-gray-400 max-w-2xl mx-auto fade-item">
+           India has a wide network of NMC-recognized medical colleges across different states. Each state follows its own counselling authority, seat matrix, quota rules, and fee structure.
+Select a state to explore medical colleges, admission process, seat availability, counselling pattern, eligibility, and fees.
+
           </p>
         </div>
 
@@ -43,7 +44,7 @@ export default function StatesList() {
               <Link
                 key={state.slug}
                 href={`/india/${state.slug}/mbbs`}
-                className="hover:underline hover:text-white transition-colors flex items-center gap-2"
+                className="hover:underline hover:text-white transition-colors flex items-center gap-2 fade-item"
               >
                 {state.name}
                 <ChevronRight size={16} className="opacity-60 group-hover:opacity-100" />

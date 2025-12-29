@@ -18,6 +18,18 @@ import StatesList from "@/components/study-india/states-list"
 import AdmissionPage from "@/components/mbbs/admissionPage"
 import StartYourMBBS from "@/components/mbbs/startyourmbbs"
 import Complete from "@/components/mbbs/complete"
+import MbbsSeatMatrixIndia from "@/components/mbbs/MbbsSeatMatrixIndia"
+import MbbsQuotaReservation from "@/components/mbbs/MbbsQuotaReservation"
+import MbbsSeatMatrixOverview from "@/components/mbbs/MbbsSeatMatrixOverview"
+import AiCounsellingMcc from "@/components/mbbs/AiCounsellingMcc"
+import StateQuotaCounselling from "@/components/mbbs/StateQuotaCounselling"
+import CollegeAdmissionPattern from "@/components/mbbs/CollegeAdmissionPattern"
+import MbbsEligibilityCriteria from "@/components/mbbs/MbbsEligibilityCriteria"
+import MbbsAdmissionProcessAndColleges from "@/components/mbbs/MbbsAdmissionProcessAndColleges"
+import MbbsFeesStructure from "@/components/mbbs/MbbsFeesStructure"
+import ClinicalExposureInternship from "@/components/mbbs/ClinicalExposureInternship"
+import CareerAfterMBBS from "@/components/mbbs/CareerAfterMBBS"
+import MbbsAdmissionJourney from "@/components/mbbs/MbbsAdmissionJourney"
 export const metadata = {
   title: "MBBS in India – Admission, Fees & Top Colleges | All About Doctor",
   description:
@@ -31,8 +43,21 @@ export default function MBBSInIndiaPage() {
     <main className="w-full">
     <Navbar/>
       <Hero />
+      <MbbsSeatMatrixIndia/>
+      <MbbsQuotaReservation/>
+      <MbbsSeatMatrixOverview/>
+      <AiCounsellingMcc/>
+      <StateQuotaCounselling/>
+      <CollegeAdmissionPattern/>
+
+      <MbbsEligibilityCriteria/>
+      <MbbsAdmissionProcessAndColleges/>
+      <MbbsFeesStructure/>
+      <ClinicalExposureInternship/>
+      <CareerAfterMBBS/>
+      <MbbsAdmissionJourney/>
       <StatesList />
-      <Overview />
+      {/* <Overview />
       <Eligibility />
       <EntranceExam />
       <AdmissionProcess />
@@ -41,13 +66,14 @@ export default function MBBSInIndiaPage() {
       <Accreditation />
       <Syllabus />
       <Universities />
-      <StartYourMBBS/>
+      
       <Advantages />
       <Career />
       <Documents />
-      <Complete/>
+      <Complete/> */}
       <FAQs />
       <WhyChooseUs />
+       <Complete/>
       <Footer/>
     </main>
   )

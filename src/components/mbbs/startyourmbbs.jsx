@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function StartYourMBBS() {
     return (
-        <main className=" bg-white overflow-hidden " >
+        <main className=" bg-white overflow-hidden my-20" >
             {/* Main Container */}
             <div className="flex items-start justify-between  px-8 pt-10 md:px-8 relative max-w-7xl mx-auto bg-cover bg-center bg-no-repeat" style={{ backgroundImage: "url('/assets/img/bg2.png')" }}>
                 {/* Left Section - Text Content */}

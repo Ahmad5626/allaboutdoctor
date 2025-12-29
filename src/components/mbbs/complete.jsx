@@ -3,7 +3,7 @@ import Link from "next/link"
 
 export default function Complete() {
   return (
-    <div className=" bg-gray-50 flex items-center justify-center p-2">
+    <div className=" bg-gray-50 flex items-center justify-center p-2 my-10">
       <div className="max-w-7xl w-full bg-cover bg-center bg-no-repeat" style={{backgroundImage: "url('/assets/img/bg5.png')"}}>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Card Section */}

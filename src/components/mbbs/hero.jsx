@@ -14,21 +14,20 @@ export default function Hero() {
             </span>
             <h1 className="text-5xl lg:text-6xl font-bold leading-tight bg-gradient-to-r from-primary via-blue-200 to-secondary bg-clip-text text-transparent animate-shimmer fade-item"
               style={{ animationDelay: "100ms" }}>
-              Study MBBS in India for Indian Students <span >Admission, Fees, Eligibility & Top Medical
-                Universities</span>
+              MBBS in India  Complete Admission Guidance
 
             </h1>
             <div className="h-1 w-24 bg-primary rounded-full"></div>
           </div>
 
-          <h2 className="text-lg md:text-xl text-primary font-semibold fade-item">
-            From NEET to NExT — Your Global Medical Future Begins Here
-          </h2>
+          
           <div className="pt-0 space-y-4 max-w-3xl">
             <h3 className="mt-4 max-w-2xl text-sm/6 md:text-base/7 text-muted-foreground fade-item">
-              At All About Doctor Education Pvt. Ltd., we redefine the medical education journey for aspiring doctors in
-              India. Through doctor-led mentorship, AI-powered learning, and personalized counseling, we help students
-              navigate every milestone — from NEET preparation to NExT success — with clarity, confidence, and guidance.
+          MBBS in India is the most sought-after medical career path for students aspiring to become qualified doctors. With a vast network of NMC-recognized government, private, and deemed medical colleges, India offers high-quality medical education, extensive clinical exposure, and globally recognized degre
+            </h3>
+
+              <h3 className="mt-4 max-w-2xl text-sm/6 md:text-base/7 text-muted-foreground fade-item">
+         MBBS admissions in India are strictly based on NEET-UG and conducted through a structured counselling system involving All India Quota (AIQ) and State Quota counselling authorities. All About Doctor Education Pvt. Ltd. provides end-to-end, transparent, and expert-driven guidance to help students secure the right MBBS seat based on their NEET rank, budget, and preferences.
             </h3>
           </div>
         </div>
