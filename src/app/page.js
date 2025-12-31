@@ -26,11 +26,13 @@ import LatestUpdates from '@/components/home/LatestUpdates'
 import Download from '@/components/home/Download'
 import InternationalCollaboration from '@/components/home/International'
 import Images from '@/components/home/Images'
+import Videomain from '@/components/home/videomain'
 
 const page = () => {
   return (
     <div>
       <Hedaer />
+      <Videomain/>
       <HeroSection />
    
       <MbbsCta />
