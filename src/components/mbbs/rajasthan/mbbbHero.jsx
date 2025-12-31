@@ -17,8 +17,7 @@ export default function RajasthanHero() {
               className="text-5xl lg:text-6xl font-bold leading-tight bg-gradient-to-r from-primary via-blue-200 to-secondary bg-clip-text text-transparent animate-shimmer fade-item"
               style={{ animationDelay: "100ms" }}
             >
-              MBBS in Rajasthan
-<span > Complete Admission Guidance</span>
+              Rajasthan MBBS Admission: "Apno Rajasthan, Apno Doctor"
             </h1>
 
             <div className="h-1 w-24 bg-primary rounded-full"></div>
@@ -26,17 +25,10 @@ export default function RajasthanHero() {
 
           <div className="pt-0 space-y-4">
             <h2 className="mt-4 text-muted-foreground text-lg md:text-xl fade-item">
-              Pursuing MBBS in Rajasthan is an excellent opportunity for medical
-              aspirants who want strong academics, modern medical infrastructure,
-              and extensive clinical exposure across diverse healthcare settings.
-              Rajasthan hosts numerous NMC-recognized government and private
-              medical colleges equipped with advanced laboratories, experienced
-              faculty, simulation facilities, and high patient inflow for
-              practical learning.
+            Choosing MBBS in Rajasthan is an excellent option for medical aspirants who seek strong academic standards, modern healthcare infrastructure, and extensive clinical exposure. The state is home to several NMC-recognized government and private medical colleges, supported by high-patient teaching hospitals, experienced faculty, advanced laboratories, and comprehensive skill-based learning facilities.
+
               <br /><br />
-              With professional NEET counseling support and step-by-step admission
-              assistance, All About Doctor Education Pvt Ltd helps students secure
-              MBBS seats across major medical cities in Rajasthan.
+              With structured NEET UG counselling guidance and complete end-to-end admission support, All About Doctor Education Pvt. Ltd. helps students secure MBBS seats in leading medical colleges across Rajasthan through a transparent, systematic, and confidence-driven process.
             </h2>
           </div>
         </div>

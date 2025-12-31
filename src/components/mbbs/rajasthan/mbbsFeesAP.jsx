@@ -1,37 +1,95 @@
-import { CheckCircle } from "lucide-react";
-import React from "react";
+"use client";
+import { IndianRupee, Building2, GraduationCap } from "lucide-react";
 
-const MbbsFeesRajasthan = () => {
-  const fees = [
-    "Government Medical Colleges: Affordable fee range",
-    "Private Medical Colleges: Moderate to high fee structure",
-    "Deemed Universities (if any): Higher fee bracket",
-    "A customized fee breakdown is provided based on NEET score, seat category & city preference.",
-  ];
-
+export default function MbbsFeesRajasthan() {
   return (
-    <section className="px-4 md:px-8 border-b border-primary/20">
-      <div className="relative mx-auto max-w-7xl px-6 py-12">
+    <section className="relative overflow-hidden py-10 bg-primary text-white">
+      
+      {/* layered background glow */}
+      <div className="absolute inset-0">
+        <div className="absolute -top-24 left-1/4 h-[420px] w-[420px] rounded-full bg-secondary/30 blur-[180px]" />
+        <div className="absolute bottom-0 right-1/4 h-[420px] w-[420px] rounded-full bg-white/10 blur-[160px]" />
+      </div>
 
-        <h1
-          className="text-pretty text-4xl font-semibold leading-tight sm:text-4xl animate-fade-up mb-6"
-          style={{ animationDelay: '100ms' }}
-        >
-          MBBS <span className="text-primary">Fees in Rajasthan</span>
-        </h1>
+      <div className="relative max-w-7xl mx-auto px-6">
 
-        <div className="space-y-5">
-          {fees.map((item, idx) => (
-            <div key={idx} className="flex gap-4 items-start">
-              <CheckCircle className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
-              <p className="text-foreground/80 text-lg">{item}</p>
+        {/* Heading */}
+        <div className="max-w-4xl mb-16">
+          <h2 className="text-5xl lg:text-6xl font-bold leading-tight bg-gradient-to-r from-primary via-blue-200 to-secondary bg-clip-text text-transparent animate-shimmer fade-item">
+            MBBS Fees in{" "}
+          Rajasthan
+          </h2>
+
+          <p className="mt-4 text-lg text-white/80  fade-item">
+            Fee structure varies based on college type, quota, and seat category.
+          </p>
+        </div>
+
+        {/* Cards */}
+        <div className="grid md:grid-cols-3 gap-8">
+
+          {/* Government */}
+          <div className="group relative rounded-3xl bg-white/10 backdrop-blur border border-white/20 p-8 hover:bg-white/15 transition-all">
+            <div className="flex items-center gap-4 mb-6">
+              <span className="flex h-12 w-12 items-center justify-center rounded-full bg-secondary text-primary">
+                <Building2 />
+              </span>
+              <h3 className="text-xl font-semibold">
+                Government Medical Colleges
+              </h3>
             </div>
-          ))}
+
+            <p className="text-white/85 leading-relaxed">
+             Affordable and subsidized
+            </p>
+          </div>
+
+          {/* Private */}
+          <div className="group relative rounded-3xl bg-white/10 backdrop-blur border border-white/20 p-8 hover:bg-white/15 transition-all">
+            <div className="flex items-center gap-4 mb-6">
+              <span className="flex h-12 w-12 items-center justify-center rounded-full bg-secondary text-primary">
+                <GraduationCap />
+              </span>
+              <h3 className="text-xl font-semibold">
+                Private Medical Colleges
+              </h3>
+            </div>
+
+            <p className="text-white/85 leading-relaxed">
+              Moderate to higher fee range
+            </p>
+          </div>
+
+          {/* NRI / Management */}
+          <div className="group relative rounded-3xl bg-white/10 backdrop-blur border border-white/20 p-8 hover:bg-white/15 transition-all">
+            <div className="flex items-center gap-4 mb-6">
+              <span className="flex h-12 w-12 items-center justify-center rounded-full bg-secondary text-primary">
+                <IndianRupee />
+              </span>
+              <h3 className="text-xl font-semibold">
+                NRI / Management Seats
+              </h3>
+            </div>
+
+            <p className="text-white/85 leading-relaxed">
+              Premium fee structure
+            </p>
+          </div>
+
+        </div>
+
+        {/* Bottom Info Box */}
+        <div className="mt-16 max-w-4xl rounded-3xl bg-white/10 backdrop-blur border border-white/20 p-8">
+          <p className="text-lg text-white/90 leading-relaxed">
+            A{" "}
+            
+              customized fee breakdown
+            
+             is provided based on NEET score, seat category, and preferred city.
+          </p>
         </div>
 
       </div>
     </section>
   );
-};
-
-export default MbbsFeesRajasthan;
+}

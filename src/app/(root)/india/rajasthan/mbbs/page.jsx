@@ -9,9 +9,16 @@ import MbbsAdmissionProcessRajasthan from '@/components/mbbs/rajasthan/mbbsAdmis
 import MbbsDurationStructureRajasthan from '@/components/mbbs/rajasthan/mbbsDurationStructure'
 import MbbsEligibilityRajasthan from '@/components/mbbs/rajasthan/mbbsEligibilityAP'
 import MbbsFeesRajasthan from '@/components/mbbs/rajasthan/mbbsFeesAP'
+import MbbsStateCTA from '@/components/mbbs/rajasthan/MbbsStateCTA'
 import StartMBBSJourneyRajasthan from '@/components/mbbs/rajasthan/startMBBSJourneyAP'
-import TopCityRajasthan from '@/components/mbbs/rajasthan/topCitiesAP'
+import StateDomicileQuota from '@/components/mbbs/rajasthan/StateDomicileQuota'
+import StateMbbsWorkflow from '@/components/mbbs/rajasthan/StateMbbsWorkflow'
+import StateStatus from '@/components/mbbs/rajasthan/StateStatus'
+import TopCitiesStates from '@/components/mbbs/rajasthan/topCitiesAP'
+
+import WhyChooseState from '@/components/mbbs/rajasthan/whyChooseAP'
 import WhyChooseRajasthan from '@/components/mbbs/rajasthan/whyChooseAP'
+import WhyChooseUsIndia from '@/components/mbbs/why-choose-us'
 import WhyChooseUs from '@/components/mbbs/why-choose-us'
 import React from 'react'
 
@@ -28,17 +35,20 @@ const page = () => {
     <div>
       <Navbar />
       <RajasthanHero />
-      <TopCityRajasthan />
-      <WhyChooseRajasthan />
+      <WhyChooseState/>
+      <TopCitiesStates />
       <MbbsDurationStructureRajasthan />
       <MbbsEligibilityRajasthan />
-      <MbbsAdmissionProcessRajasthan />
+      <StateDomicileQuota/>
+      <StateMbbsWorkflow/>
+     <StateStatus/>
       <MbbsFeesRajasthan />
       <ClinicalExposureRajasthan />
       <CareerAfterMBBSRajasthan />
-      <WhyChooseUs />
-      <StartMBBSJourneyRajasthan />
-      <ExploreMoreIndia />
+      <MbbsStateCTA/>
+      <WhyChooseUsIndia />
+      
+      {/* <ExploreMoreIndia /> */}
       <FaqRajasthan />
       <Footer />
     </div>

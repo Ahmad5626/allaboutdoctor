@@ -1,4 +1,4 @@
-export default function WhyChooseUs() {
+export default function WhyChooseUsIndia() {
   const strengths = [
     { label: "Partner Colleges", value: "850+" },
     { label: "Successful Students", value: "10,000+" },

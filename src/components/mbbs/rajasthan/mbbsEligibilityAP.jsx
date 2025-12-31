@@ -1,38 +1,90 @@
-import { CheckCircle } from "lucide-react";
-import React from "react";
+"use client"
+import { Check } from "lucide-react"
 
-const MbbsEligibilityRajasthan = () => {
-  const eligibility = [
-    "Qualify NEET-UG",
-    "Complete 10+2 with Physics, Chemistry & Biology",
-    "Register for Rajasthan NEET-UG counseling",
-    "Submit required academic & identity documents",
-    "Meet domicile rules (for state quota seats)",
-  ];
-
+export default function MbbsEligibilityBgPrimary() {
   return (
-    <section className="px-4 md:px-8 border-b border-primary/20 bg-white">
-      <div className="relative mx-auto max-w-7xl px-6 py-12">
+    <section className="relative overflow-hidden py-10 bg-primary text-white">
 
-        <h2
-          className="text-pretty text-4xl font-semibold leading-tight sm:text-4xl animate-fade-up"
-          style={{ animationDelay: "80ms" }}
-        >
-          Eligibility for <span className="text-primary">MBBS in Rajasthan</span>
-        </h2>
+      {/* background glow */}
+      <div className="absolute inset-0">
+        <div className="absolute top-10 left-1/4 h-96 w-96 bg-secondary/30 blur-[140px] rounded-full" />
+        <div className="absolute bottom-0 right-1/4 h-96 w-96 bg-white/10 blur-[160px] rounded-full" />
+      </div>
 
-        <div className="mt-8 space-y-5">
-          {eligibility.map((item, idx) => (
-            <div key={idx} className="flex gap-4 items-start">
-              <CheckCircle className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
-              <p className="text-foreground/80 text-lg">{item}</p>
+      <div className="relative max-w-7xl mx-auto px-6">
+
+        {/* Heading */}
+        <div className="max-w-4xl mb-16">
+          <h2 className="text-5xl lg:text-6xl font-bold leading-tight bg-gradient-to-r from-white via-blue-200 to-secondary bg-clip-text text-transparent animate-shimmer fade-item">
+            MBBS in Rajasthan  NEET UG Eligibility Requirements
+          </h2>
+
+        
+        </div>
+
+        {/* Criteria */}
+        <div className="space-y-6">
+
+          {/* 1 */}
+          <div className="flex gap-5 items-start rounded-2xl bg-white/10 backdrop-blur border border-white/20 p-6 fade-item">
+            <span className="mt-1 flex h-9 w-9 items-center justify-center rounded-full bg-secondary text-primary">
+              <Check className="h-4 w-4" />
+            </span>
+            <div className="text-white/85 text-base">
+              <p className="font-medium">NEET UG Qualification</p>
+              <p className="mt-1 text-sm text-white/70">
+                Candidate must qualify NEET UG in the current academic year. <br />
+                A valid NEET score and rank are mandatory.
+              </p>
             </div>
-          ))}
+          </div>
+
+          {/* 2 */}
+          <div className="flex gap-5 items-start rounded-2xl bg-white/10 backdrop-blur border border-white/20 p-6 fade-item">
+            <span className="mt-1 flex h-9 w-9 items-center justify-center rounded-full bg-secondary text-primary">
+              <Check className="h-4 w-4" />
+            </span>
+            <div className="text-white/85 text-base">
+              <p className="font-medium">Educational Eligibility</p>
+              <p className="mt-1 text-sm text-white/70">
+                10+2 with Physics, Chemistry, Biology/Biotechnology <br />
+                English must be a compulsory subject
+              </p>
+            </div>
+          </div>
+
+          {/* 3 */}
+          <div className="flex gap-5 items-start rounded-2xl bg-white/10 backdrop-blur border border-white/20 p-6 fade-item">
+            <span className="mt-1 flex h-9 w-9 items-center justify-center rounded-full bg-secondary text-primary">
+              <Check className="h-4 w-4" />
+            </span>
+            <div className="text-white/85 text-base">
+              <p className="font-medium">Minimum PCB Marks</p>
+              <p className="mt-2 text-sm text-white/70">
+                General / EWS: 50% <br />
+                OBC / SC / ST: 40% <br />
+                PwD (General): 45%
+              </p>
+            </div>
+          </div>
+
+          {/* 4 */}
+          <div className="flex gap-5 items-start rounded-2xl bg-white/10 backdrop-blur border border-white/20 p-6 fade-item">
+            <span className="mt-1 flex h-9 w-9 items-center justify-center rounded-full bg-secondary text-primary">
+              <Check className="h-4 w-4" />
+            </span>
+            <div className="text-white/85 text-base">
+              <p className="font-medium">Age Criteria</p>
+              <p className="mt-1 text-sm text-white/70">
+                Minimum age: 17 years (by 31 December of the admission year) <br />
+                Upper age limit: As per latest NEET UG guidelines
+              </p>
+            </div>
+          </div>
+
         </div>
 
       </div>
     </section>
-  );
-};
-
-export default MbbsEligibilityRajasthan;
+  )
+}
